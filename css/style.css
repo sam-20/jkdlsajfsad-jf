@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+}
+
+.main {
+    height: 100vh;
+}
+.navbar {
+    background: skyblue;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.links {
+    display: flex;
+}
+.links li {
+    list-style: none;
+    margin-right: 10px;
+}
+
+header {
+    height: 100px;
+    background-color: teal;
+}
+
+.content {
+    display: flex;
+    height: 230px;
+    background-color: aquamarine;
+}
+.news {
+    flex: 0.9;
+}
+
+.reactions {
+    display: flex;
+    flex-direction: column;
+    background-color: azure;
+    flex: 0.3;
+}
+
+footer {
+    background-color: burlywood;
+}
