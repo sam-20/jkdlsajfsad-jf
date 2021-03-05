@@ -1,0 +1,89 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.maincontainer {
+    background-color: aqua;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.topcontainer {
+    background-color: red;
+    display: flex;
+    flex: 0.1;
+}
+
+.bottomcontainer {
+    background-color: yellow;
+    display: flex;
+    flex: 0.9;
+}
+
+.lefttopcontainer {
+    background: pink;
+    display: flex;
+    flex: 0.2;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.righttopcontainer {
+    background-color: dodgerblue;
+    display: flex;
+    flex: 0.8;
+    justify-content: flex-end;
+    padding-right: 20px;
+    align-items: center;
+}
+
+.leftbottomcontainer {
+    background-color: gray;
+    display: flex;
+    flex: 0.5;
+}
+
+.rightbottomcontainer {
+    background-color: indianred;
+    display: flex;
+    flex: 0.5;
+}
+
+.brand {
+    /* padding-left: 20px; */
+    /* background-color: red; */
+}
+
+.our-list {
+    list-style-type: none;
+}
+
+.our-list li {
+    display: inline;
+    padding-right: 20px;
+}
+
+.apply-now-button {
+
+    /*gives padding to top, right, left, bottom*/
+    /* padding: 20px; */
+
+    /*first value is for top and bottom
+    second value is for right and left*/
+    padding: 10px 20px;
+
+    /*first value is for top,
+    second value is for right and left
+    third value is for bottom*/
+    /* padding: 10px 20px 15px; */
+
+    /*first value is for top
+    second value is for right
+    third value is for bottom
+    fourth value is for left
+    */
+    /* padding: 10px 12px 15px 20px */
+}
+
