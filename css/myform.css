@@ -1,0 +1,86 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.maincontainer {
+    display: flex;
+    height: 100vh;
+    background-color: dodgerblue;
+    background-image: url('/images/download.jpeg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    /* align-items:center;
+    justify-content: center; */
+
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.formcontainer{
+    display: flex;
+    height: 450px;
+    width: 350px;
+    background-color: red;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+.headerdiv{
+    display: flex;
+    background-color: gray;
+    flex: 0.1;
+}
+
+.imagediv{
+    display: flex;
+    background-color: green;
+    flex: 0.4;
+}
+
+.inputdiv{
+    display: flex;
+    background-color: yellowgreen;
+    flex: 0.2;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.buttondiv{
+    display: flex;
+    background-color: dodgerblue;
+    flex: 0.2;
+}
+
+.footerdiv{
+    display: flex;
+    background-color: pink;
+    flex: 0.1;
+}
+
+.myinputfields{
+    /*this value applies to all sides of the element*/
+    /* padding:30px;     */
+
+    /*the first value is for top and bottom
+    the second value is for left and right**/
+    /* padding: 15px 35px; */
+
+    /**the first value is for the top,
+    second value for right and left
+    third value for bottom*/
+    /* padding:20px 15px 10px; */
+
+    /*the first value for the top
+    second value for the right
+    third value for the bottom
+    fourth value for the left*/
+    /* padding:10px 20px 40px 15px; */
+
+    padding:10px 5px;
+  
+}
+
