@@ -6,62 +6,86 @@
 .maincontainer {
     display: flex;
     height: 100vh;
-    background-color: dodgerblue;
-    background-image: url('/images/download.jpeg');
+    /* background-color: dodgerblue; */
+    background-image: url("/images/flowers.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    justify-content: center;
+    align-items: center;
+}
 
-    /* align-items:center;
-    justify-content: center; */
+.formcontainer {
+    display: flex;
+    height: 370px;
+    width: 250px;
+    background-color: white;
+    flex-direction: column;
+    border-radius: 15px;
+    background-image: url('/images/plain2.png');
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    /*The first value is the horizontal offset:
+    A positive value puts the shadow on the right side of the box, 
+    a negative value puts the shadow on the left side of the box
+
+    the second value is the vertical offset
+    A positive value puts the shadow below the box,
+    a negative value puts the shadow above the box
+
+    third value is the blur radius 
+    the higher the number the more blurred the shadow becomes
+
+    foruth value is the color of the shadow*/
+    box-shadow: -1px -1px 20px 0px gray;
+}
+
+.headerdiv {
+    display: flex;
+    /* background-color: gray; */
+    flex: 0.15;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagediv {
+    display: flex;
+    /* background-color: green; */
+    flex: 0.4;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputdiv {
+    display: flex;
+    /* background-color: red; */
+    flex: 0.2;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.buttondiv {
+    display: flex;
+    /* background-color: orange; */
+    flex: 0.15;
 
     justify-content: center;
     align-items: center;
-    
 }
 
-.formcontainer{
+.footerdiv {
     display: flex;
-    height: 450px;
-    width: 350px;
-    background-color: red;
-    flex-direction: column;
-    border-radius: 15px;
-}
-
-.headerdiv{
-    display: flex;
-    background-color: gray;
+    /* background-color: pink; */
     flex: 0.1;
-}
 
-.imagediv{
-    display: flex;
-    background-color: green;
-    flex: 0.4;
-}
-
-.inputdiv{
-    display: flex;
-    background-color: yellowgreen;
-    flex: 0.2;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 }
 
-.buttondiv{
-    display: flex;
-    background-color: dodgerblue;
-    flex: 0.2;
-}
-
-.footerdiv{
-    display: flex;
-    background-color: pink;
-    flex: 0.1;
-}
-
-.myinputfields{
+.myinputfields {
     /*this value applies to all sides of the element*/
     /* padding:30px;     */
 
@@ -80,7 +104,65 @@
     fourth value for the left*/
     /* padding:10px 20px 40px 15px; */
 
-    padding:10px 5px;
-  
+    padding: 5px 5px;
+    /* margin-top: 50px; */
+
+    border-radius: 5px;
+
+    /* border-style:double;
+    border-width: 2px;
+    border-color: gray; */
+
+    /*first value is for the border-width
+    second value for the border-style
+    third value for the border-color*/
+    /* border: 2px solid gray; */
+    border: none;
+
+    box-shadow: -1px 0px 10px 0px gray;
+
+    background-color: transparent;
+
+    color:white;
+    font-size: 12px;
 }
 
+::placeholder {
+    font-size: smaller;
+    color:white;
+}
+
+.form-image {
+    height: 110px;
+    width: 110px;
+    border-radius: 55px;
+    box-shadow: -1px 0px 20px 0px gray;
+}
+
+.form-button {
+    padding: 5px 0px;
+    margin: 0px 15px;
+    width: 100%;
+    font-size: small;
+    border-radius: 5px;
+    border: 2px double transparent;
+    background-color: dodgerblue;
+    color: white;
+    box-shadow: -1px 0px 10px 0px gray;
+}
+
+.forgotpassword {
+    font-size: small;
+    color: white;
+}
+
+/*styling for when you hover over the forgot password link*/
+.forgotpassword:hover {
+    color: dodgerblue;
+}
+
+.logintext {
+    font-size: large;
+    font-weight: bold;
+    color: white;
+}
