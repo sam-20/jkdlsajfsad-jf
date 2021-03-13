@@ -1,0 +1,121 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.main {
+    background-color: aqua;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.topdiv {
+    background-color: red;
+    display: flex;
+    flex: 0.3;
+}
+
+.bottomdiv {
+    background-color: yellow;
+    display: flex;
+    flex: 0.7;
+}
+
+.containerA {
+    background-color: gray;
+    display: flex;
+    flex-basis: 33.3%;
+
+    /*align items is used to align all the items vertically
+    inside the flexible container*/
+    align-items: center;
+}
+
+.containerB {
+    background-color: orange;
+    display: flex;
+    flex-basis: 33.3%;
+
+    /*justify content is used to align all the items horizontally
+    inside the flexible container*/
+    justify-content: flex-end;
+}
+
+.containerC {
+    background-color: indigo;
+    display: flex;
+    flex-basis: 33.3%;
+}
+
+.containerA1 {
+    background-color: dodgerblue;
+    display: flex;
+    flex: 1;
+    height: 50px;
+
+    /*align self is used on an individual items 
+    to override the align items property given to it by the parent container
+    hence the name align-self ie. align urself*/
+    align-self: flex-end;
+}
+
+.containerA2 {
+    background-color: green;
+    display: flex;
+    flex: 1;
+    height: 50px;
+}
+.containerA3 {
+    background-color: brown;
+    display: flex;
+    flex: 1;
+    height: 50px;
+}
+
+.containerA4 {
+    background-color: pink;
+    display: flex;
+    flex: 1;
+    height: 50px;
+}
+
+.containerA5 {
+    background-color: rgb(37, 15, 71);
+    display: flex;
+    flex: 1;
+    height: 50px;
+
+    /*align self is used on an individual items 
+    to override the align items property given to it by the parent container
+    hence the name align-self ie. align urself*/
+    align-self: flex-start;
+}
+
+.containerA6 {
+    background-color: rgb(66, 16, 16);
+    display: flex;
+    flex: 1;
+    height: 50px;
+}
+
+.containerB1 {
+    background-color: red;
+    display: flex;
+    height: 50px;
+    width: 50px;
+}
+
+.containerB2 {
+    background-color: yellow;
+    display: flex;
+    height: 50px;
+    width: 50px;
+}
+
+.containerB3 {
+    background-color: green;
+    display: flex;
+    height: 50px;
+    width: 50px;
+}
