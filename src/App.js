@@ -1,9 +1,18 @@
 import React, { useState } from 'react'
+
+import { Switch, Route } from 'react-router-dom';
+
 import Statemgt from './components/Statemgt'
 import Test1 from './components/Test1'
 
-import Form from './components/form/form'
-import Home from './components/Home/Home'
+import Form from './pages/Form/Form'
+
+import { Home, Mounting, Button, Inputfield } from './components'
+
+import Signup from './pages/Signup/Signup'
+import Signin from './pages/Signin/Signin'
+
+
 
 function App() {
 
@@ -11,13 +20,27 @@ function App() {
   return (
     <div className="App">
 
-      {/* <Statemgt /> */}
+      <Switch>
 
-      {/* <Test1 /> */}
+        <Route path="/" exact component={Form} />
 
-      {/* <Form/> */}
+        <Route path="/signup" exact component={Signup} />
 
-      <Home />
+        <Route path="/signin" exact component={Signin} />
+
+      </Switch>
+
+      {/* <Statemgt />
+
+        <Test1 />
+
+        <Home />
+
+        <Inputfield/>
+
+        <Button/>
+
+        <Mounting /> */}
 
     </div>
   );

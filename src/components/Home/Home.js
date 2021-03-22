@@ -8,26 +8,27 @@ function Home() {
     return (
         <div className="body">
 
-            {/* <button className="loginbutton">Login</button>
+            <button className="loginbutton">Login</button>
 
             <button className="signupbutton">Signup</button>
 
-            <div style={{background:'white'}}>
-                <Button textinsidebutton="Sign In" customizecolor="white" customizeheight={10} />
+            <div style={{ background: 'white', marginTop: 20, marginBottom: 20 }}>
+                <Button textinsidebutton="Sign In" customizecolor="white" customizeheight={30} />
 
                 <Button textinsidebutton="Sign out" customizecolor="black" customizeheight={20} />
             </div>
 
-        <button>Some text</button> */}
+            <button>Some text</button>
 
-            {/* <input type="text" />
-        <input type="password" />
-        <input type="number"/>
-        <input type="radio" />
-        <input type="checkbox" /> */}
+            <input type="text" />
+            <input type="password" />
+            <input type="number" />
+            <input type="radio" />
+            <input type="checkbox" />
 
             <Button textinsidebutton="my button 1" />
-            <Button textinsidebutton="my button 2" > </Button>
+
+            <Button textinsidebutton="my button 2"> </Button>
 
             <div style={{ display: 'flex' }}>
                 <Inputfield myinputtype="checkbox" />
@@ -52,9 +53,9 @@ function Home() {
 
             </div>
 
-            {/* <Inputfield myinputtype="password" /> */}
+            <Inputfield myinputtype="password" />
 
-            {/* <Inputfield myinputtype="radio" /> */}
+            <Inputfield myinputtype="radio" />
 
             <Typography text="Look here" mytypographycolor="red" />
 
