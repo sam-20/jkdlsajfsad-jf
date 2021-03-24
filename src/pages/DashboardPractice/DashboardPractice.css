@@ -1,0 +1,93 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.maincontainer {
+    display: flex;
+    background-color: red;
+    height: 100vh;
+}
+
+.left {
+    display: flex;
+    background-color: white;
+    flex: 0.3;
+    flex-direction: column;
+}
+
+.right {
+    display: flex;
+    background-color: green;
+    flex: 0.7;
+    flex-direction: column;
+}
+
+.righttop {
+    display: flex;
+    background-color: aqua;
+    flex: 0.1;
+}
+
+.rightbottom {
+    display: flex;
+    background-color: white;
+    flex: 0.9;
+    flex-direction: column;
+}
+
+.cardtoprow {
+    display: flex;
+    background-color: transparent;
+    flex: 0.5;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cardbottomrow {
+    display: flex;
+    background-color: transparent;
+    flex: 0.5;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card {
+    display: flex;
+    width: 75px;
+    height: 75px;
+    background-color: white;
+    box-shadow: 2px -2px 5px 5px gray;
+    border-radius: 5px;
+}
+
+.branddiv {
+    display: flex;
+    background-color: transparent;
+    flex: 0.1;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.menudiv {
+    display: flex;
+    background-color: yellow;
+    flex: 0.8;
+}
+
+.signoutdiv {
+    display: flex;
+    background-color: green;
+    flex: 0.1;
+}
+
+.logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+}
+
+.brandname{
+    font-size: 16px;
+    font-weight: bold;
+}

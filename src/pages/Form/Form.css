@@ -1,8 +1,62 @@
-
+.ourform {
+    background-color: green;
+}
 
 ::placeholder {
-    color: gray;
+    color: black;
     font-size: 10px;
-    /* font-weight: bold; */
+    font-weight: bold;
     font-style: italic;
+    text-align: center;
+}
+
+.myinput {
+    color: black;
+    outline: none;
+    border: none;
+    text-align: center;
+    font-size: 10px;
+}
+
+.login_button {
+    font-size: 12px;
+    padding: 5px 40px;
+    box-shadow: 2px -2px 5px 2px grey;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.login_button:hover {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.login_button:focus {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.login_button:active {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.link :hover {
+    color: green;
+}
+
+.imagediv {
+    display: flex;
+    flex: 0.5;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: green;
+}
+
+@media screen and (max-width: 570px) {
+    .ourform {
+        background-color: red;
+    }
 }

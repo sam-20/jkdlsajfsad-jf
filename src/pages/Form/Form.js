@@ -2,8 +2,10 @@ import './Form.css'
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { AccessAlarm, ThreeDRotation, Visibility } from '@material-ui/icons';
+import kstu_logo from '../../images/download.png'
 
 function Form() {
+
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -68,39 +70,86 @@ function Form() {
         <div style={{ background: 'white', height: '100vh', margin: 0, padding: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
 
 
-            <form style={{ boxShadow: '2px -2px 15px 10px dodgerblue', borderRadius: 20 }}>
+            <form className="ourform" style={{ boxShadow: '2px 2px 10px 10px gray', borderRadius: 20 }}>
                 {/* <label>Username: </label> <br /> */}
-                <div style={{ display: 'flex', flexDirection: 'column', backgroundColor: 'white', height: 300, width: 200, justifyContent: 'center', borderRadius: 10, alignItems: 'center' }}>
-                    <div>
-                        <input type="text" value={username} onChange={updateUsername} placeholder="Username"
-                            style={{ boxShadow: '2px -2px 2px 2px gray', border: 'none', marginBottom: 10, borderRadius: 2 }}
-                        />
+                <div style={{ display: 'flex', flexDirection: 'column', height: 300, width: 230, justifyContent: 'center', borderRadius: 10 }}>
+
+
+                    <div className="imagediv">
+                        <img style={{ width: 70, height: 70 }} src={kstu_logo} alt="alternate" />
                     </div>
 
 
-                    <div style={{ display: 'flex', boxShadow: '2px 2px 2px 2px gray', marginLeft: 50, marginRight: 50 }}>
+                    {/* <div>
+                        <input type="text" value={username} onChange={updateUsername} placeholder="Username"
+                            // onKeyDown={handleEnter}
+                            style={{ boxShadow: '2px -2px 2px 2px gray', border: 'none', marginBottom: 10, borderRadius: 2 }}
+                        />
+                    </div> */}
+
+                    <div style={{ display: 'flex', justifyContent: 'center', flex: 0.1 }}>
+                        <input className="myinput" placeholder="Username" type="text" style={{ boxShadow: '2px -2px 5px 2px gray', borderRadius: 10 }} />
+                    </div>
+
+                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: 20, flex: 0.1 }}>
+                        <input type="password" className="myinput" placeholder="Password" type="text" style={{ boxShadow: '2px -2px 5px 2px gray', borderRadius: 10 }} />
+                    </div>
+
+                    <div style={{ display: 'flex', marginTop: 20, justifyContent: 'center', flex: 0.1 }}>
+                        <button className="login_button" onClick={(e) => { e.preventDefault() }} >Login</button>
+                    </div>
+
+
+
+                    {/* <div style={{ display: 'flex', boxShadow: '2px 2px 2px 2px gray', marginLeft: 50, marginRight: 50 }}>
                         <input type="password" value={password} onChange={updatePassword} placeholder="Password"
                             style={{ border: 'none' }}
                         />
                         <Visibility style={{ color: 'gray', }} />
-                    </div>
+                    </div> */}
 
+                    {/* <a href="#" className="link" >Link</a> */}
 
-
-                    <div>
+                    {/* <div>
                         <button onClick={signin} >Signin</button>
                     </div>
 
                     <div>
                         <button onClick={signup} >Signup</button>
+                    </div> */}
+
+                    {/* <div style={{ backgroundColor: 'dodgerblue', flex: 0.3 }}>
+                        <div style={{ backgroundColor: 'yellow', display: 'flex', height: '100%', borderBottomRightRadius: 60 }}>
+
+                        </div>
                     </div>
 
-                    {/* <p>Your username is : {username} </p>
-                <p>Your password is : {password} </p> */}
+                    <div style={{ backgroundColor: 'yellow', flex: 0.3 }}>
+                        <div style={{ backgroundColor: 'dodgerblue', display: 'flex', height: '100%', borderTopLeftRadius: 60 }}>
+
+                        </div>
+                    </div> */}
+
+
+
                 </div>
             </form>
 
+            <nav>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+
+                <li>
+                    <a href="#">About</a>
+                </li>
+
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </nav>
         </div>
+
     )
 }
 

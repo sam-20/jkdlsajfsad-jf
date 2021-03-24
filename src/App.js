@@ -12,6 +12,7 @@ import { Home, Mounting, Button, Inputfield } from './components'
 import Signup from './pages/Signup/Signup'
 import Signin from './pages/Signin/Signin'
 
+import DashboardPractice from './pages/DashboardPractice/DashboardPractice'
 
 
 function App() {
@@ -27,6 +28,8 @@ function App() {
         <Route path="/signup" exact component={Signup} />
 
         <Route path="/signin" exact component={Signin} />
+
+        <Route path="/dashboardpractice" exact component={DashboardPractice} />
 
       </Switch>
 
