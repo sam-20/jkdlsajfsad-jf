@@ -14,7 +14,6 @@ import Signin from './pages/Signin/Signin'
 
 import DashboardPractice from './pages/DashboardPractice/DashboardPractice'
 
-
 function App() {
 
 

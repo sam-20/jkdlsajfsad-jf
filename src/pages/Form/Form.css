@@ -1,5 +1,8 @@
 .ourform {
-    background-color: green;
+    background-color: yellow;
+    width: 23%;
+    display: flex;
+    justify-content: center;
 }
 
 ::placeholder {
@@ -16,16 +19,21 @@
     border: none;
     text-align: center;
     font-size: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
 }
 
 .login_button {
     font-size: 12px;
-    padding: 5px 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     box-shadow: 2px -2px 5px 2px grey;
     border-radius: 20px;
     border: none;
     outline: none;
     cursor: pointer;
+    width: 100%;
 }
 
 .login_button:hover {
@@ -49,14 +57,18 @@
 
 .imagediv {
     display: flex;
-    flex: 0.5;
+    flex: 0.4;
     justify-content: center;
-    align-items: flex-start;
-    background-color: green;
+    align-items: center;
+    background-color: transparent;
 }
 
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 960px) {
     .ourform {
         background-color: red;
+        width: 40%;
+        height: 60%;
+        display: flex;
+        justify-content: center;
     }
 }
