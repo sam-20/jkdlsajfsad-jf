@@ -14,13 +14,16 @@ import Signin from './pages/Signin/Signin'
 
 import DashboardPractice from './pages/DashboardPractice/DashboardPractice'
 
+import MyComponent from './components/MyComponent'
+import Maincomponent from './components/MainComponent'
+
 function App() {
 
 
   return (
     <div className="App">
 
-      <Switch>
+      {/* <Switch>
 
         <Route path="/" exact component={Form} />
 
@@ -30,7 +33,9 @@ function App() {
 
         <Route path="/dashboardpractice" exact component={DashboardPractice} />
 
-      </Switch>
+      </Switch> */}
+
+
 
       {/* <Statemgt />
 
@@ -42,7 +47,14 @@ function App() {
 
         <Button/>
 
+
         <Mounting /> */}
+
+      {/* <MyComponent></MyComponent> */}
+      {/* <MyComponent /> */}
+
+      <MyComponent />
+
 
     </div>
   );
