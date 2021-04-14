@@ -1,6 +1,5 @@
 import { useState } from 'react'
 
-import MyComponent from './MyComponent'
 
 function Maincomponent(props) {
 
@@ -12,9 +11,6 @@ function Maincomponent(props) {
         changemyname('daniel')
     }
 
-    function clicked() {
-        alert('button clicked')
-    }
 
     function updatenumber() {
         var newnum = num1 + 1

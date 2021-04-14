@@ -1,7 +1,7 @@
 import './Form.css'
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
-import { AccessAlarm, ThreeDRotation, Visibility } from '@material-ui/icons';
+// import { useHistory } from 'react-router-dom'
+// import { AccessAlarm, ThreeDRotation, Visibility } from '@material-ui/icons';
 import kstu_logo from '../../images/download.png'
 
 function Form() {
@@ -10,22 +10,29 @@ function Form() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
-    let history = useHistory();
+    const [values, setValues] = useState({})
 
-    function signup(e) {
-        console.log(username)
-        console.log(password)
+    // let history = useHistory();
+
+    // function signup(e) {
+    //     console.log(username)
+    //     console.log(password)
+    //     e.preventDefault()
+
+    //     history.push('/signup')
+    // }
+
+    // function signin(e) {
+    //     console.log(username)
+    //     console.log(password)
+    //     e.preventDefault()
+
+    //     history.push('/signin')
+    // }
+
+    const onchange = (e) => {
         e.preventDefault()
-
-        history.push('/signup')
-    }
-
-    function signin(e) {
-        console.log(username)
-        console.log(password)
-        e.preventDefault()
-
-        history.push('/signin')
+        setValues({ ...values, [e.target.name]: [e.target.value] })
     }
 
     function updateUsername(e) {
@@ -40,30 +47,48 @@ function Form() {
         setPassword(e.target.value)
     }
 
-    function run() {
-        var foo = "Foo";
-        let bar = "Bar";
+    // function run() {
+    //     var foo = "Foo";
+    //     let bar = "Bar";
 
-        console.log(foo, bar); // Foo Bar
+    //     console.log(foo, bar); // Foo Bar
 
-        {
-            var moo = "Mooo"
-            let baz = "Bazz";
-            console.log(moo, baz); // Mooo Bazz
-        }
+    //     {
+    //         var moo = "Mooo"
+    //         let baz = "Bazz";
+    //         console.log(moo, baz); // Mooo Bazz
+    //     }
 
-        console.log(moo); // Mooo
-        // console.log(baz); // ReferenceError
-    }
+    //     console.log(moo); // Mooo
+    //     // console.log(baz); // ReferenceError
+    // }
 
     function handleEnter(event) {
-        alert(event.keyCode)
+        // alert(event.keyCode)
         if (event.keyCode === 13) {
             const form = event.target.form;
             const index = Array.prototype.indexOf.call(form, event.target);
             form.elements[index + 1].focus();
             event.preventDefault();
         }
+    }
+
+    function submit(e) {
+        e.preventDefault()
+
+        fetch('http://localhost:5000/login', {
+            method: 'POST',
+            body: JSON.stringify({ username: username, password: password }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(res => res.json())    /**fetching json response */
+            .then(res => {
+                console.log(res);
+            }, (err) => {
+                console.log(err);
+            })
     }
 
     return (
@@ -78,15 +103,15 @@ function Form() {
                     </div>
 
                     <div style={{ display: 'flex', flex: 0.2, alignItems: 'center', justifyContent: 'center', backgroundColor: 'yellows', paddingLeft: 15, paddingRight: 15 }}>
-                        <input className="myinput" placeholder="Username" type="text" style={{ boxShadow: '1px -1px 3px 0px gray', borderRadius: 5 }} onKeyDown={handleEnter} />
+                        <input className="myinput" z placeholder="Username" type="text" onKeyDown={handleEnter} value={username} onChange={updateUsername} />
                     </div>
 
                     <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', flex: 0.2, backgroundColor: 'greens', paddingLeft: 15, paddingRight: 15 }}>
-                        <input type="password" className="myinput" placeholder="Password" type="text" style={{ boxShadow: '1px -1px 3px 0px gray', borderRadius: 5 }} />
+                        <input type="password" className="myinput" placeholder="Password" value={password} onChange={updatePassword} />
                     </div>
 
                     <div style={{ display: 'flex', justifyContent: 'center', flex: 0.2, alignItems: 'flex-start', backgroundColor: 'blues', paddingLeft: 15, paddingRight: 15 }}>
-                        <button className="login_button" onClick={(e) => { e.preventDefault() }} >Login</button>
+                        <button className="login_button" onClick={submit} >Login</button>
                     </div>
 
                 </div>

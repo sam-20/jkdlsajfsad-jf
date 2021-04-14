@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import Mycss from './MyComponent.module.css'
+
 
 function MyComponent() {
 
@@ -36,12 +38,16 @@ function MyComponent() {
 
     return (
         <div>
-            <button onClick={changename}>change the name</button>
+            {/* {Mycss.button1-control} */}
+            <button className={Mycss.button1_control} onClick={changename}>change the name</button>
             <p>{myname}</p>
             <button onClick={changenumber}>change the nubmer</button>
             {mynumber}
 
+            <p className={Mycss.sampletext}> this is some text</p>
+
             <button onClick={changeFan}>change fan status</button>
+            {fan}
         </div>
 
     )

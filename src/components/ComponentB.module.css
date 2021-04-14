@@ -1,0 +1,87 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.body {
+    background-color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    width: 10%;
+    height: 5%;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    color: dodgerblue;
+    border: 2px solid dodgerblue;
+    margin: 10px;
+}
+
+.button:active {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.popover_open {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(95, 201, 74);
+    width: 20%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 5px 1px gray;
+    /* transition: all 0.5s ease; */
+    /* animation: ease-in-out; */
+}
+
+.popover_closed {
+    display: none;
+}
+
+.textareadiv {
+    display: flex;
+    background-color: transparent;
+    flex: 0.9;
+}
+
+.textarea {
+    width: 100%;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    box-shadow: 0px 0px 5px 1px gray;
+    outline: none;
+}
+
+::placeholder {
+    text-align: left;
+}
+
+.sendbuttondiv {
+    display: flex;
+    background-color: transparent;
+    flex: 0.1;
+    justify-content: center;
+    align-items: center;
+}
+
+.sendbutton {
+    width: 60%;
+    padding: 5px 0px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 5px 1px green;
+    outline: none;
+    cursor: pointer;
+}

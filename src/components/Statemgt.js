@@ -26,7 +26,7 @@ function Statemgt() {
     //  num1: is the name of the state variable
     //  setNum1 is the name of the function we want to use when we want to change the value of the num1
     //  useState() means we're initializing the value of num1 to nothing
-    const [num1, setNum1] = useState();
+    // const [num1, setNum1] = useState();
 
 
 

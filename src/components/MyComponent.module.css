@@ -1,0 +1,12 @@
+.button1_control {
+    background-color: dodgerblue;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.sampletext {
+    color: red;
+}
