@@ -40,8 +40,6 @@ function App() {
       <Route path="/form" exact component={Form} />
       <Route path="/appliances" exact component={Appliances} />
       <Route path="/shoes" exact component={Shoes} />
-      <Route path="/mylogin" exact component={MyLogin} />
-      <Route exact path="/mydashboard" component={MyDashboard} />
       <Route path="/signin" exact component={Signin} />
       <Route path="/signup" exact component={Signup} />
       <Route path="/dashboard" exact component={Dashboard} />
