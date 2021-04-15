@@ -5,17 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
 import { MyProvider } from './store/context'
-import { AppProvider } from './contextpractice/ContextStore'
 ReactDOM.render(
   <React.StrictMode>
 
     <BrowserRouter>
       <MyProvider>
-
-      {/* <AppProvider> */}
         <App />
-      {/* </AppProvider> */}
-
       </MyProvider>
     </BrowserRouter>
   </React.StrictMode>,

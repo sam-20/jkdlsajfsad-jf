@@ -26,9 +26,6 @@ import ComponentB from './components/ComponentB'
 import ComponentC from './components/ComponentC'
 import ComponentD from './components/ComponentD'
 
-import MyLogin from './contextpractice/MyLogin'
-import MyDashboard from './contextpractice/MyDashboard'
-
 import { Dashboard,Signin, Signup } from './pages/wednesday/index'
 
 function App() {
