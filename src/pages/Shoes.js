@@ -19,7 +19,7 @@ function Shoes() {
             <p>This is the shoes page</p>
             <p>Items in cart: {cartItem}</p>
 
-            <button>Add this shoes to cart</button>
+            <button onClick={updateCartItem}>Add this shoes to cart</button>
 
             <br />
 
