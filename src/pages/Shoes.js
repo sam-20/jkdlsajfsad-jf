@@ -1,11 +1,10 @@
 import { useHistory } from 'react-router-dom'
-
 import { MyContext } from '../store/context'
 import { useContext } from 'react'
 
 function Shoes() {
 
-    const { cartItem, updateCartItem } = useContext(MyContext)
+    const { cartItem, updateCartItem, subtractCartItem } = useContext(MyContext)
 
     let history = useHistory()
 
@@ -19,11 +18,21 @@ function Shoes() {
             <p>This is the shoes page</p>
             <p>Items in cart: {cartItem}</p>
 
-            <button onClick={updateCartItem}>Add this shoes to cart</button>
-
-            <br />
-
             <button onClick={openAppliancesPage}>Navigate to appliance section</button>
+
+            <br /><br />
+            <p>Without using reducer</p>
+            <button onClick={updateCartItem}>Add this shoes to cart</button>
+            <button onClick={subtractCartItem}>remove this shoes from cart</button>
+
+            <br /><br />
+
+            <p>Using reducer</p>
+            <button onClick={updateCartItem}>Add this shoes to cart</button>
+            <button onClick={subtractCartItem}>remove this shoes from cart</button>
+
+            <br /><br />
+
         </div>
 
     )

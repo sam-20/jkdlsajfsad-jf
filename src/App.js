@@ -25,8 +25,12 @@ import ComponentA from './components/ComponentA'
 import ComponentB from './components/ComponentB'
 import ComponentC from './components/ComponentC'
 import ComponentD from './components/ComponentD'
-
-import { Dashboard,Signin, Signup } from './pages/wednesday/index'
+import ComponentE from './components/ComponentE'
+import Arrays from './components/array'
+import DashboardMenu from './pages/DashboardLinkSwitch/DashboardMenu'
+import { Dashboard, Signin, Signup } from './pages/wednesday/index'
+import Maps from './pages/Maps/Maps'
+import Modal from './pages/Modal'
 
 function App() {
 
@@ -34,15 +38,20 @@ function App() {
   return (
 
     <Switch>
-      <Route path="/" exact component={ComponentA} />
+      <Route path="/" exact component={Modal} />
+      <Route path="/maps" exact component={Maps} />
+      <Route path="/dash" exact component={Dashboard} />
+      <Route path="/first" exact component={ComponentA} />
       <Route path="/second" exact component={ComponentB} />
       <Route path="/third" exact component={ComponentC} />
+      <Route path="/popover" exact component={ComponentE} />
       <Route path="/form" exact component={Form} />
       <Route path="/appliances" exact component={Appliances} />
       <Route path="/shoes" exact component={Shoes} />
       <Route path="/signin" exact component={Signin} />
       <Route path="/signup" exact component={Signup} />
-      <Route path="/dashboard" exact component={Dashboard} />
+      <Route path="/arrays" exact component={Arrays} />
+      <Route path='/dashmenu' exact component={DashboardMenu} />
       <Route component={ComponentD} />
     </Switch>
 

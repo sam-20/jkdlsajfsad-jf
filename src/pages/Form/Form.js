@@ -2,7 +2,7 @@ import './Form.css'
 import React, { useState } from 'react'
 // import { useHistory } from 'react-router-dom'
 // import { AccessAlarm, ThreeDRotation, Visibility } from '@material-ui/icons';
-import kstu_logo from '../../images/download.png'
+import kstu_logo from '../../images/download.jpg'
 
 function Form() {
 
@@ -76,7 +76,7 @@ function Form() {
     function submit(e) {
         e.preventDefault()
 
-        fetch('http://localhost:5000/login', {
+        fetch('http://localhost:5000/api/v1/login', {
             method: 'POST',
             body: JSON.stringify({ username: username, password: password }),
             headers: {
@@ -103,7 +103,7 @@ function Form() {
                     </div>
 
                     <div style={{ display: 'flex', flex: 0.2, alignItems: 'center', justifyContent: 'center', backgroundColor: 'yellows', paddingLeft: 15, paddingRight: 15 }}>
-                        <input className="myinput" z placeholder="Username" type="text" onKeyDown={handleEnter} value={username} onChange={updateUsername} />
+                        <input className="myinput"  placeholder="Username" type="text" onKeyDown={handleEnter} value={username} onChange={updateUsername} />
                     </div>
 
                     <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', flex: 0.2, backgroundColor: 'greens', paddingLeft: 15, paddingRight: 15 }}>

@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.button {
+    border: none;
+    outline: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    color: white;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.button1 {
+    background-image: linear-gradient(red, yellow, blue);
+}
+
+.button2 {
+    background-image: linear-gradient(to right, yellow, dodgerblue);
+}
+
+.button3 {
+    background-image: linear-gradient(to bottom right, red, white);
+}
+
+.button4 {
+    background-image: linear-gradient(180deg, blue, yellow);
+}
+
+.button5 {
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+}
+
+.button6 {
+    background-image: linear-gradient(to right, red, rgb(0, 255, 94));
+}
+
+.text1 {
+    word-spacing: 30px;
+}
+
+.text2 {
+    letter-spacing: 3px;
+}
+
+.text3 {
+    margin-top: 10px;
+    color: red;
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    line-height: 30px;
+}
+
+.animatedtext1 {
+    animation: text 3s 1;
+}
+
+@keyframes text {
+    /*what css should take effect when it starts*/
+    0% {
+    }
+
+    /*what css should take effect when its halfway*/
+    50% {
+        font-size: 30px;
+        letter-spacing: 20px;
+    }
+
+    /*what css should take effect when its complete*/
+    100% {
+    }
+}
+
+.animatedtext2 {
+    /*name used to define keyframes rule (any word of ur choice)*/
+    animation-name: myanimation;
+
+    /*the length of time taken for the animation to complete*/
+    animation-duration: 2s;
+
+    /*establishes preset acceleration curves such as ease or linear*/
+    animation-timing-function: ease-out;
+
+    /*time between element being loaded and start of animation*/
+    animation-delay: 0s;
+
+    /*the direction of the animation after each cyle*/
+    animation-direction: alternate;
+
+    /*number of times animation should be performed*/
+    /* animation-iteration-count: infinite; */
+
+    /*set which values are applied before and after the animation*/
+    animation-fill-mode: none;
+
+    /*pause/play the animation*/
+    animation-play-state: running;
+
+    /* animation:  stretch 1.5s ease-out 0s alternate infinite none running; */
+}
+
+@keyframes myanimation {
+    0% {
+        color: red;
+        margin-left: -50px;
+    }
+
+    50% {
+        color: yellow;
+        margin-left: 50px;
+    }
+
+    100% {
+        color: green;
+    }
+}
+
+.loader1 {
+    height: 20px;
+    width: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: red;
+    animation-name: loader1;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes loader1 {
+    0% {
+        transform: scale(0.3);
+        background-color: red;
+    }
+    50% {
+        background-color: dodgerblue;
+    }
+    100% {
+        transform: scale(1.5);
+        background-color: yellow;
+    }
+}
+
+.loader2 {
+    margin: 30px;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 2px;
+    border-radius: 20px;
+    animation-name: loader2;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function:linear;
+}
+
+@keyframes loader2 {
+    0% {
+        border-top-color: red;
+        transform: rotate(0deg);
+    }
+
+    25% {
+        border-top-color: green;
+    }
+
+    50% {
+        border-top-color: yellow;
+    }
+
+    75% {
+        border-top-color: blue;
+    }
+
+    100% {
+        border-top-color: red;
+        transform: rotate(360deg);
+    }
+}

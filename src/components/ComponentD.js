@@ -20,7 +20,7 @@ function ComponentD() {
             age: 14,
             height: '90cm'
         }]
-    let array3 = [14, 9, 12, "pineapple", 10, "mango", "pear", 19, 8]
+    let array3 = [14, 9, 12, "pineapple", 10, { name: 'sam', age: 45 }, "mango", "pear", 19, 8]
     let array4 = [
         {
             english: 78,
@@ -42,7 +42,19 @@ function ComponentD() {
     console.log(`initial array 2: ${array2}`)
     console.log(`initial array 3: ${array3}`)
     console.log(`initial array 4: ${array4}`)
-    
+
+    /**filter() returns a new array of elements which meet a condition specified*/
+    // let filtered1 = array4.filter((index) => index.english == 50)
+    // console.log(filtered1);
+    // let filtered2 = array3.filter((count) => (count < 10) || (count == "pear"))
+    // console.log(filtered2);
+
+    /**foreach() */
+    array3.forEach((index) => { console.log(index) })
+    array1.forEach((index) => { console.log(index); })
+    console.log(array1);
+
+
     /**unshift() adds a new element to the beginning of an array and alters the length of the array*/
     // array1.unshift({ name: 'Kofi', gender: 'Male' })
     // console.log(array1)
@@ -54,7 +66,7 @@ function ComponentD() {
     // console.log(array1)
     // array2.shift()
     // console.log(array2)
-    
+
     /**push() adds a new element to the end of an array and alters the length of the array */
     // array1.push({ pet: 'cat', gender: 'female' })
     // console.log(array1);
@@ -87,7 +99,7 @@ function ComponentD() {
     // console.log(array2)
     // array4.splice(1)
     // console.log(array4);
- 
+
     /**concat() joins 2 or more arrays and returns a new array without changing the initial arrays*/
     // let newarray1 = array1.concat(array3)
     // console.log(newarray1)
@@ -131,8 +143,8 @@ function ComponentD() {
 
 
     return (
-        <div>Sorry, this webpage does not exist.
-        you were trying to reach componentB
+        <div>
+            <p> this is a text</p>
         </div>
     )
 }
