@@ -1,0 +1,73 @@
+page-trending {
+    //body
+    .body{
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //trending title background
+    .toolbar-background{
+        // background:transparent;
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //icon in header
+    .camfilaicon{
+        zoom :2.0;
+        color:white;
+     }
+ 
+
+    //navbar title 
+    .toolbar-title{
+        color:white;
+        margin-left:-90px;
+        margin-top: 5px;
+
+    }
+
+    //navbar title
+    .navbartitle{
+        margin-top:5px;
+    }
+
+    //remove border line caused by refresher 
+    .has-refresher  .scroll-content {
+        border-top: 0 !important;
+      }
+
+    //icon used for pulling refresher
+    .refresher-pulling-icon{
+        color:white;
+    }
+
+    //text shown when pulling refresher
+    .refresher-pulling-text{
+        color:white;
+    }
+
+    //icon used when refreshing
+    .spinner svg {
+        stroke: white;
+        fill: white;
+    }
+
+    //text shown when refreshing
+    .refresher-refreshing-text{
+        color:white;
+    }
+
+    .progress {
+        margin: 0px;
+        height: 8px;
+        background-color: #F1292B!important;
+        border-radius: 2px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    }
+
+}

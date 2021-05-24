@@ -1,0 +1,114 @@
+<ion-header no-shadow no-border>
+
+  <ion-navbar>
+    <ion-row>
+      <ion-col>
+        <!-- <img src="{{this.group_profilepic_retrieved}}" class="imageheader" /> -->
+      </ion-col>
+
+      <ion-col>
+        <!-- <ion-title>{{this.groupname_retrieved}}</ion-title> -->
+        <ion-title>Group info</ion-title>
+      </ion-col>
+
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+
+    </ion-row>
+
+
+
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content class="body">
+  <ion-row>
+
+    <!-- group profile picture-->
+    <ion-col>
+      <ion-card class="groupprofilecard">
+        <img src="{{this.group_profilepic}}" class="groupprofilepic" (click)="viewprofileimage()">
+      </ion-card>
+    </ion-col>
+
+
+    <ion-col class="groupdescriptioncolumn">
+      <!--group name-->
+      <ion-row>
+        <h6 class="groupname">{{this.groupname}}</h6>
+        <!-- <div class="statsvalue" (click)="following()">{{this.followingcount}}</div> -->
+      </ion-row>
+
+      <!--group about-->
+      <ion-row>
+        <div class="groupabout">{{this.groupabout}}</div>
+      </ion-row>
+    </ion-col>
+
+  </ion-row>
+
+  <div>
+    <span class="groupparticipantstext">Group participants : {{this.members_joined_count}}</span>
+    <button class="dissolvegroupbutton" ion-button color="danger" small *ngIf="this.mymodulevariables.globaluserid == this.createdgroup_admin_id" (click)="dissolvegroup()">dissolve group</button>
+    <button class="managebutton" ion-button small color="dark" *ngIf="this.mymodulevariables.globaluserid == this.createdgroup_admin_id" (click)="managegroupmembers()">manage</button>
+  </div>
+
+
+
+  <!--group participants info-->
+  <ion-list class="participantsinfolist" no-lines>
+
+    <ion-item-sliding *ngFor="let count of groupmembersdetailstable" class="slidingformstyle">
+
+      <ion-item class="participantinfoitem">
+        <ion-avatar item-start>
+          <!--profile pic-->
+          <img src="{{server+count.profile_pic_fetched}}" class="participantprofilepic">
+        </ion-avatar>
+        <!--name-->
+        <h3 class="participantname"><b>{{count.username_fetched}} <span *ngIf="count.user_id_fetched == this.createdgroup_admin_id">:
+              admin</span></b></h3>
+
+        <!--about-->
+        <p class="participantabout">{{count.about_fetched}}</p>
+
+        <ion-row>
+          <ion-col></ion-col>
+          <ion-col></ion-col>
+          <ion-col>
+            <!--messages posted-->
+            <ion-note class="participantmsgsposted"><span class="messagestext">Messages</span>
+              <ion-badge class="messagespostedbadge">{{count.messages_posted}}</ion-badge>
+            </ion-note>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <!--sliding items-->
+
+      <!--right side of slide-->
+      <ion-item-options side="right">
+
+        <button ion-button color="secondary">
+          <ion-icon name="ios-text"></ion-icon>
+          <!-- Dm -->
+        </button>
+
+        <button ion-button color="primary">
+          <ion-icon name="ios-call"></ion-icon>
+          <!-- Call -->
+        </button>
+
+      </ion-item-options>
+
+      <!--sliding items-->
+
+    </ion-item-sliding>
+
+  </ion-list>
+
+
+</ion-content>

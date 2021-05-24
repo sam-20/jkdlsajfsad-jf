@@ -1,0 +1,202 @@
+<ion-header no-shadow no-border>
+
+  <ion-navbar>
+    <ion-row>
+      <ion-col>
+        <!--text / ios-text / ios-text-outline-->
+        <ion-icon name="ios-paw" class="camfilaicon"></ion-icon>
+      </ion-col>
+
+      <ion-col>
+        <ion-title>Message</ion-title>
+      </ion-col>
+
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+
+    </ion-row>
+
+
+
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content class="body">
+
+  <!-- Custom Refresher Content -->
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!-- Custom Refresher Content -->
+
+
+  <!----------------------------------------------------------------------------card to display message to be commented--------------------------------------------------------------------->
+  <ion-card class="commentedmessagecard" *ngFor="let count of commentedmessagetablerow;">
+    <!--looping through the  messagetablerows array-->
+
+    <!--first row containing profile of message sender, sender_name and pin icon-->
+
+
+    <ion-row>
+      <!--1st column-->
+      <ion-col (click)="openuserprofilecommentedmsg(count)">
+        <ion-item class="profilepictureANDusername">
+          <ion-avatar item-start>
+            <img class="avatarprofilepic" src="{{server+count.commentedmsg_sender_profile_pic_fetched}}" />
+            <!-----c-->
+            <!--profile pic in message-->
+            <!--user profile goes here-->
+          </ion-avatar>
+          <h2 class="commentedmessageusername"><b>{{count.commentedmsg_sender_username_fetched}}</b></h2>
+        </ion-item>
+      </ion-col>
+
+      <!--2nd column-->
+      <!-- <ion-col> -->
+
+      <!-- </ion-col> -->
+
+      <!--3rd column-->
+      <!-- <ion-col> -->
+      <!--pin message icon -->
+      <!-- <ion-icon name="star" class="pinmessageicon" color={{this.commentedmessagepincolor}}></ion-icon> -->
+      <!-- </ion-col> -->
+    </ion-row>
+    <!--end of first row-->
+
+    <!--picture in msg goes here-->
+
+    <!--ng if is a condition that if the image src exists then set the src to ...-->
+    <img *ngIf="!server+count.commented_message_media_fetched" src="{{server+count.commented_message_media_fetched}}"
+      class="commentedmessagemedia" (click)="viewimmage1(count)">
+    <!--picture in msg goes here-->
+
+    <ion-card-content>
+      <!--messageDB is the php variable to which the column values from the 
+        database was assigned to-->
+      <p class="commentedmessagetext">{{count.commented_message_fetched}}</p>
+    </ion-card-content>
+
+    <!--another row with columns : likes, comments and time added-->
+    <ion-row class="statsrowstylecommentedmessage">
+
+      <!--likes-->
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="ios-heart" color={{this.commentedmessagelikecolor}}></ion-icon>
+          <div class="likecounttext">{{count.commentedmsg_likes_fetched}}</div>
+        </button>
+
+        <!--comments-->
+        <button ion-button icon-start clear small>
+          <ion-icon *ngIf="count.commentedmsg_comments_fetched > 0" name="ios-text" color=secondary></ion-icon>
+          <ion-icon *ngIf="count.commentedmsg_comments_fetched == 0" name="ios-text" color=dark></ion-icon>
+          <div class="commentscounttext">{{count.commentedmsg_comments_fetched}}</div>
+        </button>
+
+      </ion-col>
+
+
+      <ion-col center text-center>
+
+        <!--enter comments text-->
+        <div class="commenttext" (click)="commentmessage(count)">comment</div>
+
+        <!--time added--column3-->
+        <ion-note class="timeadded">
+          {{count.commentedmsg_date_created_fetched}}
+        </ion-note>
+      </ion-col>
+    </ion-row>
+
+
+  </ion-card>
+  <!-------------------------------------------------------------------------card to display message to be commented--------------------------------------------------------------------------->
+
+  <div class="commentstext"><b>comments</b></div>
+
+
+  <!-------------------------------------------------------------------------various comments of specific message--------------------------------------------------------------------------->
+  <ion-item *ngFor="let count of specificmessagecommentstable" class="ionitemsdesign">
+
+    <ion-card-content class="commentsmessagecard">
+      <!--looping through the  messagetablerows array-->
+
+      <!--first row containing profile of message sender, sender_name and pin icon-->
+      <ion-row>
+        <!--1st column-->
+        <ion-col (click)="openuserprofilecommentmsg(count)">
+          <ion-item class="profilepictureANDusername" no-lines>
+            <ion-avatar item-start>
+              <img class="avatarprofilepic" src="{{server+count.commenter_profile_pic_fetched}}" />
+              <!-----c-->
+              <!--profile pic in message-->
+              <!--user profile goes here-->
+            </ion-avatar>
+            <h2 class="commenterusername"><b>{{count.commenter_username_fetched}}</b></h2>
+          </ion-item>
+        </ion-col>
+
+        <!--2nd column-->
+        <!-- <ion-col> -->
+
+        <!-- </ion-col> -->
+
+        <!--3rd column-->
+        <!-- <ion-col> -->
+          <!--pin message icon -->
+          <!-- <ion-icon name="star" class="pinmessageicon" color={{count.commentmsg_pincolor}}></ion-icon> -->
+        <!-- </ion-col> -->
+      </ion-row>
+      <!--end of first row-->
+
+      <!--picture in msg goes here-->
+
+      <!--ng if is a condition that if the image src exists then set the src to ...-->
+      <img *ngIf="!server+count.commentmsg_messagemedia_fetched" src="{{server+count.commentmsg_messagemedia_fetched}}"
+        class="commentmessagemedia" (click)="viewimage2(count)">
+      <!--picture in msg goes here-->
+
+      <!--card message content-->
+      <ion-card-content text-wrap (click)="loadmessagedetails(count)">
+        <p class="commentmessagetext">{{count.commentmsg_message_fetched}}</p>
+      </ion-card-content>
+
+      <!--another row with columns : likes, comments and time added-->
+      <ion-row class="statsrowstylecomments">
+        <!--likes-->
+        <ion-col>
+          <button ion-button icon-start clear small>
+            <ion-icon name="ios-heart" color={{count.commentmsg_likecolor}}></ion-icon>
+            <div class="likecounttext">{{count.commentmsg_likes_fetched}}</div>
+          </button>    
+        <!--likes-->
+
+        <!--comments-->
+          <button ion-button icon-start clear small>
+            <ion-icon name="ios-text" color={{count.commentmsg_commentcolor}}></ion-icon>
+            <div class="commentscounttext">{{count.commentmsg_comments_fetched}}</div>
+          </button>
+        </ion-col>
+        <!--comments-->
+
+        <!--time added--column3-->
+        <ion-col center text-center>
+          <ion-note class="timeaddedcommentsmessages">
+            {{count.commentmsg_date_created_fetched}}
+          </ion-note>
+        </ion-col>
+      </ion-row>
+      <!--time added-->
+
+    </ion-card-content>
+  </ion-item>
+  <!--------------------------------------------------------------------------various comments of specific message--------------------------------------------------------------------->
+
+
+</ion-content>

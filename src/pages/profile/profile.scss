@@ -1,0 +1,185 @@
+page-profile {
+    //body
+    .body{
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //hide scroll bar when scrolling
+    ::-webkit-scrollbar,
+    *::-webkit-scrollbar
+    {
+        display: none;
+    }
+    
+     //profle title background
+     .toolbar-background{
+        //background:transparent;
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //icon in header
+    .camfilaicon{
+        zoom :2.0;
+        color:white;
+        margin-top: 2px;
+        margin-left: 10px;
+     }
+
+    //logout icon
+    .logouticon{
+        zoom :1.5;
+        color:white;
+        margin-top: 3px;
+        float: right;
+        margin-right: 10px;
+     } 
+ 
+
+    //navbar title
+    .toolbar-title{
+        color:white;
+        //margin-left:-90px;
+        margin-top: 9px;
+
+    }
+
+    //navbar title
+    .navbartitle{
+        margin-top:5px;
+    }
+
+    //logout button
+     .logoutbutton{
+        width:0px;
+        float: right;
+        margin-top:5px;
+    }
+
+    //remove border line caused by refresher  
+    .has-refresher  .scroll-content {
+        border-top: 0 !important;
+      }
+
+    //icon used for pulling refresher
+    .refresher-pulling-icon{
+        color:white;
+    }
+
+    //text shown when pulling refresher
+    .refresher-pulling-text{
+        color:white;
+    }
+
+    //icon used when refreshing
+    .spinner svg {
+        stroke: white;
+        fill: white;
+    }
+
+    //text shown when refreshing
+    .refresher-refreshing-text{
+        color:white;
+    }
+
+
+     //user profile card
+     .userprofilecard{
+        margin-top:0px;
+        width:100px;
+        height:100px;
+        border-radius:150px;
+        margin-left: 15px;
+    }
+
+      //picture inside user profile card
+      .userprofilepic{
+        width:100px;
+        height: 100px;
+    }
+    
+    //stats colunn
+    .statscolumn{
+        margin-left:-140px;
+        margin-right: 10px;
+    }
+
+    //stats header
+    .statsheader{
+        color:white;
+    }
+
+    //stats value
+    .statsvalue{
+        color:white;
+    }
+
+
+    //edit profile button
+    .editprofilebutton{
+        //float:right;
+        margin-top:5px;
+        margin-left: 75px;
+    }
+
+    //date joined text
+    .datejoinedtext{
+        float: right;
+        margin-top: 25px;
+        color:black;
+        margin-right: 15px;
+    }
+
+    //headers like username, about, phone , email, etc.
+    .biodetailsheadertext{
+        color:black;
+        margin-left:15px;
+    }
+
+
+    //the values assigned to the headers
+    .biodetailsvaluetext{
+        //preserve line breaks wherever user added them in the text
+        white-space:pre-wrap;
+        color:black;
+    }
+
+
+    //swipeable tabs styling
+    .SwipedTabs-indicatorSegment
+    {
+        -webkit-transition: 0.3s all;
+        -moz-transition: 0.3s all;
+        -o-transition: 0.3s all;
+        transition: 0.3s all;
+        transform-origin: top 0 left 0;
+        height: 1px;
+        position: relative;
+        top: -2px;
+        background-color: black !important; //color of active tab's bar indicator segment
+    }
+ 
+    .SwipedTabs-tabs ion-segment-button
+    {
+        border:none !important;
+        color: gray !important; //color of text of inactive tab heading
+        //background-color: white !important; //background color of tabs heading
+        background:transparent;
+    }
+ 
+    .SwipedTabs-tabs ion-segment-button.SwipedTabs-activeTab{
+        color:black !important; //color of text of active tab heading
+    }
+
+    // //add a border line beneath the segment bar indicator
+    // .SwipedTabs-tabs{
+    //     border-bottom: solid 1px #e6e6e6 !important;
+    // }
+
+}
+ 

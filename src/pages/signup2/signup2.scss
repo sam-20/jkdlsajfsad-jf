@@ -1,0 +1,90 @@
+page-signup2 {
+    //body
+    .body{
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+       //animation:  bounceInRight 1s 0s;
+   }
+
+   //navbar background styling
+   .toolbar-background{
+    background:url('/assets/imgs/12.jpg') !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    //background: white !important;
+   }
+
+
+   //navbar back icon
+   .back-button-icon{
+       color:white;
+   }
+
+   //back text beside back button
+   .back-button-text{
+       color:white;
+       margin-top:10px;
+   }
+
+
+   //navbar title text
+   .toolbar-title{
+       margin-top:10px;
+       margin-left:-30px;
+       color:white;
+      // animation:  bounceInRight 1s 0s;
+   }
+
+    //signup button
+    .signup{
+       margin-top:30px;
+   }
+
+   //upload button
+   .upload{
+       margin-top:10px;
+       width:115px;
+   }
+
+   //upload button icon
+   .uploadicon{
+       padding:5px;
+       margin-top:-3px;
+       border-radius: 5px;
+   }
+
+   //upload picture card
+   .uploadcard{
+      // position: relative;
+       width:120px;
+       height: 120px;
+       border-radius: 150px;
+       //margin-left:100px;
+   }
+
+   //picture in card
+   .profilepic{
+       width:120px;
+       height: 120px;
+       border-radius: 150px;
+   }
+
+   //delete picture icon
+   .deletepictureicon{
+      position: absolute;
+       color:white;
+       margin-left:-5px;
+       //margin-top:0px;
+   }
+
+   //about textarea
+   .abouttextarea{
+       margin-top:50px;
+       border-radius:10px;
+       background: transparent;
+       color:white;
+       font:arial;
+   }
+}

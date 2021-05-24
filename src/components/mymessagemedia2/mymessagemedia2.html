@@ -1,0 +1,44 @@
+<!--to provide a space to allow user to swipe in case there's no message media-->
+<div *ngIf="this.countmessagemedia ==  0">
+    <ion-card-content class="nuisancemessagemedia">
+        fsd
+    </ion-card-content>
+</div>
+
+
+
+<ion-item *ngFor="let count of messagetablerows2;" class="ionitemdesignmedia" no-lines>
+
+    <!--message media-->
+    <img *ngIf="!server+count.message_media_fetched" src="{{server+count.message_media_fetched}}" class="mymessagemediamessagemedia"
+    (click)="viewimage(count)">
+
+
+    <!-- row with columns : likes, comments and time added-->
+    <ion-row class="statsrowstylemessagemedia">
+        <!--likes---->
+        <ion-col>
+            <button ion-button icon-start clear small>
+                <ion-icon name="ios-thumbs-up" color={{count.likecolor}}></ion-icon>
+                <div style="color:black">{{count.likes_fetched}}</div>
+            </button>
+
+        <!--comments-->
+            <button ion-button icon-start clear small>
+                <ion-icon name="ios-text" color="{{count.commentcolor}}"></ion-icon>
+                <div style="color:black">{{count.comments_fetched}}</div>
+            </button>
+        </ion-col>
+        <!--comments-->
+
+        <!--time added--column3-->
+        <ion-col center text-center>
+            <ion-note class="timeaddedmymessagemedia2">
+                {{count.date_created_fetched}}
+            </ion-note>
+        </ion-col>
+    </ion-row>
+    <!--time added-->
+
+
+</ion-item>

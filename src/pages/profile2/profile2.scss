@@ -1,0 +1,202 @@
+page-profile2 {
+    //body
+    .body{
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //hide scroll bar when scrolling
+    ::-webkit-scrollbar,
+    *::-webkit-scrollbar
+    {
+        display: none;
+    }
+
+    //back button which comes which navctrl push
+    .back-button-icon{
+        color: white;
+      }
+
+     //profle title background
+     .toolbar-background{
+        //background:transparent;
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //icon in header
+    .camfilaicon{
+        zoom :2.0;
+        color:white;
+        margin-top: 2px;
+        margin-left: 10px;
+     }
+ 
+
+    //navbar title
+    .toolbar-title{
+        color:white;
+        //margin-left:-90px;
+        margin-top: 9px;
+
+    }
+
+    //navbar title
+    .navbartitle{
+        margin-top:5px;
+    }
+
+    //remove border line caused by refresher  
+    .has-refresher  .scroll-content {
+        border-top: 0 !important;
+      }
+
+    //icon used for pulling refresher
+    .refresher-pulling-icon{
+        color:white;
+    }
+
+    //text shown when pulling refresher
+    .refresher-pulling-text{
+        color:white;
+    }
+
+    //icon used when refreshing
+    .spinner svg {
+        stroke: white;
+        fill: white;
+    }
+
+    //text shown when refreshing
+    .refresher-refreshing-text{
+        color:white;
+    }
+
+
+     //user profile card
+     .userprofilecard{
+        margin-top:0px;
+        width:100px;
+        height:100px;
+        border-radius:150px;
+        margin-left: 15px;
+    }
+
+      //picture inside user profile card
+      .userprofilepic{
+        width:100px;
+        height: 100px;
+    }
+    
+    //stats colunn
+    .statscolumn{
+        margin-left:-140px;
+        margin-right: 10px;
+    }
+
+    //stats header
+    .statsheader{
+        color:white;
+    }
+
+    //stats value
+    .statsvalue{
+        color:white;
+    }
+
+
+    //send message button
+    .sendmessagebutton{
+        //float:right;
+        margin-top:15px;
+        margin-left: 15px;
+    }
+
+    //follow button
+    .followbutton{
+        //float:right;
+        margin-top:15px;
+        //margin-left: 15px;
+    }
+
+    //user bio details container
+    .userbiodetailsblock{
+        margin-left:15px;
+        color:black;
+    }   
+
+
+    //bio details fetched
+    .userbiodetailsfetched{
+        padding-bottom: 10px;
+        padding-top:5px;
+    }
+
+    //follower text
+    .followertext{
+        color:black;
+        //margin-bottom: -40px;
+        //float:right;
+        margin-left: 13px;
+        font-size: 11px;
+    }
+
+    //date joined text
+    .datejoinedtext{
+        //float: right;
+        //margin-top: 0px;
+        color:black;
+    }
+
+
+    //headers like username, about, phone , email, etc.
+    .biodetailsheadertext{
+        color:black;
+        margin-left:25px;
+    }
+
+    //the values assigned to the headers
+    .biodetailsvaluetext{
+        //preserve line breaks wherever user added them in the text
+        white-space:pre-wrap;
+        color:black;
+    }
+
+
+    //swipeable tabs styling
+    .SwipedTabs-indicatorSegment
+    {
+        -webkit-transition: 0.3s all;
+        -moz-transition: 0.3s all;
+        -o-transition: 0.3s all;
+        transition: 0.3s all;
+        transform-origin: top 0 left 0;
+        height: 1px;
+        position: relative;
+        top: -2px;
+        background-color: transparent !important; //color of active tab's bar indicator segment
+    }
+ 
+    .SwipedTabs-tabs ion-segment-button
+    {
+        border:none !important;
+        color: gray !important; //color of text of inactive tab heading
+        //background-color: white !important; //background color of tabs heading
+        background:transparent;
+    }
+ 
+    //for active tab
+    .SwipedTabs-tabs ion-segment-button.SwipedTabs-activeTab{
+        color:white !important; //color of text of active tab heading
+        background-color: rgb(202, 144, 180) !important; //background color of active tabs heading
+    }
+
+    //add a border line beneath the segment bar indicator
+    .SwipedTabs-tabs{
+        border-bottom: solid 1px #e6e6e6 !important;
+    }
+}

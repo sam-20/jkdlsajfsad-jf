@@ -1,0 +1,7 @@
+{
+  "name": "CamFila",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

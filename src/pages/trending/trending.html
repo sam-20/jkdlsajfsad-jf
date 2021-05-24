@@ -1,0 +1,421 @@
+<ion-header no-shadow no-border>
+
+  <ion-navbar>
+    <ion-row>
+      <ion-col>
+        <!--text / ios-text / ios-text-outline-->
+        <ion-icon name="ios-paw" class="camfilaicon"></ion-icon>
+      </ion-col>
+
+      <ion-col>
+        <ion-title>Trending</ion-title>
+      </ion-col>
+
+      <ion-col></ion-col>
+
+    </ion-row>
+
+
+
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content class="body">
+
+  <!-- <button ion-button (click)="callnumber()">call number</button>
+  <button ion-button (click)="audiorecord1()">audio record 1</button>
+  <button ion-button (click)="audiorecord2()">audio record 2</button>
+  <button ion-button (click)="openfiledirectory()">open file directory</button> 
+  <button ion-button (click)="mediacaptureimage()">media capture image</button>  -->
+
+  <!-- <button ion-button (click)="mediacapturevideo()">media capture video</button> <br> -->
+  <!-- <button ion-button (click)="playcapturedvideo()">play captured video</button> <br> <br> -->
+
+  <!-- <button ion-button (click)="openCamera()">use camera plugin for video</button> -->
+
+
+  <!-- <button ion-button (click)="mediacaptureaudio()">media capture audio</button> <br>
+  <button ion-button (click)="playcapturedaudio()">play captured audio</button> <br>
+  <button ion-button (click)="pauseplayingaudio()">pause playing audio</button> <br>
+  <button ion-button (click)="resumeplayingaudio()">resume playing audio</button> <br>
+  <button ion-button (click)="stopplayingaudio()">stop playing audio</button> <br> -->
+
+  <!-- <button ion-button (click)="startrecording()">start</button> -->
+
+  <!-- <button ion-button (click)="selectvideo()">select</button> -->
+
+  <!-- <p>video 1</p>
+  <video #myvideo height="300" width="300" controls>
+    <source src="{{data}}" type="video/mp4">
+  </video> -->
+
+  <!-- <button ion-button (click)="captureAudio()">capture audio</button>
+  <button ion-button (click)="captureVideo()">capture video</button> -->
+
+  <!-- <ion-list>
+    <ion-item *ngFor="let file of mediaFiles" tappable (click)="playFile(file)" text-wrap>
+      {{file.name}}
+      <p>{{file.size / 1000 / 1000 | number }} MB</p>
+    </ion-item>
+  </ion-list> -->
+
+  <!-- <p>video 2</p>
+  <video controls autoplay #myvideo src="{{this.url}}"></video> -->
+
+  <!-- <p>video 3</p>
+  <video #myvideo controls preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" >
+    <source src="{{url}}" type="video/mp4" />
+  </video> -->
+
+  <!-- <button ion-button (click)="playVideo()">Play Video</button>
+  <button ion-button (click)="stopPlayingVideo()">Stop playing Video</button> -->
+
+  <!-- <ion-card>
+    <ion-card-content>
+      <ion-card-title>
+        <button ion-button primary (click)="stopRecord()" *ngIf="recording">
+          <ion-icon name="mic-off"></ion-icon>&nbsp;&nbsp;Stop Record
+        </button>
+        <button ion-button primary (click)="startRecord()" *ngIf="!recording">
+          <ion-icon name="mic"></ion-icon>&nbsp;&nbsp;Start Record
+        </button>
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+  <ion-list>
+    <ion-item *ngFor="let audio of audioList; index as i;">
+      <p>{{audio.filename}}</p>
+      <button ion-button clear item-end large (click)="playAudio(audio.filename, i)">
+        <ion-icon name="play"></ion-icon>
+      </button>
+
+      <button ion-button clear item-end large (click)="pauseAudio(audio.filename, i)">
+        <ion-icon name="pause"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list> -->
+
+
+  <!-- <button ion-button (click)="CreateVideo()">create video</button>
+  <textarea rows="1" cols="50" [(ngModel)]="resultpath" ></textarea>
+  <textarea rows="1" cols="50" [(ngModel)]="numbstring" ></textarea> -->
+
+
+  <!--record audio-->
+  <!-- <button ion-button round small color="primary" (click)="recordaudio()">
+    <ion-icon name="mic" style="margin-right: 5px;"></ion-icon>start
+  </button> -->
+
+  <!--end audio record-->
+  <!-- <button ion-button round small color="danger" (click)="stoprecordingaudio()">
+    <ion-icon name="mic-off" style="margin-right: 5px;"></ion-icon>stop
+  </button> -->
+
+  <!--recorded audio name-->
+  <!-- <ion-card>Recorded audio: {{this.recordedaudioname}}</ion-card> -->
+
+  <!--play audio-->
+  <!-- <button ion-button round small color="primary" (click)="playrecordedaudio(this.recordedaudioname)">
+    <ion-icon name="play" style="margin-right: 5px;"></ion-icon>play
+  </button><br> -->
+
+  <!--pause audio-->
+  <!-- <button ion-button round small color="danger" (click)="pauserecordedaudio(this.recordedaudioname)">
+    <ion-icon name="pause" style="margin-right: 5px;"></ion-icon>pause
+  </button><br> -->
+
+  <!--resume audio-->
+  <!-- <button ion-button round small color="secondary" (click)="resumerecordedaudio(this.recordedaudioname)">
+    <ion-icon name="repeat" style="margin-right: 5px;"></ion-icon>resume
+  </button><br> -->
+
+  <!--stop audio-->
+  <!-- <button ion-button round small color="dark" (click)="stoprecordedaudio(this.recordedaudioname)">
+    <ion-icon name="square" style="margin-right: 5px;"></ion-icon>stop
+  </button> -->
+
+  <!-- <br>
+  <br>
+  audio position :<br><textarea [(ngModel)]="positioninput"></textarea> <br>
+
+  <br> -->
+
+  <!-- audio duration :<br><textarea [(ngModel)]="durationinput"></textarea> -->
+
+
+  <!-- myaduiio
+  <ion-card style="background:red">{{this.myaudio}}</ion-card>
+
+  audio 2
+  <ion-card style="background:yellow">{{this.myaudio2}}</ion-card>
+
+  audio 3
+  <ion-card style="background:green">{{this.myaudio3}}</ion-card>
+
+  audio table json converted
+  <ion-card style="background:blue">{{this.audiotablejsonconverted}}</ion-card>
+
+  audio table
+  <ion-card style="background:pink">{{this.audiotable}}</ion-card>
+
+
+  audio 4
+  <ion-card style="background:rgb(0, 255, 115)">{{this.myaudio4}}</ion-card>
+
+  audio 5
+  <ion-card style="background:dodgerblue">{{this.myaudio5}}</ion-card>
+
+  audio 6
+  <ion-card style="background:orange">{{this.myaudio6}}</ion-card>
+
+  audio 61
+  <ion-card style="background:orange">{{this.myaudio61}}</ion-card>
+
+  audio 7
+  <ion-card style="background:white">{{this.myaudio7}}</ion-card>
+
+  audio 8
+  <ion-card style="background:rgb(247, 0, 255)">{{this.myaudio8}}</ion-card>
+
+  audio 9
+  <ion-card style="background:white">{{this.myaudio9}}</ion-card>
+
+  audio 10
+  <ion-card style="background:white">{{this.myaudio10}}</ion-card>
+
+  audio 11
+  <ion-card style="background:white">{{this.myaudio11}}</ion-card>
+
+  audio 12
+  <ion-card style="background:white">{{this.myaudio12}}</ion-card>
+
+  audio 13
+  <ion-card style="background:white">{{this.myaudio13}}</ion-card>
+
+  audio 14
+  <ion-card style="background:white">{{this.myaudio14}}</ion-card>
+
+  audio 15
+  <ion-card style="background:white">{{this.myaudio15}}</ion-card>
+
+  audio 16
+  <ion-card style="background:white">{{this.myaudio16}}</ion-card>
+
+  audio 17
+  <ion-card style="background:white">{{this.myaudio17}}</ion-card>
+
+  audio 17b
+  <ion-card style="background:white">{{this.myaudio17b}}</ion-card>
+
+  audio 18
+  <ion-card style="background:white">{{this.myaudio18}}</ion-card>
+
+  audio 19
+  <ion-card style="background:white">{{this.myaudio19}}</ion-card>
+
+
+  audio 20 id
+  <ion-card style="background:white">{{this.myaudio20}}</ion-card>
+
+  audio 20 src
+  <ion-card style="background:white">{{this.myaudio20src}}</ion-card>
+
+
+  audio 20 duration
+  <ion-card style="background:white">{{this.myaudio20duration}}</ion-card>
+
+  audio 21
+  <ion-card style="background:white">{{this.myaudio21}}</ion-card>
+
+  audio 22
+  <ion-card style="background:white">{{this.myaudio22}}</ion-card>
+
+  audio 23
+  <ion-card style="background:white">{{this.myaudio23}}</ion-card>
+
+  audio 24
+  <ion-card style="background:white">{{this.myaudio24}}</ion-card>
+
+
+  searchresults length : {{this.searchresultslength}}
+
+  <br><textarea [(ngModel)]="this.somedata"></textarea>
+
+  somedata in variable : {{this.somedata}} -->
+
+  <!-- <button ion-button (click)="showarray()">show array</button>
+
+
+  <button ion-button (click)="playextractedaudio()">play extracted audio</button>
+
+  <button ion-button (click)="playmediaaudio()">play media audio</button>
+
+  <button ion-button (click)="playagain()">play again</button>
+
+  <button ion-button (click)="tryagain()">try again</button>
+
+
+  <button ion-button (click)=" playdirectfile()">play direct src file</button>
+
+  <button ion-button (click)=" playdirectfile2()">play direct src file(works!)</button> -->
+
+
+
+
+
+  <!---file upload codes-->
+  <!-- <button ion-fab class="filefablistbutton" (click)="uploadfile()">
+    <ion-icon name="ios-folder" class="filefablisticon"></ion-icon>
+  </button>
+
+  <img [src]="base64Image" width="25%" height="25%" alt="Image" />
+  <br>
+  <img [src]="thumbnailretrieved" width="25%" height="25%" alt="Image" />
+  <br>
+  <img [src]="newimage" width="25%" height="25%" alt="Image" />
+  <br>
+  <img src="{{this.newimage}}" width="25%" height="25%" alt="Image" />
+  <br>
+  <img style="height:300px;width: 300px" src="{{this.thumbnailretrieved}}" />1<br>
+  <img style="height:300px;width: 300px" src={{this.thumbnailretrieved}} />2<br>
+  <img style="height:300px;width: 300px" src="this.thumbnailretrieved" />3<br>
+
+  <img style="height:300px;width: 300px" src="{{this.secondimage}}" />4<br>
+  <img style="height:300px;width: 300px" src={{this.secondimage}} />5<br>
+
+  <img style="height:300px;width: 300px" [src]="this.thumbnailretrieved" />6<br>
+
+  <img src="{{this.newimage2}}" width="25%" height="25%" alt="Image" />
+  <br>
+  <img [src]="newimage2" width="25%" height="25%" alt="Image" /> -->
+
+
+
+  <!------file picker tutorials --------------->
+  <button ion-button (click)="selectFile()">select file</button><br>
+
+  <!--view file extension details-->
+  <button ion-button (click)="viewfileextensionandmimetype()">view file extension details</button><br>
+
+  <!--open selected file-->
+  <button ion-button (click)="openselectedFile()">open selected file</button><br>
+
+  <!--open pdf file with document viewer-->
+  <button ion-button (click)="openpdffile()">open pdf file</button><br>
+
+  <!--open office file with document viewer-->
+  <button ion-button (click)="openofficefile()">open office file</button><br>
+
+  <!--view selected file size-->
+  <button ion-button (click)="viewselectedfilesize()">view selected file size</button><br>
+
+  <!--record audio with media capture-->
+  <button ion-button (click)="mediacaptureaudiorecorder()">media capture audio recorder</button><br>
+
+  <!--play audio with streaming media plugin-->
+  <!-- <button ion-button (click)="playmediacapturedaudio1()">play audio with streaming media plugin</button><br> -->
+
+  <!--retrieve media captured audio duration with media plugin-->
+  <button ion-button (click)="mediacapturedaudioduration()">retrieve audio duration</button><br>
+
+  <!--play media captured audio with media plugin-->
+  <button ion-button (click)="playmediacapturedaudio2()">play audio with media plugin</button><br>
+
+
+  <!--open pdf with inapp browserr-->
+  <button ion-button (click)="inappbrowser()">view pdf with in app browser</button><br>
+
+  <!--specific file chooser-->
+  <!-- <button ion-button (click)="specificfiletypechooser()">open file</button> -->
+
+
+  <!-- <button ion-button (click)="thumbnailfilepath()">thumbnail fiel path</button> -->
+
+  <!-- <img src="{{this.newimage}}" width="25%" height="25%" alt="Image" /> -->
+
+  <!-- <button ion-button (click)="replace()">replace</button> -->
+
+  <!--download file-->
+  <button ion-button (click)="downloadfile()">download file</button><br>
+
+  <span *ngIf="this.downloading">downloading</span>
+
+  <span *ngIf="this.download">download</span>
+
+
+  <div class="spinner-border text-primary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-border text-secondary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-border text-success" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-border text-danger" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-border text-warning" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-border text-info" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-border text-light" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-border text-dark" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+
+
+  <div class="spinner-grow text-primary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-secondary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-success" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-danger" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-warning" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-info" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-light" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-dark" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+
+  <button type="button" class="btn btn-outline-primary">Primary</button>
+  <button type="button" class="btn btn-outline-secondary">Secondary</button>
+  <button type="button" class="btn btn-outline-success">Success</button>
+  <button type="button" class="btn btn-outline-danger">Danger</button>
+  <button type="button" class="btn btn-outline-warning">Warning</button>
+  <button type="button" class="btn btn-outline-info">Info</button>
+  <button type="button" class="btn btn-outline-light">Light</button>
+  <button type="button" class="btn btn-outline-dark">Dark</button>
+
+  <button type="button" class="btn btn-primary">Primary</button>
+  <button type="button" class="btn btn-secondary">Secondary</button>
+  <button type="button" class="btn btn-success">Success</button>
+  <button type="button" class="btn btn-danger">Danger</button>
+  <button type="button" class="btn btn-warning">Warning</button>
+  <button type="button" class="btn btn-info">Info</button>
+  <button type="button" class="btn btn-light">Light</button>
+  <button type="button" class="btn btn-dark">Dark</button>
+  <button type="button" class="btn btn-link">Link</button>
+
+
+
+</ion-content>

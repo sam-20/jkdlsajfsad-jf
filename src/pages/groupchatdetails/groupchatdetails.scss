@@ -1,0 +1,190 @@
+page-groupchatdetails {
+    //body
+    .body{
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //back button which comes which navctrl push
+    .back-button-icon{
+        color: white;
+      }
+
+     //posts title background
+     .toolbar-background{
+        //background:transparent;
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+ 
+    //navbar title
+    .toolbar-title{
+        color:white;
+        margin-top: 15px;
+    }
+
+    //navbar title
+    .navbartitle{
+        margin-top:5px;
+    } 
+
+    //remove border line caused by refresher  
+    .has-refresher  .scroll-content {
+        border-top: 0 !important;
+      }
+
+    //icon used for pulling refresher
+    .refresher-pulling-icon{
+        color:white;
+    }
+
+    //text shown when pulling refresher
+    .refresher-pulling-text{
+        color:white;
+    }
+
+    //icon used when refreshing
+    .spinner svg {
+        stroke: white;
+        fill: white;
+    }
+
+    //text shown when refreshing
+    .refresher-refreshing-text{
+        color:white;
+    }
+
+
+    //group's image in heder
+    .imageheader{
+        border-radius: 50px;
+        width:50px !important;
+        height: 50px;
+    }
+
+
+     //group profile card
+     .groupprofilecard{
+        margin-top:0px;
+        width:100px;
+        height:100px;
+        border-radius:150px;
+    }
+
+      //picture inside group profile card
+      .groupprofilepic{
+        width:100px;
+        height: 100px;
+    }
+    
+    //group name and about
+    .groupdescriptioncolumn{
+        margin-left : -70px;
+        margin-top: 10px;
+    }
+
+    //group name text
+    .groupname{
+        color:black;
+    }
+
+    //group about text
+    .groupabout{
+        color:black;
+    }
+    
+    //group participants text
+    .groupparticipantstext{
+        color: black;
+        margin-left :10px;
+    }
+
+    //manage button
+    .managebutton{
+        float: right;
+        margin-right: 10px;
+        margin-top:-3px;
+        text-transform: none;
+    }
+
+    //dissolve group button
+    .dissolvegroupbutton{
+        float: right;
+        margin-right: 10px;
+        margin-top:-3px;
+        text-transform: none;
+    }
+
+     //manage button
+     .managebutton{
+        float: right;
+        margin-right: 10px;
+        margin-top:-3px;
+        text-transform: none;
+    }
+
+ 
+    //list to contain group participants' info
+     .participantsinfolist{
+        background: transparent;
+    }
+
+    // participant info item
+    .participantinfoitem{
+        background: transparent;
+        margin-bottom: 0px;
+    }
+
+    //participant profile pic
+    .participantprofilepic{
+        width:50px !important;
+        height: 50px !important;
+        margin-top:0px;
+     }
+    
+    //participant name
+    .participantname{
+        color:black;
+        margin-top:10px;
+        margin-bottom: -4px;
+    }
+ 
+     //participant about
+     .participantabout{
+        margin-top:15px;
+       color:gray;
+    } 
+
+    //participant message posted
+    .participantmsgsposted{
+        float: right;
+        font-size: 12px;
+        margin-top:-45px;
+     }
+
+
+     //messages text
+     .messagestext{
+         color:black;
+     }
+
+
+     //badge for messages posted
+     .messagespostedbadge{
+         background: rgb(238, 0, 255);
+         border-radius: 10px;
+         font-size: 10px;
+         margin-right:10px;
+     }
+
+
+     //sliding list form
+   .slidingformstyle{
+    background: transparent;
+   }
+
+}

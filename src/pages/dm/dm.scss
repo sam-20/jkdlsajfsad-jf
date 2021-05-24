@@ -1,0 +1,180 @@
+page-dm {
+    //body
+    .body{
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //hide scroll bar when scrolling
+    ::-webkit-scrollbar,
+    *::-webkit-scrollbar
+    {
+        display: none;
+    }
+
+    //trending title background
+    .toolbar-background{
+        //background:transparent;
+        background:url('/assets/imgs/12.jpg');
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+    }
+
+    //icon in header
+    .camfilaicon{
+        zoom :2.0;
+        color:white;
+        margin-left:10px;
+     }
+ 
+
+    //navbar title 
+    .toolbar-title{
+        color:white;
+        //margin-left:-90px;
+        margin-top: 5px;
+
+    }
+
+    //navbar title
+    .navbartitle{
+        margin-top:5px;
+    }
+
+    //remove border line caused by refresher 
+    .has-refresher  .scroll-content {
+        border-top: 0 !important;
+      }
+
+    //icon used for pulling refresher
+    .refresher-pulling-icon{
+        color:white;
+    }
+
+    //text shown when pulling refresher
+    .refresher-pulling-text{
+        color:white;
+    }
+
+    //icon used when refreshing
+    .spinner svg {
+        stroke: white;
+        fill: white;
+    }
+
+    //text shown when refreshing
+    .refresher-refreshing-text{
+        color:white;
+    }
+
+   //list to contain dm chats and their last messages
+   .dmchatlist{
+       background: transparent;
+   }
+
+   // ion item
+   .chatitem{
+       background: transparent;
+   }
+
+   //dm chat username
+   .username{
+       color:black;
+   }
+
+   //dm chat last message
+   .lastmessage{
+       color:rgb(88, 88, 84);
+   }
+
+   //last messsage time
+   .lastmessagetime{
+       float: right;
+       font-size: 12px;
+       margin-top:-40px;
+       margin-right: 15px;
+       color:black;
+   }
+
+   //user profile pic
+   .userprofilepic{
+       width:50px !important;
+       height: 50px !important;
+       margin-top:0px;
+   }
+
+   //sliding list form
+   .slidingformstyle{
+    background: transparent;
+   }
+
+
+
+
+    /****accept or decline chat styling */
+    .acceptordeclinedivchatitem{
+        margin-left:-9px;
+        padding-left: 0px;
+    }
+
+   .senderprofilepic{
+    width: 55px;
+    height: 55px;
+    border-radius: 60px !important;
+    margin-top: 5px;
+   }
+
+   .sendername{
+    color:black;
+   }
+
+   .promptmessage{
+    color:black;
+   }
+   
+   .acceptbutton{
+       margin-top:-5px !important;
+   }
+
+   .declinebutton{
+    margin-top:-5px !important;
+}
+
+   .timesent{
+    font-size: 13px;
+    color:black;
+   }
+
+    /****accept or decline chat styling */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    //columns test
+//    .col1{
+//     background: red;
+//    }
+
+//    .col2{
+//     background: yellow;
+//    }
+
+//    .col3{
+//     background: green;
+//    }
+
+
+}

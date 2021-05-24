@@ -1,0 +1,128 @@
+page-creategroup {
+     //body
+     .body{
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //back button which comes which navctrl push
+    .back-button-icon{
+        color: white;
+      }
+
+    //hide scroll bar when scrolling
+    ::-webkit-scrollbar,
+    *::-webkit-scrollbar
+    {
+        display: none;
+    }
+
+     //create group title background
+     .toolbar-background{
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+     //icon in header
+        .camfilaicon{
+        zoom :2.0;
+        color:white;
+    }
+ 
+ 
+    //navbar title
+    .toolbar-title{
+        color:white;
+        margin-top: 5px;
+    } 
+
+    //navbar title
+    .navbartitle{
+        margin-top:5px;
+    }
+
+
+    //group profile picture
+    .profilephoto{
+        margin-top:10px;
+        border-radius: 60px;
+        width:100px;
+        height: 100px;
+    }
+
+    //delete picture icon
+    .deletepictureicon{
+        position: absolute;
+        color:red;
+        margin-left:35px;
+        float: right;
+        margin-top:-30px !important;
+    }
+
+    //change photo text
+    .changephototext{
+        color:black;
+        margin-top: -10px;
+    }
+
+     //group name form setup
+     .formsetup{
+        margin-top:50px !important;
+    }
+
+     // group name form item
+     .groupnameform{
+        margin-top: 20px;
+        background: transparent;
+    }
+
+    //group name input textbox
+    .groupnameinput{
+        color:black;
+        font-size: 13px;
+    }
+
+    //group name input placeholder
+    .text-input::-webkit-input-placeholder {
+        text-indent: 0;
+        color: black;
+        padding-left: 85px;
+    }
+
+     //create group button
+     .creategroupbutton{
+        margin-top: 10px;
+        //margin-left: 10px;
+        width: 150px;
+        height: 30px;
+    } 
+
+     //create group icon
+     .creategroupicon{
+        margin-right: 5px;
+    }
+
+
+     //group description textarea
+    .groupdescriptiontextarea{
+        margin-top:30px;
+        border-radius:10px;
+        background: transparent;
+        // margin-left: -2px;
+        color:black;
+        font:arial;
+        border:1px solid transparent;
+    }
+
+    //text area placeholder
+    .groupdescriptiontextarea::placeholder{
+        color:black;    
+        padding-left:85px;
+    }   
+
+
+}

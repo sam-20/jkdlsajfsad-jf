@@ -1,0 +1,193 @@
+<ion-header no-shadow no-border>
+
+  <ion-navbar>
+    <ion-row>
+      <!-- <ion-col> -->
+      <!--text / ios-text / ios-text-outline-->
+      <!-- <ion-icon name="ios-paw" class="camfilaicon"></ion-icon> -->
+      <!-- </ion-col> -->
+
+      <ion-col>
+        <ion-title>{{this.username}}</ion-title>
+      </ion-col>
+
+
+      <ion-col>
+      </ion-col>
+
+    </ion-row>
+
+
+
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content class="body">
+
+  <!-- Custom Refresher Content -->
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!-- Custom Refresher Content -->
+
+
+  <ion-row>
+
+    <ion-col>
+      <!--profile picture-->
+      <ion-card class="userprofilecard">
+        <img src="{{this.profilepic}}" class="userprofilepic" (click)="viewprofileimage()">
+      </ion-card>
+    </ion-col>
+
+    <!--user stats values-->
+    <ion-col class="statscolumn">
+      <ion-row>
+        <ion-col width-50 style="text-align: center">
+          <div class="statsvalue" (click)="mymessages()">{{this.usermessagescount}}</div>
+        </ion-col>
+        <ion-col width-50 style="text-align: center">
+          <div class="statsvalue" (click)="following()">{{this.followingcount}}</div>
+        </ion-col>
+        <ion-col width-50 style="text-align: center">
+          <div class="statsvalue" (click)="followers()">{{this.followerscount}}</div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+
+        <!--user stats headers-->
+        <ion-col width-50 style="text-align: center">
+          <div class="statsheader" (click)="mymessages()">posts</div>
+        </ion-col>
+        <ion-col width-50 style="text-align: center">
+          <div class="statsheader" (click)="following()">following</div>
+        </ion-col>
+        <ion-col width-50 style="text-align: center">
+          <div class="statsheader" (click)="followers()">followers</div>
+        </ion-col>
+      </ion-row>
+
+      <!--send message button-->
+      <button ion-button small color=secondary class="sendmessagebutton" style="text-transform: none;" (click)="opendmchat()">send
+        message</button>
+
+      <!--follow button-->
+      <button ion-button small color={{this.followbuttoncolor}} class="followbutton" style="text-transform: none;"
+        (click)="followORunfollow()">{{this.followstatus}}</button>
+
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col>
+          <div class="followertext">{{this.followertext}}</div>
+        </ion-col>
+        <!-- <ion-col></ion-col> -->
+      </ion-row>
+
+    </ion-col>
+
+  </ion-row>
+
+
+  <!--user bio details-->
+  <!--username details-->
+  <ion-row>
+    <ion-col col-3>
+      <div text-wrap><b><span class="biodetailsheadertext">Username:</span></b> </div>
+    </ion-col>
+
+    <ion-col col-9>
+      <div text-wrap><span class="biodetailsvaluetext">{{this.username}}</span></div>
+    </ion-col>
+  </ion-row>
+
+  <!--date joined details-->
+  <ion-row>
+    <ion-col col-3>
+      <div text-wrap><b><span class="biodetailsheadertext">Joined:</span></b> </div>
+    </ion-col>
+
+    <ion-col col-9>
+      <div text-wrap><span class="biodetailsvaluetext">{{this.datejoined}}</span></div>
+    </ion-col>
+  </ion-row>
+
+  <!--about details-->
+  <ion-row>
+    <ion-col col-3>
+      <div *ngIf="this.about != 'empty'" text-wrap><b><span class="biodetailsheadertext">About:</span></b></div>
+    </ion-col>
+
+    <ion-col col-9>
+      <div text-wrap><span class="biodetailsvaluetext">{{this.about}}</span></div>
+    </ion-col>
+  </ion-row>
+
+  <!--email details-->
+  <ion-row>
+    <ion-col col-3>
+      <div *ngIf="this.email != 'empty'" text-wrap><b><span class="biodetailsheadertext">Email:</span></b></div>
+    </ion-col>
+
+    <ion-col col-9>
+      <div text-wrap><span class="biodetailsvaluetext">{{this.email}}</span></div>
+    </ion-col>
+  </ion-row>
+
+  <!--phone details-->
+  <ion-row>
+    <ion-col col-3>
+      <div *ngIf="this.phonenumber != 'empty'" text-wrap><b><span class="biodetailsheadertext">Phone:</span></b></div>
+    </ion-col>
+
+    <ion-col col-9>
+      <div text-wrap><span class="biodetailsvaluetext">{{this.phonenumber}}</span></div>
+    </ion-col>
+  </ion-row>
+
+  <!--website details-->
+  <ion-row>
+    <ion-col col-3>
+      <div *ngIf="this.website != 'empty'" text-wrap><b><span class="biodetailsheadertext">Website:</span></b></div>
+    </ion-col>
+
+    <ion-col col-9>
+      <div text-wrap><span class="biodetailsvaluetext">{{this.website}}</span></div>
+    </ion-col>
+  </ion-row>
+
+
+
+  <!--user's likes and message media swipeable tabs-->
+  <ion-segment class="SwipedTabs-tabs">
+    <ion-segment-button *ngFor='let tab of tabs; let i = index ' value="IgnoreMe" (click)="selectTab(i)" [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider && ( this.SwipedTabsSlider.getActiveIndex() === i || ( tabs.length -1 === i && this.SwipedTabsSlider.isEnd())))}'>
+      {{tab}}
+    </ion-segment-button>
+  </ion-segment>
+
+  <!--here is our dynamic line "indicator"-->
+  <div id='tabsindicators' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%' : (100/this.tabs.length)}"></div>
+
+  <!-- slides to contain pinned messages and message media-->
+  <ion-slides [ngStyle]="{ 'height': slidesMoving ? 'auto' : (slidesHeight + 'px') }" (ionSlideDidChange)="slideDidChange()"
+    (ionSlideWillChange)="slideWillChange()" (ionSlidesDidLoad)="slidesDidLoad()" #SwipedTabsSlider (ionSlideDrag)="animateIndicator($event)"
+    (pan)="updateIndicatorPosition()" [pager]="false">
+
+    <!--pinned messages slide-->
+    <ion-slide style="background-color: transparent;">
+      <app-likedmessages2></app-likedmessages2>
+    </ion-slide>
+
+    <!--my message media slides-->
+    <ion-slide style="background-color: transparent">
+      <app-mymessagemedia2></app-mymessagemedia2>
+    </ion-slide>
+
+  </ion-slides>
+
+</ion-content>

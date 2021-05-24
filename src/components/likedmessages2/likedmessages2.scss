@@ -1,0 +1,106 @@
+
+    // //pin message icon
+    // .pinmessageicon{
+    //     float: right;
+    //     margin-right:-20px;
+    // }
+
+    //time added text
+    .timeadded{
+        float:right;
+        color:black;
+        margin-top:15px !important;
+        font-size: 12px;
+    }
+
+    //message card
+    .messagecard.card-md{
+        border-radius:10px;
+    }
+
+    //message card
+    .messagecard{
+        background:transparent;
+        margin-top:-15px;
+        margin-left:-15px;
+        //padding-left:0px;
+        margin-bottom: -15px;
+    }
+
+    //picture in message
+    .likedmessagesmessagemedia{
+        height:200px !important; 
+        width:800px !important; 
+        margin-left:15px !important;
+        margin-bottom:-10px;
+        border-radius: 20px;
+    }
+
+    //profile pic and username as one component
+    .profilepictureANDusername{
+        margin-top:-8px;
+        margin-bottom: -8px;
+        background: transparent;
+    }
+
+     //ion item design
+     .ionitemdesignfavorites{
+        background: transparent;
+        margin-bottom: -10px;
+        padding-left:0px;
+    }
+
+
+     //likes comments time
+     .statsrowstylefavorites{
+        //margin-top:-10px;
+        margin-bottom:-10px !important;
+    }
+
+
+    //some useless stuff to allow us slide in case theres no messsage media
+    .nuisancelikedmessages{
+        background: transparent;
+        height:500px !important;
+        color: transparent;
+    }
+
+
+     //likes button for card 1 and 2
+     .likesbutton{
+        margin-left: 0px !important;
+
+        //these make it completely transparent removing every shadow around the button
+        background: transparent;
+        box-shadow: none !important;
+        border-color: transparent !important;
+        outline: none !important;
+    }
+
+
+     //likes number tetx
+     .likescounttext{
+        color: black;
+    }
+
+
+    //comments button for card  1 and 2
+    .commentsbutton{
+        margin-left: 10px !important;
+
+        //these make it completely transparent removing every shadow around the button
+        background: transparent;
+        box-shadow: none !important;
+        border-color: transparent !important;
+        outline: none !important;
+    }
+
+
+
+    //comments number text
+    .commentscounttext{
+        color: black;
+    }
+
+
+

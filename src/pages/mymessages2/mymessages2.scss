@@ -1,0 +1,162 @@
+page-mymessages2 {
+    //body
+    .body{
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //hide scroll bar when scrolling
+    ::-webkit-scrollbar,
+    *::-webkit-scrollbar
+    {
+        display: none;
+    }
+
+    //back button which comes which navctrl push
+    .back-button-icon{
+        color: white;
+      }
+
+     //posts title background
+     .toolbar-background{
+        //background:transparent;
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //icon in header
+    .camfilaicon{
+        zoom :2.0;
+        color:white;
+    }
+ 
+    //navbar title
+    .toolbar-title{
+        color:white;
+        margin-top: 5px;
+
+    }
+
+    //navbar title
+    .navbartitle{
+        margin-top:5px;
+    } 
+
+    //remove border line caused by refresher  
+    .has-refresher  .scroll-content {
+        border-top: 0 !important;
+      }
+
+    //icon used for pulling refresher
+    .refresher-pulling-icon{
+        color:white;
+    }
+
+    //text shown when pulling refresher
+    .refresher-pulling-text{
+        color:white;
+    }
+
+    //icon used when refreshing
+    .spinner svg {
+        stroke: white;
+        fill: white;
+    }
+
+    //text shown when refreshing
+    .refresher-refreshing-text{
+        color:white;
+    }
+
+
+    //pin message icon
+    .pinmessageicon{
+        float: right;
+    }
+
+    //delete message icon
+    .deletemessageicon{
+        float:right;
+        margin-top:10px;
+    }   
+ 
+    //time added text
+    .timeadded{
+        float:right;
+        color:black;
+        margin-top:10px !important;
+    }
+
+    //message card
+    .messagecard.card-md{
+        border-radius:10px;
+    }
+
+    //message card
+    .messagecard{
+        background:transparent;
+        margin-top:-15px;
+        margin-left:0px;
+        padding-left:0px;
+        margin-bottom: -10px;
+    }
+
+    //picture in message
+    .messagemedia{
+        height:200px; 
+        width:800px; 
+        margin-left:15px;
+        //margin-bottom:-25px;
+        border-radius: 20px;
+    }
+
+    //profile pic and username as one component
+    .profilepictureANDusername{
+        margin-top:-8px;
+        margin-bottom: -8px;
+        background: transparent;
+    }
+
+    //likes comments time
+    .statsrowstyle{
+        margin-top:-15px;
+        margin-bottom: -18px;
+    }
+
+    //ion item design
+    .ionitemdesign{
+        background: transparent;
+        margin-bottom: -10px;
+    }
+
+
+    //username text
+    .usernametext{
+        color:black;
+    }
+
+    //message text
+    .messagetext{
+        color:black !important;
+    }
+
+    //likes counts text
+    .likescounttext{
+        color:black;
+    }
+
+    //commentss count text
+    .commentscountext{
+        color:black;
+    }
+
+
+
+
+
+
+}

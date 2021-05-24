@@ -1,0 +1,88 @@
+
+    //pin message icon
+    .pinmessageicon{
+        float: right;
+        margin-right:-20px;
+    }
+
+    //time added text
+    .timeaddedpinnedmessages{
+        float:right;
+        color:black;
+        margin-top:10px !important;
+        font-size: 12px;
+    }
+
+    //message card
+    .messagecard.card-md{
+        border-radius:10px;
+    }
+
+    //message card
+    .messagecard{
+        background:transparent;
+        margin-top:-15px;
+        margin-left:-15px;
+        //padding-left:0px;
+        margin-bottom: -15px;
+    }
+
+    //picture in message
+    .pinnedmessagesmessagemedia{
+        height:200px !important; 
+        width:800px !important; 
+        margin-left:15px !important;
+        margin-bottom:0px;
+        border-radius: 20px;
+    }
+
+    //profile pic and username as one component
+    .profilepictureANDusername{
+        margin-top:-8px;
+        margin-bottom: -8px;
+        background: transparent;
+    }
+
+     //ion item design
+     .ionitemdesignfavorites{
+        background: transparent;
+        margin-bottom: -10px;
+        padding-left:0px;
+    }
+
+
+     //likes comments time
+     .statsrowstylefavorites{
+        margin-top:-15px;
+        margin-bottom: -15px;
+    }
+
+
+    //some useless stuff to allow us slide in case theres no messsage media
+    .nuisancepinnedmessages{
+        background: transparent;
+        height:500px !important;
+        color: transparent;
+    }
+
+    //usrname text
+    .usernametext{
+        color:black;
+    }
+
+    //message text
+    .messagetext{
+        color:black !important;
+    }
+
+    //likes count
+    .likescounttext{
+        color:black;
+    }
+
+    //cmmments count
+    .commmentscounttext{
+        color:black;
+    }
+
+

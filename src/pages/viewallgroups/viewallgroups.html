@@ -1,0 +1,67 @@
+<ion-header no-shadow no-border>
+
+  <ion-navbar>
+    <ion-row>
+      <ion-col>
+        <!--text / ios-text / ios-text-outline-->
+        <ion-icon name="ios-paw" class="camfilaicon"></ion-icon>
+      </ion-col>
+
+      <ion-col>
+        <ion-title>Groups</ion-title>
+      </ion-col>
+
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+
+    </ion-row>
+
+
+
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content class="body">
+
+  <!-- Custom Refresher Content -->
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!-- Custom Refresher Content -->
+
+  <!--search bar-->
+  <div class="searchbar">
+    <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
+  </div>
+  <!--search bar-->
+
+
+  <!--card to display group info-->
+  <ion-card class="groupcard" *ngFor="let count of groupaccountstablerows | groupnamesearch: terms">
+
+    <ion-row>
+
+      <ion-col col-3>
+        <img src="{{server+count.group_profile_pic_fetched}}" class="groupprofilepic">
+      </ion-col>
+
+      <ion-col col-6>
+        <ion-card class="groupnamecard"><b>{{count.group_name_fetched}}</b></ion-card>
+        <ion-card class="aboutcard">{{count.about_fetched}}</ion-card>
+      </ion-col>
+
+      <ion-col col-3>
+        <button ion-button small style="text-transform: none;" class="joinbutton" color={{count.buttoncolor}} (click)="joinORexitgroup(count)">{{count.joinstatus}}</button>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-card>
+  <!--card to display group info-->
+
+</ion-content>

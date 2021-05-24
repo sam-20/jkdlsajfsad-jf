@@ -1,0 +1,490 @@
+/*************splash screen css starts here************/
+.custom-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100000;
+    width: 100%;
+    //background-color: #EBEBEB; //we set the background color of the splashscreen to the same background color of the image
+    background: url("/assets/imgs/12.jpg") !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.splashheader {
+    position: absolute;
+    top: 15%;
+    left: 35%;
+    color: white;
+    font-style: italic;
+    font-family: Times New Roman, serif;
+    font-size: 30px;
+
+    /*combining multiple animations on one element
+    first value for duration ie. how long it should last for 
+    second value for delay ie. after how many seconds it should appear */
+    animation: zoomIn 1s 0s, pulse 1s 3s, zoomOut 1s 5.5s;
+}
+
+// .splashicon{
+//     position: absolute;
+//     top:40%;
+//     left:35%;
+//     zoom:6.0;
+//     color:white;
+//     //width:100px !important;
+//     //height: 100px !important;
+
+//     /*combining multiple animations on one element
+//     first value for duration ie. how long it should last for
+//     second value for delay ie. after how many seconds it should appear */
+//     animation:  zoomIn 1s 0s,
+//                 wobble 1s 3s,
+//                 zoomOut 1s 5.5s;
+// }
+
+.splashimage {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    //width:100px;
+    //height:100px;
+
+    /*combining multiple animations on one element
+    first value for duration ie. how long it should last for 
+    second value for delay ie. after how many seconds it should appear */
+    animation: zoomIn 1s 0s, wobble 1s 3s, zoomOut 1s 5.5s;
+}
+
+/********************splash screen css ends here*********** */
+
+page-home {
+    //body
+    .body {
+        background: url("/assets/imgs/12.jpg") !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //hide scroll bar when scrolling
+    ::-webkit-scrollbar,
+    *::-webkit-scrollbar {
+        display: none;
+    }
+
+    //home title background
+    .toolbar-background {
+        //background:transparent;
+        background: url("/assets/imgs/12.jpg") !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //navbar title
+    .toolbar-title {
+        color: white;
+        //margin-left:-90px;
+        margin-top: 9px;
+    }
+
+    //icon in header
+    .camfilaicon {
+        zoom: 2;
+        color: white;
+        margin-top: 2px;
+        margin-left: 10px;
+    }
+
+    //new message icon
+    .newmessageicon {
+        zoom: 2;
+        color: white;
+        margin-top: 1px;
+        float: right;
+    }
+
+    //search icon
+    .searchicon {
+        zoom: 1.5;
+        color: white;
+        margin-top: 5px;
+        float: right;
+        margin-right: 10px;
+    }
+
+    // //postmessage button
+    // .postmessagebutton{
+    //     width:0px;
+    //     float: right;
+    //     margin-top:5px;
+    // }
+
+    //ion item styling
+    .ionitemsdesign {
+        background: transparent;
+        //margin-top:-25px;
+        padding-left: 0px;
+    }
+
+    //pin message icon
+    .pinmessageicon {
+        float: right;
+        margin-top: 8px;
+        margin-right: 0px;
+    }
+
+    //time added text
+    .timeadded {
+        //position: absolute;
+        right: 10px;
+        //top:13px;
+        color: black;
+        margin-top: 8px !important;
+        //float:right;
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+    //username profile pic
+    .avatarprofilepic {
+        width: 45px !important;
+        height: 45px !important;
+        border-radius: 22px;
+    }
+
+    /*********************message card for msgs which are not comments*********************************/
+    //messagecard1
+    .messagecard1.card-md {
+        border-radius: 5px;
+        // background-color: yellow;
+    }
+
+    //messagecard1
+    .messagecard1 {
+        //background:url('/assets/imgs/9.jpg');
+        margin-top: -15px;
+        //margin-left:-10px;
+        padding-left: 5px;
+        margin-bottom: -28px;
+        // background-color: red;
+        width: 100%;
+    }
+
+    .card1messagemedia {
+        height: 200px;
+        width: 800px;
+        margin-left: 12px;
+        margin-bottom: 0px;
+        border-radius: 20px;
+    }
+
+    .card1profilepicdiv {
+        display: flex;
+        background-color: transparent;
+        justify-content: center;
+        align-items: center;
+    }
+
+    //card1 username
+    .card1username {
+        color: black;
+        font-size: smaller;
+        margin-top: 0px;
+        padding-top: 0px;
+        font-weight: bold;
+    }
+
+    .card1usernamediv {
+        background-color: transparent;
+        margin-top: 9px;
+    }
+
+    //card1 message content
+    .card1messagetext {
+        color: black;
+
+        font-size: smaller;
+
+        //preserve line breaks wherever user added them in the text
+        white-space: pre-wrap;
+    }
+
+    //card1 message card
+    .card1messagecard {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 10px;
+        // background: green;
+    }
+    /*********************message card for msgs whihc are not comments***************************************/
+
+    /***********************message card for mgs which are comments*****************************************/
+
+    /**********************outer card**********/
+    //messagecard2
+    .messagecard2.card-md {
+        border-radius: 10px;
+    }
+
+    //message card2
+    .messagecard2 {
+        //background:url('/assets/imgs/9.jpg');
+        margin-top: -15px;
+        //margin-left:-15px;
+        padding-left: 5px;
+        margin-bottom: -28px;
+    }
+
+    .card2messagemedia {
+        height: 200px;
+        width: 800px;
+        margin-left: 15px;
+        margin-bottom: 0px;
+        border-radius: 20px;
+    }
+
+    //card2 username
+    .card2username {
+        color: black;
+    }
+
+    //card2 message content
+    .card2messagetext {
+        color: black;
+
+        //preserve line breaks wherever user added them in the text
+        white-space: pre-wrap;
+    }
+
+    //card2 message card
+    .card2messagecard {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        //background:red;
+        margin-top: 3px;
+    }
+    /**********************outer card**********/
+
+    /**********************inner card**********/
+    //messagecard3
+    .messagecard3.card-md {
+        border-radius: 10px;
+    }
+
+    //message card3
+    .messagecard3 {
+        background: transparent;
+        margin-top: 5px;
+        margin-left: 25px;
+        padding-left: 0px;
+    }
+
+    .card3messagemedia {
+        height: 200px;
+        margin-bottom: 0px;
+        //border-radius: 20px;
+    }
+
+    //card 3 time addd
+    .card3timeadded {
+        //position: absolute;
+        // right:10px;
+        //top:13px;
+        color: black;
+        margin-top: 10px !important;
+        float: right;
+        margin-right: 15px;
+        //float:right;
+    }
+
+    //card3 username
+    .card3username {
+        color: black;
+    }
+
+    //card3 message content
+    .card3messagetext {
+        color: black;
+
+        //preserve line breaks wherever user added them in the text
+        white-space: pre-wrap;
+    }
+
+    //card3 message card
+    .card3messagecard {
+        padding-top: 5px;
+        padding-bottom: 0px;
+        //background:red;
+        margin-top: 3px;
+        margin-bottom: -3px;
+    }
+    /**********************inner card**********/
+
+    /***********************message card for mgs which are comments*****************************************/
+
+    //the syling below is the same for normal messages and those which are comments
+
+    //profile pic and username as one component
+    .profilepictureANDusername {
+        // background-color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    //commenttext
+    .commenttext {
+        margin-top: 8px;
+        margin-left: 0px;
+        color: black;
+        float: right;
+    }
+
+    //home menu toggle button
+    .homemenubutton {
+        margin-top: 10px;
+    }
+
+    //remove border line caused by refresher
+    .has-refresher .scroll-content {
+        border-top: 0 !important;
+    }
+
+    //icon used for pulling refresher
+    .refresher-pulling-icon {
+        color: white;
+    }
+
+    //text shown when pulling refresher
+    .refresher-pulling-text {
+        color: white;
+    }
+
+    //icon used when refreshing
+    .spinner svg {
+        stroke: white;
+        fill: white;
+    }
+
+    //text shown when refreshing
+    .refresher-refreshing-text {
+        color: white;
+    }
+
+    //space created by inifite scroll on html
+    //derived name from elements in ctrl+shift+i
+    ion-infinite-scroll {
+        display: block;
+        width: 100%;
+        height: 0px;
+    }
+
+    .card1likes_comments_row {
+        // background-color: yellow;
+        padding-left: 10px;
+    }
+
+    //likes button for card 1 and 2
+    .likesbutton {
+        // margin-left: 15px;
+
+        //these make it completely transparent removing every shadow around the button
+        background: transparent;
+        box-shadow: none !important;
+        border-color: transparent !important;
+        outline: none !important;
+    }
+
+    //likes button for card 3
+    .likesbuttoncard3 {
+        margin-left: 0px;
+        padding-left: 15px;
+
+        //these make it completely transparent removing every shadow around the button
+        background: transparent;
+        box-shadow: none !important;
+        border-color: transparent !important;
+        outline: none !important;
+    }
+
+    //likes number tetx
+    .likescounttext {
+        color: black;
+    }
+
+    //comments button for card  1 and 2
+    .commentsbutton {
+        margin-left: 10px;
+
+        //these make it completely transparent removing every shadow around the button
+        background: transparent;
+        box-shadow: none !important;
+        border-color: transparent !important;
+        outline: none !important;
+    }
+
+    //comments button for card 3
+    .commentsbuttoncard3 {
+        margin-left: 0px;
+
+        //these make it completely transparent removing every shadow around the button
+        background: transparent;
+        box-shadow: none !important;
+        border-color: transparent !important;
+        outline: none !important;
+    }
+
+    //comments number text
+    .commentscounttext {
+        color: black;
+    }
+
+    // //floating action container
+    // .fabcontainer{
+    //     // margin-left: -40px !important;
+    //     // margin-top:-5px;
+    // }
+
+    //paw fab
+    .pawfab {
+        //background: rgb(48, 190, 93);
+
+        //these make it completely transparent removing every shadow around the button
+        background: rgb(172, 35, 153);
+        //background: #FF3399;
+        box-shadow: none !important;
+        border-color: rgba(0, 0, 0, 0) !important;
+        outline: none !important;
+        margin-bottom: 60px;
+    }
+
+    //send message fab button inside fab
+    .sendmessagefablistbutton {
+        background: rgb(123, 200, 204);
+        width: 50px;
+        height: 50px;
+    }
+
+    //send message fab icon
+    .sendmessagefablisticon {
+        color: white;
+        zoom: 1.4 !important;
+    }
+
+    //search people fab button inside fab
+    .searchpeoplefablistbutton {
+        background: rgb(219, 107, 79);
+        width: 50px;
+        height: 50px;
+    }
+
+    //search people fab icon
+    .searchpeoplefablisticon {
+        color: white;
+        zoom: 1.4 !important;
+    }
+}

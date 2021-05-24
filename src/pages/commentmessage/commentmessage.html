@@ -1,0 +1,159 @@
+<ion-header no-shadow no-border>
+
+  <ion-navbar>
+    <ion-row>
+      <ion-col>
+        <!--text / ios-text / ios-text-outline-->
+        <ion-icon name="ios-paw" class="camfilaicon"></ion-icon>
+      </ion-col>
+
+      <ion-col>
+        <ion-title>Comment message</ion-title>
+      </ion-col>
+
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+
+    </ion-row>
+
+
+
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content class="body">
+
+  <!--card to display message to be commented-->
+  <ion-card class="commentedmessagecard" *ngFor="let count of commentedmessagetablerow;">
+    <!--looping through the  messagetablerows array-->
+
+    <!--first row containing profile of message sender, sender_name and pin icon-->
+
+
+    <ion-row>
+      <!--1st column-->
+      <ion-col>
+        <ion-item class="profilepictureANDusername">
+          <ion-avatar item-start>
+            <img class="avatarprofilepic" src="{{server+count.commentedmsg_sender_profile_pic_fetched}}" />
+            <!-----c-->
+            <!--profile pic in message-->
+            <!--user profile goes here-->
+          </ion-avatar>
+          <h2 class="usernametext">{{count.commentedmsg_sender_username_fetched}}</h2>
+        </ion-item>
+      </ion-col>
+
+      <!--2nd column-->
+      <!-- <ion-col>
+
+      </ion-col> -->
+
+      <!--3rd column-->
+      <!-- <ion-col> -->
+        <!--pin message icon -->
+        <!-- <ion-icon name="star" class="pinmessageicon" color={{this.commentedmessagepincolor}}></ion-icon> -->
+      <!-- </ion-col> -->
+    </ion-row>
+    <!--end of first row-->
+
+    <!--picture in msg goes here-->
+
+    <!--ng if is a condition that if the image src exists then set the src to ...-->
+    <img *ngIf="!server+count.commented_message_media_fetched" src="{{server+count.commented_message_media_fetched}}"
+    class="commentedmessagemedia" (click)="viewimage(count)">
+    <!--picture in msg goes here-->
+
+    <ion-card-content>
+      <!--messageDB is the php variable to which the column values from the 
+        database was assigned to-->
+      <p class="commentedmessagetext">{{count.commented_message_fetched}}</p>
+    </ion-card-content>
+
+    <!--another row with columns : likes, comments and time added-->
+    <ion-row>
+      <!--likes-->
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="ios-heart" color={{this.commentedmessagelikecolor}}></ion-icon>
+          <div class="likescounttext">{{count.commentedmsg_likes_fetched}}</div>
+        </button>
+
+      <!--comments-->
+        <button ion-button icon-start clear small>
+            <ion-icon *ngIf="count.commentedmsg_comments_fetched > 0" name="ios-text" color=secondary></ion-icon>
+            <ion-icon *ngIf="count.commentedmsg_comments_fetched == 0" name="ios-text" color=dark></ion-icon>
+          <div class="commmentscounttext">{{count.commentedmsg_comments_fetched}}</div>
+        </button>
+      </ion-col>
+      <!--comments-->
+
+      <!--time added--column3-->
+      <ion-col center text-center>
+        <ion-note class="timeadded">
+          {{count.commentedmsg_date_created_fetched}}
+        </ion-note>
+      </ion-col>
+    </ion-row>
+    <!--time added-->
+
+  </ion-card>
+  <!--card to display message to be commented-->
+
+
+  <!--now for where the user is going to enter their message-->
+  <ion-row>
+    <ion-col></ion-col>
+
+    <div *ngIf="display">
+      <!--display would be the condition that holds true to show card or false to hide card-->
+      <!--image card for picture post-->
+      <ion-col width-50 style="text-align: center">
+        <ion-card class="picturecard">
+          <ion-icon name="trash" class="deletepictureicon" (click)="deletephoto()"></ion-icon>
+          <img *ngIf="base64Image" [src]="base64Image" class="imagesource" (click)="viewimage2()">
+        </ion-card>
+      </ion-col>
+    </div>
+
+
+    <ion-col></ion-col>
+  </ion-row>
+
+
+  <ion-row>
+
+    <ion-col></ion-col>
+
+    <!--post message textarea-->
+    <ion-col>
+      <textarea rows="10" cols="45" [(ngModel)]="messagetextareainput" class="postmessagetextarea" placeholder="type message here..."></textarea>
+    </ion-col>
+
+    <ion-col></ion-col>
+
+  </ion-row>
+
+  <ion-row>
+
+    <ion-col></ion-col>
+
+    <!--add image icon-->
+    <ion-col>
+      <button ion-button round class="addimagebutton" (click)="presentActionSheet()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-col>
+
+    <!--send message button-->
+    <ion-col>
+      <button ion-button round class="sendmessagebutton" (click)="sendmessage()">send<ion-icon name="send" class="sendmessageicon"></ion-icon></button>
+    </ion-col>
+
+  </ion-row>
+
+
+</ion-content>

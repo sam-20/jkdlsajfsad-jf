@@ -1,0 +1,108 @@
+page-postmessagemodal {
+    //body
+    .body{
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //hide scroll bar when scrolling
+    ::-webkit-scrollbar,
+    *::-webkit-scrollbar
+    {
+        display: none;
+    }
+    
+    //back button which comes which navctrl push
+    .back-button-icon{
+        color: white;
+      }
+
+     //postmessage title background
+     .toolbar-background{
+        //background:transparent;
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //icon in header
+    .camfilaicon{
+        zoom :2.0;
+        color:white;
+     }
+ 
+
+    //navbar title
+    .toolbar-title{
+        color:white;
+        margin-top: 5px;
+
+    }
+
+    //navbar title
+    .navbartitle{
+        margin-top:5px;
+    }
+
+    //post message textarea
+   .postmessagetextarea{
+        margin-top:0px;
+        border-radius:10px;
+        background: transparent;
+        margin-left: -2px;
+        color:black;
+        font:arial;
+        border:1px solid transparent;
+    }
+
+    //text area placeholder
+    .postmessagetextarea::placeholder{
+        color:black;    
+    }
+ 
+    //add image button 
+    .addimagebutton{
+        margin-top:-10px;
+        width:0px;
+        float: right;
+        margin-right:-10px;
+    }
+
+    //send message button
+    .sendmessagebutton{
+        margin-top:-10px;
+        width:80px;
+    }
+
+    //send message icon
+    .sendmessageicon{
+        margin-left:5px;
+        margin-top:-3px;
+    }
+
+    //insert picture message card
+    .picturecard{
+        width:320px;
+        height: 200px;
+        border-radius: 10px;
+        margin-left:0px;
+       // position: relative;
+    }
+
+    //picture in picture card
+    .imagesource{
+        width:320px;
+        height:200px;
+    }
+
+    //delete picture icon
+    .deletepictureicon{
+        position: absolute;
+        color:red;
+        background:transparent;
+        //margin-top:200px;
+    }    
+}

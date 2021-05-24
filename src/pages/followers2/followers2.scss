@@ -1,0 +1,146 @@
+page-followers2 {
+    //body
+    .body{
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //hide scroll bar when scrolling
+    ::-webkit-scrollbar,
+    *::-webkit-scrollbar
+    {
+        display: none;
+    }
+
+    //back button which comes which navctrl push
+    .back-button-icon{
+        color: white;
+      }
+
+     //followers title background
+     .toolbar-background{
+        //background:transparent;
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //icon in header
+    .camfilaicon{
+        zoom :2.0;
+        color:white;
+     }
+  
+ 
+    //navbar title
+    .toolbar-title{
+        color:white;
+        margin-top: 5px;
+
+    }
+
+    //navbar title
+    .navbartitle{
+        margin-top:5px;
+    }
+
+    //remove border line caused by refresher  
+    .has-refresher  .scroll-content {
+        border-top: 0 !important;
+      }
+
+    //icon used for pulling refresher
+    .refresher-pulling-icon{
+        color:white;
+    }
+
+    //text shown when pulling refresher
+    .refresher-pulling-text{
+        color:white;
+    }
+
+    //icon used when refreshing
+    .spinner svg {
+        stroke: white;
+        fill: white;
+    }
+
+    //text shown when refreshing
+    .refresher-refreshing-text{
+        color:white;
+    }
+
+    //card  containing user details
+    .usercard{
+        background:transparent;
+        box-shadow: none !important; //border around card
+        margin-bottom: 0px;
+
+        //remove border lines around card
+        box-shadow: none !important;
+        border: none !important;
+        border-style: none !important;
+    }
+
+    //user profile pic
+    .profilepic{
+        border-radius:50px;
+        width:60px;
+        height:60px;
+        margin-top:2px;
+        margin-bottom: 0px;
+        margin-left:10px;
+        padding-left: 0px;
+    }
+
+    //follow button
+    .followbutton{
+        width:80px;
+        float:right;
+        margin-top:40px;
+        margin-right: 10px;
+    }
+
+    //username card
+    .usernamecard{
+        margin-left:0px;
+        margin-top:15px;
+        color:black;
+        background:transparent;
+        box-shadow: none !important; //border around card
+
+        //remove border lines around card
+        box-shadow: none !important;
+        border: none !important;
+        border-style: none !important;
+    }
+
+    //about card
+    .aboutcard{
+        height:60px;
+        width:140px;
+        margin-left:0px;
+        margin-right:-5px;
+        margin-top:0px;
+        margin-bottom: 0px;
+        color:black;
+        background:transparent;
+        box-shadow: none !important; //border around card 
+
+        //remove border lines around card
+        box-shadow: none !important;
+        border: none !important;
+        border-style: none !important;
+    }
+
+    //follower text
+    .followertext{
+        color:black;
+        margin-top:10px;
+        margin-bottom: -40px;
+        margin-left: 15px;
+    }
+}

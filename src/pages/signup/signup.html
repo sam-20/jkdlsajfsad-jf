@@ -1,0 +1,42 @@
+<ion-header  no-shadow no-border>
+
+  <ion-navbar class="navbar">
+    <ion-row>
+      <ion-col width-50 style="text-align: center">
+        <ion-title>Signup</ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="body">
+
+  <div class="formsetup">
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text" [(ngModel)]="usernameinput"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="passwordinput"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Confirm Password</ion-label>
+      <ion-input type="password" [(ngModel)]="confirmpasswordinput"></ion-input>
+    </ion-item>
+
+    <!--next button-->
+    <ion-row>
+      <ion-col width-50 style="text-align: center">
+        <button ion-button round class="next" (click)="signup2()">Next
+          <ion-icon name="arrow-dropright" class="nextarrowicon"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </div>
+
+</ion-content>

@@ -1,0 +1,226 @@
+page-editprofile {
+
+    //body
+    .body{
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //hide scroll bar when scrolling
+    ::-webkit-scrollbar,
+    *::-webkit-scrollbar
+    {
+        display: none;
+    }
+
+    //back button which comes which navctrl push
+    .back-button-icon{
+        color: white;
+      }
+
+     //posts title background
+     .toolbar-background{
+       // background:transparent;
+       background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //icon in header
+    .camfilaicon{
+        zoom :2.0;
+        color:white;
+    }
+ 
+    //navbar title
+    .toolbar-title{
+        color:white;
+        margin-top: 5px;
+
+    }
+
+    //navbar title
+    .navbartitle{
+        margin-top:5px;
+    } 
+
+    //remove border line caused by refresher  
+    .has-refresher  .scroll-content {
+        border-top: 0 !important;
+      }
+
+    //icon used for pulling refresher
+    .refresher-pulling-icon{
+        color:white;
+    }
+
+    //text shown when pulling refresher
+    .refresher-pulling-text{
+        color:white;
+    }
+
+    //icon used when refreshing
+    .spinner svg {
+        stroke: white;
+        fill: white;
+    }
+
+    //text shown when refreshing
+    .refresher-refreshing-text{
+        color:white;
+    }
+
+    //done container
+    .donecontainer{
+        margin-top:4px;
+        margin-right:15px;
+    }
+
+    //done checkmark in header
+    .doneicon{
+        zoom :1.5;
+        color:white;
+        margin-right: 25px;
+    }
+
+    //done text
+    .donetext{
+        color:white;
+        margin-top: -20px;
+        float: right;
+    }
+
+    //profile picture
+    .profilephoto{
+        border-radius: 60px;
+        width:100px;
+        height: 100px;
+    }
+
+    //change photo text
+    .changephototext{
+        color:white;
+        margin-top: -10px;
+    }
+
+    // username form item
+    .usernameform{
+        background: transparent;
+    }
+
+    //username label
+    .usernamelabel{
+        //color:rgb(46, 202, 51) !important;
+        color:black !important;
+    }
+
+    //username input textbox
+    .usernameinput{
+        color:black;
+        font-size: 13px;
+        border-bottom:1px solid rgb(180, 176, 180) //text box line
+    }
+
+    //about form item
+    .aboutform{
+        //margin-top:20px;
+        background: transparent;
+    }
+
+    //about label
+    .aboutlabel{
+        //color:rgb(46, 202, 51) !important;
+        color:black !important;
+    }
+
+    //about input textbox
+    .aboutinput{
+        color:black;
+        font-size: 13px;
+        border-bottom:1px solid rgb(234, 227, 235) //text box line
+    }
+
+    //website form item
+    .websiteform{
+        //margin-top:20px;
+        background: transparent;
+    }
+
+    //website label
+    .websitelabel{
+        //color:rgb(46, 202, 51) !important;
+        color:black !important;
+    }
+
+    //website input textbox
+    .websiteinput{
+        color:black;
+        font-size: 13px;
+        border-bottom:1px solid rgb(234, 227, 235) //text box line
+    }
+
+    // email form item
+    .emailform{
+        background: transparent;
+    }
+
+    //email label
+    .emaillabel{
+        //color:rgb(46, 202, 51) !important;
+        color:black !important;
+    }
+
+    //email input textbox
+    .emailinput{
+        color:black;
+        font-size: 13px;
+        border-bottom:1px solid rgb(234, 227, 235) //text box line
+    }
+
+
+    // phone form item
+    .phoneform{
+        background: transparent;
+    }
+
+    //phone label
+    .phonelabel{
+        //color:rgb(46, 202, 51) !important;
+        color:black !important;
+    }
+
+    //phone input textbox
+    .phoneinput{
+        color:black;
+        font-size: 13px;
+        border-bottom:1px solid rgb(234, 227, 235) //text box line
+    }
+
+    //delete picture icon
+   .deletepictureicon{
+        position: absolute;
+        color:red;
+        margin-left:35px;
+        float: right;
+        margin-top:-30px !important;
+    }
+
+    //privacy setup block
+    .privacysetup{
+        margin-top:10px;
+        margin-left: 5px;
+    }
+
+    //privacy button
+    .privacybutton{
+        width:100px;
+    }
+
+    //privacy icon
+    .privacyicon{
+        margin-right: 5px;
+    }
+}

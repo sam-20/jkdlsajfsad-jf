@@ -1,0 +1,81 @@
+<ion-header no-shadow no-border>
+
+  <ion-navbar>
+    <ion-row>
+      <ion-col>
+        <!--text / ios-text / ios-text-outline-->
+        <ion-icon name="ios-paw" class="camfilaicon"></ion-icon>
+      </ion-col>
+
+      <ion-col>
+        <ion-title>Post message</ion-title>
+      </ion-col>
+
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+
+    </ion-row>
+
+
+
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content class="body">
+
+  <ion-row>
+    <ion-col></ion-col>
+
+    <div *ngIf="display">
+      <!--display would be the condition that holds true to show card or false to hide card-->
+      <!--image card for picture post-->
+      <ion-col width-50 style="text-align: center">
+        <ion-card class="picturecard">
+          <ion-icon name="trash" class="deletepictureicon" (click)="deletephoto()"></ion-icon>
+          <img *ngIf="base64Image" [src]="base64Image" class="imagesource" 
+          (click)="viewimage()">
+        </ion-card>
+      </ion-col>
+    </div>
+
+
+    <ion-col></ion-col>
+  </ion-row>
+
+
+  <ion-row>
+
+    <ion-col></ion-col>
+
+    <!--post message textarea-->
+    <ion-col>
+      <textarea rows="10" cols="45" [(ngModel)]="messagetextareainput" class="postmessagetextarea" placeholder="type message here..."></textarea>
+    </ion-col>
+
+    <ion-col></ion-col>
+
+  </ion-row>
+
+  <ion-row>
+
+    <ion-col></ion-col>
+
+    <!--add image icon-->
+    <ion-col>
+      <button ion-button round class="addimagebutton" (click)="presentActionSheet()">
+        <ion-icon name="ios-add"></ion-icon>
+      </button>
+    </ion-col>
+
+    <!--send message button-->
+    <ion-col>
+      <button ion-button round class="sendmessagebutton" (click)="sendmessage()">send<ion-icon name="ios-send" class="sendmessageicon"></ion-icon></button>
+    </ion-col>
+
+  </ion-row>
+
+
+</ion-content>

@@ -1,0 +1,84 @@
+<div *ngIf="this.countlikedmessages ==  0">
+    <ion-card-content class="nuisancelikedmessages">
+      fsd
+    </ion-card-content>
+  </div>
+  
+  <ion-item *ngFor="let count of selecteduserlikedmsgtablerows;" class="ionitemdesignfavorites">
+    <!--card to display msgs-->
+    <ion-card-content class="messagecard">
+      <!--looping through the  messagetablerows array-->
+  
+      <!--first row containing profile of message sender, sender_name and pin icon-->
+  
+  
+      <ion-row>
+        <!--1st column-->
+        <ion-col (click)="openuserprofile(count)">
+          <ion-item class="profilepictureANDusername" no-lines>
+            <ion-avatar item-start>
+              <img class="avatarprofilepic" src="{{server+count.msgsender_profile_pic_fetched}}" />
+              <!-----c-->
+              <!--profile pic in message-->
+              <!--user profile goes here-->
+            </ion-avatar>
+            <h2 style="color:black">{{count.msgsender_username_fetched}}</h2>
+          </ion-item>
+        </ion-col>
+  
+        <!--2nd column-->
+        <ion-col>
+  
+        </ion-col>
+  
+        <!--3rd column-->
+        <ion-col>
+          <!--pin message icon -->
+          <!-- <ion-icon name="star" class="pinmessageicon" (click)="unpinmessage(count)" color={{count.pincolor}}></ion-icon> -->
+        </ion-col>
+      </ion-row>
+      <!--end of first row-->
+  
+      <!--picture in msg goes here-->
+  
+      <!--ng if is a condition that if the image src exists then set the src to ...-->
+      <img *ngIf="!server+count.message_media_fetched" src="{{server+count.message_media_fetched}}" class="likedmessagesmessagemedia"
+      (click)="viewimage(count)">
+      <!--picture in msg goes here-->
+  
+      <ion-card-content text-wrap (click)="loadmessagedetails(count)">
+        <!--messageDB is the php variable to which the column values from the 
+        database was assigned to-->
+        <p style="color:black" text-wrap>{{count.message_fetched}}</p>
+      </ion-card-content>
+  
+      <!--another row with columns : likes, comments and time added-->
+      <ion-row class="statsrowstylefavorites">
+        <!--likes--->
+        <ion-col>
+          <button ion-button icon-start clear small (click)="likeORunlikemessage(count)" class="likesbutton">
+            <ion-icon name="ios-heart" color={{count.likecolor}}></ion-icon>
+            <div class="likescounttext">{{count.likes_fetched}}</div>
+          </button>
+        <!--likes-->
+  
+        <!--comments---->
+          <button ion-button icon-start clear small class="commentsbutton">
+            <ion-icon name="ios-text" color="{{count.commentcolor}}"></ion-icon>
+            <div  class="commentscounttext">{{count.comments_fetched}}</div>
+          </button>
+        </ion-col>
+        <!--comments-->
+  
+        <!--time added--column3-->
+        <ion-col center text-center>
+          <ion-note class="timeadded">
+            {{count.date_created_fetched}}
+          </ion-note>
+        </ion-col>
+      </ion-row>
+      <!--time added-->
+  
+    </ion-card-content>
+    <!--card to display messages-->
+  </ion-item>

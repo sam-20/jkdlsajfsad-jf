@@ -1,0 +1,280 @@
+<ion-header no-shadow no-border>
+
+  <ion-navbar>
+    <ion-row>
+      <ion-col>
+        <!--text / ios-text / ios-text-outline-->
+        <ion-icon name="ios-paw" class="camfilaicon"></ion-icon>
+      </ion-col>
+
+      <ion-col>
+        <ion-title>Notifications</ion-title>
+      </ion-col>
+
+      <ion-col></ion-col>
+
+    </ion-row>
+
+
+
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content class="body"> 
+
+  <!-- Custom Refresher Content -->
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!-- Custom Refresher Content -->
+
+
+  <!--looping through this ion item-->
+  <ion-item class="ionitemdesign" *ngFor="let count of notificationsmessagetablerows2" >
+
+
+    <!----------------------start of------------------follow card follow card follow card follow card follow card follow card follow card follow card follow card---------------start of--------------------------------------------------->
+    <ion-card-content class="followcard" *ngIf="count.notmsg_type_fetched =='follow'">
+      <ion-row (click)="openuserprofile(count)">
+        <ion-col col-3>
+          <!--follower profile pic-->
+          <img class="followerprofilepic" src="{{server+count.senderProfilepic_fetched}}" />
+          <!--follower profile pic-->
+        </ion-col>
+
+        <ion-col col-9>
+          <!--follower name and message text-->
+          <div class="notmsgcontainer"><span class="notmsg1"><b>{{count.senderUsername_fetched}}</b></span><span class="notmsg2">followed
+              you</span></div>
+          <!--follower name and message text-->
+        </ion-col>
+
+        <!-- <ion-col></ion-col> -->
+      </ion-row>
+
+      <ion-row>
+        <ion-col center text-center>
+          <!--notification time added-->
+          <ion-note class="timeaddedfollownot">
+            {{count.date_created_fetched}}
+          </ion-note>
+          <!--notification time added-->
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+    <!----------------------end of------------------follow card follow card follow card follow card follow card follow card follow card follow card follow card---------------end of--------------------------------------------------->
+
+
+
+
+    <!----------------------start of------------------like card like card like card like card like card like card like card like card like card---------------start of--------------------------------------------------->
+
+    <ion-card-content class="likecard" *ngIf="count.notmsg_type_fetched =='like'">
+      <ion-row>
+        <ion-col (click)="openownprofile()">
+          <ion-item class="profilepictureANDusername" no-lines>
+            <ion-avatar item-start>
+              <!--user profile pic -->
+              <img class="avatarprofilepic" src="{{server+count.receiverProfilepic_fetched}}" />
+              <!--user profile pic -->
+            </ion-avatar>
+
+            <!--user's username-->
+            <h3 class="likecardreceiverusername"><b>{{count.receiverUsername_fetched}}</b></h3>
+            <!--user's username-->
+          </ion-item>
+        </ion-col>
+
+        <ion-col></ion-col>
+
+        <!--liker's username-->
+        <ion-col (click)="openuserprofile(count)"><span class="notmsg3">{{count.senderUsername_fetched}} liked</span></ion-col>
+        <!--liker's username-->
+      </ion-row>
+
+      <!--user's image message-->
+      <img *ngIf="!server+count.receiverMessagemedia_fetched" src="{{server+count.receiverMessagemedia_fetched}}" class="likedmessagemedia"
+      (click)="viewimage(count)">
+      <!--user's image message-->
+
+      <!--user's message -->
+      <ion-card-content text-wrap>
+        <p class="likecardmessage">{{count.receiverMessage_fetched}}</p>
+      </ion-card-content>
+      <!--user's message-->
+
+      <ion-row class="likedmessagerowstyle">
+        <ion-col>
+          <!--message likes-->
+          <button ion-button icon-start clear small>
+            <ion-icon name="ios-heart" color=danger></ion-icon>
+            <div class="likecardlikecountstext">{{count.receiverMessagelikes_fetched}}</div>
+          </button>
+          <!--message likes-->
+
+          <!--message comments-->
+          <button ion-button icon-start clear small>
+            <ion-icon name="ios-text" color=secondary></ion-icon>
+            <div class="likecardcommentscountstext">{{count.receiverMessagecomments_fetched}}</div>
+          </button>
+          <!--message comments-->
+        </ion-col>
+
+        <ion-col>
+          <!--notification time added-->
+          <ion-note class="timeaddedlikecard">
+            {{count.date_created_fetched}}
+          </ion-note>
+          <!--notification time added-->
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+
+    <!----------------------end of------------------like card like card like card like card like card like card like card like card like card---------------end of--------------------------------------------------->
+
+
+
+
+    <!----------------------start of------------------comment card comment card comment card comment card comment card comment card comment card comment card comment card---------------start of--------------------------------------------------->
+
+    <!----------------------start of----------------card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2-------------start of ----------------------------------------------->
+    <ion-card-content class="commentmsgcard" *ngIf="count.notmsg_type_fetched =='comment'">
+
+      <!-------------------start of-----------------card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3--------------start of----------------------------------------------->
+      <ion-card class="commentedmsgcard">
+        <ion-row>
+          <ion-col (click)="openownprofile(count)">
+            <ion-item class="profilepictureANDusername">
+              <ion-avatar item-start>
+                <!--commented user profile pic -->
+                <img class="avatarprofilepic" src="{{server+count.receiverProfilepic_fetched}}" />
+                <!--commented user profile pic -->
+              </ion-avatar>
+
+              <!--commented user's username-->
+              <h3 class="commentedmsgusername"><b>{{count.receiverUsername_fetched}}</b></h3>
+              <!--commented user's username-->
+            </ion-item>
+          </ion-col>
+
+          <!-- <ion-col></ion-col> -->
+
+
+          <!-- <ion-col></ion-col> -->
+
+        </ion-row>
+
+        <!--commented msg image message-->
+        <img *ngIf="!server+count.receiverMessagemedia_fetched" src="{{server+count.receiverMessagemedia_fetched}}"  class="commentedmessagemedia"
+        (click)="viewimage(count)">
+        <!--commented msg image message-->
+
+        <!--commented msg's message -->
+        <ion-card-content text-wrap>
+          <p class="commentedmessagetext">{{count.receiverMessage_fetched}}</p>
+        </ion-card-content>
+        <!--commented msg's message-->
+
+        <ion-row class="rowstyle">
+          <ion-col>
+            <!--commented message likes-->
+            <button ion-button icon-start clear small>
+              <ion-icon name="ios-heart" color=danger></ion-icon>
+              <div class="commentedmessagelikecounttext">{{count.receiverMessagelikes_fetched}}</div>
+            </button>
+            <!--commented message likes-->
+     
+            <!--commented message comments-->
+            <button ion-button icon-start clear small>
+              <ion-icon name="ios-text" color=secondary></ion-icon>
+              <div class="commentedmessagecommentscounttext">{{count.receiverMessagecomments_fetched}}</div>
+            </button>
+            <!--commented message comments-->
+          </ion-col>
+
+          <ion-col>
+            <!--commented msg time added-->
+            <!-- <ion-note class="timeadded2">
+                  22:17
+                </ion-note> -->
+            <!--commented msg time added-->
+          </ion-col>
+        </ion-row>
+      </ion-card>
+      <!-------------------------------------end of ---------card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3-------------------end of ------------------------------->
+
+
+
+      <!----------------------continuation of---------------card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2------------------continuation of ----------------------------------------------->
+      <ion-row>
+        <ion-col (click)="openuserprofile(count)">
+          <ion-item class="profilepictureANDusername" no-lines>
+            <ion-avatar item-start>
+              <!--comment msg profile pic -->
+              <img class="avatarprofilepic" src="{{server+count.senderProfilepic_fetched}}" />
+              <!--comment msg profile pic -->
+            </ion-avatar>
+
+            <!--commenter username and comment text-->
+            <h3 class="commenterusername">{{count.senderUsername_fetched}} <span class="commenttext">commented</span></h3>
+            <!--commenter username and comment text-->
+          </ion-item>
+        </ion-col>
+
+        <!-- <ion-col></ion-col> -->
+
+        <!-- <ion-col></ion-col> -->
+
+      </ion-row>
+
+      <!--comment image message-->
+      <img *ngIf="!server+count.senderMessagemedia_fetched" src="{{server+count.senderMessagemedia_fetched}}" class="commentmessagemedia"
+      (click)="viewimage2(count)">
+      <!--comment image message-->
+
+      <!--comment message -->
+      <ion-card-content text-wrap>
+        <p class="commentmessage">{{count.senderMessage_fetched}}</p>
+      </ion-card-content>
+      <!--comment message-->
+
+      <ion-row class="commentmsgrowstyle">
+        <ion-col>
+          <!--comment message likes-->
+          <button ion-button icon-start clear small>
+            <ion-icon name="ios-heart" color=danger></ion-icon>
+            <div class="commentmsglikescounttext">{{count.senderMessagelikes_fetched}}</div>
+          </button>
+          <!--comment message likes-->
+
+          <!--comment message comments-->
+          <button ion-button icon-start clear small>
+            <ion-icon name="ios-text" color=secondary></ion-icon>
+            <div class="commentmsgcommentscounttext">{{count.senderMessagecomments_fetched}}</div>
+          </button>
+          <!--comment message comments-->
+        </ion-col>
+
+        <ion-col>
+          <!--notification time added-->
+          <ion-note class="timeaddedcommentmessage">
+            {{count.date_created_fetched}}
+          </ion-note>
+          <!--notification time added-->
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+    <!----------------------end of----------------card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2-------------end of ------------------------------------------------------->
+
+    <!----------------------end of------------------comment card comment card comment card comment card comment card comment card comment card comment card comment card---------------end of--------------------------------------------------->
+
+
+  </ion-item>
+  <!--end of ion item-->
+
+</ion-content>

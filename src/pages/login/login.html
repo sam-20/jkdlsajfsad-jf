@@ -1,0 +1,78 @@
+<!--splashscreen settings-->
+<div class="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+
+  <h1 class="splashheader">CamFila</h1>
+
+  <!--splash screen styling-->
+  <div>
+    <!-- <ion-icon name="ios-paw" class="splashicon"></ion-icon> -->
+    <img src="/assets/imgs/camfilaicon8.png" class="splashimage">
+  </div>
+</div>
+
+<ion-header no-shadow no-border>
+
+  <ion-navbar class="navbar">
+    <ion-row>
+      <ion-col width-50 style="text-align: center">
+        <ion-title>Login</ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding class="body">
+
+  <div class="formsetup">
+
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text" [(ngModel)]="usernameinput" class="usernametextbox"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="passwordinput" class="passwordtextbox"></ion-input>
+    </ion-item>
+
+
+    <!--login button-->
+    <ion-row>
+      <ion-col width-50 style="text-align: center">
+        <button ion-button round class="login" (click)="login()">Login</button>
+      </ion-col>
+    </ion-row>
+
+
+    <!--signup option-->
+    <!-- <ion-row class="textbelow">
+      <ion-col width-50 style="text-align: center">
+        <span class="notmember">Not a member?</span>
+        <span class="signup" (click)="openSignupPage()">Sign up</span>
+      </ion-col>
+    </ion-row> -->
+
+    <!--reset password option-->
+    <ion-row class="forgotpasswordresetrow">
+      <ion-col width-50 style="text-align: center">
+        <span class="forgotpassword">Forgot password?</span>
+        <span class="resethere" (click)="resetpassword()">Reset here</span>
+      </ion-col>
+    </ion-row>
+  </div>
+
+
+  <!-- <button ion-button (click)="trending()">video audio file test</button> -->
+
+</ion-content>
+
+<ion-footer>
+  <span style="float:right;margin-right: 5px;">Need help?
+    <a style="color:#488aff; text-decoration: underline;" (click)="help()">
+      <b>Contact Us</b>
+    </a>
+  </span>
+</ion-footer>

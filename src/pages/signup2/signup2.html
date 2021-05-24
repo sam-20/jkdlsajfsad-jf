@@ -1,0 +1,57 @@
+<ion-header  no-shadow no-border>
+
+  <ion-navbar class="navbar">
+    <ion-row>
+      <ion-col width-50 style="text-align: center">
+        <ion-title>Profile</ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="body">
+
+  <!--card /picture box-->
+  <ion-row>
+    <ion-col>
+    </ion-col>
+
+    <ion-col width-50 style="text-align: center">
+      <ion-card class="uploadcard">
+        <!--profile picture in card-->
+        <img  class="profilepic" *ngIf="base64Image" [src] = "base64Image" /> <!------10-->
+        <ion-icon name="trash" class="deletepictureicon" (click)="deleteprofilepic()"></ion-icon>  
+      </ion-card>
+    </ion-col>
+
+    <ion-col>
+    </ion-col>
+  </ion-row>
+
+
+  <!--Upload button-->
+  <ion-row>
+    <ion-col width-50 style="text-align: center">
+      <button ion-button round class="upload" (click)="presentActionSheet()"> <!--------9-->
+        <ion-icon name="camera" class="uploadicon"></ion-icon>Upload
+      </button>
+    </ion-col>
+  </ion-row> 
+
+  <!--about textspace-->
+  <ion-row>
+    <ion-col width-50 style="text-align: center">
+      <textarea rows="6" cols="40" [(ngModel)]="aboutmeinput" class="abouttextarea" placeholder="About me..."></textarea>
+    </ion-col>
+  </ion-row>
+
+  <!--signup button-->
+  <ion-row>
+    <ion-col width-50 style="text-align: center">
+      <button ion-button round class="signup" (click)="Loading1()" (click)="Loading2()" (click)="signupfunc()">Signup</button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

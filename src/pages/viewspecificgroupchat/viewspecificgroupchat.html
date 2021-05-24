@@ -1,0 +1,260 @@
+<ion-header no-shadow no-border>
+
+  <ion-navbar>
+    <ion-row class="headerrow">
+      <ion-col col-3>
+        <img src="{{this.groupprofilepic}}" class="imageheader" />
+      </ion-col>
+
+      <ion-col col-7 (click)="viewgroupchatdetails()">
+        <ion-title>{{this.groupname}}</ion-title>
+      </ion-col>
+
+      <ion-col col-2>
+        <ion-icon name="ios-exit" class="exitgroupicon" (click)="showalert()"></ion-icon>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-navbar>
+</ion-header>
+
+
+
+
+
+
+<ion-content class="body">
+
+  <ion-list no-lines class="messagebubble" *ngFor="let count of this.groupmessagestablerows;">
+
+    <!--right side message-->
+    <!--logged in message bubble-->
+    <div class="innermessage loggedinuser" *ngIf="count.sender_id_fetched == this.mymodulevariables.globaluserid" (pan)='deletemymessage($event,count)'>
+
+      <!--picture in message-->
+      <img *ngIf="!server+count.grp_msg_media_fetched" class="messagemedia" src="{{server+count.grp_msg_media_fetched}}"
+        (click)="viewimage(count)">
+
+      <!--video in message-->
+      <div class="videodivcontainer" *ngIf="!server+count.grp_video_fetched">
+        <img class="thumbnailmessagemedia" src="{{server+count.grp_video_thumbnail_fetched}}" (click)="playvideo(count)">
+        <div class="centeredicon">
+          <ion-icon name="play" class="playvideoicon" (click)="playvideo(count)"></ion-icon>
+        </div>
+      </div>
+
+
+      <!--document file-->
+      <ion-card-content class="documentfilecard" *ngIf="count.grp_file_path_fetched !=null" (click)="openfile(count)">
+        <ion-icon name="ios-document" class="documenticon"></ion-icon><span class="documentname">{{count.grp_file_name_fetched}}</span>
+        <br>
+        <ion-note class="documentsize">{{count.grp_file_size_fetched}}</ion-note>
+      </ion-card-content>
+
+
+      <!--audio file-->
+      <ion-card-content class="audiocardright" *ngIf="count.grp_audio_recorded_fetched != null">
+        <ion-row><span class="audiofilenameright">{{count.grp_audio_name_fetched}}</span></ion-row>
+        <ion-row>
+          <ion-col class="audiorightplayiconscolumn">
+            <ion-icon name="play" *ngIf="count.playiconactive" class="playaudioicon" (click)="playrecordedaudio(count)"></ion-icon>
+            <ion-icon name="pause" *ngIf="count.pauseiconactive" class="pauseaudioicon" (click)="pauserecordedaudio(count)"></ion-icon>
+            <ion-icon name="repeat" *ngIf="count.resumeiconactive" class="resumeaudioicon" (click)="resumerecordedaudio(count)"></ion-icon>
+            <ion-icon name="square" *ngIf="count.stopiconactive" class="stopaudioicon" (click)="stoprecordedaudio(count)"></ion-icon>
+          </ion-col>
+
+          <ion-col>
+            <ion-note class="audiofiledurationright">{{count.grp_audio_duration_fetched}}</ion-note>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+
+      <!--provide a break so after the image if it exists so that the normal teext will go on the next line-->
+      <br *ngIf="!server+count.grp_msg_media_fetched">
+
+      <!--actual message-->
+      <span class="allusersmessagetext">{{count.grp_msg_fetched}}</span>
+
+      <!--message time-->
+      <ion-note class="loggedinusermessagetime">{{count.grp_msg_time_fetched}}</ion-note>
+
+    </div>
+    <!--logged in message bubble-->
+
+
+    <!--left side message-->
+    <!--other group participants message bubble-->
+    <div class="innermessage user2" *ngIf="count.sender_id_fetched != this.mymodulevariables.globaluserid" (pan)='deleteotherusersmessage($event,count)'>
+
+      <!--sender of message name-->
+      <span class="groupparticipantmgssendername">{{count.username_fetched}}</span> <br>
+
+      <!--picture in message-->
+      <div class="imagedivcontainer" *ngIf="!server+count.grp_msg_media_fetched">
+        <img class="messagemedia" src="{{server+count.grp_msg_media_fetched}}" (click)="viewimage(count)">
+
+        <!--download image icon-->
+        <!-- <div class="imagebottomrighticon">
+        <ion-icon name="download" class="downloadimageicon" (click)="downloadimage(count)"></ion-icon>
+      </div> -->
+      </div>
+
+      <!--video in message-->
+      <div class="videodivcontainer" *ngIf="!server+count.grp_video_fetched">
+        <img class="thumbnailmessagemedia" src="{{server+count.grp_video_thumbnail_fetched}}" (click)="playvideo(count)">
+
+        <!--play video icon-->
+        <div class="centeredicon">
+          <ion-icon name="play" class="playvideoicon" (click)="playvideo(count)"></ion-icon>
+        </div>
+
+        <!--download video icon-->
+        <div class="videobottomrighticon">
+          <ion-icon name="download" *ngIf="count.download" class="downloadvideoicon" (click)="downloadvideo(count)"></ion-icon>
+
+          <!--downloading spinner-->
+          <div *ngIf="count.downloading" class="spinner-border text-primary" role="status" (click)="canceldownload(count)">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!--document file-->
+      <ion-card-content class="documentfilecard" *ngIf="count.grp_file_path_fetched !=null">
+        <ion-icon name="ios-document" class="documenticon" (click)="openfile(count)"></ion-icon><span class="documentname"
+          (click)="openfile(count)">{{count.grp_file_name_fetched}}</span>
+        <br>
+        <ion-note class="documentsize" (click)="openfile(count)">{{count.grp_file_size_fetched}}</ion-note>
+
+        <!--download document icon-->
+        <ion-icon name="download" *ngIf="count.download" class="downloaddocumenticon" (click)="downloadfile(count)"></ion-icon>
+
+        <!--downloading spinner-->
+        <div *ngIf="count.downloading" class="spinner-border text-primary" role="status" style="float:right;" (click)="canceldownload(count)">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </ion-card-content>
+
+
+      <!--audio file-->
+      <ion-card-content class="audiocardleft" *ngIf="count.grp_audio_recorded_fetched != null">
+        <ion-row><span class="audiofilenameleft">{{count.grp_audio_name_fetched}}</span></ion-row>
+        <ion-row>
+          <ion-col class="audioleftplayiconscolumn">
+            <ion-icon name="play" *ngIf="count.playiconactive" class="playaudioicon" (click)="playrecordedaudio(count)"></ion-icon>
+            <ion-icon name="pause" *ngIf="count.pauseiconactive" class="pauseaudioicon" (click)="pauserecordedaudio(count)"></ion-icon>
+            <ion-icon name="repeat" *ngIf="count.resumeiconactive" class="resumeaudioicon" (click)="resumerecordedaudio(count)"></ion-icon>
+            <ion-icon name="square" *ngIf="count.stopiconactive" class="stopaudioicon" (click)="stoprecordedaudio(count)"></ion-icon>
+          </ion-col>
+
+          <!--audio duration-->
+          <ion-col>
+            <ion-note class="audiofiledurationleft">{{count.grp_audio_duration_fetched}}</ion-note>
+          </ion-col>
+
+          <!--download audio icon-->
+          <ion-col>
+            <!--download audio icon-->
+            <ion-icon name="download" *ngIf="count.download" class="downloadaudioicon" (click)="downloadaudio(count)"></ion-icon>
+
+            <!--downloading spinner-->
+            <div *ngIf="count.downloading" class="spinner-border text-primary" role="status" (click)="canceldownload(count)">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </ion-col>
+
+        </ion-row>
+      </ion-card-content>
+
+
+      <!--provide a break so after the image if it exists so that the normal teext will go on the next line-->
+      <br *ngIf="!server+count.grp_msg_media_fetched">
+
+      <!--actual message-->
+      <span class="allusersmessagetext">{{count.grp_msg_fetched}}</span>
+
+      <!--message time-->
+      <ion-note class="participantmessagetime">{{count.grp_msg_time_fetched}}</ion-note>
+
+    </div>
+    <!--other group participants message bubble-->
+
+
+  </ion-list>
+
+
+</ion-content>
+
+
+
+
+<ion-footer class="textareafooter">
+  <!--send message text area-->
+  <ion-row>
+    <ion-col>
+      <ion-textarea class="sendmessagetextarea" rows="1" [(ngModel)]="sendgroupmessagetextareainput" placeholder="type message here..."></ion-textarea>
+    </ion-col>
+
+
+    <ion-row>
+
+      <!--camera floating action button-->
+      <ion-col>
+        <ion-fab edge class="fabcontainer">
+          <button ion-fab mini class="camerafab">
+            <ion-icon name="ios-camera" class="mainfabicon"></ion-icon>
+          </button>
+
+          <ion-fab-list side="top">
+
+            <!--camera  option-->
+            <button ion-fab class="camerafablistbutton" (click)="openCamera()">
+              <ion-icon name="ios-camera" class="camerafablisticon"></ion-icon>
+              <div class="label">Take photo</div>
+            </button>
+
+            <!--gallery option-->
+            <button ion-fab class="galleryfablistbutton" (click)="openPhotos()">
+              <ion-icon name="ios-photos" class="galleryfablisticon"></ion-icon>
+              <div class="label">Upload photo</div>
+            </button>
+
+            <!--capture video  option-->
+            <button ion-fab class="capturevideofablistbutton" (click)="capturevideo()">
+              <ion-icon name="ios-film" class="capturevideofablisticon"></ion-icon>
+              <div class="label">Capture video</div>
+            </button>
+
+            <!--upload video  option-->
+            <button ion-fab class="uploadvideofablistbutton" (click)="uploadvideo()">
+              <ion-icon name="ios-play" class="uploadvideofablisticon"></ion-icon>
+              <div class="label">Upload video</div>
+            </button>
+
+            <!--record audio  option-->
+            <button ion-fab class="recordaudiofablistbutton" (click)="recordaudio()">
+              <ion-icon name="ios-microphone" class="recordaudiofablisticon"></ion-icon>
+              <div class="label">Record audio</div>
+            </button>
+
+            <!--file  option-->
+            <button ion-fab class="filefablistbutton" (click)="uploadfile()">
+              <ion-icon name="ios-folder" class="filefablisticon"></ion-icon>
+              <div class="label">Upload file</div>
+            </button>
+
+          </ion-fab-list>
+        </ion-fab>
+      </ion-col>
+
+      <!--send message icon-->
+      <ion-col>
+        <ion-icon name="ios-send" class="sendmessageicon" (click)="sendgroupmessage()"></ion-icon>
+      </ion-col>
+    </ion-row>
+
+  </ion-row>
+</ion-footer>

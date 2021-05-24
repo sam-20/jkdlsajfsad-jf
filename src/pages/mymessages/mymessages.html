@@ -1,0 +1,124 @@
+<ion-header no-shadow no-border>
+
+  <ion-navbar>
+    <ion-row>
+      <ion-col>
+        <!--text / ios-text / ios-text-outline-->
+        <ion-icon name="ios-paw" class="camfilaicon"></ion-icon>
+      </ion-col>
+
+      <ion-col>
+        <ion-title>Posts</ion-title>
+      </ion-col>
+
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+
+    </ion-row>
+
+
+
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content class="body">
+
+  <!-- Custom Refresher Content -->
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!-- Custom Refresher Content -->
+
+  <!--looping through the  messagetablerows array-->
+  <ion-item *ngFor="let count of messagetablerows; let color of colortable" class="ionitemdesign">
+    <!--card to display msgs-->
+    <ion-card-content class="messagecard">
+
+
+      <!--first row containing profile of message sender, sender_name and pin icon-->
+
+
+      <ion-row>
+        <!--1st column-->
+        <ion-col>
+          <ion-item class="profilepictureANDusername" no-lines>
+            <ion-avatar item-start>
+
+              <!--ng if is a condition that if the image src exists then set the src to ...-->
+              <img src="{{this.profilepic}}">
+              <!--profile pic in message-->
+              <!--user profile goes here-->
+            </ion-avatar>
+            <h2 class="usernametext">{{count.username_fetched}}</h2>
+          </ion-item>
+        </ion-col>
+
+        <!--2nd column-->
+        <ion-col>
+
+        </ion-col>
+
+        <!--3rd column-->
+        <ion-col>
+          <!--pin message icon -->
+          <!--<ion-icon name="star" class="pinmessageicon" (click)="pinmessage(count,color)" color={{color.pincolor}}></ion-icon>-->
+        </ion-col>
+      </ion-row>
+      <!--end of first row-->
+
+      <!--picture in msg goes here-->
+      <!--ng if is a condition that if the image src exists then set the src to ...-->
+      <img *ngIf="!server+count.message_media_fetched" src="{{server+count.message_media_fetched}}" class="messagemedia"
+       (click)="viewimage(count)">
+      <!--picture in msg goes here-->
+
+      <ion-card-content text-wrap>
+        <!--messageDB is the php variable to which the column values from the 
+    database was assigned to-->
+        <p class="messagetext" text-wrap>{{count.message_fetched}}</p>
+      </ion-card-content>
+
+      <!--another row with columns : likes, comments and time added-->
+      <ion-row class="statsrowstyle">
+        <!--likes--column1-->
+        <ion-col>
+          <button ion-button icon-start clear small>
+            <ion-icon name="ios-heart" color={{count.likecolor}}></ion-icon>
+            <div class="likescount">{{count.likes_fetched}}</div>
+          </button>
+        <!--likes-->
+
+        <!--comments-->
+          <button ion-button icon-start clear small>
+            <ion-icon name="ios-text" color="{{count.commentcolor}}"></ion-icon>
+            <div class="commentscount">{{count.comments_fetched}}</div>
+          </button>
+        </ion-col>
+        <!--comments-->
+
+        <!--time added-->
+        <ion-col center text-center>
+          <ion-note class="timeadded">
+            {{count.date_created_fetched}}
+          </ion-note>
+        </ion-col>
+
+        <!--delete message icon-->
+        <ion-col>
+          <ion-icon name="trash" class="deletemessageicon" color="danger" (click)="showalert(count.message_id_fetched)"></ion-icon>
+        </ion-col>
+        <!--delete message icon-->
+
+      </ion-row>
+      <!--time added-->
+
+    </ion-card-content>
+    <!--card to display messages-->
+
+  </ion-item>
+</ion-content>

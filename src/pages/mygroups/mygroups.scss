@@ -1,0 +1,139 @@
+page-mygroups {
+
+    //body
+    .body{
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //hide scroll bar when scrolling
+    ::-webkit-scrollbar,
+    *::-webkit-scrollbar
+    {
+        display: none;
+    }
+
+    //trending title background
+    .toolbar-background{
+         //background:transparent;
+         background:url('/assets/imgs/12.jpg') !important;
+         background-repeat: no-repeat !important;
+         background-size: cover !important;
+         //background: white !important;
+    }
+
+    //icon in header
+    .camfilaicon{
+        zoom :2.0;
+        color:white;
+        margin-left:10px;
+     }
+ 
+
+    //navbar title 
+    .toolbar-title{
+        color:white;
+        //margin-left:-90px;
+        margin-top: 5px;
+
+    }
+
+    //navbar title
+    .navbartitle{
+        margin-top:5px;
+    }
+
+    //remove border line caused by refresher 
+    .has-refresher  .scroll-content {
+        border-top: 0 !important;
+      }
+
+    //icon used for pulling refresher
+    .refresher-pulling-icon{
+        color:white;
+    }
+
+    //text shown when pulling refresher
+    .refresher-pulling-text{
+        color:white;
+    }
+
+    //icon used when refreshing
+    .spinner svg {
+        stroke: white;
+        fill: white;
+    }
+
+    //text shown when refreshing
+    .refresher-refreshing-text{
+        color:white;
+    }
+
+    //view all groups icon
+    .viewallgroupsicon{
+        zoom :1.5;
+        color:white;
+        margin-top: 3px;
+        float: right;
+        margin-right: 10px;
+     } 
+
+
+     //list to contain group chats and their last messages
+    .groupchatlist{
+       background: transparent;
+    }
+
+    // ion item
+    .chatitem{
+       background: transparent;
+       margin-bottom: 5px;
+    }
+
+    //group chat username
+    .groupname{
+       color:black;
+       margin-top:0px;
+    }
+
+    //group chat last message text
+    .lastmessage{
+        margin-top:5px;
+       color:gray;
+    }    
+
+    //last messsage time
+    .lastmessagetime{
+       float: right;
+       font-size: 12px;
+       margin-top:-45px;
+       margin-right: 15px;
+       color:black
+    }
+
+    //group profile pic
+    .groupprofilepic{
+       width:50px !important;
+       height: 50px !important;
+       margin-top:-5px;
+    }
+
+    //last message sender's name
+    .lastmsgsendername{
+        color:black;
+    }
+
+    //sliding list setup
+    .slidingformstyle{
+        background: transparent;
+    }
+}
+
+.popoverstyling{
+    background: red;
+    float: left;
+}
+
+

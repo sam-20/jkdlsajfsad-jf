@@ -1,0 +1,25 @@
+<ion-tabs selectedIndex="2">
+
+  <!--profile tab-->
+  <ion-tab [root]="tab1" tabIcon="ios-person"></ion-tab>
+
+
+  <!--search tab-->
+  <!-- <ion-tab [root]="tab4" tabIcon="ios-search"></ion-tab> -->
+
+  <!--notifications tab-->
+  <ion-tab [root]="tab5" tabIcon="ios-notifications" tabBadge="{{this.unreadnotifications}}" tabBadgeStyle="nottabbadgeicon"
+    (ionSelect)="clearnotificationbadge()"></ion-tab>
+
+
+  <!--home tab-->
+  <ion-tab [root]="tab3" tabIcon="ios-home"  tabBadge="{{this.newmesagescount}}" tabBadgeStyle="hometabbadgeicon" ></ion-tab>
+
+
+  <!--dm tab-->
+  <ion-tab [root]="tab2" tabIcon="ios-mail"></ion-tab>
+
+
+  <!--my groups tab-->
+  <ion-tab [root]="tab6" tabIcon="ios-people"></ion-tab>
+</ion-tabs>

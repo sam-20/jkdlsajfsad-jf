@@ -1,0 +1,179 @@
+
+/*************splash screen css starts here************/
+.custom-overlay{
+    position: fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index: 100000;
+    width: 100%;
+    //background-color: #EBEBEB; //we set the background color of the splashscreen to the same background color of the image
+    background:url('/assets/imgs/12.jpg') !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+
+.splashheader{
+    position: absolute;
+    top:15%;
+    left:35%;
+    color:white;
+    font-style: italic;
+    font-family:Times New Roman, serif;
+    font-size: 30px;
+    
+    /*combining multiple animations on one element
+    first value for duration ie. how long it should last for 
+    second value for delay ie. after how many seconds it should appear */
+    animation:  zoomIn 1s 0s,
+                pulse 1s 3s,
+                zoomOut 1s 5.5s;
+}
+
+// .splashicon{
+//     position: absolute;
+//     top:40%;
+//     left:35%;
+//     zoom:6.0 !important;
+//     color:white;
+//     width:100px !important;
+//     height: 100px !important;
+
+    
+//     /*combining multiple animations on one element
+//     first value for duration ie. how long it should last for 
+//     second value for delay ie. after how many seconds it should appear */
+//     animation:  zoomIn 1s 0s,
+//                 wobble 1s 3s,
+//                 zoomOut 1s 5.5s;
+// }
+ 
+.splashimage{
+    position: absolute;
+    top:40%;
+    left:37%;
+    //width:100px;
+    //height:100px;
+    
+    /*combining multiple animations on one element
+    first value for duration ie. how long it should last for 
+    second value for delay ie. after how many seconds it should appear */
+    animation:  zoomIn 1s 0s,
+                wobble 1s 3s,
+                zoomOut 1s 5.5s;
+}
+
+/********************splash screen css ends here*********** */
+
+
+page-login {
+    //body
+    .body{
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+
+        /*combining multiple animations on one element
+        first value for duration ie. how long it should last for 
+        second value for delay ie. after how many seconds it should appear */
+        //animation:  slideInLeft 1s 0s;
+    }
+
+    //entire form containing textboxes and buttons
+    .formsetup{
+        margin-top:110px !important;
+        //animation:  slideInRight 1s 0s;
+    }
+
+    //signup text
+    .signup{
+        color:#488aff;
+        text-decoration: underline;
+    }
+
+    //not a member
+    .notmember{
+        color:black;
+    }
+
+    //login button
+    .login{
+        margin-top:50px;
+    }
+
+    //text below the login button
+    .textbelow{
+        margin-top: 20px;
+    }
+
+    //textboxes
+    .item{ 
+        //used for transparent background
+        background:transparent;
+    }
+
+    //username and password label
+    .label{
+        //color:rgb(46, 202, 51) !important;
+        color:black !important;
+    }
+
+    //input text into the texboxes
+    .text-input{
+        color:black;
+    }
+
+    //navbar title
+    .toolbar-title{
+        margin-top:10px;
+        color:white;
+
+        /*combining multiple animations on one element
+        first value for duration ie. how long it should last for 
+        second value for delay ie. after how many seconds it should appear */
+        //animation:  slideInRight 1s 0s;
+    }
+
+    //navbar background
+    .toolbar-background{
+         //background:transparent;
+         background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //username text box
+    .usernametextbox{
+        border-bottom:1px solid dodgerblue
+    }
+
+    //password input text box
+    .passwordtextbox{
+        border-bottom:1px solid dodgerblue;
+    }
+
+
+    //forgot/reset password row
+    .forgotpasswordresetrow{
+        margin-top: 20px;
+    }
+
+    //forgot password?
+    .forgotpassword{
+        color:black;
+    }
+
+    //reset here
+    .resethere{
+        color:#488aff;
+        text-decoration: underline;
+    }
+
+    //code here
+
+}
+

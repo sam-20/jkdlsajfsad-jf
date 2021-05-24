@@ -1,0 +1,68 @@
+<ion-header no-shadow no-border>
+
+  <ion-navbar>
+    <ion-row>
+      <ion-col>
+        <!--text / ios-text / ios-text-outline-->
+        <ion-icon name="ios-paw" class="camfilaicon"></ion-icon>
+      </ion-col>
+
+      <ion-col>
+        <ion-title>Followers</ion-title>
+      </ion-col>
+
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+
+    </ion-row>
+
+
+
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content class="body">
+
+  <!-- Custom Refresher Content -->
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!-- Custom Refresher Content -->
+
+
+  <!--search bar-->
+  <div class="searchbar">
+    <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
+  </div>
+  <!--search bar-->
+
+  <!--card to display user info-->
+  <ion-card *ngFor="let count of followerstablerows | searchfollowers: terms" class="usercard">
+
+    <ion-row>
+
+      <ion-col (click)="openuserprofile(count)">
+        <img src="{{server+count.follower_profile_pic_fetched}}" class="profilepic">
+      </ion-col>
+
+      <ion-col (click)="openuserprofile(count)">
+        <ion-card class="usernamecard"><b>{{count.follower_username_fetched}}</b></ion-card>
+        <ion-card class="aboutcard">{{count.follower_about_fetched}}</ion-card>
+      </ion-col>
+
+      <ion-col>
+        <div class="followertext">{{count.followertext}}</div>
+        <button ion-button small style="text-transform: none;" class="followbutton" color={{count.buttoncolor}} (click)="followOrunfollow(count)">{{count.followstatus}}</button>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-card>
+  <!--card to display user info-->
+
+</ion-content>

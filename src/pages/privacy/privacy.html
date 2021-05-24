@@ -1,0 +1,81 @@
+<ion-header no-shadow no-border>
+
+  <ion-navbar>
+    <ion-row>
+      <ion-col>
+        <!--text / ios-text / ios-text-outline-->
+        <ion-icon name="ios-paw" class="camfilaicon"></ion-icon>
+      </ion-col>
+
+      <ion-col>
+        <ion-title>Privacy</ion-title>
+      </ion-col>
+
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+
+    </ion-row>
+
+
+
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content class="body">
+
+  <!--profile photo-->
+  <ion-grid>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <img src="{{this.profilepic_retrieved}}" class="profilephoto" (click)="viewprofileimage()" />
+      </ion-col>
+
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <!--password field-->
+  <div class="formsetup">
+    <ion-item class="passwordform" no-lines>
+      <ion-input type="password" class="passwordinput" [(ngModel)]="passwordinput" placeholder="enter new password here to update..."></ion-input>
+    </ion-item>
+    <!-- <button ion-button small round class="updatepasswordbutton" style="text-transform: none;" (click)="updatepassword()"> -->
+    <!-- <ion-icon name="lock" class="updatepasswordicon"></ion-icon>Update password -->
+    <!-- </button> -->
+  </div>
+
+
+  <!--update password button-->
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col>
+      <button ion-button small round class="updatepasswordbutton" style="text-transform: none;" (click)="updatepassword()">
+        <ion-icon name="lock" class="updatepasswordicon"></ion-icon>Update password
+      </button>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+
+
+  <!--delete account button-->
+  <!-- <ion-row>
+    <ion-col></ion-col>
+    <ion-col>
+      <button ion-button small round color=danger class="deleteaccountbutton" style="text-transform: none;" (click)="showalert()">
+        <ion-icon name="warning" class="deleteaccounticon"></ion-icon>Delete account
+      </button>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row> -->
+
+
+  <!--delete account button-->
+  <!-- <button ion-button small round color=danger class="deleteaccountbutton" style="text-transform: none;" (click)="deleteaccount()"><ion-icon name="warning" class="deleteaccounticon"></ion-icon>Delete account</button> -->
+
+
+</ion-content>

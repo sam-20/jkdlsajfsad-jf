@@ -1,0 +1,142 @@
+page-viewallgroups {
+
+    //body
+    .body{
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //back button which comes which navctrl push
+    .back-button-icon{
+        color: white;
+      }
+
+    //hide scroll bar when scrolling
+    ::-webkit-scrollbar,
+    *::-webkit-scrollbar
+    {
+        display: none;
+    }
+
+     //following title background
+     .toolbar-background{
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //icon in header
+    .camfilaicon{
+        zoom :2.0;
+        color:white;
+     }
+ 
+ 
+    //navbar title
+    .toolbar-title{
+        color:white;
+        margin-top: 5px;
+    } 
+
+    //navbar title
+    .navbartitle{
+        margin-top:5px;
+    }
+
+    //remove border line caused by refresher  
+    .has-refresher  .scroll-content {
+        border-top: 0 !important;
+      }
+
+    //icon used for pulling refresher
+    .refresher-pulling-icon{
+        color:white;
+    }
+
+    //text shown when pulling refresher
+    .refresher-pulling-text{
+        color:white;
+    }
+
+    //icon used when refreshing
+    .spinner svg {
+        stroke: white;
+        fill: white;
+    }
+
+    //text shown when refreshing
+    .refresher-refreshing-text{
+        color:white;
+    }
+
+    //searchbar
+    .searchbar{
+        position: static;
+    }
+
+    //card  containing group details
+    .groupcard{
+        background:transparent;
+        box-shadow: none !important; //border around card
+
+        //remove border lines around card
+        box-shadow: none !important;
+        border: none !important;
+        border-style: none !important;
+    }
+
+    //group profile pic
+    .groupprofilepic{
+        border-radius:50px;
+        width:65px;
+        height:65px;
+        margin-top:2px;
+        margin-bottom: 0px;
+        
+        margin-left:10px;
+        padding-left: 0px;
+    }
+
+    //join button
+    .joinbutton{
+        width:80px;
+        float:right;
+        margin-top:20px;
+        margin-right: 10px;
+    }
+
+    //group name card
+    .groupnamecard{
+        margin-left:0px;
+        margin-top:15px;
+        color:black;
+        background:transparent;
+        box-shadow: none !important; //border around card
+
+        //remove border lines around card
+        box-shadow: none !important;
+        border: none !important;
+        border-style: none !important;
+    }
+
+    //about card
+    .aboutcard{
+        height:60px;
+        width:140px;
+        margin-left:0px;
+        margin-right:-5px;
+        margin-top:0px;
+        margin-bottom: 0px;
+        color:black;
+        background:transparent;
+        box-shadow: none !important; //border around card 
+
+        //remove border lines around card
+        box-shadow: none !important;
+        border: none !important;
+        border-style: none !important;
+    }
+}

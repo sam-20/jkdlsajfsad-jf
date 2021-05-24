@@ -1,0 +1,107 @@
+page-tabsholder {
+    .body{
+        background: transparent;
+        //ackground:url('/assets/imgs/15.jpg');
+    }
+
+
+    //bottom tab bar styling
+    // all tabs (android)
+    .tabs-md .tabbar {
+    //background: transparent;
+    background:url('/assets/imgs/12.jpg');
+    background-repeat: no-repeat !important;
+        background-size: cover !important;
+    }
+
+    // all tabs (ios)
+    .tabs-ios .tabbar {
+        background:url('/assets/imgs/9.jpg');
+        }
+
+    // all tabs texts (android)
+    .tabs-md .tab-button-text {
+	    //font-size: 14px;
+	    color: #fff;
+    }
+
+    // all tabs texts (ios)
+    .tabs-ios .tab-button-text {
+	    //font-size: 14px;
+	    color: #fff;
+    }
+
+    // // active tab's background color(android)
+    // .tabs-md .tab-button[aria-selected=true] {
+	//     //background-color: #fff;
+    // }
+
+     // // active tab's background color(ios)
+    // .tabs-ios .tab-button[aria-selected=true] {
+	//     //background-color: #fff;
+    // }
+
+    //active tab's icon color (android)
+    .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+        color: dodgerblue;
+    }
+
+    //inactive tab's icon color (android)
+    .tabs-md .tab-button[aria-selected=false] .tab-button-icon {
+        color: white;
+    }
+
+     //active tab's icon color (ios)
+     .tabs-ios .tab-button[aria-selected=true] .tab-button-icon {
+        color: white;
+    }
+
+    //inactive tab's icon color (ios)
+    .tabs-ios .tab-button[aria-selected=false] .tab-button-icon {
+        color: black;
+    }
+
+    //  // active tab's text color (android)
+    //  .tabs-md .tab-button[aria-selected=true] .tab-button-text{
+	//     color: green;
+    // }
+
+     //  // active tab's text color (ios)
+    //  .tabs-ios .tab-button[aria-selected=true] .tab-button-text{
+	//     color: green;
+    // }
+
+
+    //tab badge icon styling 
+    // .badge-md-danger {
+    //     color: white;
+    //     background-color: #f53d3d;
+    //     border-radius: 20px;
+    //     font-size: 10px;
+    // }
+
+
+    //using the tabBadgeStyle from the html as the class to style for a particular tab icon's badge
+    
+    //for home tab's badge icon
+    .badge-md-hometabbadgeicon{
+        color: dodgerblue;
+        background-color: dodgerblue;
+        border-radius: 200% !important;
+        width:  0px !important;
+        height: 8px !important;
+        display: inline-block;
+        font-size: 0px;
+        left : 45px;
+        top: 10px;
+    }
+
+    //for notification tab's badge icon
+    .badge-md-nottabbadgeicon{
+        color: white;
+        background-color: #f53d3d;
+        border-radius: 20px;
+        font-size: 10px;
+    }
+
+}

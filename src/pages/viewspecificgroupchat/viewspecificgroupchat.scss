@@ -1,0 +1,566 @@
+page-viewspecificgroupchat {
+    //body
+    .body{
+        background:url('/assets/imgs/12.jpg') !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        //background: white !important;
+    }
+
+    //back button which comes which navctrl push
+    .back-button-icon{
+        color: white;
+      }
+
+     //posts title background
+     .toolbar-background{
+        //background:transparent;
+        background:url('/assets/imgs/12.jpg');
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+    }
+ 
+    //navbar title
+    .toolbar-title{
+        color:white;
+        margin-top: 15px;
+        margin-left: -20px;
+
+    }
+
+    //navbar title
+    .navbartitle{
+        margin-top:5px;
+    } 
+
+    //remove border line caused by refresher  
+    .has-refresher  .scroll-content {
+        border-top: 0 !important;
+      }
+
+    //icon used for pulling refresher
+    .refresher-pulling-icon{
+        color:white;
+    }
+
+    //text shown when pulling refresher
+    .refresher-pulling-text{
+        color:white;
+    }
+
+    //icon used when refreshing
+    .spinner svg {
+        stroke: white;
+        fill: white;
+    }
+
+    //text shown when refreshing
+    .refresher-refreshing-text{
+        color:white;
+    }
+
+
+    //group's image in heder
+    .imageheader{
+        border-radius: 50px;
+        width:50px !important;
+        height: 50px;
+        margin-top:3px;
+    }
+
+     //header containing picture and group's name
+     .headerrow{
+        margin : -9px;
+    }
+
+    //message bubble for both loggedinuser and other group participants
+    .messagebubble {
+        margin-bottom: 10px;
+    }
+
+    //actual message text for all users
+    .allusersmessagetext{
+        //preserve line breaks wherever user added them in the text
+        white-space:pre-wrap;
+    }
+
+    //inner message text for both loggedinuser and other group participants
+    .innermessage {
+        display: inline-block;
+        padding: 5px 5px; //first value for top and bottom, second value for left and right
+        margin: 5px;
+        font-weight: 500;
+        font-size: 13px;
+        border-radius: 10px;
+        margin-bottom: 5px;
+        //max-width allows the text to be sent to the next line and prevent it from streching to the other end of the screen
+        max-width: 250px;
+    }
+
+    //other participants message text div
+    .innermessage.user2 {
+        float: left;
+        background-color: #F1F0F0;
+        color: black;
+        clear: both;
+        padding:3px; //////////////////////////////////////////////
+    }
+
+    //other participants' names which comes before their message
+    .groupparticipantmgssendername{
+        color:dodgerblue;
+    }
+
+    //other paricipant's message time
+    .participantmessagetime{
+        float:right;
+        font-size: 10px;
+        color:green;
+        margin-top:5px;
+        margin-left:3px;
+    }
+
+    //logged in user's message text div
+    .innermessage.loggedinuser {
+        float: right;
+        //margin-right: 10%;
+        background-color: #0084FF;
+        color: white;
+        clear: both;
+        padding-top:3px;    //////////////////////////////
+        padding-left:3px;   ////////////////////////////    
+        padding-bottom:3px; //////////////////////////////
+        padding-right:1px;  ///////////////////////////
+    }
+
+    //loggeed in user's message time
+    .loggedinusermessagetime{
+        float:right;
+        font-size:10px;
+        margin-top:5px;
+        margin-left: 3px;
+        color:yellow;
+    }
+
+    //picture in message
+    .messagemedia{
+        // height: 200px !important;
+        max-height: 200px !important;   //////////////////////
+        max-width: 200px !important;    ////////////////////
+        min-height: 200px !important;   /////////////////
+        min-width: 200px !important;  ////////////////////////
+    }
+
+
+    //thumbnail video picture in message
+    .thumbnailmessagemedia{
+        max-height: 200px !important;
+        max-width: 200px !important; 
+        min-height: 200px !important;
+        min-width: 200px !important;  
+    }
+
+
+    /*************the css here is for overlay of text or items over the video******** */
+    //div container for video
+    .videodivcontainer{
+        position: relative;
+        text-align: center;
+    }
+
+
+    /* Centered "play" icon in video div*/
+    .centeredicon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    //actual icon in the center of video
+    .playvideoicon{
+        zoom :2.0;
+        color:white;
+    }
+
+    /*bottom right "download" video icon div  */
+    .videobottomrighticon{
+        position: absolute;
+        bottom: 8px;
+        right: 10px;
+    }
+
+    //actual download video icon
+    .downloadvideoicon{
+        color:dodgerblue;
+    }
+/*************the css here is for overlay of text or items over video******** */
+
+
+
+
+/*************the css here is for overlay of text or items over image******** */
+    //div container for video
+    .imagedivcontainer{
+        position: relative;
+        text-align: center;
+        margin-bottom: -15px;
+    }
+
+    /*bottom right "download" image icon div  */
+    .imagebottomrighticon{
+        position: absolute;
+        bottom: 8px;
+        right: 10px;
+    }
+
+
+    //actual download image icon
+    .downloadimageicon{
+        color:gold;
+    }
+/*************the css here is for overlay of text or items over image******** */
+
+
+    //text area for sending a message
+    .sendmessagetextarea{
+        border-radius: 50px;
+        background: transparent;
+        color:black;
+        font:arial;
+        //border:1px solid gray
+        margin-left:10px;
+    }
+
+    // //send message input placeholder
+    // .text-input::-webkit-input-placeholder {
+    //     text-indent: 0;
+    //     color: black;
+    //     padding-left: 50px !important;
+    // }
+
+    // //camera icon
+    // .cameraicon{
+    //     margin-top:2px;
+    //     margin-left: -8px;
+    //     zoom :2.0;
+    //     color:white;
+    // }
+
+    //send message icon
+    .sendmessageicon{
+        margin-top:5px;
+        margin-left: 0px;
+        zoom :2.0;
+        margin-right: 20px;
+        //color: dodgerblue;
+        color:green;
+    }
+
+
+    //floating action container
+    .fabcontainer{
+        margin-left: -40px !important;
+        margin-top:-5px;
+    }
+
+    //main camera floating action button
+    .camerafab{
+        //background: rgb(48, 190, 93);
+
+        //these make it completely transparent removing every shadow around the button
+        background: transparent;
+        box-shadow: none !important;
+        border-color: rgba(0,0,0,0) !important;
+        outline: none !important;
+    }
+
+    //main fab icon
+    .mainfabicon{
+        //color:rgb(116, 252, 154);
+        color:orange;
+        zoom: 1.2;
+    }
+
+    //camera button inside fab
+    .camerafablistbutton{
+        background: rgb(212, 166, 39);
+    }
+
+    //camera icon inside fab
+    .camerafablisticon{
+        color: white;
+    }
+
+    //photos button inside fab
+    .galleryfablistbutton{
+        background: rgb(163, 63, 199)
+    }
+
+    //photos icon inside fab
+    .galleryfablisticon{
+        color:white;
+    }
+
+
+    //capture video button inside fab
+    .capturevideofablistbutton{
+        background:white;
+    }
+
+    //capture video icon inside fab
+    .capturevideofablisticon{
+        color:black
+    }
+
+    //upload video button inside fab
+    .uploadvideofablistbutton{
+        background: rgb(97, 199, 63)
+    }
+
+    //upload video icon inside fab
+    .uploadvideofablisticon{
+        color:white;
+    }
+
+
+    //record audio button inside fab
+    .recordaudiofablistbutton{
+        background: rgb(63, 158, 199)
+    }
+
+    //record audio icon inside fab
+    .recordaudiofablisticon{
+        color:white;
+    }
+
+     //stop recording audio button inside fab
+     .stopaudiorecordfablistbutton{
+        background: black;
+    }
+
+    //stop recording audio icon inside fab
+    .stopaudiorecordfablisticon{
+        color:white;
+    }
+
+    //file button inside fab
+    .filefablistbutton{
+        background: rgb(199, 63, 63)
+    }
+
+    //file icon inside fab
+    .filefablisticon{
+        color:white;
+    }
+    
+
+    //hide scroll bar when scrolling
+    ::-webkit-scrollbar,
+    *::-webkit-scrollbar
+    {
+        display: none;
+    }
+
+
+    //text area footer
+    .textareafooter{
+        // background:white;
+
+        background:url('/assets/imgs/6.jpg');
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+    }
+
+
+    //exit group icon
+    .exitgroupicon{
+        color:rgb(255, 30, 60);
+        zoom:2.5;
+        margin-top:3px;
+    }
+
+
+    //audio card left
+    .audiocardleft{
+        background: transparent; 
+        width:200px;
+        max-width:250px;
+        height: 40px;
+        padding:0px;
+        margin-top:0px;
+        margin-left: 0px;
+        // margin-bottom: -25px;
+        margin-bottom: -15px;
+    }
+
+    //audio file name left
+    .audiofilenameleft{
+        padding-left:15px;
+        color:black
+    }
+
+
+    //audio left play, pause , stop, resume icons column
+    .audioleftplayiconscolumn{
+        margin-left:15px;
+    }
+
+    //audio file duration left
+    .audiofiledurationleft{
+        margin-top:5px;
+        color:black;
+        font-size:12px;
+    }
+
+    //download audio icon
+    .downloadaudioicon{
+        margin-top:3px;
+        color:green;
+    }
+
+
+    //audio card right
+    .audiocardright{
+        background: transparent; 
+        width:200px;
+        max-width:250px;
+        height: 40px;
+        padding:0px;
+        margin-top:0px;
+        margin-left: 0px;
+        // margin-bottom: -25px;
+        margin-bottom: -15px;
+    }
+
+    //audio file name right
+    .audiofilenameright{
+        padding-left: 15px;
+    }
+
+    //audio right play, pause , stop, resume icons column
+    .audiorightplayiconscolumn{
+        margin-left:15px;
+    }
+
+    //audio file duration right
+    .audiofiledurationright{
+        margin-top:5px;
+        color:white;
+        font-size:12px;
+    }
+
+    /**icons inside audio file fetched into the chat page */
+    .playaudioicon{
+        color:white;
+    }
+
+    .pauseaudioicon{
+        color:black
+    }
+
+    .resumeaudioicon{
+        color:rgb(85, 156, 26)
+    }
+
+    .stopaudioicon{
+        color:red;
+    }
+    /**icons inside audio file fetched into the chat page */
+
+
+    /***document file css */
+
+    //document file card
+    .documentfilecard{
+        background:rgb(93, 95, 93); 
+        max-width:200px
+        ;max-height: 50px; 
+        min-height: 50px; 
+        min-width: 200px; 
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-top:5px;
+        padding-left: 5px;
+    }
+
+    //document icon
+    .documenticon{
+        color:white;
+    }
+
+    //document name
+    .documentname{
+        margin-left: 5px;
+        font-size: 13px;
+        color:white;
+
+        //these truncate the text and assign ... when it reaches the end of the line
+        word-break: break-all; 
+        word-wrap: break-word;
+    }
+
+    //document size
+    .documentsize{
+        font-size: 12px;
+        color:white;
+    }
+
+    //download document icon
+    .downloaddocumenticon{
+        float: right
+    }
+
+    /***document file css */
+
+
+
+     /****************floating action button with label styling************ */
+     .fab {
+        contain: initial;
+        // box-shadow: 0px 3px 2px 2px black;
+        box-shadow: 0px 2px 1px 1px black;
+      }
+   
+      ion-fab {
+          ion-fab-list button[ion-fab] {
+              overflow: visible;
+   
+              div.label {
+                position: absolute;
+                right: 48px;
+                background: rgba(0, 0, 0, 0.7);
+                height: 24px;
+                line-height: 16px;
+                padding-left: 8px;
+                padding-right: 8px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                border-radius: 3px;
+                color: #fff;
+                box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.1);
+              }
+          }
+      }
+    /****************floating action button with label styling************ */    
+
+}
+
+
+//microphone started or ended toast
+.microphonetoast{
+    //toast background
+    .toast-wrapper {
+       background: gray;
+       opacity: 0.8;
+       border-radius: 50px;
+       text-align: center;
+       width:150px;
+     }
+     .toast-message {
+       font-size: 12px;
+       color: white;
+     }
+}
+    

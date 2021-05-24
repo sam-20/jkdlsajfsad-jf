@@ -1,0 +1,87 @@
+<ion-header no-shadow no-border>
+
+  <ion-navbar>
+    <ion-row>
+      <ion-col>
+        <!--text / ios-text / ios-text-outline-->
+        <ion-icon name="ios-paw" class="camfilaicon"></ion-icon>
+      </ion-col>
+
+      <ion-col>
+        <!-- <ion-title>Group chats ({{this.groupchatscount}})</ion-title> -->
+        <ion-title>Group chats</ion-title>
+      </ion-col>
+
+      <!--view all groups icon-->
+      <!-- <ion-col>
+        <ion-icon name="ios-arrow-dropdown" (click)="viewallgroups()" class="viewallgroupsicon"></ion-icon>
+      </ion-col> -->
+
+      <!--my groups options-->
+      <ion-col>
+      <ion-icon name="ios-menu" (click)="presentPopover($event)" class="viewallgroupsicon"></ion-icon>
+    </ion-col>
+
+    </ion-row>
+
+
+
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content class="body">
+  <!-- Custom Refresher Content -->
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!-- Custom Refresher Content -->
+
+
+
+  <ion-list class="groupchatlist" no-lines>
+
+      <ion-item-sliding *ngFor="let count of this.usergroupchatlisttablerows" class="slidingformstyle">
+
+    <ion-item class="chatitem">
+      <ion-avatar item-start (click)="viewprofileimage(count)">
+        <img src="{{server+count.group_profile_pic_fetched}}" class="groupprofilepic">
+      </ion-avatar>
+      <h3 class="groupname" (click)="opengroupchat(count)"><b>{{count.group_name_fetched}}</b></h3>
+      <p class="lastmessage" (click)="opengroupchat(count)"><span class="lastmsgsendername"><b>{{count.group_lastmsgsender_name_fetched}}</b></span><span
+          *ngIf=(count.group_lastmsgsender_name_fetched)>:</span> {{count.group_last_message_fetched}}</p>
+
+      <!--message time-->
+      <ion-row (click)="opengroupchat(count)">
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col>
+          <ion-note class="lastmessagetime">{{count.group_lastmsg_time_fetched}}</ion-note>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+     <!--sliding items-->
+
+      <!--right side of slide-->
+      <ion-item-options side="right">
+
+          <button ion-button color="danger" (click)="showalert(count)">
+            <ion-icon name="ios-exit"></ion-icon>
+            Exit group
+          </button>
+
+        </ion-item-options>
+  
+        <!--sliding items-->
+  
+      </ion-item-sliding>
+
+
+  </ion-list>
+
+</ion-content>
