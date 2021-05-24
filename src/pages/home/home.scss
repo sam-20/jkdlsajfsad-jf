@@ -63,10 +63,10 @@
 page-home {
     //body
     .body {
-        background: url("/assets/imgs/12.jpg") !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        //background: white !important;
+        // background: url("/assets/imgs/12.jpg") !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
+        background-color: white;
     }
 
     //hide scroll bar when scrolling
@@ -77,8 +77,8 @@ page-home {
 
     //home title background
     .toolbar-background {
-        //background:transparent;
-        background: url("/assets/imgs/12.jpg") !important;
+        background-color: dodgerblue !important;
+        // background: url("/assets/imgs/12.jpg") !important;
         background-repeat: no-repeat !important;
         background-size: cover !important;
         //background: white !important;
@@ -454,7 +454,8 @@ page-home {
         //background: rgb(48, 190, 93);
 
         //these make it completely transparent removing every shadow around the button
-        background: rgb(172, 35, 153);
+        // background: rgb(172, 35, 153);
+        background-color: dodgerblue;
         //background: #FF3399;
         box-shadow: none !important;
         border-color: rgba(0, 0, 0, 0) !important;
