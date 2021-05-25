@@ -330,8 +330,14 @@ export class HomePage {
        * {message_id_fetched: "64", message_fetched: "look at me", pincolor:"dark"}
        * so that we can call it in the html like {{count.pincolor}}**/
       this.messagetablerows.forEach(function (element) { element.pincolor = "dark"; });
+      this.messagetablerows.forEach(function (element) { element.pinIcon = "star-outline"; });
+
       this.messagetablerows.forEach(function (element) { element.likecolor = "dark"; });
+      this.messagetablerows.forEach(function (element) { element.heartIcon = "ios-heart-outline"; });
+
       this.messagetablerows.forEach(function (element) { element.commentcolor = "dark"; });
+      this.messagetablerows.forEach(function (element) { element.commentIcon = "ios-text-outline"; });
+
 
       //adding new properties to the messagetablerows once again to store info of messages that have been commented
       //only msgs that are comments will have values assigned to them
@@ -373,6 +379,7 @@ export class HomePage {
           if (this.messagetablerows[msgtableloop1].message_id_fetched == this.pinnedmsgids[pinnedmsgloop].message_id_fetched) {  //if a match is found
             //console.log('pinned msg id: ', this.messagetablerows[msgtableloop1].message_id_fetched);  //log matched up msg id
             this.messagetablerows[msgtableloop1].pincolor = "primary" //assign a primary color to the pincolor property of that message's row
+            this.messagetablerows[msgtableloop1].pinIcon = "star"
           }
         }
       }
@@ -387,6 +394,7 @@ export class HomePage {
           if (this.messagetablerows[msgtableloop2].message_id_fetched == this.likedmsgids[likedmsgloop].message_id_fetched) {  //if a match is found
             //console.log('liked message id: ', this.messagetablerows[msgtableloop2].message_id_fetched);  //log matched up msg id
             this.messagetablerows[msgtableloop2].likecolor = "danger" //assign a danger color to the likecolor property of that message's row
+            this.messagetablerows[msgtableloop2].heartIcon = "ios-heart"
           }
         }
       }
@@ -455,6 +463,7 @@ export class HomePage {
       for (var key in this.messagetablerows) {
         if ((this.messagetablerows[key].comments_fetched) > 0) {
           this.messagetablerows[key].commentcolor = "secondary";
+          this.messagetablerows[key].commentIcon = "ios-text";
         }
       }
 
@@ -519,8 +528,13 @@ export class HomePage {
        * {message_id_fetched: "64", message_fetched: "look at me", pincolor:"dark"}
        * so that we can call it in the html like {{count.pincolor}}**/
       this.virtualmessagetablerows.forEach(function (element) { element.pincolor = "dark"; });
+      this.virtualmessagetablerows.forEach(function (element) { element.pinIcon = "star-outline"; });
+
       this.virtualmessagetablerows.forEach(function (element) { element.likecolor = "dark"; });
+      this.virtualmessagetablerows.forEach(function (element) { element.heartIcon = "ios-heart-outline"; });
+
       this.virtualmessagetablerows.forEach(function (element) { element.commentcolor = "dark"; });
+      this.virtualmessagetablerows.forEach(function (element) { element.commentIcon = "ios-text-outline"; });
 
       //adding new properties to the messagetablerows once again to store info of messages that have been commented
       //only msgs that are comments will have values assigned to them
@@ -537,6 +551,7 @@ export class HomePage {
       this.virtualmessagetablerows.forEach(function (element) { element.commentedmsg_profile_pic = null; });
       this.virtualmessagetablerows.forEach(function (element) { element.commentedmsg_commentcolor = "secondary"; });
       this.virtualmessagetablerows.forEach(function (element) { element.commentedmsg_likecolor = "dark"; });
+      this.virtualmessagetablerows.forEach(function (element) { element.commentedmsg_likeIcon = "ios-heart"; });
       this.virtualmessagetablerows.forEach(function (element) { element.commentedmsg_pincolor = "dark"; });
 
 
@@ -562,6 +577,7 @@ export class HomePage {
           if (this.virtualmessagetablerows[msgtableloop1].message_id_fetched == this.pinnedmsgids[pinnedmsgloop].message_id_fetched) {  //if a match is found
             //console.log('pinned msg id: ', this.messagetablerows[msgtableloop1].message_id_fetched);  //log matched up msg id
             this.virtualmessagetablerows[msgtableloop1].pincolor = "primary" //assign a primary color to the pincolor property of that message's row
+            this.virtualmessagetablerows[msgtableloop1].pinIcon = "star" //assign a primary color to the pincolor property of that message's row
           }
         }
       }
@@ -576,6 +592,7 @@ export class HomePage {
           if (this.virtualmessagetablerows[msgtableloop2].message_id_fetched == this.likedmsgids[likedmsgloop].message_id_fetched) {  //if a match is found
             //console.log('liked message id: ', this.messagetablerows[msgtableloop2].message_id_fetched);  //log matched up msg id
             this.virtualmessagetablerows[msgtableloop2].likecolor = "danger" //assign a danger color to the likecolor property of that message's row
+            this.virtualmessagetablerows[msgtableloop2].heartIcon = "ios-heart" //assign a danger color to the likecolor property of that message's row
           }
         }
       }
@@ -644,6 +661,7 @@ export class HomePage {
       for (var key in this.virtualmessagetablerows) {
         if ((this.virtualmessagetablerows[key].comments_fetched) > 0) {
           this.virtualmessagetablerows[key].commentcolor = "secondary";
+          this.virtualmessagetablerows[key].commentIcon = "ios-text";
         }
       }
 
@@ -731,12 +749,14 @@ export class HomePage {
 
     if (count.pincolor == 'primary') {
       count.pincolor = 'dark' //meaning user has unpinned msg
+      count.pinIcon = 'star-outline'
       this.removepinnedmessage();
       this.pinORunpincommentedmsgwithsameid();  //update any commented message's pin color with the pincolor of the same id as the original message's pincolor 
     }
 
     else {
       count.pincolor = 'primary'  //meaning user has pinned msg
+      count.pinIcon = 'star'
       this.insertpinnedmessage();
       this.pinORunpincommentedmsgwithsameid();  //update any commented message's pin color with the pincolor of the same id as the original message's pincolor 
     }
@@ -751,12 +771,14 @@ export class HomePage {
 
     if (count.commentedmsg_pincolor == 'primary') {
       count.commentedmsg_pincolor = 'dark' //meaning user has unpinned msg
+      count.commentedmsg_pinIcon = 'star-outline' //meaning user has unpinned msg
       this.removepinnedmessage();
       this.pinORunpinoriginalmsgwithsameidcard3();  //update any original message's pin color with the pincolor of the same id as the commented message's pincolor 
     }
 
     else {
       count.commentedmsg_pincolor = 'primary'  //meaning user has pinned msg
+      count.commentedmsg_pinIcon = 'star' //meaning user has unpinned msg
       this.insertpinnedmessage();
       this.pinORunpinoriginalmsgwithsameidcard3();  //update any original message's pin color with the pincolor of the same id as the commented message's pincolor 
     }
@@ -772,6 +794,7 @@ export class HomePage {
 
     if (count.likecolor == 'dark') {
       count.likecolor = 'danger' //meaning user has liked message
+      count.heartIcon = "ios-heart"
       ++count.likes_fetched //add 1 to the total value of likes
       this.totallikes = count.likes_fetched;  //after adding one we send it to the total likes variable for message table likes update
       this.likemessage();
@@ -790,6 +813,7 @@ export class HomePage {
 
     else {
       count.likecolor = 'dark'  //meaning user has unliked message 
+      count.heartIcon = "ios-heart-outline"
       --count.likes_fetched;  //sub 1 from the total value of likes
       this.totallikes = count.likes_fetched; //after subtracting one we send it to the total likes variable for message table likes update
 
@@ -814,6 +838,7 @@ export class HomePage {
 
     if (count.commentedmsg_likecolor == 'dark') {
       count.commentedmsg_likecolor = 'danger' //meaning user has liked message
+      count.commentedmsg_heartIcon = 'ios-heart' 
       ++count.commentedmsg_likes //add 1 to the total value of likes
       this.totallikes = count.commentedmsg_likes;  //after adding one we send it to the total likes variable for message table likes update
       this.likemessage();
@@ -832,6 +857,7 @@ export class HomePage {
 
     else {
       count.commentedmsg_likecolor = 'dark'  //meaning user has unliked message
+      count.commentedmsg_heartIcon = 'ios-heart-outline' 
       --count.commentedmsg_likes;  //sub 1 from the total value of likes
       this.totallikes = count.commentedmsg_likes; //after subtracting one we send it to the total likes variable for message table likes update
 

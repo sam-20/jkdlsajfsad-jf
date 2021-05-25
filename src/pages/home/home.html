@@ -89,7 +89,7 @@
         <!-- pin icon -->
         <div
           style="display: flex; background-color: transparent;flex: 0.1;justify-content: center;align-items: flex-start;padding-top: 5px;">
-          <ion-icon name="star" (click)="pinmessage(count)" color={{count.pincolor}}></ion-icon>
+          <ion-icon name={{count.pinIcon}} (click)="pinmessage(count)" color={{count.pincolor}}></ion-icon>
         </div>
       </div>
 
@@ -111,13 +111,13 @@
         <div style="display: flex;flex: 0.8;background-color: transparent;align-items: center;flex-direction: row;">
 
           <!-- like icon -->
-          <ion-icon (click)="likeORunlikemessage(count)" name="ios-heart" color={{count.likecolor}}></ion-icon>
+          <ion-icon (click)="likeORunlikemessage(count)" name={{count.heartIcon}} color={{count.likecolor}}></ion-icon>
 
           <!-- like count -->
           <div style="font-size: smaller; padding-left: 5px;">{{count.likes_fetched}}</div>
 
           <!-- comments icon -->
-          <ion-icon name="ios-text" style="margin-left: 20px;" color={{count.commentcolor}}></ion-icon>
+          <ion-icon name={{count.commentIcon}} style="margin-left: 20px;" color={{count.commentcolor}}></ion-icon>
 
           <!-- comments count -->
           <div style="font-size: smaller;padding-left: 5px;">{{count.comments_fetched}}</div>
@@ -188,7 +188,8 @@
           <div style="display: flex;flex: 0.8;background-color: transparent;align-items: center;flex-direction: row;">
 
             <!-- like icon -->
-            <ion-icon name="ios-heart" (click)="likeORunlikemessagecard3(count)" color={{count.commentedmsg_likecolor}}>
+            <ion-icon name={{commentedmsg_heartIcon}} (click)="likeORunlikemessagecard3(count)"
+              color={{count.commentedmsg_likecolor}}>
             </ion-icon>
 
             <!-- like count -->
@@ -236,7 +237,7 @@
           <!-- pin icon -->
           <div
             style="display: flex; background-color: transparent;flex: 0.1;justify-content: center;align-items: flex-start;padding-top: 5px;">
-            <ion-icon name="star" (click)="pinmessage(count)" color={{count.pincolor}}></ion-icon>
+            <ion-icon name={{count.pinIcon}} (click)="pinmessage(count)" color={{count.pincolor}}></ion-icon>
           </div>
         </div>
 
@@ -258,13 +259,14 @@
           <div style="display: flex;flex: 0.8;background-color: transparent;align-items: center;flex-direction: row;">
 
             <!-- like icon -->
-            <ion-icon (click)="likeORunlikemessage(count)" name="ios-heart" color={{count.likecolor}}></ion-icon>
+            <ion-icon (click)="likeORunlikemessage(count)" name={{count.heartIcon}} color={{count.likecolor}}>
+            </ion-icon>
 
             <!-- like count -->
             <div style="font-size: smaller; padding-left: 5px;">{{count.likes_fetched}}</div>
 
             <!-- comments icon -->
-            <ion-icon color={{count.commentcolor}} name="ios-text" style="margin-left: 20px;"></ion-icon>
+            <ion-icon color={{count.commentcolor}} name={{count.commentIcon}} style="margin-left: 20px;"></ion-icon>
 
             <!-- comments count -->
             <div style="font-size: smaller;padding-left: 5px;">{{count.comments_fetched}}</div>
