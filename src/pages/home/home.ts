@@ -225,7 +225,7 @@ export class HomePage {
       for (let count of this.pinnedmsgsidsjsonconvertedrows) {
         this.pinnedmsgids.push(count);
       }
-      console.log('pinned messages: ', this.pinnedmsgids);
+      // console.log('pinned messages: ', this.pinnedmsgids);
       //console.log('pinned messages length: ', this.pinnedmsgids.length)
     });
   }
@@ -255,7 +255,7 @@ export class HomePage {
       for (let count of this.likedmsgsidsjsonconvertedrows) {
         this.likedmsgids.push(count);
       }
-      console.log('liked messages: ', this.likedmsgids);
+      // console.log('liked messages: ', this.likedmsgids);
       //console.log('liked messages length', this.likedmsgids.length)
     });
   }
@@ -284,7 +284,7 @@ export class HomePage {
       for (let count of this.commentmsgsidsjsonconvertedrows) {
         this.commentmsgids.push(count);
       }
-      console.log('comment messages: ', this.commentmsgids);
+      // console.log('comment messages: ', this.commentmsgids);
       //console.log('comment messages length', this.commentmsgids.length)
     });
   }
@@ -353,7 +353,10 @@ export class HomePage {
       this.messagetablerows.forEach(function (element) { element.commentedmsg_username = null; });
       this.messagetablerows.forEach(function (element) { element.commentedmsg_profile_pic = null; });
       this.messagetablerows.forEach(function (element) { element.commentedmsg_commentcolor = "secondary"; });
+
       this.messagetablerows.forEach(function (element) { element.commentedmsg_likecolor = "dark"; });
+      this.messagetablerows.forEach(function (element) { element.commentedmsg_heartIcon = "ios-heart-outline"; });
+
       this.messagetablerows.forEach(function (element) { element.commentedmsg_pincolor = "dark"; });
 
 
@@ -468,7 +471,7 @@ export class HomePage {
       }
 
     }, err => {  //log php connection error
-      console.log(err);
+      // console.log(err);
 
       if (this.alreadysenterrormessage == true) {
         // do nothing 
@@ -551,7 +554,7 @@ export class HomePage {
       this.virtualmessagetablerows.forEach(function (element) { element.commentedmsg_profile_pic = null; });
       this.virtualmessagetablerows.forEach(function (element) { element.commentedmsg_commentcolor = "secondary"; });
       this.virtualmessagetablerows.forEach(function (element) { element.commentedmsg_likecolor = "dark"; });
-      this.virtualmessagetablerows.forEach(function (element) { element.commentedmsg_likeIcon = "ios-heart"; });
+      this.virtualmessagetablerows.forEach(function (element) { element.commentedmsg_heartIcon = "ios-heart"; });
       this.virtualmessagetablerows.forEach(function (element) { element.commentedmsg_pincolor = "dark"; });
 
 
@@ -653,7 +656,7 @@ export class HomePage {
 
 
 
-      console.log('virtualmessagetablerows: ', this.virtualmessagetablerows);
+      // console.log('virtualmessagetablerows: ', this.virtualmessagetablerows);
 
       /**now by default our comments icon is dark..however we want to differentiate commented msgs from others by changing the color of the icon
        * hence when the comments for the particular msg is more than 0 we change the color of the comment icon to indicate someone has commented on the message
@@ -692,7 +695,7 @@ export class HomePage {
 
           this.messagetablerows.sort((a, b) => b.message_id_fetched - a.message_id_fetched)
           //b comes before a in the second part of the line because i want the latest ids to be at the top
-          console.log("message has been added");
+          // console.log("message has been added");
 
           /**update the value in the home tab icon badge to 0 so display a value in the badge which
            * we have modified into a dot so display the dot instead of the badge value
@@ -705,7 +708,7 @@ export class HomePage {
       }
 
     }, err => {
-      console.log(err);
+      // console.log(err);
 
       if (this.alreadysenterrormessage == true) {
         // do nothing 
@@ -838,7 +841,7 @@ export class HomePage {
 
     if (count.commentedmsg_likecolor == 'dark') {
       count.commentedmsg_likecolor = 'danger' //meaning user has liked message
-      count.commentedmsg_heartIcon = 'ios-heart' 
+      count.commentedmsg_heartIcon = 'ios-heart'
       ++count.commentedmsg_likes //add 1 to the total value of likes
       this.totallikes = count.commentedmsg_likes;  //after adding one we send it to the total likes variable for message table likes update
       this.likemessage();
@@ -857,7 +860,7 @@ export class HomePage {
 
     else {
       count.commentedmsg_likecolor = 'dark'  //meaning user has unliked message
-      count.commentedmsg_heartIcon = 'ios-heart-outline' 
+      count.commentedmsg_heartIcon = 'ios-heart-outline'
       --count.commentedmsg_likes;  //sub 1 from the total value of likes
       this.totallikes = count.commentedmsg_likes; //after subtracting one we send it to the total likes variable for message table likes update
 
@@ -888,7 +891,7 @@ export class HomePage {
       //now refresh the pinned messsages table again to update changes
       this.pinnedmsgids = [];
       this.loadpinnedmessages();
-      console.log(this.pinnedmsgids);
+      // console.log(this.pinnedmsgids);
     });
   }
 
@@ -905,7 +908,7 @@ export class HomePage {
       //now refresh the pinned messsages table again to update changes
       this.pinnedmsgids = [];
       this.loadpinnedmessages();
-      console.log(this.pinnedmsgids);
+      // console.log(this.pinnedmsgids);
     });
   }
 
@@ -977,7 +980,7 @@ export class HomePage {
       //now refresh the likes table again to update changes
       this.likedmsgids = [];
       this.loadlikedmessages();
-      console.log(this.likedmsgids);
+      // console.log(this.likedmsgids);
     });
   }
 
@@ -1043,11 +1046,11 @@ export class HomePage {
 
   //open a selected user's profile
   openuserprofile(count) {
-    console.log("selected user's id", count.user_id_fetched)
+    // console.log("selected user's id", count.user_id_fetched)
 
     //if selected user is ourself then we open our own profile tab
     if (count.user_id_fetched == this.mymodulevariables.globaluserid) {
-      console.log("open profile tab page")
+      // console.log("open profile tab page")
       this.tabs.select(0);
     }
 
@@ -1060,11 +1063,11 @@ export class HomePage {
 
   //open a selected user's profile in a commented message
   openuserprofilecommentedmsg(count) {
-    console.log("selected user's id", count.commentedmsg_userid)
+    // console.log("selected user's id", count.commentedmsg_userid)
 
     //if selected user is ourself then we open our own profile tab
     if (count.commentedmsg_userid == this.mymodulevariables.globaluserid) {
-      console.log("open profile tab page")
+      // console.log("open profile tab page")
       this.tabs.select(0);
     }
 
@@ -1089,13 +1092,13 @@ export class HomePage {
   //view selected message image in full
   viewimage(count) {
     this.photoViewer.show(this.server + count.message_media_fetched, count.message_fetched);
-    console.log("with server", this.server + count.message_media_fetched);
+    // console.log("with server", this.server + count.message_media_fetched);
   }
 
   //view selected message image in full - for commented message
   viewimage2(count) {
     this.photoViewer.show(this.server + count.commentedmsg_messagemedia, count.commentedmsg_message);
-    console.log("with server", this.server + count.commentedmsg_messagemedia);
+    // console.log("with server", this.server + count.commentedmsg_messagemedia);
   }
 
   //pull to refresh 
@@ -1130,7 +1133,7 @@ export class HomePage {
     setTimeout(() => {
 
       this.virtualloadallmessages();
-      console.log('scroll ended');
+      // console.log('scroll ended');
 
       /**after the user has scrolled it means he has seen the new messages hence we set the badge icon in the home 
        * tab to null so that it disappears
