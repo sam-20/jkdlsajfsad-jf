@@ -69,20 +69,21 @@
     <!-- normal message card starts here-->
     <div *ngIf="count.iscomment =='false'" style="display: flex;width: 100%;background-color: transparent;
     flex-direction: column;
-    margin-top: 10px; padding-left: 5px;padding-right: 5px;padding-top: 5px;
+    margin-top: 20px; padding-left: 5px;padding-right: 5px;padding-top: 5px;
     padding-bottom: 5px;border-radius: 5px;
     box-shadow: 0px 0px 5px 1px gray;">
 
       <div style="display: flex;background-color: transparent;flex-direction: row;width: 100%;">
 
         <!-- profile image -->
-        <div onclick="openuserprofile(count)" style="display: flex;background-color: transparent;flex: 0.2;">
+        <div (click)="openuserprofile(count)" style="display: flex;background-color: transparent;flex: 0.2;">
           <img src="{{server+count.sender_profile_pic_fetched}}"
             style="width: 46px;height: 46px; border-radius: 23px;" />
         </div>
 
         <!-- username -->
-        <div style="display: flex; background-color: transparent;flex: 0.7;align-items: center;">
+        <div (click)="openuserprofile(count)"
+          style="display: flex; background-color: transparent;flex: 0.7;align-items: center;">
           <p style="font-weight: 500;">{{count.username_fetched}}</p>
         </div>
 
@@ -101,7 +102,7 @@
       </div>
 
       <!-- message -->
-      <div onclick="loadmessagedetails(count)"
+      <div (click)="loadmessagedetails(count)"
         style="display: flex;background-color: transparent;padding-left: 10px;padding-top: 5px;padding-bottom: 5px;">
         <p style="font-size: smaller;">{{count.message_fetched}}</p>
       </div>
@@ -137,8 +138,8 @@
 
 
     <!--comment message card & commented message card starts here -->
-    <div
-      style="display: flex;width: 100%;background-color: transparent;margin-top: 10px; flex-direction: column;align-items: center;">
+    <div *ngIf="count.iscomment =='true'" style="display: flex;width: 100%;background-color: transparent;margin-top: 20px;
+       flex-direction: column;align-items: center;">
 
       <!-- commented message card starts here -->
       <div style="display: flex;width: 100%;background-color: transparent;
@@ -150,33 +151,36 @@
         <div style="display: flex;background-color: transparent;flex-direction: row;width: 100%;">
 
           <!-- profile image -->
-          <div style="display: flex;background-color: transparent;flex: 0.2;">
-            <img src="../../assets/imgs/16.jpg" style="width: 46px;height: 46px; border-radius: 23px;" />
+          <div (click)="openuserprofilecommentedmsg(count)"
+            style="display: flex;background-color: transparent;flex: 0.2;">
+            <img src="{{server+count.commentedmsg_profile_pic}}"
+              style="width: 46px;height: 46px; border-radius: 23px;" />
           </div>
 
           <!-- username -->
-          <div style="display: flex; background-color: transparent;flex: 0.7;align-items: center;">
-            <p style="font-weight: 500;">samuel</p>
+          <div (click)="openuserprofilecommentedmsg(count)"
+            style="display: flex; background-color: transparent;flex: 0.7;align-items: center;">
+            <p style="font-weight: 500;">{{count.commentedmsg_username}}</p>
           </div>
 
           <!-- pin icon -->
-          <div
+          <!-- <div
             style="display: flex; background-color: transparent;flex: 0.1;justify-content: center;align-items: flex-start;padding-top: 5px;">
             <ion-icon name="star"></ion-icon>
-          </div>
+          </div> -->
         </div>
 
         <!-- image -->
-        <div
+        <div *ngIf="!server+count.commentedmsg_messagemedia"
           style="display: flex;background-color: transparent;justify-content: center;align-items: center;padding-top: 5px;padding-bottom: 5px;">
-          <img src="../../assets/imgs/16.jpg" style="height: 180px;width: 95%;" />
+          <img src="{{server+count.commentedmsg_messagemedia}}" (click)="viewimage2(count)"
+            style="height: 180px;width: 95%;" />
         </div>
 
         <!-- message -->
-        <div
+        <div (click)="loadcommentedmessagedetails(count)"
           style="display: flex;background-color: transparent;padding-left: 10px;padding-top: 5px;padding-bottom: 5px;">
-          <p style="font-size: smaller;">ive been on the deeper end and if u think im about to change who i am cos of u
-            then ure so wrong</p>
+          <p style="font-size: smaller;">{{count.commentedmsg_message}}</p>
         </div>
 
         <!-- likes comments and time -->
@@ -184,31 +188,32 @@
           <div style="display: flex;flex: 0.8;background-color: transparent;align-items: center;flex-direction: row;">
 
             <!-- like icon -->
-            <ion-icon name="ios-heart"></ion-icon>
+            <ion-icon name="ios-heart" (click)="likeORunlikemessagecard3(count)" color={{count.commentedmsg_likecolor}}>
+            </ion-icon>
 
             <!-- like count -->
-            <div style="font-size: smaller; padding-left: 5px;">23</div>
+            <div style="font-size: smaller; padding-left: 5px;">{{count.commentedmsg_likes}}</div>
 
             <!-- comments icon -->
-            <ion-icon name="ios-text" style="margin-left: 20px;"></ion-icon>
+            <ion-icon name="ios-text" style="margin-left: 20px;" color={{count.commentedmsg_commentcolor}}></ion-icon>
 
             <!-- comments count -->
-            <div style="font-size: smaller;padding-left: 5px;">23</div>
+            <div style="font-size: smaller;padding-left: 5px;">{{count.commentedmsg_comments}}</div>
           </div>
 
           <!-- time -->
           <div style="display: flex;flex: 0.2;background-color: transparent; align-items: center;
             justify-content: flex-end;padding-right: 10px;">
-            <div style="font-size: 10px;font-weight: 500;">08:56</div>
+            <div style="font-size: 10px;font-weight: 500;"> {{count.commentedmsg_date_created}}</div>
           </div>
 
         </div>
       </div>
-      <!-- commented message card starts here -->
+      <!-- commented message card ends here -->
 
 
       <!-- comment message card starts here -->
-      <div style="display: flex;width: 90%;background-color: transparent;
+      <div *ngIf="count.iscomment =='true'" style="display: flex;width: 90%;background-color: transparent;
     flex-direction: column;
     margin-top: 10px; padding-left: 5px;padding-right: 5px;padding-top: 5px;
     padding-bottom: 5px;border-radius: 5px;
@@ -217,33 +222,35 @@
         <div style="display: flex;background-color: transparent;flex-direction: row;width: 100%;">
 
           <!-- profile image -->
-          <div style="display: flex;background-color: transparent;flex: 0.2;">
-            <img src="../../assets/imgs/16.jpg" style="width: 46px;height: 46px; border-radius: 23px;" />
+          <div (click)="openuserprofile(count)" style="display: flex;background-color: transparent;flex: 0.2;">
+            <img src="{{server+count.sender_profile_pic_fetched}}"
+              style="width: 46px;height: 46px; border-radius: 23px;" />
           </div>
 
           <!-- username -->
-          <div style="display: flex; background-color: transparent;flex: 0.7;align-items: center;">
-            <p style="font-weight: 500;">samuel</p>
+          <div (click)="openuserprofile(count)"
+            style="display: flex; background-color: transparent;flex: 0.7;align-items: center;">
+            <p style="font-weight: 500;">{{count.username_fetched}}</p>
           </div>
 
           <!-- pin icon -->
           <div
             style="display: flex; background-color: transparent;flex: 0.1;justify-content: center;align-items: flex-start;padding-top: 5px;">
-            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star" (click)="pinmessage(count)" color={{count.pincolor}}></ion-icon>
           </div>
         </div>
 
         <!-- image -->
-        <div
+        <div *ngIf="!server+count.message_media_fetched"
           style="display: flex;background-color: transparent;justify-content: center;align-items: center;padding-top: 5px;padding-bottom: 5px;">
-          <img src="../../assets/imgs/16.jpg" style="height: 180px;width: 95%;" />
+          <img (click)="viewimage(count)" src="{{server+count.message_media_fetched}}"
+            style="height: 180px;width: 95%;" />
         </div>
 
         <!-- message -->
-        <div
-          style="display: flex;background-color: transparent;padding-left: 10px;padding-top: 5px;padding-bottom: 5px;">
-          <p style="font-size: smaller;">ive been on the deeper end and if u think im about to change who i am cos of u
-            then ure so wrong</p>
+        <div (click)="loadmessagedetails(count)"
+          style="display: flex;padding-left: 10px;padding-top: 5px;padding-bottom: 5px;">
+          <p style="font-size: smaller;width: 100%;">{{count.message_fetched}}</p>
         </div>
 
         <!-- likes comments and time -->
@@ -251,22 +258,22 @@
           <div style="display: flex;flex: 0.8;background-color: transparent;align-items: center;flex-direction: row;">
 
             <!-- like icon -->
-            <ion-icon name="ios-heart"></ion-icon>
+            <ion-icon (click)="likeORunlikemessage(count)" name="ios-heart" color={{count.likecolor}}></ion-icon>
 
             <!-- like count -->
-            <div style="font-size: smaller; padding-left: 5px;">23</div>
+            <div style="font-size: smaller; padding-left: 5px;">{{count.likes_fetched}}</div>
 
             <!-- comments icon -->
-            <ion-icon name="ios-text" style="margin-left: 20px;"></ion-icon>
+            <ion-icon color={{count.commentcolor}} name="ios-text" style="margin-left: 20px;"></ion-icon>
 
             <!-- comments count -->
-            <div style="font-size: smaller;padding-left: 5px;">23</div>
+            <div style="font-size: smaller;padding-left: 5px;">{{count.comments_fetched}}</div>
           </div>
 
           <!-- time -->
           <div style="display: flex;flex: 0.2;background-color: transparent; align-items: center;
           justify-content: flex-end;padding-right: 10px;">
-            <div style="font-size: 10px;font-weight: 500;">08:56</div>
+            <div style="font-size: 10px;font-weight: 500;">{{count.date_created_fetched}}</div>
           </div>
 
         </div>
@@ -274,161 +281,12 @@
       <!-- comment message card ends here -->
 
     </div>
-    <!--comment message card & commented message card starts here -->
+    <!--comment message card & commented message card ends here -->
 
   </div>
   <!-- page setup ends here-->
 
 
-
-  <ion-item *ngFor="let count of messagetablerows" class="ionitemsdesign">
-
-    <!----------------------start of----------------card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2-------------start of ----------------------------------------------->
-    <ion-card-content class="messagecard2" *ngIf="count.iscomment =='true'">
-
-      <!-------------------start of-----------------card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3--------------start of----------------------------------------------->
-      <ion-card class="messagecard3">
-        <ion-row>
-          <ion-col (click)="openuserprofilecommentedmsg(count)">
-            <ion-item class="profilepictureANDusername">
-              <ion-avatar item-start no-lines>
-                <!--card 3 msg sender profile pic-->
-                <img class="avatarprofilepic" src="{{server+count.commentedmsg_profile_pic}}" />
-                <!--card 3 msg sender profile pic-->
-              </ion-avatar>
-
-              <!--card 3 msg sender username-->
-              <h2 class="card3username">{{count.commentedmsg_username}}</h2>
-              <!--card 3 msg sender username-->
-            </ion-item>
-          </ion-col>
-
-          <!-- <ion-col>
-
-          </ion-col> -->
-
-          <!--card 3 pin message icon -->
-          <!-- <ion-col>
-            <ion-icon name="star" class="pinmessageicon" (click)="pinmessagecard3(count)" color={{count.commentedmsg_pincolor}}></ion-icon>
-          </ion-col> -->
-          <!--card 3 pin message icon -->
-        </ion-row>
-
-        <!--card 3 picture in msg goes here-->
-        <img *ngIf="!server+count.commentedmsg_messagemedia" src="{{server+count.commentedmsg_messagemedia}}"
-          class="card3messagemedia" (click)="viewimage2(count)">
-        <!--card 3 picture in msg goes here-->
-
-        <!--card 3 message content-->
-        <ion-card-content text-wrap (click)="loadcommentedmessagedetails(count)" class="card3messagecard">
-          <p class="card3messagetext">{{count.commentedmsg_message}}</p>
-        </ion-card-content>
-        <!--card 3 message content-->
-
-        <ion-row>
-
-          <ion-col>
-
-            <!--card 3 likes-->
-            <button ion-button icon-start clear small (click)="likeORunlikemessagecard3(count)"
-              class="likesbuttoncard3">
-              <ion-icon name="ios-heart" color={{count.commentedmsg_likecolor}}></ion-icon>
-              <div class="likescounttext">{{count.commentedmsg_likes}}</div>
-            </button>
-
-            <!--card 3 comments-->
-            <button ion-button icon-start clear small class="commentsbuttoncard3">
-              <ion-icon name="ios-text" color={{count.commentedmsg_commentcolor}}></ion-icon>
-              <div class="commentscounttext">{{count.commentedmsg_comments}}</div>
-            </button>
-          </ion-col>
-
-          <!--card 3 time added-->
-          <ion-col center text-center>
-            <ion-note class="card3timeadded">
-              {{count.commentedmsg_date_created}}
-            </ion-note>
-          </ion-col>
-        </ion-row>
-        <!--card 3 time added-->
-
-      </ion-card>
-      <!-------------------------------------end of ---------card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3 card 3-------------------end of ------------------------------->
-
-
-
-      <!----------------------continuation of---------------card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2------------------continuation of ----------------------------------------------->
-      <ion-row>
-        <ion-col (click)="openuserprofile(count)" col-11>
-          <ion-item class="profilepictureANDusername" no-lines>
-            <ion-avatar item-start>
-              <!--card 2 message sender profile pic-->
-              <img class="avatarprofilepic" src="{{server+count.sender_profile_pic_fetched}}" />
-              <!--card 2 message sender profile pic-->
-            </ion-avatar>
-
-            <!--card 2 message sender username-->
-            <h2 class="card2username">{{count.username_fetched}}</h2>
-            <!--card 2 message sender username-->
-          </ion-item>
-        </ion-col>
-
-
-        <!-- <ion-col>
-
-        </ion-col> -->
-
-        <!--card 2 pin message icon-->
-        <ion-col col-1>
-          <ion-icon name="star" class="pinmessageicon" (click)="pinmessage(count)" color={{count.pincolor}}></ion-icon>
-        </ion-col>
-        <!--card 2 pin message icon-->
-      </ion-row>
-
-      <!--card 2 picture in msg goes here-->
-      <img *ngIf="!server+count.message_media_fetched" src="{{server+count.message_media_fetched}}"
-        class="card2messagemedia" (click)="viewimage(count)">
-      <!--card 2 picture in msg goes here-->
-
-      <!--card 2 message content-->
-      <ion-card-content text-wrap (click)="loadmessagedetails(count)" class="card2messagecard">
-        <p class="card2messagetext">{{count.message_fetched}}</p>
-      </ion-card-content>
-      <!--card 2 message content-->
-
-      <ion-row>
-
-        <ion-col>
-
-          <!--card 2 likes-->
-          <button ion-button icon-start clear small (click)="likeORunlikemessage(count)">
-            <ion-icon name="ios-heart" color={{count.likecolor}}></ion-icon>
-            <div class="likescounttext">{{count.likes_fetched}}</div>
-          </button>
-
-
-          <!--card 2 comments-->
-          <button ion-button icon-start clear small>
-            <ion-icon name="ios-text" color={{count.commentcolor}}></ion-icon>
-            <div class="commentscounttext">{{count.comments_fetched}}</div>
-          </button>
-
-        </ion-col>
-
-
-
-        <!--card 2 time added-->
-        <ion-col center text-center>
-          <ion-note class="timeadded">
-            {{count.date_created_fetched}}
-          </ion-note>
-        </ion-col>
-      </ion-row>
-      <!--card 2 time added-->
-
-    </ion-card-content>
-    <!----------------------end of----------------card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2 card 2-------------end of ------------------------------------------------------->
-  </ion-item>
 
 
   <!--floating action buttons to post message or search people-->
