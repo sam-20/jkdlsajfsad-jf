@@ -1,65 +1,65 @@
 page-loadspecificmessagedetails {
     //body
-    .body{
-        background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
+    .body {
+        // background: url("/assets/imgs/12.jpg") !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
         //background: white !important;
+        background-color: white;
     }
 
     //hide scroll bar when scrolling
     ::-webkit-scrollbar,
-    *::-webkit-scrollbar
-    {
+    *::-webkit-scrollbar {
         display: none;
     }
 
     //back button which comes which navctrl push
-    .back-button-icon{
+    .back-button-icon {
         color: white;
-      }
+    }
 
-     //loadspecificmessage title background
-     .toolbar-background{
+    //loadspecificmessage title background
+    .toolbar-background {
         //background:transparent;
-        background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
+        // background:url('/assets/imgs/12.jpg') !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
         //background: white !important;
+        background-color: dodgerblue;
     }
 
     //icon in header
-    .camfilaicon{
-        zoom :2.0;
-        color:white;
-     }
- 
+    .camfilaicon {
+        zoom: 2;
+        color: white;
+    }
 
     //navbar title
-    .toolbar-title{
-        color:white;
+    .toolbar-title {
+        color: white;
         margin-top: 5px;
-
+        font-size: medium;
     }
 
     //navbar title
-    .navbartitle{
-        margin-top:5px;
+    .navbartitle {
+        margin-top: 5px;
     }
 
-    //remove border line caused by refresher  
-    .has-refresher  .scroll-content {
+    //remove border line caused by refresher
+    .has-refresher .scroll-content {
         border-top: 0 !important;
-      }
+    }
 
     //icon used for pulling refresher
-    .refresher-pulling-icon{
-        color:white;
+    .refresher-pulling-icon {
+        color: white;
     }
 
     //text shown when pulling refresher
-    .refresher-pulling-text{
-        color:white;
+    .refresher-pulling-text {
+        color: white;
     }
 
     //icon used when refreshing
@@ -69,152 +69,147 @@ page-loadspecificmessagedetails {
     }
 
     //text shown when refreshing
-    .refresher-refreshing-text{
-        color:white;
+    .refresher-refreshing-text {
+        color: white;
     }
 
-
     //ion item styling
-     .ionitemsdesign{
+    .ionitemsdesign {
         background: transparent;
         //margin-top:-25px;
     }
 
     //pin message icon
-    .pinmessageicon{
+    .pinmessageicon {
         float: right;
-        margin-top:10px;
+        margin-top: 10px;
         margin-right: -22px;
     }
 
     //time added text
-    .timeadded{
+    .timeadded {
         color: black;
-        margin-top:10px;
-        float:right;
+        margin-top: 10px;
+        float: right;
         margin-right: 15px;
         font-size: 12px !important;
     }
 
-     //commented message card
-     .commentedmessagecard.card-md{
-        border-radius:10px;
+    //commented message card
+    .commentedmessagecard.card-md {
+        border-radius: 10px;
     }
 
     //commented message card
-    .commentedmessagecard{
-        background:transparent;
-        margin-top:5px;
+    .commentedmessagecard {
+        background: transparent;
+        margin-top: 5px;
         margin-bottom: 0px;
     }
 
-     //comments message card
-     .commentsmessagecard.card-md{
-        border-radius:10px;
+    //comments message card
+    .commentsmessagecard.card-md {
+        border-radius: 10px;
     }
 
     //comments message card
-    .commentsmessagecard{
+    .commentsmessagecard {
         //background:url('/assets/imgs/9.jpg');
-        margin-top:-25px;
+        margin-top: -25px;
         // margin-left:-15px;
-        padding-left:0px;
+        padding-left: 0px;
         margin-bottom: -28px;
     }
 
     //profile pic and username as one component
-    .profilepictureANDusername{
-        background:transparent;
-        margin-top:5px;
+    .profilepictureANDusername {
+        background: transparent;
+        margin-top: 5px;
     }
 
     //commenttext
-    .commenttext{
-        margin-top:12px;
-        margin-left:0px;
-        color:black;
+    .commenttext {
+        margin-top: 12px;
+        margin-left: 0px;
+        color: black;
         float: left;
     }
 
     //commented message actual comment message text
-    .commentedmessagetext{
-        color:black;
+    .commentedmessagetext {
+        color: black;
         //preserve line breaks wherever user added them in the text
-        white-space:pre-wrap;
+        white-space: pre-wrap;
     }
 
     //comment message actual comment emssage text
-    .commentmessagetext{
-        color:black;
+    .commentmessagetext {
+        color: black;
         //preserve line breaks wherever user added them in the text
-        white-space:pre-wrap;
+        white-space: pre-wrap;
     }
 
-
     //"comments" header written before comments display
-    .commentstext{
-        color:black;
-        margin-top:20px;
+    .commentstext {
+        color: black;
+        margin-top: 20px;
         margin-bottom: 5px;
-        margin-left:10px;
+        margin-left: 10px;
     }
 
     //message media of commented message
-    .commentedmessagemedia{
-        height:200px; 
-        width:800px; 
-        margin-left:0px;
-        margin-bottom:0px;
+    .commentedmessagemedia {
+        height: 200px;
+        width: 800px;
+        margin-left: 0px;
+        margin-bottom: 0px;
         border-radius: 10px;
     }
 
     //message media of comments
-    .commentmessagemedia{
-        height:200px; 
-        width:800px; 
-        margin-left:15px;
-        margin-bottom:0px;
+    .commentmessagemedia {
+        height: 200px;
+        width: 800px;
+        margin-left: 15px;
+        margin-bottom: 0px;
         border-radius: 20px;
     }
 
-
     //commented message's username
-    .commentedmessageusername{
-        color:black;
+    .commentedmessageusername {
+        color: black;
     }
 
     //all messages likes count
-    .likecounttext{
-        color:black;
+    .likecounttext {
+        color: black;
     }
 
     //all messages comments count
-    .commentscounttext{
-        color:black;
+    .commentscounttext {
+        color: black;
     }
 
     //comment message username
-    .commenterusername{
+    .commenterusername {
         color: black;
     }
 
     //time for comments messags
-    .timeaddedcommentsmessages{
+    .timeaddedcommentsmessages {
         color: black;
-        margin-top:10px;
-        float:right;
+        margin-top: 10px;
+        float: right;
         font-size: 12px;
     }
 
     //stats row style for comments messgaes
-    .statsrowstylecomments{
+    .statsrowstylecomments {
         margin-top: -13px;
     }
 
     //stats row style for commented message
-    .statsrowstylecommentedmessage{
-        margin-top:-13px;
+    .statsrowstylecommentedmessage {
+        margin-top: -13px;
     }
-
 }
- 
