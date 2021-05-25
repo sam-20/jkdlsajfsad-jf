@@ -554,7 +554,7 @@ export class HomePage {
       this.virtualmessagetablerows.forEach(function (element) { element.commentedmsg_profile_pic = null; });
       this.virtualmessagetablerows.forEach(function (element) { element.commentedmsg_commentcolor = "secondary"; });
       this.virtualmessagetablerows.forEach(function (element) { element.commentedmsg_likecolor = "dark"; });
-      this.virtualmessagetablerows.forEach(function (element) { element.commentedmsg_heartIcon = "ios-heart"; });
+      this.virtualmessagetablerows.forEach(function (element) { element.commentedmsg_heartIcon = "ios-heart-ou"; });
       this.virtualmessagetablerows.forEach(function (element) { element.commentedmsg_pincolor = "dark"; });
 
 
