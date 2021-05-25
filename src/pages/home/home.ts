@@ -445,6 +445,22 @@ export class HomePage {
       }
 
 
+      /**
+       * compare liked messages table with commented message to see if user
+       * has already liked commented message
+       */
+      for (var msgtableloop2 = 0; msgtableloop2 < this.messagetablerows.length; msgtableloop2++) { //looping through the entire messages rows
+        for (var likedmsgloop = 0; likedmsgloop < this.likedmsgids.length; likedmsgloop++) { // looping through the liked messages rows
+          if (this.messagetablerows[msgtableloop2].commentedmsg_id == this.likedmsgids[likedmsgloop].message_id_fetched) {  //if a match is found
+            this.messagetablerows[msgtableloop2].commentedmsg_likecolor = "danger" //assign a danger color to the likecolor property of that message's row
+            this.messagetablerows[msgtableloop2].commentedmsg_heartIcon = "ios-heart"
+          }
+        }
+      }
+
+
+
+
       //we have our messages data now but for any message that has been pinned or unpinneed we have to let any commented message of the same id to also be automatically pinned or unpinned
       //we compare the overall table messages with itself again to match any message id with a commented message id..then we assign the pin color of the original message
       //to the pin color of the commented message
