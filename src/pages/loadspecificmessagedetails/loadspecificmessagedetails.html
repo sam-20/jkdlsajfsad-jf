@@ -25,7 +25,7 @@
 
 
   <!-- commented message card starts here-->
-  <div style="display: flex;width: 100%;background-color: transparent;
+  <div *ngFor="let count of commentedmessagetablerow;" style="display: flex;width: 100%;background-color: transparent;
     flex-direction: column;
     margin-top: 5px; padding-left: 5px;padding-right: 5px;padding-top: 5px;
     padding-bottom: 5px;border-bottom-style: solid;border-bottom-width: 0.5px; border-bottom-color: #E3E3E3;">
@@ -34,30 +34,34 @@
 
       <div style="display: flex;padding-left: 10px;padding-right: 10px;">
         <!-- profile image -->
-        <div style="display: flex;background-color: transparent;flex: 0.2;">
-          <img src="../../assets/imgs/16.jpg" style="width: 46px;height: 46px; border-radius: 23px;" />
+        <div (click)="openuserprofilecommentedmsg(count)"
+          style="display: flex;background-color: transparent;flex: 0.2;">
+          <img src="{{server+count.commentedmsg_sender_profile_pic_fetched}}"
+            style="width: 46px;height: 46px; border-radius: 23px;" />
         </div>
 
         <!-- username -->
-        <div style="display: flex; background-color: transparent;flex: 0.5;align-items: center;padding-top: 10px;">
-          <p style="font-weight: 500;">samuel</p>
+        <div (click)="openuserprofilecommentedmsg(count)"
+          style="display: flex; background-color: transparent;flex: 0.5;align-items: center;padding-top: 10px;">
+          <p style="font-weight: 500;">{{count.commentedmsg_sender_username_fetched}}</p>
         </div>
 
         <!-- add comment -->
         <div style="display: flex;flex: 0.3;align-items: center;padding-top: 10px;">
-          <button ion-button small style="text-transform: none; height: 80%;" color="primary">add comment</button>
+          <button (click)="commentmessage(count)" ion-button small style="text-transform: none; height: 80%;" color="primary">add comment</button>
         </div>
       </div>
 
       <!-- image -->
-      <div
+      <div *ngIf="!server+count.commented_message_media_fetched"
         style="display: flex;background-color: transparent;justify-content: center;align-items: center;padding-top: 5px;padding-bottom: 5px;">
-        <img src="../../assets/imgs/16.jpg" style="height: 180px;width: 95%;" />
+        <img src="{{server+count.commented_message_media_fetched}}" style="height: 180px;width: 95%;"
+          (click)="viewimmage1(count)" />
       </div>
 
       <!-- message -->
       <div style="display: flex;background-color: transparent;padding-left: 10px;padding-top: 5px;padding-bottom: 5px;">
-        <p style="font-size: smaller;">count.message_fetched</p>
+        <p style="font-size: smaller;">{{count.commented_message_fetched}}</p>
       </div>
 
       <!-- likes comments and time -->
@@ -65,22 +69,25 @@
         <div style="display: flex;flex: 0.8;background-color: transparent;align-items: center;flex-direction: row;">
 
           <!-- like icon -->
-          <ion-icon name="ios-heart" color="danger"></ion-icon>
+          <ion-icon name="ios-heart" color={{this.commentedmessagelikecolor}}></ion-icon>
 
           <!-- like count -->
-          <div style="font-size: smaller; padding-left: 5px;">12</div>
+          <div style="font-size: smaller; padding-left: 5px;">{{count.commentedmsg_likes_fetched}}</div>
 
           <!-- comments icon -->
-          <ion-icon name="ios-text" style="margin-left: 20px;" color="secondary"></ion-icon>
+          <ion-icon *ngIf="count.commentedmsg_comments_fetched > 0" name="ios-text" color=secondary
+            style="margin-left: 20px;"></ion-icon>
+          <ion-icon *ngIf="count.commentedmsg_comments_fetched == 0" name="ios-text" color=dark
+            style="margin-left: 20px;"></ion-icon>
 
           <!-- comments count -->
-          <div style="font-size: smaller;padding-left: 5px;">23</div>
+          <div style="font-size: smaller;padding-left: 5px;">{{count.commentedmsg_comments_fetched}}</div>
         </div>
 
         <!-- time -->
         <div style="display: flex;flex: 0.2;background-color: transparent; align-items: center;
           justify-content: flex-end;padding-right: 10px;">
-          <div style="font-size: 10px;font-weight: 500;">12:09</div>
+          <div style="font-size: 10px;font-weight: 500;"> {{count.commentedmsg_date_created_fetched}}</div>
         </div>
       </div>
 
