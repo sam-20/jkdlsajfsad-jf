@@ -39,10 +39,45 @@
   <!--search bar-->
 
 
+  <!-- user card starts here-->
+  <div style="width: 100%;background-color: transparent;display: flex;
+  padding-left: 10px;padding-right: 10px;">
+    <div style="display: flex;background-color: transparent;flex: 0.15; align-items: center;justify-content: center;">
+      <!-- profile pic -->
+      <img src="../../assets/imgs/16.jpg" style="width: 46px;height: 46px;border-radius: 23px;" />
+    </div>
+
+    <div style="display: flex;background-color: transparent;flex: 0.6;flex-direction: column;padding-left: 10px;">
+      <div style="display: flex;  background-color: transparent ;flex: 0.5;align-items: flex-end;">
+        <!-- username -->
+        <span style="font-size: smaller;font-weight: 500;">samuel</span>
+      </div>
+
+      <div style="background-color: transparent;flex: 0.5;">
+        <!-- about -->
+        <span style="font-size: smaller;font-weight: 500;">samuel</span>
+      </div>
+    </div>
+
+    <div style="display: flex;background-color: transparent;flex: 0.25;flex-direction: column;width: 100%;">
+      <div style="display: flex;  background-color: transparent;flex: 0.5;">
+        <!-- follow button -->
+        <button ion-button small style="text-transform: none; height: 90%;" color="danger">following</button>
+      </div>
+
+      <div
+        style="display: flex;  background-color: transparent;flex: 0.5;align-items: flex-end;justify-content: center;">
+        <!-- follows you text -->
+        <span style="font-size: smaller;font-weight: 500;">follows you</span>
+      </div>
+    </div>
+  </div>
+  <!-- user card ends here-->
+
+
   <!--card to display user info-->
   <ion-card class="usercard" *ngFor="let count of useraccountstablerows | search: terms">
     <!--looping through the  useraccountstablerows array-->
-
 
     <ion-row>
 
@@ -50,7 +85,8 @@
         <img src="{{server+count.user_profile_pic_fetched}}" class="userprofilepic">
       </ion-col>
 
-      <ion-col (click)="openuserprofile(count)" col-6>
+      <ion-col (click)="openuserprofile(count)" col-6
+        style="display: flex;align-items: flex-end;flex-direction: column; padding-top: 15px;">
         <ion-card class="usernamecard"><b>{{count.username_fetched}}</b></ion-card>
         <ion-card class="aboutcard">{{count.user_about_fetched}}</ion-card>
       </ion-col>

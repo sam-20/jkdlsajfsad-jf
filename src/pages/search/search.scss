@@ -1,68 +1,63 @@
 page-search {
     //body
-    .body{
-        background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
+    .body {
+        // background:url('/assets/imgs/12.jpg') !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
         //background: white !important;
     }
 
     //hide scroll bar when scrolling
     ::-webkit-scrollbar,
-    *::-webkit-scrollbar
-    {
+    *::-webkit-scrollbar {
         display: none;
     }
 
     //friends title background
-    .toolbar-background{
-        //background:transparent;
-        background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
+    .toolbar-background {
+        background-color: dodgerblue;
+        // background:url('/assets/imgs/12.jpg') !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
         //background: white !important;
     }
 
-
     //back button which comes which navctrl push
-    .back-button-icon{
+    .back-button-icon {
         color: white;
-      }
+    }
 
-      
     //icon in header
-    .camfilaicon{
-        zoom :2.0;
-        color:white;
-     }
- 
+    .camfilaicon {
+        zoom: 2;
+        color: white;
+    }
 
     //navbar title
-    .toolbar-title{
-        color:white;
+    .toolbar-title {
+        color: white;
         //margin-left:-90px;
         margin-top: 5px;
-
     }
 
     //navbar title
-    .navbartitle{
-        margin-top:5px;
+    .navbartitle {
+        margin-top: 5px;
     }
 
-    //remove border line caused by refresher 
-    .has-refresher  .scroll-content {
+    //remove border line caused by refresher
+    .has-refresher .scroll-content {
         border-top: 0 !important;
-      }
+    }
 
     //icon used for pulling refresher
-    .refresher-pulling-icon{
-        color:white;
+    .refresher-pulling-icon {
+        color: white;
     }
 
     //text shown when pulling refresher
-    .refresher-pulling-text{
-        color:white;
+    .refresher-pulling-text {
+        color: white;
     }
 
     //icon used when refreshing
@@ -72,54 +67,52 @@ page-search {
     }
 
     //text shown when refreshing
-    .refresher-refreshing-text{
-        color:white;
+    .refresher-refreshing-text {
+        color: white;
     }
-    
 
     //searchbar
-    .searchbar{
+    .searchbar {
         position: static;
     }
 
     //card  containing user details
-    .usercard{
-        background:transparent;
+    .usercard {
+        background-color: transparent;
         box-shadow: none !important; //border around card
-        padding-bottom: 10px;
+        padding-bottom: 0px;
 
-         //remove border lines around card
-         box-shadow: none !important;
-         border: none !important;
-         border-style: none !important;
+        //remove border lines around card
+        box-shadow: none !important;
+        border: none !important;
+        border-style: none !important;
     }
 
     //user profile pic
-    .userprofilepic{
-        border-radius:50px;
-        width:60px;
-        height:60px;
-        margin-top:2px;
+    .userprofilepic {
+        border-radius: 23px;
+        width: 45px;
+        height: 45px;
+        margin-top: 10px;
         margin-bottom: 0px;
-        
-        margin-left:10px;
+
+        margin-left: 10px;
         padding-left: 0px;
     }
 
     //follow button
-    .followbutton{
-        width:80px;
-        float:right;
-        margin-top:35px;
+    .followbutton {
+        width: 80px;
+        float: right;
+        margin-top: 35px;
         margin-right: 10px;
     }
 
     //username card
-    .usernamecard{
-        margin-left:0px;
-        //margin-top:10px;
-        color:black;
-        background:transparent;
+    .usernamecard {
+        margin-left: 0px;
+        color: black;
+        background-color: transparent;
         box-shadow: none !important; //border around card
 
         //remove border lines around card
@@ -129,16 +122,17 @@ page-search {
     }
 
     //about card
-    .aboutcard{
+    .aboutcard {
         //height:60px;
         //width:140px;
-        margin-left:0px;
+        margin-left: 0px;
         //margin-right:-5px;
-        margin-top:0px;
+        margin-top: 0px;
         margin-bottom: 0px;
-        color:black;
-        background:transparent;
-        box-shadow: none !important; //border around card 
+        color: black;
+        background-color: transparent;
+        box-shadow: none !important; //border around card
+        font-size: smaller;
 
         //remove border lines around card
         box-shadow: none !important;
@@ -147,12 +141,12 @@ page-search {
     }
 
     //follower text
-    .followertext{
-        color:black;
-        margin-top:15px !important;
+    .followertext {
+        color: black;
+        margin-top: 15px !important;
         margin-bottom: -40px;
-        float:right;
+        float: right;
         margin-right: 10px;
+        font-size: smaller;
     }
 }
- 
