@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class PostProvider {
     // server : string ="http://www.camfilaknust.com/" //api url
-    server: string = "http://10.190.145.37:8080/camfilaapi/" //api url
+    server: string = "http://10.178.24.200:8080/camfilaapi/" //api url
     // server : string ="http://10.162.90.177/camfilaapi/" //api url
     //server : string = "http://camfilaknust.tk/"
 
