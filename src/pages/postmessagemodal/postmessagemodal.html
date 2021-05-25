@@ -1,23 +1,10 @@
 <ion-header no-shadow no-border>
 
   <ion-navbar>
-    <ion-row>
-      <ion-col>
-        <!--text / ios-text / ios-text-outline-->
-        <ion-icon name="ios-paw" class="camfilaicon"></ion-icon>
-      </ion-col>
-
-      <ion-col>
-        <ion-title>Post message</ion-title>
-      </ion-col>
-
-      <ion-col></ion-col>
-      <ion-col></ion-col>
-
-    </ion-row>
-
-
-
+    <div style="width: 100%;height: 100%;display: flex;flex-direction: row;">
+      <ion-icon name="ios-paw" class="camfilaicon"></ion-icon>
+      <ion-title>Post message</ion-title>
+    </div>
   </ion-navbar>
 
 
@@ -35,8 +22,7 @@
       <ion-col width-50 style="text-align: center">
         <ion-card class="picturecard">
           <ion-icon name="trash" class="deletepictureicon" (click)="deletephoto()"></ion-icon>
-          <img *ngIf="base64Image" [src]="base64Image" class="imagesource" 
-          (click)="viewimage()">
+          <img *ngIf="base64Image" [src]="base64Image" class="imagesource" (click)="viewimage()">
         </ion-card>
       </ion-col>
     </div>
@@ -52,7 +38,8 @@
 
     <!--post message textarea-->
     <ion-col>
-      <textarea rows="10" cols="45" [(ngModel)]="messagetextareainput" class="postmessagetextarea" placeholder="type message here..."></textarea>
+      <textarea rows="10" cols="45" [(ngModel)]="messagetextareainput" class="postmessagetextarea"
+        placeholder="type message here..."></textarea>
     </ion-col>
 
     <ion-col></ion-col>
@@ -66,13 +53,14 @@
     <!--add image icon-->
     <ion-col>
       <button ion-button round class="addimagebutton" (click)="presentActionSheet()">
-        <ion-icon name="ios-add"></ion-icon>
+        <ion-icon name="ios-camera"></ion-icon>
       </button>
     </ion-col>
 
     <!--send message button-->
     <ion-col>
-      <button ion-button round class="sendmessagebutton" (click)="sendmessage()">send<ion-icon name="ios-send" class="sendmessageicon"></ion-icon></button>
+      <button ion-button round class="sendmessagebutton" (click)="sendmessage()">send<ion-icon name="ios-send"
+          class="sendmessageicon"></ion-icon></button>
     </ion-col>
 
   </ion-row>

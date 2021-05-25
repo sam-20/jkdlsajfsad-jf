@@ -1,10 +1,11 @@
 page-postmessagemodal {
     //body
     .body{
-        background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
+        // background:url('/assets/imgs/12.jpg') !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
         //background: white !important;
+        background-color: white;
     }
 
     //hide scroll bar when scrolling
@@ -22,10 +23,11 @@ page-postmessagemodal {
      //postmessage title background
      .toolbar-background{
         //background:transparent;
-        background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
+        // background:url('/assets/imgs/12.jpg') !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
         //background: white !important;
+        background-color: dodgerblue;
     }
 
     //icon in header
@@ -39,6 +41,7 @@ page-postmessagemodal {
     .toolbar-title{
         color:white;
         margin-top: 5px;
+        font-size: medium;
 
     }
 
