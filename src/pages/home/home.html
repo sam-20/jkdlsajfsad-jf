@@ -70,7 +70,7 @@
     <div *ngIf="count.iscomment =='false'" style="display: flex;width: 100%;background-color: transparent;
     flex-direction: column;
     margin-top: 20px; padding-left: 5px;padding-right: 5px;padding-top: 5px;
-    padding-bottom: 5px;border-radius: 5px;
+    padding-bottom: 5px;border-radius: 3px;
     box-shadow: 0px 0px 5px 1px gray;">
 
       <div style="display: flex;background-color: transparent;flex-direction: row;width: 100%;">
@@ -145,7 +145,7 @@
       <div style="display: flex;width: 100%;background-color: transparent;
       flex-direction: column;
       margin-top: 10px; padding-left: 5px;padding-right: 5px;padding-top: 5px;
-      padding-bottom: 5px;border-radius: 5px;
+      padding-bottom: 5px;border-radius: 3px;
       box-shadow: 0px 0px 5px 1px gray;">
 
         <div style="display: flex;background-color: transparent;flex-direction: row;width: 100%;">
@@ -216,7 +216,7 @@
       <div *ngIf="count.iscomment =='true'" style="display: flex;width: 90%;background-color: transparent;
     flex-direction: column;
     margin-top: 10px; padding-left: 5px;padding-right: 5px;padding-top: 5px;
-    padding-bottom: 5px;border-radius: 5px;
+    padding-bottom: 5px;border-radius: 3px;
     box-shadow: 0px 0px 5px 1px gray;">
 
         <div style="display: flex;background-color: transparent;flex-direction: row;width: 100%;">
@@ -228,9 +228,9 @@
           </div>
 
           <!-- username -->
-          <div (click)="openuserprofile(count)"
-            style="display: flex; background-color: transparent;flex: 0.7;align-items: center;">
-            <p style="font-weight: 500;">{{count.username_fetched}}</p>
+          <div (click)="openuserprofile(count)" style="display: flex;flex: 0.7;align-items: center;">
+            <p style="font-weight: 500;">{{count.username_fetched}} </p>
+            <p style="font-size: 10px;font-style: italic;padding-left: 5px;">commented</p>
           </div>
 
           <!-- pin icon -->
