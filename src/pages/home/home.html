@@ -76,7 +76,7 @@
 
       <!-- image -->
       <div *ngIf="!server+count.message_media_fetched"
-        style="display: flex;background-color: transparent;justify-content: center;align-items: center;padding-top: 5px;padding-bottom: 5px;">
+        style="display: flex;background-color: transparent;justify-content: center;align-items: center;padding-top: 15px;padding-bottom: 5px;">
         <img (click)="viewimage(count)" src="{{server+count.message_media_fetched}}"
           style="height: 180px;width: 95%;" />
       </div>
@@ -127,21 +127,21 @@
       <div style="display: flex;width: 100%;background-color: transparent;
       flex-direction: column;
       margin-top: 10px; padding-left: 5px;padding-right: 5px;padding-top: 5px;
-      padding-bottom: 5px;">
+      padding-bottom: 10px;">
 
         <div style="display: flex;background-color: transparent;flex-direction: row;width: 100%;">
 
           <!-- profile image -->
           <div (click)="openuserprofilecommentedmsg(count)"
-            style="display: flex;background-color: transparent;flex: 0.2;">
+            style="display: flex;background-color: transparent;flex: 0.15;">
             <img src="{{server+count.commentedmsg_profile_pic}}"
-              style="width: 46px;height: 46px; border-radius: 23px;" />
+              style="width: 40px;height: 40px; border-radius: 20px;" />
           </div>
 
           <!-- username -->
           <div (click)="openuserprofilecommentedmsg(count)"
-            style="display: flex; background-color: transparent;flex: 0.7;align-items: center;">
-            <p style="font-weight: 500;">{{count.commentedmsg_username}}</p>
+            style="display: flex; background-color: transparent;flex: 0.75;align-items: center;">
+            <span style="font-weight: 500;font-size: smaller;">{{count.commentedmsg_username}}</span>
           </div>
 
           <!-- pin icon -->
@@ -153,14 +153,14 @@
 
         <!-- image -->
         <div *ngIf="!server+count.commentedmsg_messagemedia"
-          style="display: flex;background-color: transparent;justify-content: center;align-items: center;padding-top: 5px;padding-bottom: 5px;">
+          style="display: flex;background-color: transparent;justify-content: center;align-items: center;padding-top: 15px;padding-bottom: 5px;">
           <img src="{{server+count.commentedmsg_messagemedia}}" (click)="viewimage2(count)"
             style="height: 180px;width: 95%;" />
         </div>
 
         <!-- message -->
         <div (click)="loadcommentedmessagedetails(count)"
-          style="display: flex;background-color: transparent;padding-left: 10px;padding-top: 5px;padding-bottom: 5px;">
+          style="display: flex;background-color: transparent;padding-left: 10px;padding-top: 15px;padding-bottom: 5px;">
           <p style="font-size: smaller;">{{count.commentedmsg_message}}</p>
         </div>
 
@@ -199,20 +199,21 @@
     flex-direction: column;
     margin-top: 10px; padding-left: 5px;padding-right: 5px;padding-top: 5px;
     padding-bottom: 5px;border-radius: 3px;
-    box-shadow: 0px 0px 5px 1px gray;">
+    /* box-shadow: 0px 0px 3px 1px gray; */
+    ">
 
         <div style="display: flex;background-color: transparent;flex-direction: row;width: 100%;">
 
           <!-- profile image -->
-          <div (click)="openuserprofile(count)" style="display: flex;background-color: transparent;flex: 0.2;">
+          <div (click)="openuserprofile(count)" style="display: flex;background-color: transparent;flex: 0.15;">
             <img src="{{server+count.sender_profile_pic_fetched}}"
-              style="width: 46px;height: 46px; border-radius: 23px;" />
+              style="width: 40px;height: 40px; border-radius: 20px;" />
           </div>
 
           <!-- username -->
-          <div (click)="openuserprofile(count)" style="display: flex;flex: 0.7;align-items: center;">
-            <p style="font-weight: 500;">{{count.username_fetched}} </p>
-            <p style="font-size: 10px;font-style: italic;padding-left: 5px;">commented</p>
+          <div (click)="openuserprofile(count)" style="display: flex;flex: 0.75;align-items: center;">
+            <span style="font-weight: 500;font-size: smaller;">{{count.username_fetched}} </span>
+            <span style="font-size: 10px;font-style: italic;padding-left: 5px;">commented</span>
           </div>
 
           <!-- pin icon -->
@@ -224,14 +225,14 @@
 
         <!-- image -->
         <div *ngIf="!server+count.message_media_fetched"
-          style="display: flex;background-color: transparent;justify-content: center;align-items: center;padding-top: 5px;padding-bottom: 5px;">
+          style="display: flex;background-color: transparent;justify-content: center;align-items: center;padding-top: 15px;padding-bottom: 5px;">
           <img (click)="viewimage(count)" src="{{server+count.message_media_fetched}}"
             style="height: 180px;width: 95%;" />
         </div>
 
         <!-- message -->
         <div (click)="loadmessagedetails(count)"
-          style="display: flex;padding-left: 10px;padding-top: 5px;padding-bottom: 5px;">
+          style="display: flex;padding-left: 10px;padding-top: 15px;padding-bottom: 5px;">
           <p style="font-size: smaller;width: 100%;">{{count.message_fetched}}</p>
         </div>
 
