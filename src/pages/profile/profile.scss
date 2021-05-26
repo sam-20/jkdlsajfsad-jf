@@ -1,7 +1,7 @@
 page-profile {
     //body
-    .body{
-        background:url('/assets/imgs/12.jpg') !important;
+    .body {
+        background: url("/assets/imgs/12.jpg") !important;
         background-repeat: no-repeat !important;
         background-size: cover !important;
         //background: white !important;
@@ -9,71 +9,69 @@ page-profile {
 
     //hide scroll bar when scrolling
     ::-webkit-scrollbar,
-    *::-webkit-scrollbar
-    {
+    *::-webkit-scrollbar {
         display: none;
     }
-    
-     //profle title background
-     .toolbar-background{
+
+    //profle title background
+    .toolbar-background {
         //background:transparent;
-        background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        //background: white !important;
+        // background: url("/assets/imgs/12.jpg") !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
+        background-color: dodgerblue;
     }
 
     //icon in header
-    .camfilaicon{
-        zoom :2.0;
-        color:white;
+    .camfilaicon {
+        zoom: 2;
+        color: white;
         margin-top: 2px;
         margin-left: 10px;
-     }
+    }
 
     //logout icon
-    .logouticon{
-        zoom :1.5;
-        color:white;
+    .logouticon {
+        zoom: 1.5;
+        color: white;
         margin-top: 3px;
         float: right;
         margin-right: 10px;
-     } 
- 
-
-    //navbar title
-    .toolbar-title{
-        color:white;
-        //margin-left:-90px;
-        margin-top: 9px;
-
     }
 
     //navbar title
-    .navbartitle{
-        margin-top:5px;
+    .toolbar-title {
+        color: white;
+        //margin-left:-90px;
+        margin-top: 9px;
+        font-size: medium;
+    }
+
+    //navbar title
+    .navbartitle {
+        margin-top: 5px;
     }
 
     //logout button
-     .logoutbutton{
-        width:0px;
+    .logoutbutton {
+        width: 0px;
         float: right;
-        margin-top:5px;
+        margin-top: 5px;
     }
 
-    //remove border line caused by refresher  
-    .has-refresher  .scroll-content {
+    //remove border line caused by refresher
+    .has-refresher .scroll-content {
         border-top: 0 !important;
-      }
+    }
 
     //icon used for pulling refresher
-    .refresher-pulling-icon{
-        color:white;
+    .refresher-pulling-icon {
+        color: white;
     }
 
     //text shown when pulling refresher
-    .refresher-pulling-text{
-        color:white;
+    .refresher-pulling-text {
+        color: white;
     }
 
     //icon used when refreshing
@@ -83,76 +81,71 @@ page-profile {
     }
 
     //text shown when refreshing
-    .refresher-refreshing-text{
-        color:white;
+    .refresher-refreshing-text {
+        color: white;
     }
 
-
-     //user profile card
-     .userprofilecard{
-        margin-top:0px;
-        width:100px;
-        height:100px;
-        border-radius:150px;
+    //user profile card
+    .userprofilecard {
+        margin-top: 0px;
+        width: 100px;
+        height: 100px;
+        border-radius: 150px;
         margin-left: 15px;
     }
 
-      //picture inside user profile card
-      .userprofilepic{
-        width:100px;
+    //picture inside user profile card
+    .userprofilepic {
+        width: 100px;
         height: 100px;
     }
-    
+
     //stats colunn
-    .statscolumn{
-        margin-left:-140px;
+    .statscolumn {
+        margin-left: -140px;
         margin-right: 10px;
     }
 
     //stats header
-    .statsheader{
-        color:white;
+    .statsheader {
+        color: white;
     }
 
     //stats value
-    .statsvalue{
-        color:white;
+    .statsvalue {
+        color: white;
     }
 
-
     //edit profile button
-    .editprofilebutton{
+    .editprofilebutton {
         //float:right;
-        margin-top:5px;
+        margin-top: 5px;
         margin-left: 75px;
     }
 
     //date joined text
-    .datejoinedtext{
+    .datejoinedtext {
         float: right;
         margin-top: 25px;
-        color:black;
+        color: black;
         margin-right: 15px;
     }
 
     //headers like username, about, phone , email, etc.
-    .biodetailsheadertext{
-        color:black;
-        margin-left:15px;
+    .biodetailsheadertext {
+        color: black;
+        margin-left: 15px;
     }
-
 
     //the values assigned to the headers
-    .biodetailsvaluetext{
+    .biodetailsvaluetext {
         //preserve line breaks wherever user added them in the text
-        white-space:pre-wrap;
-        color:black;
+        white-space: pre-wrap;
+        color: black;
     }
 
-
     //swipeable tabs styling
-    .SwipedTabs-indicatorSegment
-    {
+    .SwipedTabs-indicatorSegment {
         -webkit-transition: 0.3s all;
         -moz-transition: 0.3s all;
         -o-transition: 0.3s all;
@@ -163,23 +156,20 @@ page-profile {
         top: -2px;
         background-color: black !important; //color of active tab's bar indicator segment
     }
- 
-    .SwipedTabs-tabs ion-segment-button
-    {
-        border:none !important;
+
+    .SwipedTabs-tabs ion-segment-button {
+        border: none !important;
         color: gray !important; //color of text of inactive tab heading
         //background-color: white !important; //background color of tabs heading
-        background:transparent;
+        background: transparent;
     }
- 
-    .SwipedTabs-tabs ion-segment-button.SwipedTabs-activeTab{
-        color:black !important; //color of text of active tab heading
+
+    .SwipedTabs-tabs ion-segment-button.SwipedTabs-activeTab {
+        color: black !important; //color of text of active tab heading
     }
 
     // //add a border line beneath the segment bar indicator
     // .SwipedTabs-tabs{
     //     border-bottom: solid 1px #e6e6e6 !important;
     // }
-
 }
- 
