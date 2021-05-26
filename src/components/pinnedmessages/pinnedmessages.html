@@ -22,7 +22,7 @@
             <!--profile pic in message-->
             <!--user profile goes here-->
           </ion-avatar>
-          <h2 class="usernametext">{{count.msgsender_username_fetched}}</h2>
+          <b class="usernametext">{{count.msgsender_username_fetched}}</b>
         </ion-item>
       </ion-col>
 
@@ -49,7 +49,7 @@
     <ion-card-content text-wrap (click)="loadmessagedetails(count)">
       <!--messageDB is the php variable to which the column values from the 
       database was assigned to-->
-      <p class="messagetext" text-wrap>{{count.message_fetched}}</p>
+      <span class="messagetext" text-wrap>{{count.message_fetched}}</span>
     </ion-card-content>
 
     <!--another row with columns : likes, comments and time added-->
