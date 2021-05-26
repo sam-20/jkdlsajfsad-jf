@@ -1,119 +1,115 @@
 page-privacy {
     //body
-    .body{
-        background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        //background: white !important;
+    .body {
+        // background:url('/assets/imgs/12.jpg') !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
+        background-color: white;
     }
 
     //back button which comes which navctrl push
-    .back-button-icon{
+    .back-button-icon {
         color: white;
-      }
+    }
 
     //hide scroll bar when scrolling
     ::-webkit-scrollbar,
-    *::-webkit-scrollbar
-    {
+    *::-webkit-scrollbar {
         display: none;
     }
 
-     //following title background
-     .toolbar-background{
+    //following title background
+    .toolbar-background {
         //background:transparent;
-        background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        //background: white !important;
+        // background:url('/assets/imgs/12.jpg') !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
+        background-color: dodgerblue;
     }
 
     //icon in header
-    .camfilaicon{
-        zoom :2.0;
-        color:white;
-     }
- 
- 
-    //navbar title
-    .toolbar-title{
-        color:white;
-        margin-top: 5px;
-    } 
+    .camfilaicon {
+        zoom: 2;
+        color: white;
+    }
 
     //navbar title
-    .navbartitle{
-        margin-top:5px;
+    .toolbar-title {
+        color: white;
+        margin-top: 5px;
+        font-size: medium;
+    }
+
+    //navbar title
+    .navbartitle {
+        margin-top: 5px;
     }
 
     //profile picture
-    .profilephoto{
-        border-radius: 150px;
-        width:120px;
+    .profilephoto {
+        border-radius: 50px;
+        width: 100px;
         height: 100px;
     }
 
-
     // password form item
-    .passwordform{
+    .passwordform {
         margin-top: 20px;
         background: transparent;
     }
 
     //password input textbox
-    .passwordinput{
-        color:black;
+    .passwordinput {
+        color: black;
         font-size: 13px;
     }
 
     //update password button
-    .updatepasswordbutton{
+    .updatepasswordbutton {
         margin-top: 10px;
         //margin-left: 10px;
         width: 150px;
-    } 
+    }
 
-     //update password icon
-     .updatepasswordicon{
+    //update password icon
+    .updatepasswordicon {
         margin-right: 5px;
     }
 
     //delete account button
-    .deleteaccountbutton{
+    .deleteaccountbutton {
         margin-top: 10px;
         //margin-left: 10px;
         width: 150px;
-    } 
-
-     //delete account icon
-     .deleteaccounticon{
-        margin-right: 5px;
-        color:yellow;
     }
-      
+
+    //delete account icon
+    .deleteaccounticon {
+        margin-right: 5px;
+        color: yellow;
+    }
+
     //password input placeholder
     .text-input::-webkit-input-placeholder {
         text-indent: 0;
         color: black;
         padding-left: 50px;
     }
-    
 }
 
-    //password updated toast NB: its placed outside the body's class
-    //was used in the ts file
-    .passwordtoast
-    {
-        //toast background
-        .toast-wrapper {
-            background: gray;
-            opacity: 0.8;
-            border-radius: 50px;
-            text-align: center;
-            width:150px;
-          }
-          .toast-message {
-            font-size: 12px;
-            color: white;
-          }
+//password updated toast NB: its placed outside the body's class
+//was used in the ts file
+.passwordtoast {
+    //toast background
+    .toast-wrapper {
+        background: gray;
+        opacity: 0.8;
+        border-radius: 50px;
+        text-align: center;
+        width: 150px;
     }
+    .toast-message {
+        font-size: 12px;
+        color: white;
+    }
+}
