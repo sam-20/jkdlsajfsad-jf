@@ -42,7 +42,7 @@
 
   <!-- user profile card starts here-->
   <div
-    style="display: flex;width: 100%;background-color: transparent; box-shadow: 0px 0px 1px black;flex-direction: column;">
+    style="display: flex;width: 100%;background-color: transparent; box-shadow: 0px 0px 5px 1px grey;flex-direction: column;">
 
     <div style="display: flex;background-color: dodgerblue;height: 50px;"></div>
 
@@ -50,16 +50,16 @@
       align-items: center;justify-content: space-between;
       padding-right: 10px;padding-left: 10px;">
 
-      <div style="display: flex;background-color: transparent;margin-top: -25px;">
+      <div (click)="viewprofileimage()" style="display: flex;background-color: transparent;margin-top: -25px;">
         <!-- profile image -->
-        <img src="../../assets/imgs/16.jpg" style="height: 70px;width: 70px;border-radius: 35px;
+        <img src="{{this.profilepic}}" style="height: 70px;width: 70px;border-radius: 35px;
         border-style: solid;border-width: 2px; border-color: white;" />
       </div>
 
       <div style="display: flex;background-color: transparent;">
 
         <!-- edit profile button -->
-        <button style="display: flex;align-items: center;justify-content: center;
+        <button (click)="editprofile()" style="display: flex;align-items: center;justify-content: center;
         padding-top: 5px;padding-bottom: 5px;color: dodgerblue;
         padding-left: 5px;padding-right: 5px;font-size: smaller;
          border-radius: 10px; background-color: white;border-style: solid;
@@ -73,172 +73,63 @@
 
       <!-- username -->
       <div style="display: flex;background-color: transparent;align-items: center;padding-top: 5px;padding-bottom:5px;">
-        <span style="font-size: small;font-weight: 500;">samuel</span>
+        <span style="font-size: small;font-weight: 500;">{{this.username}}</span>
       </div>
 
       <!-- email -->
       <div style="display: flex;background-color: transparent;align-items: center;padding-top: 5px;padding-bottom:5px;">
-        <span style="font-size: smaller;">botwesamuel192@gmail.com</span>
+        <span style="font-size: smaller;">{{this.email}}</span>
       </div>
 
       <!-- phone -->
       <div style="display: flex;background-color: transparent;align-items: center;padding-top: 5px;padding-bottom:5px;">
-        <span style="font-size: smaller;">0233929283</span>
+        <span style="font-size: smaller;">{{this.phonenumber}}</span>
       </div>
 
       <!-- website -->
       <div style="display: flex;background-color: transparent;align-items: center;padding-top: 5px;padding-bottom:5px;">
-        <span style="font-size: smaller;">ghost.com</span>
+        <span style="font-size: smaller;">{{this.website}}</span>
       </div>
 
       <!-- date joined -->
       <div
         style="display: flex;flex-direction: row;background-color: transparent;align-items: center;padding-top: 5px;padding-bottom: 5px;">
         <ion-icon name="ios-calendar-outline"></ion-icon>
-        <span style="font-size: smaller;padding-left: 5px;">Joined July 2015</span>
+        <span style="font-size: smaller;padding-left: 5px;">Joined {{this.datejoined}}</span>
       </div>
 
       <!-- about -->
       <textarea style="display: flex;background-color: transparent; font-size: smaller;padding-top: 5px;
-      border: none;">fall.</textarea>
+      border: none;">{{this.about}}</textarea>
 
       <div style="display: flex;flex-direction: row;background-color: transparent;
        align-items: center;padding-top: 10px;padding-bottom: 10px;">
 
         <!-- following  -->
-        <button style="margin-right: 5px;padding-top: 5px;
+        <button (click)="following()" style="margin-right: 5px;padding-top: 5px;
         padding-bottom: 5px; font-size: smaller;background-color: transparent;">
-          390 Following
+          {{this.followingcount}} Following
         </button>
 
         <!-- followers -->
-        <button style="margin-right: 5px;padding-top: 5px;
+        <button (click)="followers()" style="margin-right: 5px;padding-top: 5px;
         padding-bottom: 5px; font-size: smaller;background-color: transparent;">
-          410 Followers
+          {{this.followerscount}} Followers
         </button>
 
         <!-- posts -->
-        <button style="margin-right: 5px;padding-top: 5px;
+        <button (click)="mymessages()" style="margin-right: 5px;padding-top: 5px;
         padding-bottom: 5px; font-size: smaller;background-color: transparent;">
-          23 Posts
+          {{this.usermessagescount}} Posts
         </button>
       </div>
 
     </div>
 
 
-
-
   </div>
   <!-- user profile card ends here -->
 
-
-  <ion-row>
-
-    <ion-col>
-      <!--profile picture-->
-      <ion-card class="userprofilecard">
-        <img src="{{this.profilepic}}" class="userprofilepic" (click)="viewprofileimage()">
-      </ion-card>
-    </ion-col>
-
-    <!--user stats values-->
-    <ion-col class="statscolumn">
-      <ion-row>
-        <ion-col width-50 style="text-align: center">
-          <div class="statsvalue" (click)="mymessages()">{{this.usermessagescount}}</div>
-        </ion-col>
-        <ion-col width-50 style="text-align: center">
-          <div class="statsvalue" (click)="following()">{{this.followingcount}}</div>
-        </ion-col>
-        <ion-col width-50 style="text-align: center">
-          <div class="statsvalue" (click)="followers()">{{this.followerscount}}</div>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-
-        <!--user stats headers-->
-        <ion-col width-50 style="text-align: center">
-          <div class="statsheader" (click)="mymessages()">posts</div>
-        </ion-col>
-        <ion-col width-50 style="text-align: center">
-          <div class="statsheader" (click)="following()">following</div>
-        </ion-col>
-        <ion-col width-50 style="text-align: center">
-          <div class="statsheader" (click)="followers()">followers</div>
-        </ion-col>
-      </ion-row>
-
-      <!--edit profile button-->
-      <button ion-button small class="editprofilebutton" style="text-transform: none;" (click)="editprofile()">Edit
-        Profile</button>
-
-      <!--date joined text-->
-      <ion-col>
-        <div class="datejoinedtext"><b>Joined :</b> {{this.datejoined}}</div>
-      </ion-col>
-
-    </ion-col>
-
-  </ion-row>
-
-
-  <!--user bio details-->
-  <!--username details-->
-  <ion-row>
-    <ion-col col-3>
-      <div text-wrap><b><span class="biodetailsheadertext">Username:</span></b> </div>
-    </ion-col>
-
-    <ion-col col-9>
-      <div text-wrap><span class="biodetailsvaluetext">{{this.username}}</span></div>
-    </ion-col>
-  </ion-row>
-
-  <!--about details-->
-  <ion-row>
-    <ion-col col-3>
-      <div *ngIf="this.about != 'empty'" text-wrap><b><span class="biodetailsheadertext">About:</span></b></div>
-    </ion-col>
-
-    <ion-col col-9>
-      <div text-wrap><span class="biodetailsvaluetext">{{this.about}}</span></div>
-    </ion-col>
-  </ion-row>
-
-  <!--email details-->
-  <ion-row>
-    <ion-col col-3>
-      <div *ngIf="this.email != 'empty'" text-wrap><b><span class="biodetailsheadertext">Email:</span></b></div>
-    </ion-col>
-
-    <ion-col col-9>
-      <div text-wrap><span class="biodetailsvaluetext">{{this.email}}</span></div>
-    </ion-col>
-  </ion-row>
-
-  <!--phone details-->
-  <ion-row>
-    <ion-col col-3>
-      <div *ngIf="this.phonenumber != 'empty'" text-wrap><b><span class="biodetailsheadertext">Phone:</span></b></div>
-    </ion-col>
-
-    <ion-col col-9>
-      <div text-wrap><span class="biodetailsvaluetext">{{this.phonenumber}}</span></div>
-    </ion-col>
-  </ion-row>
-
-  <!--website details-->
-  <ion-row>
-    <ion-col col-3>
-      <div *ngIf="this.website != 'empty'" text-wrap><b><span class="biodetailsheadertext">Website:</span></b></div>
-    </ion-col>
-
-    <ion-col col-9>
-      <div text-wrap><span class="biodetailsvaluetext">{{this.website}}</span></div>
-    </ion-col>
-  </ion-row>
 
 
 
