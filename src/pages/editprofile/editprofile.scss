@@ -1,65 +1,63 @@
 page-editprofile {
-
     //body
-    .body{
-        background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        //background: white !important;
+    .body {
+        // background:url('/assets/imgs/12.jpg') !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
+        background-color: white;
     }
 
     //hide scroll bar when scrolling
     ::-webkit-scrollbar,
-    *::-webkit-scrollbar
-    {
+    *::-webkit-scrollbar {
         display: none;
     }
 
     //back button which comes which navctrl push
-    .back-button-icon{
+    .back-button-icon {
         color: white;
-      }
+    }
 
-     //posts title background
-     .toolbar-background{
-       // background:transparent;
-       background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        //background: white !important;
+    //posts title background
+    .toolbar-background {
+        // background:transparent;
+        // background: url("/assets/imgs/12.jpg") !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
+        background-color: dodgerblue;
     }
 
     //icon in header
-    .camfilaicon{
-        zoom :2.0;
-        color:white;
+    .camfilaicon {
+        zoom: 2;
+        color: white;
     }
- 
+
     //navbar title
-    .toolbar-title{
-        color:white;
+    .toolbar-title {
+        color: white;
         margin-top: 5px;
-
+        font-size: medium;
     }
 
     //navbar title
-    .navbartitle{
-        margin-top:5px;
-    } 
+    .navbartitle {
+        margin-top: 5px;
+    }
 
-    //remove border line caused by refresher  
-    .has-refresher  .scroll-content {
+    //remove border line caused by refresher
+    .has-refresher .scroll-content {
         border-top: 0 !important;
-      }
+    }
 
     //icon used for pulling refresher
-    .refresher-pulling-icon{
-        color:white;
+    .refresher-pulling-icon {
+        color: white;
     }
 
     //text shown when pulling refresher
-    .refresher-pulling-text{
-        color:white;
+    .refresher-pulling-text {
+        color: white;
     }
 
     //icon used when refreshing
@@ -69,158 +67,173 @@ page-editprofile {
     }
 
     //text shown when refreshing
-    .refresher-refreshing-text{
-        color:white;
+    .refresher-refreshing-text {
+        color: white;
     }
 
     //done container
-    .donecontainer{
-        margin-top:4px;
-        margin-right:15px;
+    .donecontainer {
+        margin-top: 4px;
+        margin-right: 15px;
     }
 
     //done checkmark in header
-    .doneicon{
-        zoom :1.5;
-        color:white;
+    .doneicon {
+        zoom: 1.5;
+        color: white;
         margin-right: 25px;
     }
 
     //done text
-    .donetext{
-        color:white;
+    .donetext {
+        color: white;
         margin-top: -20px;
         float: right;
     }
 
     //profile picture
-    .profilephoto{
-        border-radius: 60px;
-        width:100px;
-        height: 100px;
+    .profilephoto {
+        border-radius: 40px;
+        width: 80px;
+        height: 80px;
     }
 
     //change photo text
-    .changephototext{
-        color:white;
+    .changephototext {
+        color: black;
         margin-top: -10px;
+        font-size: smaller;
     }
 
     // username form item
-    .usernameform{
-        background: transparent;
+    .usernameform {
+        background-color: transparent;
+        border: none;
+        margin-bottom: 5px;
+        margin-left: 10px;
     }
 
     //username label
-    .usernamelabel{
+    .usernamelabel {
         //color:rgb(46, 202, 51) !important;
-        color:black !important;
+        color: black !important;
+        border: none;
     }
 
     //username input textbox
-    .usernameinput{
-        color:black;
-        font-size: 13px;
-        border-bottom:1px solid rgb(180, 176, 180) //text box line
+    .usernameinput {
+        color: black;
+        font-size: 11px;
+        border: none;
+        border-bottom: 2px solid white; //text box line
     }
 
     //about form item
-    .aboutform{
+    .aboutform {
         //margin-top:20px;
         background: transparent;
+        margin-bottom: 5px;
+        margin-left: 10px;
     }
 
     //about label
-    .aboutlabel{
+    .aboutlabel {
         //color:rgb(46, 202, 51) !important;
-        color:black !important;
+        color: black !important;
     }
 
     //about input textbox
-    .aboutinput{
-        color:black;
-        font-size: 13px;
-        border-bottom:1px solid rgb(234, 227, 235) //text box line
+    .aboutinput {
+        color: black;
+        font-size: 11px;
+        border-bottom: 2px solid white; //text box line
     }
 
     //website form item
-    .websiteform{
+    .websiteform {
         //margin-top:20px;
         background: transparent;
+        margin-bottom: 5px;
+        margin-left: 10px;
     }
 
     //website label
-    .websitelabel{
+    .websitelabel {
         //color:rgb(46, 202, 51) !important;
-        color:black !important;
+        color: black !important;
     }
 
     //website input textbox
-    .websiteinput{
-        color:black;
-        font-size: 13px;
-        border-bottom:1px solid rgb(234, 227, 235) //text box line
+    .websiteinput {
+        color: black;
+        font-size: 11px;
+        border-bottom: 2px solid white; //text box line
     }
 
     // email form item
-    .emailform{
+    .emailform {
         background: transparent;
+        margin-bottom: 5px;
+        margin-left: 10px;
     }
 
     //email label
-    .emaillabel{
+    .emaillabel {
         //color:rgb(46, 202, 51) !important;
-        color:black !important;
+        color: black !important;
     }
 
     //email input textbox
-    .emailinput{
-        color:black;
-        font-size: 13px;
-        border-bottom:1px solid rgb(234, 227, 235) //text box line
+    .emailinput {
+        color: black;
+        font-size: 11px;
+        border: none;
+        border-bottom: 2px solid white; //text box line
     }
 
-
     // phone form item
-    .phoneform{
+    .phoneform {
         background: transparent;
+        margin-bottom: 5px;
+        margin-left: 10px;
     }
 
     //phone label
-    .phonelabel{
+    .phonelabel {
         //color:rgb(46, 202, 51) !important;
-        color:black !important;
+        color: black !important;
     }
 
     //phone input textbox
-    .phoneinput{
-        color:black;
-        font-size: 13px;
-        border-bottom:1px solid rgb(234, 227, 235) //text box line
+    .phoneinput {
+        color: black;
+        font-size: 11px;
+        border: none;
+        border-bottom: 2px solid white; //text box line
     }
 
     //delete picture icon
-   .deletepictureicon{
+    .deletepictureicon {
         position: absolute;
-        color:red;
-        margin-left:35px;
+        color: red;
+        margin-left: 35px;
         float: right;
-        margin-top:-30px !important;
+        margin-top: -30px !important;
     }
 
     //privacy setup block
-    .privacysetup{
-        margin-top:10px;
-        margin-left: 5px;
+    .privacysetup {
+        margin-top: 10px;
+        padding-left: 10px;
     }
 
     //privacy button
-    .privacybutton{
-        width:100px;
+    .privacybutton {
+        width: 100px;
     }
 
     //privacy icon
-    .privacyicon{
+    .privacyicon {
         margin-right: 5px;
     }
 }

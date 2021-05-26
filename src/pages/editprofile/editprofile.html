@@ -37,7 +37,7 @@
 
       <ion-col>
         <!--profile photo-->
-        <img *ngIf="this.profilepic" [src]="this.profilepic" class="profilephoto" (click)="viewprofileimage()"/>
+        <img *ngIf="this.profilepic" [src]="this.profilepic" class="profilephoto" (click)="viewprofileimage()" />
       </ion-col>
 
       <ion-col></ion-col>
@@ -72,6 +72,18 @@
       <ion-input type="text" value="{{this.username}}" class="usernameinput" [(ngModel)]="usernameinput"></ion-input>
     </ion-item>
 
+    <!--email-->
+    <ion-item class="emailform" no-lines>
+      <ion-label stacked class="emaillabel"><b>Email address</b></ion-label>
+      <ion-input type="text" value="{{this.email}}" class="emailinput" [(ngModel)]="emailinput"></ion-input>
+    </ion-item>
+
+    <!--phone number-->
+    <ion-item class="phoneform" no-lines>
+      <ion-label stacked class="phonelabel"><b>Phone number</b></ion-label>
+      <ion-input type="number" value="{{this.phonenumber}}" class="phoneinput" [(ngModel)]="phoneinput"></ion-input>
+    </ion-item>
+
     <!--about-->
     <ion-item class="aboutform" no-lines>
       <ion-label stacked class="aboutlabel"><b>About</b></ion-label>
@@ -83,24 +95,14 @@
       <ion-label stacked class="websitelabel"><b>Website</b></ion-label>
       <ion-textarea class="websiteinput" value="{{this.website}}" wrap="soft" [(ngModel)]="websiteinput"></ion-textarea>
     </ion-item>
-
-    <!--email-->
-    <ion-item class="emailform" no-lines>
-      <ion-label stacked class="emaillabel"><b>Email address</b></ion-label>
-      <ion-input type="text" value="{{this.email}}" class="emailinput" [(ngModel)]="emailinput"></ion-input>
-    </ion-item>
-
-    <!--phone number-->
-    <ion-item class="phoneform" no-lines>
-      <ion-label stacked class="phonelabel"><b>Phone number</b></ion-label>
-      <ion-input type="number"  value="{{this.phonenumber}}" class="phoneinput" [(ngModel)]="phoneinput"></ion-input>
-    </ion-item>
-
   </div>
+
 
   <!--privacy -->
   <div class="privacysetup">
-    <button ion-button small round class="privacybutton" style="text-transform: none;" (click)="enterprivacypage()"><ion-icon name="lock" class="privacyicon"></ion-icon>Privacy</button>
+    <button ion-button small round class="privacybutton" style="text-transform: none;" (click)="enterprivacypage()">
+      <ion-icon name="lock" class="privacyicon"></ion-icon>Privacy
+    </button>
   </div>
 
 
