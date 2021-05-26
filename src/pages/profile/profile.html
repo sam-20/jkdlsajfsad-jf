@@ -40,12 +40,97 @@
 
 
 
-  <!-- user profile card -->
-  <div style="display: flex;width: 100%;background-color: red;">
-  
-    
-  
+  <!-- user profile card starts here-->
+  <div
+    style="display: flex;width: 100%;background-color: transparent; box-shadow: 0px 0px 1px black;flex-direction: column;">
+
+    <div style="display: flex;background-color: dodgerblue;height: 50px;"></div>
+
+    <div style="display: flex;background-color: white;flex-direction: row;
+      align-items: center;justify-content: space-between;
+      padding-right: 10px;padding-left: 10px;">
+
+      <div style="display: flex;background-color: transparent;margin-top: -25px;">
+        <!-- profile image -->
+        <img src="../../assets/imgs/16.jpg" style="height: 70px;width: 70px;border-radius: 35px;
+        border-style: solid;border-width: 2px; border-color: white;" />
+      </div>
+
+      <div style="display: flex;background-color: transparent;">
+
+        <!-- edit profile button -->
+        <button style="display: flex;align-items: center;justify-content: center;
+        padding-top: 5px;padding-bottom: 5px;color: dodgerblue;
+        padding-left: 5px;padding-right: 5px;font-size: smaller;
+         border-radius: 10px; background-color: white;border-style: solid;
+        border-width: 0.5px; border-color: dodgerblue;">
+          Edit profile
+        </button>
+      </div>
+    </div>
+
+    <div style="display: flex;flex-direction: column;background-color: white;padding-left: 10px;padding-right: 10px;">
+
+      <!-- username -->
+      <div style="display: flex;background-color: transparent;align-items: center;padding-top: 5px;padding-bottom:5px;">
+        <span style="font-size: small;font-weight: 500;">samuel</span>
+      </div>
+
+      <!-- email -->
+      <div style="display: flex;background-color: transparent;align-items: center;padding-top: 5px;padding-bottom:5px;">
+        <span style="font-size: smaller;">botwesamuel192@gmail.com</span>
+      </div>
+
+      <!-- phone -->
+      <div style="display: flex;background-color: transparent;align-items: center;padding-top: 5px;padding-bottom:5px;">
+        <span style="font-size: smaller;">0233929283</span>
+      </div>
+
+      <!-- website -->
+      <div style="display: flex;background-color: transparent;align-items: center;padding-top: 5px;padding-bottom:5px;">
+        <span style="font-size: smaller;">ghost.com</span>
+      </div>
+
+      <!-- date joined -->
+      <div
+        style="display: flex;flex-direction: row;background-color: transparent;align-items: center;padding-top: 5px;padding-bottom: 5px;">
+        <ion-icon name="ios-calendar-outline"></ion-icon>
+        <span style="font-size: smaller;padding-left: 5px;">Joined July 2015</span>
+      </div>
+
+      <!-- about -->
+      <textarea style="display: flex;background-color: transparent; font-size: smaller;padding-top: 5px;
+      border: none;">fall.</textarea>
+
+      <div style="display: flex;flex-direction: row;background-color: transparent;
+       align-items: center;padding-top: 10px;padding-bottom: 10px;">
+
+        <!-- following  -->
+        <button style="margin-right: 5px;padding-top: 5px;
+        padding-bottom: 5px; font-size: smaller;background-color: transparent;">
+          390 Following
+        </button>
+
+        <!-- followers -->
+        <button style="margin-right: 5px;padding-top: 5px;
+        padding-bottom: 5px; font-size: smaller;background-color: transparent;">
+          410 Followers
+        </button>
+
+        <!-- posts -->
+        <button style="margin-right: 5px;padding-top: 5px;
+        padding-bottom: 5px; font-size: smaller;background-color: transparent;">
+          23 Posts
+        </button>
+      </div>
+
+    </div>
+
+
+
+
   </div>
+  <!-- user profile card ends here -->
 
 
   <ion-row>
@@ -159,7 +244,8 @@
 
   <!--favorites and messagwe media swipeable tabs-->
   <ion-segment class="SwipedTabs-tabs">
-    <ion-segment-button *ngFor='let tab of tabs; let i = index ' value="IgnoreMe" (click)="selectTab(i)" [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider && ( this.SwipedTabsSlider.getActiveIndex() === i || ( tabs.length -1 === i && this.SwipedTabsSlider.isEnd())))}'>
+    <ion-segment-button *ngFor='let tab of tabs; let i = index ' value="IgnoreMe" (click)="selectTab(i)"
+      [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider && ( this.SwipedTabsSlider.getActiveIndex() === i || ( tabs.length -1 === i && this.SwipedTabsSlider.isEnd())))}'>
       {{tab}}
     </ion-segment-button>
   </ion-segment>
@@ -168,9 +254,9 @@
   <div id='tabsindicators' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%' : (100/this.tabs.length)}"></div>
 
   <!-- slides to contain pinned messages and message media-->
-  <ion-slides [ngStyle]="{ 'height': slidesMoving ? 'auto' : (slidesHeight + 'px') }" (ionSlideDidChange)="slideDidChange()"
-    (ionSlideWillChange)="slideWillChange()" (ionSlidesDidLoad)="slidesDidLoad()" #SwipedTabsSlider (ionSlideDrag)="animateIndicator($event)"
-    (pan)="updateIndicatorPosition()" [pager]="false">
+  <ion-slides [ngStyle]="{ 'height': slidesMoving ? 'auto' : (slidesHeight + 'px') }"
+    (ionSlideDidChange)="slideDidChange()" (ionSlideWillChange)="slideWillChange()" (ionSlidesDidLoad)="slidesDidLoad()"
+    #SwipedTabsSlider (ionSlideDrag)="animateIndicator($event)" (pan)="updateIndicatorPosition()" [pager]="false">
 
     <!--pinned messages slide-->
     <ion-slide style="background-color: transparent;">
