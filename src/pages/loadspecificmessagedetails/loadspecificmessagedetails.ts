@@ -224,13 +224,8 @@ export class LoadspecificmessagedetailsPage {
       }
 
       this.specificmessagecommentstable.forEach(function (element) { element.commentmsg_pincolor = "dark"; });
-
       this.specificmessagecommentstable.forEach(function (element) { element.commentmsg_likecolor = "dark"; });
-      this.specificmessagecommentstable.forEach(function (element) { element.commentmsg_heartIcon = "dark"; });
-
       this.specificmessagecommentstable.forEach(function (element) { element.commentmsg_commentcolor = "dark"; });
-      this.specificmessagecommentstable.forEach(function (element) { element.commentmsg_commentIcon = "dark"; });
-
 
 
       //lets look at the data in commented message table
