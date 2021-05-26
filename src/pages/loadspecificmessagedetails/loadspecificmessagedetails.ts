@@ -15,6 +15,7 @@ export class LoadspecificmessagedetailsPage {
   commentedmessagepincolor: any; //stores the pincolor of the message which we are viewing its comments...was obtained from the previous page
   commentedmessagecommentcolor: any // stores the comment color of the message which we are viewing its comments..was obtained from the previous page
   commentedmessageid: any; //this stores the id of the message whihc we are viewing its comments...was obtained from the previous page
+  commentedmessageHeartIcon: any;
 
   jsonconvertedrows: any = [];  //this array will receive the rows from the db and convert into usable format
   commentedmessagetablerow: any = []; //this array will receive the rows from the from the converted jsonformat 
@@ -47,11 +48,14 @@ export class LoadspecificmessagedetailsPage {
     private photoViewer: PhotoViewer,
     private postPvdr: PostProvider,
     public viewCtrl: ViewController,
-    private tabs:Tabs) {
+    private tabs: Tabs) {
     //loading the id, pincolor and likecolor of the commented message from the previous page to allow us to retrieve its info from the db into this page
     this.commentedmessageid = JSON.parse(localStorage.getItem('storedmessageid'));
     this.commentedmessagepincolor = (localStorage.getItem('storedpincolor'));
+
     this.commentedmessagelikecolor = (localStorage.getItem('storedlikecolor'));
+    this.commentedmessageHeartIcon = (localStorage.getItem('storedHeartIcon'));
+
     this.commentedmessagecommentcolor = (localStorage.getItem('storedcommentcolor'));
     this.server = postPvdr.server; /*********************b */
   }
@@ -59,10 +63,11 @@ export class LoadspecificmessagedetailsPage {
 
   //codes here are executed when the page loads
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoadspecificmessagecommentsmodalPage');
-    console.log('message id of the commented message: ', this.commentedmessageid)
-    console.log('pincolor of the commented message: ', this.commentedmessagepincolor);
-    console.log('like color of the commented message: ', this.commentedmessagelikecolor);
+    // console.log('ionViewDidLoad LoadspecificmessagecommentsmodalPage');
+    // console.log('message id of the commented message: ', this.commentedmessageid)
+    // console.log('pincolor of the commented message: ', this.commentedmessagepincolor);
+    // console.log('like color of the commented message: ', this.commentedmessagelikecolor);
+    console.log('heart icon of the commented message: ', this.commentedmessageHeartIcon);
   }
 
   //codes here are executed when the user selects the page
@@ -73,8 +78,8 @@ export class LoadspecificmessagedetailsPage {
   //we load the data into the page like this for asynchronous data
   loadpagedata() {
     //operation to perform when refresh is taking place
-    console.log('Refresh started');
-    console.log(this.mymodulevariables.globaluserid);
+    // console.log('Refresh started');
+    // console.log(this.mymodulevariables.globaluserid);
     this.pinnedmsgids = [];  //clear all messages in the pinned messages array
     this.loadpinnedmessages();// load pinned messages
     this.likedmsgids = []; //clear all messages in the liked messages array
@@ -86,7 +91,7 @@ export class LoadspecificmessagedetailsPage {
       this.loadcommentedmessage();  //first load commented message
       this.specificmessagecommentstable = [];
       this.loadspecificmessagecomments(); //then load all messsages relating to specific message selected
-      console.log('Refresh complete');
+      // console.log('Refresh complete');
 
     }, 0); //duration of refresh
   }
@@ -119,8 +124,8 @@ export class LoadspecificmessagedetailsPage {
       }
 
       //lets look at the data in commented message table
-      console.log(this.commentedmessagetablerow);
-      console.log(this.commentedmessagetablerow.length);
+      // console.log(this.commentedmessagetablerow);
+      // console.log(this.commentedmessagetablerow.length);
 
 
       /**now we have have the messages in the commented message table array so we are 
@@ -160,7 +165,7 @@ export class LoadspecificmessagedetailsPage {
       for (let count of this.pinnedmsgsidsjsonconvertedrows) {
         this.pinnedmsgids.push(count);
       }
-      console.log('pinned messages: ', this.pinnedmsgids);
+      // console.log('pinned messages: ', this.pinnedmsgids);
       //console.log('pinned messages length: ', this.pinnedmsgids.length)
     });
   }
@@ -189,8 +194,8 @@ export class LoadspecificmessagedetailsPage {
       for (let count of this.likedmsgsidsjsonconvertedrows) {
         this.likedmsgids.push(count);
       }
-      console.log(this.likedmsgids);
-      console.log(this.likedmsgids.length)
+      // console.log(this.likedmsgids);
+      // console.log(this.likedmsgids.length)
     });
   }
 
@@ -219,13 +224,18 @@ export class LoadspecificmessagedetailsPage {
       }
 
       this.specificmessagecommentstable.forEach(function (element) { element.commentmsg_pincolor = "dark"; });
+
       this.specificmessagecommentstable.forEach(function (element) { element.commentmsg_likecolor = "dark"; });
+      this.specificmessagecommentstable.forEach(function (element) { element.commentmsg_heartIcon = "dark"; });
+
       this.specificmessagecommentstable.forEach(function (element) { element.commentmsg_commentcolor = "dark"; });
+      this.specificmessagecommentstable.forEach(function (element) { element.commentmsg_commentIcon = "dark"; });
+
 
 
       //lets look at the data in commented message table
-      console.log(this.specificmessagecommentstable);
-      console.log(this.specificmessagecommentstable.length);
+      // console.log(this.specificmessagecommentstable);
+      // console.log(this.specificmessagecommentstable.length);
 
       /**now we have have the messages in the specifimessagecomments table array so we are 
      we are going to check if a profile pic is null then we assign our pic to the user of the commented message **/
@@ -265,7 +275,7 @@ export class LoadspecificmessagedetailsPage {
         }
       }
 
-      console.log(this.specificmessagecommentstable);
+      // console.log(this.specificmessagecommentstable);
     });
   }
 
@@ -287,7 +297,7 @@ export class LoadspecificmessagedetailsPage {
     localStorage.setItem('storedlikecolor', count.commentmsg_likecolor); //storing the likecolor of the message to be commented so that we use it in the next page
     localStorage.setItem('storedcommentcolor', count.commentmsg_commentcolor); //storing the commentcolor of the message to commented so that we use it in the next  page
     this.navCtrl.push('LoadspecificmessagedetailsPage');
-}
+  }
 
 
   //open a selected user's profile in commented msg
@@ -295,14 +305,14 @@ export class LoadspecificmessagedetailsPage {
     console.log("selected user's id", count.commentedmsg_sender_user_id_fetched)
 
     //if selected user is ourself then we open our own profile tab
-    if (count.commentedmsg_sender_user_id_fetched == this.mymodulevariables.globaluserid){
+    if (count.commentedmsg_sender_user_id_fetched == this.mymodulevariables.globaluserid) {
       console.log("open profile tab page")
       this.tabs.select(0);
     }
 
     //if user is someone else
-    else{
-      localStorage.setItem('storeduserid',count.commentedmsg_sender_user_id_fetched);
+    else {
+      localStorage.setItem('storeduserid', count.commentedmsg_sender_user_id_fetched);
       this.navCtrl.push('Profile2Page');
     }
   }
@@ -313,29 +323,29 @@ export class LoadspecificmessagedetailsPage {
     console.log("selected user's id", count.commenter_userid_fetched)
 
     //if selected user is ourself then we open our own profile tab
-    if (count.commenter_userid_fetched == this.mymodulevariables.globaluserid){
+    if (count.commenter_userid_fetched == this.mymodulevariables.globaluserid) {
       console.log("open profile tab page")
       this.tabs.select(0);
     }
 
     //if user is someone else
-    else{
-      localStorage.setItem('storeduserid',count.commenter_userid_fetched);
+    else {
+      localStorage.setItem('storeduserid', count.commenter_userid_fetched);
       this.navCtrl.push('Profile2Page');
     }
   }
 
 
   //view highlighted message's image
-  viewimmage1(count){
-    this.photoViewer.show(this.server+count.commented_message_media_fetched, count.commented_message_fetched);
-    console.log("with server", this.server+count.commented_message_media_fetched);
+  viewimmage1(count) {
+    this.photoViewer.show(this.server + count.commented_message_media_fetched, count.commented_message_fetched);
+    console.log("with server", this.server + count.commented_message_media_fetched);
   }
 
   //view image in comment messages
-  viewimage2(count){
-    this.photoViewer.show(this.server+count.commentmsg_messagemedia_fetched, count.commentmsg_message_fetched);
-    console.log("with server", this.server+count.commentmsg_messagemedia_fetched);
+  viewimage2(count) {
+    this.photoViewer.show(this.server + count.commentmsg_messagemedia_fetched, count.commentmsg_message_fetched);
+    console.log("with server", this.server + count.commentmsg_messagemedia_fetched);
   }
 
 

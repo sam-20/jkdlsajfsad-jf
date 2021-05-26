@@ -742,9 +742,15 @@ export class HomePage {
 
   //load all comments of selected message
   loadmessagedetails(count) {
+    console.log(`count is: ${count}`);
+
+
     localStorage.setItem('storedmessageid', count.message_id_fetched) //storing the message id in a local storage for the next page
     localStorage.setItem('storedpincolor', count.pincolor); //storing the pincolor of the message to be commented so that we use it in the next page
+
     localStorage.setItem('storedlikecolor', count.likecolor); //storing the likecolor of the message to be commented so that we use it in the next page
+    localStorage.setItem('storedHeartIcon', count.heartIcon)
+
     localStorage.setItem('storedcommentcolor', count.commentcolor); //storing the commentcolor of the message to commented so that we use it in the next  page
     this.navCtrl.push('LoadspecificmessagedetailsPage');
   }
@@ -754,7 +760,10 @@ export class HomePage {
   loadcommentedmessagedetails(count) {
     localStorage.setItem('storedmessageid', count.commentedmsg_id) //storing the message id in a local storage for the next page
     localStorage.setItem('storedpincolor', count.commentedmsg_pincolor); //storing the pincolor of the message to be commented so that we use it in the next page
+
     localStorage.setItem('storedlikecolor', count.commentedmsg_likecolor); //storing the likecolor of the message to be commented so that we use it in the next page
+    localStorage.setItem('storedHeartIcon', count.commentedmsg_heartIcon)
+
     localStorage.setItem('storedcommentcolor', count.commentcolor); //storing the commentcolor of the message to commented so that we use it in the next  page
     this.navCtrl.push('LoadspecificmessagedetailsPage');
   }
