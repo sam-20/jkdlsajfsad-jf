@@ -20,7 +20,7 @@ export class DmPage {
   virtualuserdmmessagestablerows: any = [];
   virtualudmjsonconvertedrows: any = [];
 
-  permissionstatus : any; //this will be sent to the db when a user accepts or declines a new chat
+  permissionstatus: any; //this will be sent to the db when a user accepts or declines a new chat
 
   userdmmessagestablerows2: any = []; //this will store logged in user's dm chats with only the profile pic and name of the second user the logged in user is chatting with
 
@@ -158,9 +158,7 @@ export class DmPage {
 
       /**man! we're not putting any permissions on any chats */
       for (var key in this.userdmmessagestablerows2) {
-       
-          this.userdmmessagestablerows2[key].permission_status_fetched = "accept";
-      
+        this.userdmmessagestablerows2[key].permission_status_fetched = "accept";
       }
 
 
@@ -275,7 +273,7 @@ export class DmPage {
 
   //decline chat
   rejectchat(count) {
-    this.permissionstatus ="rejected"
+    this.permissionstatus = "rejected"
 
     //update chat permission status
     let body = {
