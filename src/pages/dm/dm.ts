@@ -310,7 +310,7 @@ export class DmPage {
       //operation to perform when refresh has completed
       this.loaduserdmmessages();
       event.complete();
-    }, 500); //duration of refresh 
+    }, 1000); //duration of refresh 
   }
 
 }
