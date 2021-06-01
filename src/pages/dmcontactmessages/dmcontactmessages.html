@@ -206,6 +206,98 @@
 
 
 <ion-footer class="textareafooter">
+
+  <!-- send message area starts here-->
+  <div style="display: flex;background-color: transparent;width: 100%;padding-left: 10px;padding-right: 10px;">
+
+    <div style="display: flex;background-color: transparent; width: 100%; 
+      flex-direction: row;padding-top: 5px;">
+
+      <div style="display: flex;background-color: transparent;flex: 0.75;">
+        <textarea placeholder="type message here..." name="abc" id="" rows="1" style="width: 100%;border: none;font-size: small;
+          background-color: transparent;margin-top: 5px;margin-bottom: 5px;
+          margin-left: 5px;"></textarea>
+      </div>
+
+      <div style="display: flex;background-color: transparent;flex: 0.25;flex-direction: row;">
+        <div style="display: flex;flex: 0.5;background-color: transparent;align-items: center;justify-content: center;">
+          <ion-fab style="background-color: transparent;">
+            <button ion-fab style="width: 35px;height: 35px; display: flex;justify-content: center;align-items: center;">
+              <ion-icon name="ios-camera"></ion-icon>
+            </button>
+
+            <ion-fab-list side="top">
+
+              <!--camera  option-->
+              <button ion-fab (click)="openCamera()" style="background-color: dodgerblue;">
+                <ion-icon name="ios-camera" style="color: white;"></ion-icon>
+                <div class="label">Take photo</div>
+              </button>
+
+              <!--gallery option-->
+              <button ion-fab (click)="openPhotos()" style="background-color: dodgerblue;">
+                <ion-icon name="ios-photos" style="color: white;"></ion-icon>
+                <div class="label">Upload photo</div>
+              </button>
+
+              <!--capture video  option-->
+              <button ion-fab (click)="capturevideo()" style="background-color: dodgerblue;">
+                <ion-icon name="ios-film" style="color: white;"></ion-icon>
+                <div class="label">Capture video</div>
+              </button>
+
+              <!--upload video  option-->
+              <button ion-fab (click)="uploadvideo()" style="background-color: dodgerblue;">
+                <ion-icon name="ios-play" style="color: white;"></ion-icon>
+                <div class="label">Upload video</div>
+              </button>
+
+              <!--record audio  option-->
+              <button ion-fab (click)="recordaudio()" style="background-color: dodgerblue;">
+                <ion-icon name="ios-microphone" style="color: white;"></ion-icon>
+                <div class="label">Record audio</div>
+              </button>
+
+              <!--file  option-->
+              <button ion-fab (click)="uploadfile()" style="background-color: dodgerblue;">
+                <ion-icon name="ios-folder" style="color: white;"></ion-icon>
+                <div class="label">Upload file</div>
+              </button>
+
+            </ion-fab-list>
+          </ion-fab>
+        </div>
+        <div
+          style="display: flex;flex: 0.5;background-color: transparent; align-items: center;justify-content: center;">
+          <ion-icon name="ios-send" (click)="senddmmessage()" style="font-size: 35px;color: dodgerblue;"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- send message area ends here-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <!--send message text area-->
   <ion-row>
     <ion-col>

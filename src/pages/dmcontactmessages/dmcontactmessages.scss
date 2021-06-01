@@ -211,11 +211,13 @@ page-dmcontactmessages {
     //text area for sending a message
     .sendmessagetextarea {
         border-radius: 50px;
-        background: transparent;
         color: black;
         font: arial;
         //border:1px solid gray
         margin-left: 10px;
+        border-style: solid;
+        border-width: 0.5px;
+        border-color: black;
     }
 
     //  //send message input placeholder
@@ -345,11 +347,9 @@ page-dmcontactmessages {
 
     //text area footer
     .textareafooter {
-        // background:white;
-
-        background: url("/assets/imgs/6.jpg");
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
+        // background: url("/assets/imgs/6.jpg");
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
     }
 
     //call icon
