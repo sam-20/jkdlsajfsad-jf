@@ -208,21 +208,27 @@
 <ion-footer class="textareafooter">
 
   <!-- send message area starts here-->
-  <div style="display: flex;background-color: transparent;width: 100%;padding-left: 10px;padding-right: 10px;">
+  <div style="display: flex;background-color: transparent;width: 100%;
+  padding-left: 10px;padding-right: 10px;padding-top: 5px;padding-bottom: 5px;">
 
     <div style="display: flex;background-color: transparent; width: 100%; 
-      flex-direction: row;padding-top: 5px;">
+      flex-direction: row;">
 
       <div style="display: flex;background-color: transparent;flex: 0.75;">
-        <textarea placeholder="type message here..." name="abc" id="" rows="1" style="width: 100%;border: none;font-size: small;
+        <!-- textarea -->
+        <textarea [(ngModel)]="senddmmessagetextareainput" placeholder="type message here..." name="abc" id="" rows="1"
+          style="width: 100%;border: none;font-size: small;
           background-color: transparent;margin-top: 5px;margin-bottom: 5px;
           margin-left: 5px;"></textarea>
       </div>
 
       <div style="display: flex;background-color: transparent;flex: 0.25;flex-direction: row;">
         <div style="display: flex;flex: 0.5;background-color: transparent;align-items: center;justify-content: center;">
+
+          <!-- media options icon -->
           <ion-fab style="background-color: transparent;">
-            <button ion-fab style="width: 35px;height: 35px; display: flex;justify-content: center;align-items: center;">
+            <button ion-fab
+              style="width: 35px;height: 35px; display: flex;justify-content: center;align-items: center;">
               <ion-icon name="ios-camera"></ion-icon>
             </button>
 
@@ -269,6 +275,8 @@
         </div>
         <div
           style="display: flex;flex: 0.5;background-color: transparent; align-items: center;justify-content: center;">
+
+          <!-- send message icon -->
           <ion-icon name="ios-send" (click)="senddmmessage()" style="font-size: 35px;color: dodgerblue;"></ion-icon>
         </div>
       </div>
@@ -276,92 +284,4 @@
   </div>
   <!-- send message area ends here-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!--send message text area-->
-  <ion-row>
-    <ion-col>
-      <ion-textarea class="sendmessagetextarea" rows="1" [(ngModel)]="senddmmessagetextareainput"
-        placeholder="type message here..."></ion-textarea>
-    </ion-col>
-
-
-    <ion-row>
-
-      <!--camera floating action button-->
-      <ion-col>
-        <ion-fab edge class="fabcontainer">
-          <button ion-fab mini class="camerafab">
-            <ion-icon name="ios-camera" class="mainfabicon"></ion-icon>
-          </button>
-
-          <ion-fab-list side="top">
-
-            <!--camera  option-->
-            <button ion-fab class="camerafablistbutton" (click)="openCamera()">
-              <ion-icon name="ios-camera" class="camerafablisticon"></ion-icon>
-              <div class="label">Take photo</div>
-            </button>
-
-            <!--gallery option-->
-            <button ion-fab class="galleryfablistbutton" (click)="openPhotos()">
-              <ion-icon name="ios-photos" class="galleryfablisticon"></ion-icon>
-              <div class="label">Upload photo</div>
-            </button>
-
-            <!--capture video  option-->
-            <button ion-fab class="capturevideofablistbutton" (click)="capturevideo()">
-              <ion-icon name="ios-film" class="capturevideofablisticon"></ion-icon>
-              <div class="label">Capture video</div>
-            </button>
-
-            <!--upload video  option-->
-            <button ion-fab class="uploadvideofablistbutton" (click)="uploadvideo()">
-              <ion-icon name="ios-play" class="uploadvideofablisticon"></ion-icon>
-              <div class="label">Upload video</div>
-            </button>
-
-            <!--record audio  option-->
-            <button ion-fab class="recordaudiofablistbutton" (click)="recordaudio()">
-              <ion-icon name="ios-microphone" class="recordaudiofablisticon"></ion-icon>
-              <div class="label">Record audio</div>
-            </button>
-
-            <!--file  option-->
-            <button ion-fab class="filefablistbutton" (click)="uploadfile()">
-              <ion-icon name="ios-folder" class="filefablisticon"></ion-icon>
-              <div class="label">Upload file</div>
-            </button>
-
-          </ion-fab-list>
-        </ion-fab>
-      </ion-col>
-
-      <!--send message icon-->
-      <ion-col>
-        <ion-icon name="ios-send" class="sendmessageicon" (click)="senddmmessage()"></ion-icon>
-      </ion-col>
-    </ion-row>
-
-  </ion-row>
 </ion-footer>
