@@ -82,39 +82,60 @@
     </ion-item-sliding>
 
 
-    <!-- chat item starts here -->
-    <div style="display: flex;background-color: transparent;width: 100%;flex-direction: row;">
 
-      <div style="display: flex;flex: 0.2;align-items: center;justify-content: center;">
-        <!-- profile pic -->
-        <img src="../../assets/imgs/16.jpg" style="width: 44px; height: 44px; border-radius: 22px;" />
-      </div>
+    <ion-item-sliding>
 
-      <div style="display: flex;flex: 0.7;flex-direction: column;padding-top: 5px;">
-        <div style="display: flex;flex: 0.5;align-items: flex-end;">
+      <ion-item style="padding-left: 0px;">
+        <div style="display: flex;background-color: transparent;width: 100%;flex-direction: row;">
 
-          <!-- username -->
-          <span style="font-weight: bold;font-size: small;">Micheal</span>
+          <div style="display: flex;flex: 0.2;align-items: center;justify-content: center;">
+            <!-- profile pic -->
+            <img src="../../assets/imgs/16.jpg" style="width: 44px; height: 44px; border-radius: 22px;" />
+          </div>
+
+          <div style="display: flex;flex: 0.7;flex-direction: column;">
+            <div style="display: flex;flex: 0.5;align-items: flex-end;">
+
+              <!-- username -->
+              <span style="font-weight: 500;font-size: 14px;">Micheals</span>
+            </div>
+
+            <div style="display: flex;flex: 0.45; align-items: flex-end;">
+
+              <!-- last message -->
+              <span
+                style="overflow: hidden; white-space: nowrap;text-overflow: ellipsis;width: 220px;font-size: small;">Micheal
+                will u get the
+                fuck of fm
+                y goddamn face for a min um main i need to shit</span>
+            </div>
+          </div>
+
+          <div style="display: flex;flex: 0.15;align-items:flex-end; justify-content: flex-start;padding-bottom: 2px;">
+            <!--last message time -->
+            <span style="font-weight: bold;font-size: 10px;">12:45</span>
+          </div>
+
         </div>
+      </ion-item>
 
-        <div style="display: flex;flex: 0.45; align-items: flex-end;">
+      <ion-item-options side="right" style="display: flex;align-items: flex-end;padding-bottom: 10px;">
 
-          <!-- last message -->
-          <span
-            style="overflow: hidden; white-space: nowrap;text-overflow: ellipsis;width: 220px;font-size: smaller;">Micheal
-            will u get the
-            fuck of fm
-            y goddamn face for a min um main i need to shit</span>
-        </div>
-      </div>
+        <button
+          style="flex-direction: column;display: flex;justify-content: center;align-items: center;background-color: white;">
+          <ion-icon name="ios-folder-open" color="secondary"></ion-icon>
+          <span style="font-size: 10px; margin-top: 5px;">clear</span>
+        </button>
 
-      <div style="display: flex;flex: 0.15;align-items:flex-end; justify-content: flex-start;padding-bottom: 2px;">
-        <!--last message time -->
-        <span style="font-weight: bold;font-size: smaller;">12:45</span>
-      </div>
+        <button
+          style="flex-direction: column;display: flex;justify-content: center;align-items: center;background-color: white;">
+          <ion-icon name="ios-trash" color="danger"></ion-icon>
+          <span style="font-size: 10px; margin-top: 5px;">delete</span>
+        </button>
 
-    </div>
-    <!-- chat item ends here -->
+      </ion-item-options>
+
+    </ion-item-sliding>
 
 
 
