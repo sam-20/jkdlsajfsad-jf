@@ -82,7 +82,39 @@
     </ion-item-sliding>
 
 
-    <p>hello world</p>
+    <!-- chat item starts here -->
+    <div style="display: flex;background-color: transparent;width: 100%;flex-direction: row;">
+
+      <div style="display: flex;flex: 0.2;align-items: center;justify-content: center;">
+        <!-- profile pic -->
+        <img src="../../assets/imgs/16.jpg" style="width: 44px; height: 44px; border-radius: 22px;" />
+      </div>
+
+      <div style="display: flex;flex: 0.7;flex-direction: column;padding-top: 5px;">
+        <div style="display: flex;flex: 0.5;align-items: flex-end;">
+
+          <!-- username -->
+          <span style="font-weight: bold;font-size: small;">Micheal</span>
+        </div>
+
+        <div style="display: flex;flex: 0.45; align-items: flex-end;">
+
+          <!-- last message -->
+          <span
+            style="overflow: hidden; white-space: nowrap;text-overflow: ellipsis;width: 220px;font-size: smaller;">Micheal
+            will u get the
+            fuck of fm
+            y goddamn face for a min um main i need to shit</span>
+        </div>
+      </div>
+
+      <div style="display: flex;flex: 0.15;align-items:flex-end; justify-content: flex-start;padding-bottom: 2px;">
+        <!--last message time -->
+        <span style="font-weight: bold;font-size: smaller;">12:45</span>
+      </div>
+
+    </div>
+    <!-- chat item ends here -->
 
 
 
@@ -111,8 +143,10 @@
             <!--accept/decline button and time sent-->
             <ion-row>
               <ion-col col-10>
-                <button ion-button small round color="secondary" class="acceptbutton" (click)="acceptchat(count)">accept</button>
-                <button ion-button small round color="danger" class="declinebutton" (click)="rejectchat(count)">reject</button>
+                <button ion-button small round color="secondary" class="acceptbutton"
+                  (click)="acceptchat(count)">accept</button>
+                <button ion-button small round color="danger" class="declinebutton"
+                  (click)="rejectchat(count)">reject</button>
               </ion-col>
 
               <ion-col col-2>
