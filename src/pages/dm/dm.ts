@@ -156,6 +156,15 @@ export class DmPage {
         }
       }
 
+      /**man! we're not putting any permissions on any chats */
+      for (var key in this.userdmmessagestablerows2) {
+       
+          this.userdmmessagestablerows2[key].permission_status_fetched = "accept";
+      
+      }
+
+
+
       console.log("final dm chat table:", this.userdmmessagestablerows2)
 
       //sort the dm chat list based on the lastmsg_id
