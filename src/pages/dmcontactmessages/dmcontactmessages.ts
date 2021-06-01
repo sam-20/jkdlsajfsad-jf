@@ -456,7 +456,7 @@ export class DmcontactmessagesPage {
       // var res = this.dmmsgstablerows.sort((a, b) => a.dm_msg_id_fetched - b.dm_msg_id_fetched)
       //console.log(res)
 
-      console.log("virtual dm messages", this.virtualdmmsgstablerows);
+      // console.log("virtual dm messages", this.virtualdmmsgstablerows);
 
       /**now we have the chats between the 2 users in our virtual dmmsgs table
        * since the data here keeps refreshing it means it will contain freshly posted messages between any of the users
@@ -692,15 +692,18 @@ export class DmcontactmessagesPage {
 
   //call number
   callnumber() {
+    // console.log(`receipient's number is :${this.receipientphonenumber}`);
+
+    var number = this.receipientphonenumber
 
     //if user 2 doenst have a phone number
-    if (!(this.receipientphonenumber) || (this.receipientphonenumber == null) || (this.receipientphonenumber = "")) {
+    if (!(number)) {
       this.Toastvalidation(this.receipientusername + " has no number");
     }
 
     //if user 2 has a phone number 
     else {
-      this.callNumber.callNumber(this.receipientphonenumber, true)
+      this.callNumber.callNumber(number, true)
         .then(res => console.log('Launched dialer!', res))
         .catch(err => console.log('Error launching dialer', err));
     }

@@ -1,22 +1,22 @@
 <ion-header no-shadow no-border>
 
   <ion-navbar>
-    <ion-row class="headerrow">
-      <ion-col col-3 (click)="openuserprofile()">
-        <img src="{{this.receipientprofilepic}}" class="imageheader" />
-      </ion-col>
 
-      <ion-col col-7 (click)="openuserprofile()">
-        <ion-title>{{this.receipientusername}}</ion-title>
-      </ion-col>
+    <div style="display: flex;width: 100%;display: flex;">
 
-      <ion-col>
-        <ion-icon name="ios-call" class="callicon" (click)="callnumber()"></ion-icon>
-      </ion-col>
+      <div (click)="openuserprofile()" style="display: flex;flex: 0.2;justify-content: center;align-items: center;">
+        <img src="{{this.receipientprofilepic}}" style="width: 40px;height: 40px;border-radius: 20px;" />
+      </div>
 
-    </ion-row>
+      <div (click)="openuserprofile()" style="display: flex;flex: 0.7; align-items: center;">
+        <span style="font-weight: bold;color: white;">{{this.receipientusername}}</span>
+      </div>
 
+      <div (click)="callnumber()" style="display: flex;flex: 0.1;justify-content: center;align-items: center;">
+        <ion-icon name="ios-call" color="secondary" style="font-size:30px;"></ion-icon>
+      </div>
 
+    </div>
 
   </ion-navbar>
 
@@ -48,7 +48,8 @@
 
       <!--document file-->
       <ion-card-content class="documentfilecard" *ngIf="count.dm_file_path_fetched !=null" (click)="openfile(count)">
-        <ion-icon name="ios-document" class="documenticon"></ion-icon><span class="documentname">{{count.dm_file_name_fetched}}</span>
+        <ion-icon name="ios-document" class="documenticon"></ion-icon><span
+          class="documentname">{{count.dm_file_name_fetched}}</span>
         <br>
         <ion-note class="documentsize">{{count.dm_file_size_fetched}}</ion-note>
       </ion-card-content>
@@ -59,10 +60,14 @@
         <ion-row><span class="audiofilenameright">{{count.dm_audio_name_fetched}}</span></ion-row>
         <ion-row>
           <ion-col class="audiorightplayiconscolumn">
-            <ion-icon name="play" *ngIf="count.playiconactive" class="playaudioicon" (click)="playrecordedaudio(count)"></ion-icon>
-            <ion-icon name="pause" *ngIf="count.pauseiconactive" class="pauseaudioicon" (click)="pauserecordedaudio(count)"></ion-icon>
-            <ion-icon name="repeat" *ngIf="count.resumeiconactive" class="resumeaudioicon" (click)="resumerecordedaudio(count)"></ion-icon>
-            <ion-icon name="square" *ngIf="count.stopiconactive" class="stopaudioicon" (click)="stoprecordedaudio(count)"></ion-icon>
+            <ion-icon name="play" *ngIf="count.playiconactive" class="playaudioicon" (click)="playrecordedaudio(count)">
+            </ion-icon>
+            <ion-icon name="pause" *ngIf="count.pauseiconactive" class="pauseaudioicon"
+              (click)="pauserecordedaudio(count)"></ion-icon>
+            <ion-icon name="repeat" *ngIf="count.resumeiconactive" class="resumeaudioicon"
+              (click)="resumerecordedaudio(count)"></ion-icon>
+            <ion-icon name="square" *ngIf="count.stopiconactive" class="stopaudioicon"
+              (click)="stoprecordedaudio(count)"></ion-icon>
           </ion-col>
 
           <ion-col>
@@ -86,7 +91,8 @@
 
     <!--left side message-->
     <!--user 2 message bubble-->
-    <div class="innermessage user2" *ngIf="count.loggedinuser_id_fetched == this.dmreceipient_id_retrieved" (pan)='deleteuser2message($event,count)'>
+    <div class="innermessage user2" *ngIf="count.loggedinuser_id_fetched == this.dmreceipient_id_retrieved"
+      (pan)='deleteuser2message($event,count)'>
 
       <!--picture in message-->
       <div class="imagedivcontainer" *ngIf="!server+count.dm_msg_media_fetched">
@@ -109,10 +115,12 @@
 
         <!--download video icon-->
         <div class="videobottomrighticon">
-          <ion-icon name="download" *ngIf="count.download" class="downloadvideoicon" (click)="downloadvideo(count)"></ion-icon>
+          <ion-icon name="download" *ngIf="count.download" class="downloadvideoicon" (click)="downloadvideo(count)">
+          </ion-icon>
 
           <!--downloading spinner-->
-          <div *ngIf="count.downloading" class="spinner-border text-primary" role="status" (click)="canceldownload(count)">
+          <div *ngIf="count.downloading" class="spinner-border text-primary" role="status"
+            (click)="canceldownload(count)">
             <span class="sr-only">Loading...</span>
           </div>
         </div>
@@ -122,16 +130,18 @@
 
       <!--document file-->
       <ion-card-content class="documentfilecard" *ngIf="count.dm_file_path_fetched !=null">
-        <ion-icon name="ios-document" class="documenticon" (click)="openfile(count)"></ion-icon><span class="documentname"
-          (click)="openfile(count)">{{count.dm_file_name_fetched}}</span>
+        <ion-icon name="ios-document" class="documenticon" (click)="openfile(count)"></ion-icon><span
+          class="documentname" (click)="openfile(count)">{{count.dm_file_name_fetched}}</span>
         <br>
         <ion-note class="documentsize" (click)="openfile(count)">{{count.dm_file_size_fetched}}</ion-note>
 
         <!--download document icon-->
-        <ion-icon name="download" *ngIf="count.download" class="downloaddocumenticon" (click)="downloadfile(count)"></ion-icon>
+        <ion-icon name="download" *ngIf="count.download" class="downloaddocumenticon" (click)="downloadfile(count)">
+        </ion-icon>
 
         <!--downloading spinner-->
-        <div *ngIf="count.downloading" class="spinner-border text-primary" role="status" style="float:right;" (click)="canceldownload(count)">
+        <div *ngIf="count.downloading" class="spinner-border text-primary" role="status" style="float:right;"
+          (click)="canceldownload(count)">
           <span class="sr-only">Loading...</span>
         </div>
       </ion-card-content>
@@ -142,10 +152,14 @@
         <ion-row><span class="audiofilenameleft">{{count.dm_audio_name_fetched}}</span></ion-row>
         <ion-row>
           <ion-col class="audioleftplayiconscolumn">
-            <ion-icon name="play" *ngIf="count.playiconactive" class="playaudioicon" (click)="playrecordedaudio(count)"></ion-icon>
-            <ion-icon name="pause" *ngIf="count.pauseiconactive" class="pauseaudioicon" (click)="pauserecordedaudio(count)"></ion-icon>
-            <ion-icon name="repeat" *ngIf="count.resumeiconactive" class="resumeaudioicon" (click)="resumerecordedaudio(count)"></ion-icon>
-            <ion-icon name="square" *ngIf="count.stopiconactive" class="stopaudioicon" (click)="stoprecordedaudio(count)"></ion-icon>
+            <ion-icon name="play" *ngIf="count.playiconactive" class="playaudioicon" (click)="playrecordedaudio(count)">
+            </ion-icon>
+            <ion-icon name="pause" *ngIf="count.pauseiconactive" class="pauseaudioicon"
+              (click)="pauserecordedaudio(count)"></ion-icon>
+            <ion-icon name="repeat" *ngIf="count.resumeiconactive" class="resumeaudioicon"
+              (click)="resumerecordedaudio(count)"></ion-icon>
+            <ion-icon name="square" *ngIf="count.stopiconactive" class="stopaudioicon"
+              (click)="stoprecordedaudio(count)"></ion-icon>
           </ion-col>
 
           <!--audio duration-->
@@ -156,10 +170,12 @@
           <!--download audio icon-->
           <ion-col>
             <!--download audio icon-->
-            <ion-icon name="download" *ngIf="count.download" class="downloadaudioicon" (click)="downloadaudio(count)"></ion-icon>
+            <ion-icon name="download" *ngIf="count.download" class="downloadaudioicon" (click)="downloadaudio(count)">
+            </ion-icon>
 
             <!--downloading spinner-->
-            <div *ngIf="count.downloading" class="spinner-border text-primary" role="status" (click)="canceldownload(count)">
+            <div *ngIf="count.downloading" class="spinner-border text-primary" role="status"
+              (click)="canceldownload(count)">
               <span class="sr-only">Loading...</span>
             </div>
           </ion-col>
@@ -193,7 +209,8 @@
   <!--send message text area-->
   <ion-row>
     <ion-col>
-      <ion-textarea class="sendmessagetextarea" rows="1" [(ngModel)]="senddmmessagetextareainput" placeholder="type message here..."></ion-textarea>
+      <ion-textarea class="sendmessagetextarea" rows="1" [(ngModel)]="senddmmessagetextareainput"
+        placeholder="type message here..."></ion-textarea>
     </ion-col>
 
 
