@@ -550,9 +550,8 @@ page-dmcontactmessages {
   }
   
   
-  /* speech bubble 13 */
-  
-  .sb13:before {
+  /* right bubble  */
+  .rightBubble:before {
     content: "";
     width: 0px;
     height: 0px;
@@ -566,9 +565,8 @@ page-dmcontactmessages {
   }
   
   
-  /* speech bubble 14 */
-  
-  .sb14:before {
+  /* left bubble  */
+  .leftBubble:before {
     content: "";
     width: 0px;
     height: 0px;
