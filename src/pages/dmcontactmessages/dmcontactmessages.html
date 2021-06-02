@@ -227,9 +227,11 @@
 
           <!-- media options icon -->
           <ion-fab style="background-color: transparent;">
-            <button ion-fab
-              style="width: 35px;height: 35px; display: flex;justify-content: center;align-items: center;">
-              <ion-icon name="ios-camera"></ion-icon>
+            <button ion-fab style="width: 35px;height: 35px; display: flex;justify-content: center;
+              align-items: center;
+              background-color: transparent; border: none;
+              ">
+              <ion-icon name="ios-camera" style="color: dodgerblue;"></ion-icon>
             </button>
 
             <ion-fab-list side="top">
@@ -277,7 +279,12 @@
           style="display: flex;flex: 0.5;background-color: transparent; align-items: center;justify-content: center;">
 
           <!-- send message icon -->
-          <ion-icon name="ios-send" (click)="senddmmessage()" style="font-size: 35px;color: dodgerblue;"></ion-icon>
+          <button (click)="senddmmessage()" ion-fab style="width: 35px;height: 35px; display: flex;justify-content: center;
+          align-items: center;
+          background-color: transparent; border: none;
+          ">
+            <ion-icon name="ios-send" style="color: dodgerblue;"></ion-icon>
+          </button>
         </div>
       </div>
     </div>
