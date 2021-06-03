@@ -26,182 +26,97 @@
 
 <ion-content class="body">
 
-  <ion-list no-lines class="messagebubble" *ngFor="let count of this.dmmsgstablerows;">
 
-    <!--right side message-->
-    <!--logged in message bubble-->
-    <div class="innermessage loggedinuser" *ngIf="count.loggedinuser_id_fetched == this.mymodulevariables.globaluserid"
-      (pan)='deletemymessage($event,count)'>
+  <!-- bubble container starts here-->
+  <div style="display: flex;background-color: yellow;justify-content: flex-end;
+  padding-right: 14px;padding-top: 5px;">
 
-      <!--picture in message-->
-      <img *ngIf="!server+count.dm_msg_media_fetched" class="messagemedia" src="{{server+count.dm_msg_media_fetched}}"
-        (click)="viewimage(count)">
+    <!-- bubble -->
+    <div class="rightBubble rightBubbleEdge">
 
-      <!--video in message-->
-      <div class="videodivcontainer" *ngIf="!server+count.dm_video_fetched">
-        <img class="thumbnailmessagemedia" src="{{server+count.dm_video_thumbnail_fetched}}" (click)="playvideo(count)">
-        <div class="centeredicon">
-          <ion-icon name="play" class="playvideoicon" (click)="playvideo(count)"></ion-icon>
+
+
+      <!-- image container starts here-->
+      <!-- <div style="background-color: green;height: 200px;text-align: center;position: relative;margin-bottom: 10px;"> -->
+
+      <!-- image -->
+      <!-- <img src="../../assets/imgs/16.jpg" style="width: fit-content;height:200px;border-top-left-radius: 15px;" /> -->
+
+      <!-- download image icon -->
+      <!-- <ion-icon name="download" style="color: black; position: absolute;bottom: 8px;right: 10px; 
+         border-width: 1px;border-style: solid;border-color: white;border-radius: 20px;
+         padding-left: 7px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;
+         background-color: white;
+         "></ion-icon> -->
+      <!-- </div> -->
+      <!-- image container ends here -->
+
+
+
+
+      <!-- video container starts here-->
+      <!-- <div style="background-color: transparent;height: 200px;text-align: center;position: relative;"> -->
+
+      <!-- video thumbnail -->
+      <!-- <img src="../../assets/imgs/14.jpg" style="width: fit-content;height:200px;border-top-left-radius: 15px;" /> -->
+
+      <!-- play video icon -->
+      <!-- <ion-icon name="play" style="font-size: 30px; position: absolute; top: 50%; left: 50%;transform: translate(-50%, -50%);
+          background-color: white;border-radius: 50px;padding-left: 20px;padding-right: 14px;
+          padding-top: 10px;padding-bottom: 10px;
+          ">
+        </ion-icon> -->
+
+      <!-- download video icon -->
+      <!-- <ion-icon name="download" style="color: black; position: absolute;bottom: 5px;right: 5px; 
+        border-width: 1px;border-style: solid;border-color: white;border-radius: 20px;
+        padding-left: 7px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;
+        background-color: white;
+        "></ion-icon> -->
+      <!-- </div> -->
+      <!-- video container ends here-->
+
+
+
+      <!-- text starts here-->
+      <!-- <p style="font-size: smaller;padding-top: 0px;background-color: transparent;padding-left: 5px;">
+        saying that i looked better if i was thinnier dont you show
+        oh oh oh i see your face drop now
+      </p> -->
+      <!-- text ends here -->
+
+
+
+      <!-- document starts here -->
+      <div
+        style="display: flex;background-color: transparent;flex-direction: row;padding-left: 10px;padding-top: 5px;padding-bottom: 5px;">
+        <div style="display: flex;flex: 0.15;justify-content: center;align-items: center;">
+          <ion-icon name="ios-document" style="font-size: 30px;"></ion-icon>
+        </div>
+        <div
+          style="display: flex;flex: 0.85;flex-direction: column;;min-width: 150px; max-width: 200px;padding-left: 10px;">
+          <span
+            style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: smaller;font-weight: bold;">QUICKIE
+            EXPORT.rar</span>
+          <span style="font-size: x-small;">23mb</span>
         </div>
       </div>
+      <!-- document ends here -->
 
 
-      <!--document file-->
-      <ion-card-content class="documentfilecard" *ngIf="count.dm_file_path_fetched !=null" (click)="openfile(count)">
-        <ion-icon name="ios-document" class="documenticon"></ion-icon><span
-          class="documentname">{{count.dm_file_name_fetched}}</span>
-        <br>
-        <ion-note class="documentsize">{{count.dm_file_size_fetched}}</ion-note>
-      </ion-card-content>
+
+      <!-- message time starts here -->
+      <p
+        style="font-size: xx-small;text-align: right;background-color: transparent;margin-top: -10px;margin-bottom: 2px;padding-right: 5px;">
+        10:24pm
+      </p>
+      <!-- message time ends here -->
 
 
-      <!--audio file-->
-      <ion-card-content class="audiocardright" *ngIf="count.dm_audio_recorded_fetched != null">
-        <ion-row><span class="audiofilenameright">{{count.dm_audio_name_fetched}}</span></ion-row>
-        <ion-row>
-          <ion-col class="audiorightplayiconscolumn">
-            <ion-icon name="play" *ngIf="count.playiconactive" class="playaudioicon" (click)="playrecordedaudio(count)">
-            </ion-icon>
-            <ion-icon name="pause" *ngIf="count.pauseiconactive" class="pauseaudioicon"
-              (click)="pauserecordedaudio(count)"></ion-icon>
-            <ion-icon name="repeat" *ngIf="count.resumeiconactive" class="resumeaudioicon"
-              (click)="resumerecordedaudio(count)"></ion-icon>
-            <ion-icon name="square" *ngIf="count.stopiconactive" class="stopaudioicon"
-              (click)="stoprecordedaudio(count)"></ion-icon>
-          </ion-col>
-
-          <ion-col>
-            <ion-note class="audiofiledurationright">{{count.dm_audio_duration_fetched}}</ion-note>
-          </ion-col>
-        </ion-row>
-      </ion-card-content>
-
-      <!--provide a break so after the image if it exists so that the normal teext will go on the next line-->
-      <br *ngIf="!server+count.dm_msg_media_fetched">
-
-      <!--actual message-->
-      <span class="allusersmessagetext">{{count.dm_msg_fetched}}</span>
-
-      <!--message time-->
-      <ion-note class="loggedinusermessagetime">{{count.dm_msg_time_fetched}}</ion-note>
 
     </div>
-    <!--logged in message bubble-->
-
-
-    <!--left side message-->
-    <!--user 2 message bubble-->
-    <div class="innermessage user2" *ngIf="count.loggedinuser_id_fetched == this.dmreceipient_id_retrieved"
-      (pan)='deleteuser2message($event,count)'>
-
-      <!--picture in message-->
-      <div class="imagedivcontainer" *ngIf="!server+count.dm_msg_media_fetched">
-        <img class="messagemedia" src="{{server+count.dm_msg_media_fetched}}" (click)="viewimage(count)">
-
-        <!--download image icon-->
-        <!-- <div class="imagebottomrighticon">
-          <ion-icon name="download" class="downloadimageicon" (click)="downloadimage(count)"></ion-icon>
-        </div> -->
-      </div>
-
-      <!--video in message-->
-      <div class="videodivcontainer" *ngIf="!server+count.dm_video_fetched">
-        <img class="thumbnailmessagemedia" src="{{server+count.dm_video_thumbnail_fetched}}" (click)="playvideo(count)">
-
-        <!--play video icon-->
-        <div class="centeredicon">
-          <ion-icon name="play" class="playvideoicon" (click)="playvideo(count)"></ion-icon>
-        </div>
-
-        <!--download video icon-->
-        <div class="videobottomrighticon">
-          <ion-icon name="download" *ngIf="count.download" class="downloadvideoicon" (click)="downloadvideo(count)">
-          </ion-icon>
-
-          <!--downloading spinner-->
-          <div *ngIf="count.downloading" class="spinner-border text-primary" role="status"
-            (click)="canceldownload(count)">
-            <span class="sr-only">Loading...</span>
-          </div>
-        </div>
-
-      </div>
-
-
-      <!--document file-->
-      <ion-card-content class="documentfilecard" *ngIf="count.dm_file_path_fetched !=null">
-        <ion-icon name="ios-document" class="documenticon" (click)="openfile(count)"></ion-icon><span
-          class="documentname" (click)="openfile(count)">{{count.dm_file_name_fetched}}</span>
-        <br>
-        <ion-note class="documentsize" (click)="openfile(count)">{{count.dm_file_size_fetched}}</ion-note>
-
-        <!--download document icon-->
-        <ion-icon name="download" *ngIf="count.download" class="downloaddocumenticon" (click)="downloadfile(count)">
-        </ion-icon>
-
-        <!--downloading spinner-->
-        <div *ngIf="count.downloading" class="spinner-border text-primary" role="status" style="float:right;"
-          (click)="canceldownload(count)">
-          <span class="sr-only">Loading...</span>
-        </div>
-      </ion-card-content>
-
-
-      <!--audio file-->
-      <ion-card-content class="audiocardleft" *ngIf="count.dm_audio_recorded_fetched != null">
-        <ion-row><span class="audiofilenameleft">{{count.dm_audio_name_fetched}}</span></ion-row>
-        <ion-row>
-          <ion-col class="audioleftplayiconscolumn">
-            <ion-icon name="play" *ngIf="count.playiconactive" class="playaudioicon" (click)="playrecordedaudio(count)">
-            </ion-icon>
-            <ion-icon name="pause" *ngIf="count.pauseiconactive" class="pauseaudioicon"
-              (click)="pauserecordedaudio(count)"></ion-icon>
-            <ion-icon name="repeat" *ngIf="count.resumeiconactive" class="resumeaudioicon"
-              (click)="resumerecordedaudio(count)"></ion-icon>
-            <ion-icon name="square" *ngIf="count.stopiconactive" class="stopaudioicon"
-              (click)="stoprecordedaudio(count)"></ion-icon>
-          </ion-col>
-
-          <!--audio duration-->
-          <ion-col>
-            <ion-note class="audiofiledurationleft">{{count.dm_audio_duration_fetched}}</ion-note>
-          </ion-col>
-
-          <!--download audio icon-->
-          <ion-col>
-            <!--download audio icon-->
-            <ion-icon name="download" *ngIf="count.download" class="downloadaudioicon" (click)="downloadaudio(count)">
-            </ion-icon>
-
-            <!--downloading spinner-->
-            <div *ngIf="count.downloading" class="spinner-border text-primary" role="status"
-              (click)="canceldownload(count)">
-              <span class="sr-only">Loading...</span>
-            </div>
-          </ion-col>
-
-        </ion-row>
-      </ion-card-content>
-
-
-      <!--provide a break so after the image if it exists so that the normal teext will go on the next line-->
-      <br *ngIf="!server+count.dm_msg_media_fetched">
-
-      <!--actual message-->
-      <span class="allusersmessagetext">{{count.dm_msg_fetched}}</span>
-
-      <!--message time-->
-      <ion-note class="user2messagetime">{{count.dm_msg_time_fetched}}</ion-note>
-
-    </div>
-    <!--user 2 message bubble-->
-
-
-
-  </ion-list>
-
-  <div class="box3 rightBubble">right bubble</div>
-  <div class="box3 leftBubble">left bubble</div>
+  </div>
+  <!-- bubble container ends here -->
 
 </ion-content>
 

@@ -531,51 +531,33 @@ page-dmcontactmessages {
     }
 }
 
+/*******************************new chat bubble starts here******************************/
 
+.rightBubble {
+    background-color: red;
+    width: fit-content;
+    max-width: 90%;
+    padding: 0px;
+    padding-top: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
 
-
-
-/*******************************new chat bubbles******************************/
-.box3 {
-    width: 300px;
-    margin: 50px auto;
-    border-radius: 15px;
-    background: #00bfb6;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    font-weight: 900;
-    font-family: arial;
-    position: relative;
-  }
-  
-  
-  /* right bubble  */
-  .rightBubble:before {
+.rightBubbleEdge::before {
     content: "";
     width: 0px;
     height: 0px;
     position: absolute;
-    border-left: 15px solid #00bfb6;
-    border-right: 15px solid transparent;
-    border-top: 15px solid #00bfb6;
-    border-bottom: 15px solid transparent;
-    right: -16px;
-    top: 0px;
-  }
-  
-  
-  /* left bubble  */
-  .leftBubble:before {
-    content: "";
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    border-left: 15px solid transparent;
-    border-right: 15px solid #00bfb6;
-    border-top: 15px solid #00bfb6;
-    border-bottom: 15px solid transparent;
-    left: -16px;
-    top: 0px;
-  }
-  
+    border-left: 8px solid red;
+    border-right: 7px solid transparent;
+    border-top: 7px solid red;
+    border-bottom: 7px solid transparent;
+    right: -10px;
+    top: 5px;
+    margin-right: 10px;
+}
+
+/*******************************new chat bubble ends here******************************/
