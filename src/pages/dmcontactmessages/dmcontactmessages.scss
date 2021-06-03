@@ -531,10 +531,10 @@ page-dmcontactmessages {
     }
 }
 
-/*******************************new chat bubble starts here******************************/
+/*******************************new right chat bubble starts here******************************/
 
 .rightBubble {
-    background-color: red;
+    background-color: dodgerblue;
     width: fit-content;
     max-width: 90%;
     padding: 0px;
@@ -551,13 +551,13 @@ page-dmcontactmessages {
     width: 0px;
     height: 0px;
     position: absolute;
-    border-left: 8px solid red;
+    border-left: 8px solid dodgerblue;
     border-right: 7px solid transparent;
-    border-top: 7px solid red;
+    border-top: 7px solid dodgerblue;
     border-bottom: 7px solid transparent;
     right: -10px;
     top: 5px;
     margin-right: 10px;
 }
 
-/*******************************new chat bubble ends here******************************/
+/*******************************new right chat bubble ends here******************************/
