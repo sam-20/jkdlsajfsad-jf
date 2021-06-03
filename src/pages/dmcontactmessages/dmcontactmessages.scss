@@ -561,3 +561,37 @@ page-dmcontactmessages {
 }
 
 /*******************************new right chat bubble ends here******************************/
+
+
+
+/*******************************new left chat bubble starts here******************************/
+
+.leftBubble {
+    background-color: dodgerblue;
+    width: fit-content;
+    max-width: 90%;
+    padding: 0px;
+    padding-top: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.leftBubbleEdge::before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-right: 8px solid dodgerblue;
+    border-left: 7px solid transparent;
+    border-top: 7px solid dodgerblue;
+    border-bottom: 7px solid transparent;
+    left: -10px;
+    // top: 5px;
+    margin-left: 10px;
+    margin-top: -3px;
+}
+
+/*******************************new left chat bubble ends here******************************/
