@@ -534,8 +534,9 @@ page-dmcontactmessages {
 /*******************************new right chat bubble starts here******************************/
 
 .rightBubble {
-    background-color: dodgerblue;
+    background-color: #21A6B4;
     width: fit-content;
+    min-width: 30%;
     max-width: 90%;
     padding: 0px;
     padding-top: 3px;
@@ -551,24 +552,24 @@ page-dmcontactmessages {
     width: 0px;
     height: 0px;
     position: absolute;
-    border-left: 8px solid dodgerblue;
+    border-left: 8px solid #21A6B4;
     border-right: 7px solid transparent;
-    border-top: 7px solid dodgerblue;
+    border-top: 7px solid #21A6B4;
     border-bottom: 7px solid transparent;
     right: -10px;
-    top: 5px;
+    // top: 5px;
     margin-right: 10px;
+    margin-top: -3px;
 }
 
 /*******************************new right chat bubble ends here******************************/
 
-
-
 /*******************************new left chat bubble starts here******************************/
 
 .leftBubble {
-    background-color: dodgerblue;
+    background-color: #24B852;
     width: fit-content;
+    min-width: 30%;
     max-width: 90%;
     padding: 0px;
     padding-top: 3px;
@@ -584,9 +585,9 @@ page-dmcontactmessages {
     width: 0px;
     height: 0px;
     position: absolute;
-    border-right: 8px solid dodgerblue;
+    border-right: 8px solid #24B852;
     border-left: 7px solid transparent;
-    border-top: 7px solid dodgerblue;
+    border-top: 7px solid #24B852;
     border-bottom: 7px solid transparent;
     left: -10px;
     // top: 5px;
