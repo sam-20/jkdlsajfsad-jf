@@ -94,17 +94,17 @@
         <div (click)="openfile(count)" *ngIf="count.dm_file_path_fetched !=null" style="display: flex;background-color: transparent;flex-direction: row;padding-left: 10px;
        padding-bottom: 5px;">
           <div style="display: flex;flex: 0.15;justify-content: center;align-items: center;">
-            <ion-icon name="ios-document" style="font-size: 30px;color: white;"></ion-icon>
+            <ion-icon name="ios-document" style="font-size: 30px;color: #9a9aa2;"></ion-icon>
           </div>
           <div style="display: flex;flex: 0.85;flex-direction: column
          ;min-width: 150px; max-width: 200px;padding-left: 10px;">
 
             <!-- document name -->
-            <span style="overflow: hidden;text-overflow: ellipsis;color: white;
+            <span style="overflow: hidden;text-overflow: ellipsis;color: #9a9aa2;
            white-space: nowrap; font-size: smaller;font-weight: bold;">{{count.dm_file_name_fetched}}</span>
 
             <!-- document size -->
-            <span style="font-size: x-small;color: white;">{{count.dm_file_size_fetched}}</span>
+            <span style="font-size: x-small;color: #9a9aa2;">{{count.dm_file_size_fetched}}</span>
           </div>
         </div>
         <!-------------------------------- document ends here -->
@@ -117,13 +117,13 @@
           <!-- audio icon -->
           <div style="display: flex;flex: 0.15;justify-content: center;align-items: center;">
             <ion-icon name="ios-play" (click)="playrecordedaudio(count)" *ngIf="count.playiconactive"
-              style="font-size: 30px; color: white;"></ion-icon>
+              style="font-size: 30px; color: #9a9aa2;"></ion-icon>
             <ion-icon name="ios-pause" (click)="pauserecordedaudio(count)" *ngIf="count.pauseiconactive"
-              style="font-size: 30px; color: white;"></ion-icon>
+              style="font-size: 30px; color: #9a9aa2;"></ion-icon>
             <ion-icon name="ios-repeat" (click)="resumerecordedaudio(count)" *ngIf="count.resumeiconactive"
-              style="font-size: 30px; color: white;"></ion-icon>
+              style="font-size: 30px; color: #9a9aa2;"></ion-icon>
             <ion-icon name="ios-square" (click)="stoprecordedaudio(count)" *ngIf="count.stopiconactive"
-              style="font-size: 30px; color: white;"></ion-icon>
+              style="font-size: 30px; color: #9a9aa2;"></ion-icon>
           </div>
 
 
@@ -131,11 +131,11 @@
          ;min-width: 150px; max-width: 200px;padding-left: 10px;">
 
             <!-- audio name -->
-            <span style="overflow: hidden;text-overflow: ellipsis;color: white;
+            <span style="overflow: hidden;text-overflow: ellipsis;color: #9a9aa2;
            white-space: nowrap; font-size: smaller;font-weight: bold;">{{count.dm_audio_name_fetched}}</span>
 
             <!-- audio duration -->
-            <span style="font-size: x-small;color: white;">{{count.dm_audio_duration_fetched}}</span>
+            <span style="font-size: x-small;color: #9a9aa2;">{{count.dm_audio_duration_fetched}}</span>
           </div>
         </div>
         <!-------------------------------- audio ends here -->
@@ -197,10 +197,11 @@
           </ion-icon>
 
           <!-- download video icon -->
-          <ion-icon *ngIf="count.download" (click)="downloadvideo(count)" name="download" style="color: black; position: absolute;bottom: 5px;right: 5px; 
-     border-width: 1px;border-style: solid;border-color: white;border-radius: 20px;
+          <ion-icon *ngIf="count.download" (click)="downloadvideo(count)" name="download" 
+          style="color: white; position: absolute;bottom: 5px;right: 5px; 
+     border-width: 1px;border-style: solid;border-color: #9a9aa2;border-radius: 20px;
      padding-left: 7px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;
-     background-color: white;
+     background-color: #9a9aa2;
      "></ion-icon>
 
 
@@ -229,18 +230,18 @@
      ;padding-bottom: 5px;">
           <div (click)="openfile(count)" style="display: flex;flex: 0.15;
          background-color: transparent; justify-content: center;align-items: center;">
-            <ion-icon name="ios-document" style="font-size: 30px;color: white;"></ion-icon>
+            <ion-icon name="ios-document" style="font-size: 30px;color: #9a9aa2;"></ion-icon>
           </div>
           <div style="display: flex;flex: 0.75;flex-direction: column
        ;min-width: 160px; max-width: 200px;padding-left: 10px;
        background-color: transparent;">
 
             <!-- document name -->
-            <span (click)="openfile(count)" style="overflow: hidden;text-overflow: ellipsis;color: white;
+            <span (click)="openfile(count)" style="overflow: hidden;text-overflow: ellipsis;color: #9a9aa2;
          white-space: nowrap; font-size: smaller;font-weight: bold;">{{count.dm_file_name_fetched}}</span>
 
             <!-- document size -->
-            <span style="font-size: x-small;color: white;">{{count.dm_file_size_fetched}}</span>
+            <span style="font-size: x-small;color: #9a9aa2;">{{count.dm_file_size_fetched}}</span>
           </div>
 
           <!-- download document icon -->
@@ -248,7 +249,9 @@
             style="background-color: transparent; flex: 0.1; display: flex;align-items: flex-start;justify-content: flex-start;">
 
             <!-- download icon -->
-            <ion-icon *ngIf="count.download" (click)="downloadfile(count)" name="download" style="background-color: white; border-width: 1px;border-style: solid;border-color: white;border-radius: 20px;
+            <ion-icon *ngIf="count.download" (click)="downloadfile(count)" name="download" 
+            style="background-color: #9a9aa2; border-width: 1px;border-style: solid;
+            border-color: #9a9aa2;border-radius: 20px;color: white;
             padding-left: 7px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;"></ion-icon>
 
             <!-- downloading loader -->
@@ -271,20 +274,20 @@
 
             <!-- play -->
             <ion-icon *ngIf="count.playiconactive" name="ios-play" (click)="playrecordedaudio(count)"
-              style="font-size: 30px; color: white;"></ion-icon>
+              style="font-size: 30px; color: #9a9aa2;"></ion-icon>
 
             <!-- pause -->
             <ion-icon *ngIf="count.pauseiconactive" name="ios-pause" (click)="pauserecordedaudio(count)"
-              style="font-size: 30px; color: white;"></ion-icon>
+              style="font-size: 30px; color: #9a9aa2;"></ion-icon>
 
             <!-- repeat -->
             <ion-icon *ngIf="count.resumeiconactive" name="ios-repeat" (click)="resumerecordedaudio(count)"
-              style="font-size: 30px; color: white;">
+              style="font-size: 30px; color: #9a9aa2;">
             </ion-icon>
 
             <!-- stop -->
             <ion-icon *ngIf="count.stopiconactive" name="ios-square" (click)="stoprecordedaudio(count)"
-              style="font-size: 30px; color: white;"></ion-icon>
+              style="font-size: 30px; color: #9a9aa2;"></ion-icon>
 
           </div>
 
@@ -293,11 +296,11 @@
        ;min-width: 160px; max-width: 200px;padding-left: 10px;">
 
             <!-- audio name -->
-            <span style="overflow: hidden;text-overflow: ellipsis;color: white;
+            <span style="overflow: hidden;text-overflow: ellipsis;color: #9a9aa2;
          white-space: nowrap; font-size: smaller;font-weight: bold;">{{count.dm_audio_name_fetched}}</span>
 
             <!-- audio duration -->
-            <span style="font-size: x-small;color: white;">{{count.dm_audio_duration_fetched}}</span>
+            <span style="font-size: x-small;color: #9a9aa2;">{{count.dm_audio_duration_fetched}}</span>
           </div>
 
           <!-- download audio icon -->
@@ -305,7 +308,9 @@
             style="background-color: transparent; flex: 0.1; display: flex;align-items: center;justify-content: flex-start;">
 
             <!-- download icon -->
-            <ion-icon *ngIf="count.download" (click)="downloadaudio(count)" name="download" style="background-color: white; border-width: 1px;border-style: solid;border-color: white;border-radius: 20px;
+            <ion-icon *ngIf="count.download" (click)="downloadaudio(count)" name="download" 
+            style="background-color: #9a9aa2; color: white;
+            border-width: 1px;border-style: solid;border-color: #9a9aa2;border-radius: 20px;
            padding-left: 7px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;"></ion-icon>
 
             <!-- downloading loader -->
