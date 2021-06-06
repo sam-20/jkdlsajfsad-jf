@@ -72,10 +72,10 @@
 page-login {
     //body
     .body{
-        background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        //background: white !important;
+        // background:url('/assets/imgs/12.jpg') !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
+        background-color: white;
 
         /*combining multiple animations on one element
         first value for duration ie. how long it should last for 
@@ -130,7 +130,7 @@ page-login {
     //navbar title
     .toolbar-title{
         margin-top:10px;
-        color:white;
+        color:black;
 
         /*combining multiple animations on one element
         first value for duration ie. how long it should last for 
@@ -141,20 +141,20 @@ page-login {
     //navbar background
     .toolbar-background{
          //background:transparent;
-         background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        //background: white !important;
+        //  background:url('/assets/imgs/12.jpg') !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
+        background-color: white;
     }
 
     //username text box
     .usernametextbox{
-        border-bottom:1px solid dodgerblue
+        border-bottom:1px solid transparent
     }
 
     //password input text box
     .passwordtextbox{
-        border-bottom:1px solid dodgerblue;
+        border-bottom:1px solid transparent;
     }
 
 
