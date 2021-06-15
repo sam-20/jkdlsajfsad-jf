@@ -1,61 +1,59 @@
 page-notifications {
     //body
-    .body{
-        background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        //background: white !important;
+    .body {
+        // background:url('/assets/imgs/12.jpg') !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
+        background-color: white;
     }
-
 
     //hide scroll bar when scrolling
     ::-webkit-scrollbar,
-    *::-webkit-scrollbar
-    {
+    *::-webkit-scrollbar {
         display: none;
     }
 
     //notifications title background
-    .toolbar-background{
-         //background:transparent;
-         background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        //background: white !important;
+    .toolbar-background {
+        //background:transparent;
+        //  background:url('/assets/imgs/12.jpg') !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
+        background-color: dodgerblue;
     }
 
     //navbar title
-    .toolbar-title{
-        color:white;
-        //margin-left:-90px;
+    .toolbar-title {
+        color: white;
         margin-top: 5px;
+        font-size: medium;
     }
 
     //icon in header
-    .camfilaicon{
-        zoom :2.0;
-        color:white;
+    .camfilaicon {
+        zoom: 2;
+        color: white;
         margin-left: 5px;
-     }
-
-    //navbar title
-    .navbartitle{
-        margin-top:5px;
     }
 
-    //remove border line caused by refresher  
-    .has-refresher  .scroll-content {
+    //navbar title
+    .navbartitle {
+        margin-top: 5px;
+    }
+
+    //remove border line caused by refresher
+    .has-refresher .scroll-content {
         border-top: 0 !important;
-      }
+    }
 
     //icon used for pulling refresher
-    .refresher-pulling-icon{
-        color:white;
+    .refresher-pulling-icon {
+        color: white;
     }
 
     //text shown when pulling refresher
-    .refresher-pulling-text{
-        color:white;
+    .refresher-pulling-text {
+        color: white;
     }
 
     //icon used when refreshing
@@ -65,254 +63,242 @@ page-notifications {
     }
 
     //text shown when refreshing
-    .refresher-refreshing-text{
-        color:white;
+    .refresher-refreshing-text {
+        color: white;
     }
 
-
     //ion item design
-    .ionitemdesign{
+    .ionitemdesign {
         background: transparent;
         margin-bottom: -10px;
     }
 
     /**********************************follow card************************/
-    .followcard{
-         //background:url('/assets/imgs/9.jpg');
-         margin-top:-10px;
-        margin-left:5px;
-         padding-left:0px;
-         margin-bottom: -30px;
+    .followcard {
+        //background:url('/assets/imgs/9.jpg');
+        margin-top: -10px;
+        margin-left: 5px;
+        padding-left: 0px;
+        margin-bottom: -30px;
     }
 
-    .followcard.card-md{
-        border-radius: 10px;
+    .followcard.card-md {
+        // border-radius: 10px;
     }
 
     //follower's profile pic
-    .followerprofilepic{
+    .followerprofilepic {
         border-radius: 50px;
-        width:45px;
-        height:45px;
-        margin-top:10px;
+        width: 45px;
+        height: 45px;
+        margin-top: 10px;
         //margin-bottom: -5px;
-        margin-left:5px;
+        margin-left: 5px;
     }
 
     //notification message container
-    .notmsgcontainer{
-        margin-top:18px;
-        margin-left:-5px;
+    .notmsgcontainer {
+        margin-top: 18px;
+        margin-left: -5px;
     }
 
     //follower name
-    .notmsg1{
-        color:black;
-        font-size:110%;
+    .notmsg1 {
+        color: black;
+        font-size: 110%;
         //margin-left:-30px !important;
     }
 
     //message
-    .notmsg2{
-        color:black;
-        margin-left:10px;
+    .notmsg2 {
+        color: black;
+        margin-left: 10px;
         font-size: 90%;
-        font-style: italic
+        font-style: italic;
     }
 
     //time added
-    .timeaddedfollownot{
-        float:right;
-        color:black;
-        margin-top:-30px;
+    .timeaddedfollownot {
+        float: right;
+        color: black;
+        margin-top: -30px;
         font-size: 12px;
     }
     /**********************************follow card************************/
 
-
-
     /**********************************like card************************/
-    .likecard{
+    .likecard {
         //  //background:url('/assets/imgs/9.jpg');
-        margin-top:-15px;
+        margin-top: -15px;
         // margin-left:-15px;
-        padding-left:0px;
+        padding-left: 0px;
         margin-bottom: -10px;
     }
 
     //username
-    .likecardreceiverusername{
-        color:black;
-    }
-
-    //like card message
-    .likecardmessage{
-        color:black;
-    }
-
-    //like card like counts text
-    .likecardlikecountstext{
-        color:black;
-    }
-
-    //like card coments count text
-    .likecardcommentscountstext{
+    .likecardreceiverusername {
         color: black;
     }
 
-    .likecard.card-md{
-        border-radius: 10px;
+    //like card message
+    .likecardmessage {
+        color: black;
     }
 
-    .profilepictureANDusername{
-        margin-top:-8px;
+    //like card like counts text
+    .likecardlikecountstext {
+        color: black;
+    }
+
+    //like card coments count text
+    .likecardcommentscountstext {
+        color: black;
+    }
+
+    .likecard.card-md {
+        // border-radius: 10px;
+    }
+
+    .profilepictureANDusername {
+        margin-top: -8px;
         margin-bottom: -8px;
         background: transparent;
     }
 
-    .notmsg3{
+    .notmsg3 {
         font-style: italic;
-        color:black;
+        color: black;
         font-size: 12px;
     }
 
-    .timeaddedlikecard{
-        float:right;
-        color:black;
-        margin-top:13px !important;
+    .timeaddedlikecard {
+        float: right;
+        color: black;
+        margin-top: 13px !important;
         font-size: 12px;
     }
 
-    .likedmessagerowstyle{
-        margin-top:-15px;
+    .likedmessagerowstyle {
+        margin-top: -15px;
         margin-bottom: -15px;
     }
 
-    .likedmessagemedia{
-        height:200px; 
-        width:800px; 
-        margin-left:15px;
-        margin-bottom:0px;
-        border-radius: 20px;
+    .likedmessagemedia {
+        height: 200px;
+        width: 800px;
+        margin-left: 15px;
+        margin-bottom: 0px;
+        // border-radius: 20px;
     }
     /**********************************like card************************/
-
 
     /*********************************comment card*********************/
 
     /******commented message details*********************** */
-    .commentedmsgcard{
+    .commentedmsgcard {
         background: transparent;
-        margin-top:5px;
-        margin-left:25px;
-        padding-left:0px;
+        margin-top: 5px;
+        width: 100%;
     }
 
-    .commentedmsgcard.card-md{
-        border-radius: 10px;
+    .commentedmsgcard.card-md {
+        // border-radius: 10px;
     }
-
 
     //commented message message media
-    .commentedmessagemedia{
-        height:200px; 
-        //width:800px; 
+    .commentedmessagemedia {
+        height: 200px;
+        //width:800px;
         //margin-left:15px;
-        margin-bottom:0px;
-        border-radius: 10px;
+        margin-bottom: 0px;
+        // border-radius: 10px;
     }
 
     //commented message username
-    .commentedmsgusername{
-        color:black;
+    .commentedmsgusername {
+        color: black;
     }
 
     //commented message message text
-    .commentedmessagetext{
-        color:black;
+    .commentedmessagetext {
+        color: black;
     }
 
     //commmented message likes count text
-    .commentedmessagelikecounttext{
-        color:black;
+    .commentedmessagelikecounttext {
+        color: black;
     }
 
     //commented message comments count text
-    .commentedmessagecommentscounttext{
-        color:black;
+    .commentedmessagecommentscounttext {
+        color: black;
     }
-
-
-
 
     /******commented message details*********************** */
 
-
     /******comment message details*********************** */
-    .commentmsgcard{
-        background:transparent !important;
-        margin-top:-5px;
-        margin-left:-15px;
-        padding-left:0px;
+    .commentmsgcard {
+        background: transparent !important;
+        margin-top: -5px;
+        margin-left: -15px;
+        padding-left: 0px;
         margin-bottom: -25px;
     }
 
-    .commentmsgcard{
-        background: url('/assets/imgs/19.jpg');
+    .commentmsgcard {
+        background: url("/assets/imgs/19.jpg");
         margin-left: 0px;
     }
 
-    .commentmsgcard.card-md{
-        border-radius: 10px;
+    .commentmsgcard.card-md {
+        // border-radius: 10px;
     }
 
-    .commenttext{
+    .commenttext {
         font-style: italic;
     }
 
-
-    .commentmessagerowstyle{
-        margin-top:-15px;
+    .commentmessagerowstyle {
+        margin-top: -15px;
         margin-bottom: -25px;
     }
 
     //comment message
-    .commentmessage{
+    .commentmessage {
         color: black;
     }
 
     //comment message media
-    .commentmessagemedia{
-        height:200px; 
-        width:800px; 
-        margin-left:15px;
-        margin-bottom:0px;
-        border-radius: 20px;
+    .commentmessagemedia {
+        height: 200px;
+        width: 800px;
+        margin-left: 15px;
+        margin-bottom: 0px;
+        // border-radius: 20px;
     }
 
     //commenter username
-    .commenterusername{
-        color:black;
+    .commenterusername {
+        color: black;
     }
 
     //comment message likes count text
-    .commentmsglikescounttext{
-        color:black;
+    .commentmsglikescounttext {
+        color: black;
     }
 
     //comment message comments count text
-    .commentmsgcommentscounttext{
-        color:black;
+    .commentmsgcommentscounttext {
+        color: black;
     }
 
     //time added for comment message
-    .timeaddedcommentmessage{
-        float:right;
-        color:black;
-        margin-top:13px !important;
+    .timeaddedcommentmessage {
+        float: right;
+        color: black;
+        margin-top: 13px !important;
         font-size: 12px;
     }
-
 
     /******comment message details*********************** */
 

@@ -1,65 +1,63 @@
 page-followers {
     //body
-    .body{
-        background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        //background: white !important;
+    .body {
+        // background:url('/assets/imgs/12.jpg') !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
+        background-color: white;
     }
 
     //back button which comes which navctrl push
-    .back-button-icon{
+    .back-button-icon {
         color: white;
-      }
+    }
 
-      //hide scroll bar when scrolling
+    //hide scroll bar when scrolling
     ::-webkit-scrollbar,
-    *::-webkit-scrollbar
-    {
+    *::-webkit-scrollbar {
         display: none;
     }
 
-     //followers title background
-     .toolbar-background{
+    //followers title background
+    .toolbar-background {
         //background:transparent;
-        background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        //background: white !important;
+        // background:url('/assets/imgs/12.jpg') !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
+        background-color: dodgerblue;
     }
 
     //icon in header
-    .camfilaicon{
-        zoom :2.0;
-        color:white;
-     }
-  
- 
+    .camfilaicon {
+        zoom: 2;
+        color: white;
+    }
+
     //navbar title
-    .toolbar-title{
-        color:white;
+    .toolbar-title {
+        color: white;
         margin-top: 5px;
-
+        font-size: medium;
     }
 
     //navbar title
-    .navbartitle{
-        margin-top:5px;
+    .navbartitle {
+        margin-top: 5px;
     }
 
-    //remove border line caused by refresher  
-    .has-refresher  .scroll-content {
+    //remove border line caused by refresher
+    .has-refresher .scroll-content {
         border-top: 0 !important;
-      }
+    }
 
     //icon used for pulling refresher
-    .refresher-pulling-icon{
-        color:white;
+    .refresher-pulling-icon {
+        color: white;
     }
 
     //text shown when pulling refresher
-    .refresher-pulling-text{
-        color:white;
+    .refresher-pulling-text {
+        color: white;
     }
 
     //icon used when refreshing
@@ -69,13 +67,13 @@ page-followers {
     }
 
     //text shown when refreshing
-    .refresher-refreshing-text{
-        color:white;
+    .refresher-refreshing-text {
+        color: white;
     }
 
     //card  containing user details
-    .usercard{
-        background:transparent;
+    .usercard {
+        background: transparent;
         box-shadow: none !important; //border around card
         margin-bottom: 0px;
 
@@ -86,29 +84,29 @@ page-followers {
     }
 
     //user profile pic
-    .profilepic{
-        border-radius:50px;
-        width:60px;
-        height:60px;
-        margin-top:2px;
-        margin-left:10px;
+    .profilepic {
+        border-radius: 50px;
+        width: 60px;
+        height: 60px;
+        margin-top: 2px;
+        margin-left: 10px;
         padding-left: 0px;
     }
 
     //follow button
-    .followbutton{
-        width:80px;
-        float:right;
-        margin-top:40px;
+    .followbutton {
+        width: 80px;
+        float: right;
+        margin-top: 40px;
         margin-right: 10px;
     }
 
     //username card
-    .usernamecard{
-        margin-left:0px;
-        margin-top:15px;
-        color:black;
-        background:transparent;
+    .usernamecard {
+        margin-left: 0px;
+        margin-top: 15px;
+        color: black;
+        background: transparent;
         box-shadow: none !important; //border around card
 
         //remove border lines around card
@@ -118,16 +116,16 @@ page-followers {
     }
 
     //about card
-    .aboutcard{
-        height:60px;
-        width:140px;
-        margin-left:0px;
-        margin-right:-5px;
-        margin-top:0px;
+    .aboutcard {
+        height: 60px;
+        width: 140px;
+        margin-left: 0px;
+        margin-right: -5px;
+        margin-top: 0px;
         margin-bottom: 0px;
-        color:black;
-        background:transparent;
-        box-shadow: none !important; //border around card 
+        color: black;
+        background: transparent;
+        box-shadow: none !important; //border around card
 
         //remove border lines around card
         box-shadow: none !important;
@@ -136,9 +134,9 @@ page-followers {
     }
 
     //follower text
-    .followertext{
-        color:black;
-        margin-top:10px;
+    .followertext {
+        color: black;
+        margin-top: 10px;
         margin-bottom: -40px;
         margin-left: 15px;
     }

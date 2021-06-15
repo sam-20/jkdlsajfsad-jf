@@ -40,28 +40,45 @@
   </div>
   <!--search bar-->
 
-  <!--card to display user info-->
-  <ion-card *ngFor="let count of followingtablerows | searchfollowing: terms" class="usercard">
+  <!-- user card starts here-->
+  <div *ngFor="let count of followingtablerows | searchfollowing: terms" style="width: 100%;background-color: transparent;display: flex;
+    padding-left: 10px;padding-right: 10px;
+    margin-top: 10px;margin-bottom: 30px;">
+    <div (click)="openuserprofile(count)"
+      style="display: flex;background-color: transparent;flex: 0.15; align-items: center;justify-content: center;">
+      <!-- profile pic -->
+      <img src="{{server+count.following_profile_pic_fetched}}" style="width: 46px;height: 46px;border-radius: 23px;" />
+    </div>
 
-    <ion-row>
+    <div (click)="openuserprofile(count)"
+      style="display: flex;background-color: transparent;flex: 0.6;flex-direction: column;padding-left: 10px;">
+      <div style="display: flex;  background-color: transparent ;flex: 0.5;align-items: flex-end;">
+        <!-- username -->
+        <span style="font-size: smaller;font-weight: 500;">{{count.following_username_fetched}}</span>
+      </div>
 
-      <ion-col (click)="openuserprofile(count)">
-        <img src="{{server+count.following_profile_pic_fetched}}" class="userprofilepicture">
-      </ion-col>
+      <div style="background-color: transparent;flex: 0.5;">
+        <!-- about -->
+        <span style="font-size: smaller;font-weight: 500;">{{count.following_about_fetched}}</span>
+      </div>
+    </div>
 
-      <ion-col (click)="openuserprofile(count)">
-        <ion-card class="usernamecard"><b>{{count.following_username_fetched}}</b></ion-card>
-        <ion-card class="aboutcard">{{count.following_about_fetched}}</ion-card>
-      </ion-col>
+    <div style="display: flex;background-color: transparent;flex: 0.25;flex-direction: column;width: 100%;">
+      <div style="display: flex;  background-color: transparent;flex: 0.5;justify-content: center;">
+        <!-- follow button -->
+        <button ion-button (click)="unfollowuser(count)" small style="text-transform: none; height: 90%;"
+          color={{count.buttoncolor}}>{{count.followstatus}}</button>
+      </div>
 
-      <ion-col>
-        <div class="followertext">{{count.followertext}}</div>
-        <button ion-button small style="text-transform: none;" class="followbutton" (click)="unfollowuser(count)" color={{count.buttoncolor}}>{{count.followstatus}}</button>
-      </ion-col>
+      <div
+        style="display: flex;  background-color: transparent;flex: 0.5;align-items: flex-end;justify-content: center;">
+        <!-- follows you text -->
+        <span style="font-size: smaller;font-weight: 500;">{{count.followertext}}</span>
+      </div>
+    </div>
+  </div>
+  <!-- user card ends here-->
 
-    </ion-row>
 
-  </ion-card>
-  <!--card to display user info-->
 
 </ion-content>
