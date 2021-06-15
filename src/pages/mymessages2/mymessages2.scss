@@ -1,64 +1,63 @@
 page-mymessages2 {
     //body
-    .body{
-        background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        //background: white !important;
+    .body {
+        // background:url('/assets/imgs/12.jpg') !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
+        background-color: white;
     }
 
     //hide scroll bar when scrolling
     ::-webkit-scrollbar,
-    *::-webkit-scrollbar
-    {
+    *::-webkit-scrollbar {
         display: none;
     }
 
     //back button which comes which navctrl push
-    .back-button-icon{
+    .back-button-icon {
         color: white;
-      }
+    }
 
-     //posts title background
-     .toolbar-background{
+    //posts title background
+    .toolbar-background {
         //background:transparent;
-        background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        //background: white !important;
+        // background:url('/assets/imgs/12.jpg') !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
+        background-color: dodgerblue;
     }
 
     //icon in header
-    .camfilaicon{
-        zoom :2.0;
-        color:white;
+    .camfilaicon {
+        zoom: 2;
+        color: white;
     }
- 
+
     //navbar title
-    .toolbar-title{
-        color:white;
+    .toolbar-title {
+        color: white;
         margin-top: 5px;
-
+        font-size: medium;
     }
 
     //navbar title
-    .navbartitle{
-        margin-top:5px;
-    } 
+    .navbartitle {
+        margin-top: 5px;
+    }
 
-    //remove border line caused by refresher  
-    .has-refresher  .scroll-content {
+    //remove border line caused by refresher
+    .has-refresher .scroll-content {
         border-top: 0 !important;
-      }
+    }
 
     //icon used for pulling refresher
-    .refresher-pulling-icon{
-        color:white;
+    .refresher-pulling-icon {
+        color: white;
     }
 
     //text shown when pulling refresher
-    .refresher-pulling-text{
-        color:white;
+    .refresher-pulling-text {
+        color: white;
     }
 
     //icon used when refreshing
@@ -68,95 +67,87 @@ page-mymessages2 {
     }
 
     //text shown when refreshing
-    .refresher-refreshing-text{
-        color:white;
+    .refresher-refreshing-text {
+        color: white;
     }
 
-
     //pin message icon
-    .pinmessageicon{
+    .pinmessageicon {
         float: right;
     }
 
     //delete message icon
-    .deletemessageicon{
-        float:right;
-        margin-top:10px;
-    }   
- 
+    .deletemessageicon {
+        float: right;
+        margin-top: 10px;
+    }
+
     //time added text
-    .timeadded{
-        float:right;
-        color:black;
-        margin-top:10px !important;
+    .timeadded {
+        float: right;
+        color: black;
+        margin-top: 10px !important;
     }
 
     //message card
-    .messagecard.card-md{
-        border-radius:10px;
+    .messagecard.card-md {
+        border-radius: 10px;
     }
 
     //message card
-    .messagecard{
-        background:transparent;
-        margin-top:-15px;
-        margin-left:0px;
-        padding-left:0px;
+    .messagecard {
+        background: transparent;
+        margin-top: -15px;
+        margin-left: 0px;
+        padding-left: 0px;
         margin-bottom: -10px;
     }
 
     //picture in message
-    .messagemedia{
-        height:200px; 
-        width:800px; 
-        margin-left:15px;
+    .messagemedia {
+        height: 200px;
+        width: 800px;
+        margin-left: 15px;
         //margin-bottom:-25px;
         border-radius: 20px;
     }
 
     //profile pic and username as one component
-    .profilepictureANDusername{
-        margin-top:-8px;
+    .profilepictureANDusername {
+        margin-top: -8px;
         margin-bottom: -8px;
         background: transparent;
     }
 
     //likes comments time
-    .statsrowstyle{
-        margin-top:-15px;
+    .statsrowstyle {
+        margin-top: -15px;
         margin-bottom: -18px;
     }
 
     //ion item design
-    .ionitemdesign{
+    .ionitemdesign {
         background: transparent;
         margin-bottom: -10px;
     }
 
-
     //username text
-    .usernametext{
-        color:black;
+    .usernametext {
+        color: black;
     }
 
     //message text
-    .messagetext{
-        color:black !important;
+    .messagetext {
+        color: black !important;
     }
 
     //likes counts text
-    .likescounttext{
-        color:black;
+    .likescounttext {
+        color: black;
     }
 
     //commentss count text
-    .commentscountext{
-        color:black;
+    .commentscountext {
+        color: black;
     }
-
-
-
-
-
-
 }

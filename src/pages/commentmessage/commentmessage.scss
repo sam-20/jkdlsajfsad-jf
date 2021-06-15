@@ -1,180 +1,176 @@
 page-commentmessage {
     //body
-    .body{
-        background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
+    .body {
+        // background:url('/assets/imgs/12.jpg') !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
         //background: white !important;
+        background-color: white;
     }
 
     //hide scroll bar when scrolling
     ::-webkit-scrollbar,
-    *::-webkit-scrollbar
-    {
+    *::-webkit-scrollbar {
         display: none;
     }
 
     //back button which comes which navctrl push
-    .back-button-icon{
+    .back-button-icon {
         color: white;
-      }
+    }
 
-     //comment message title background
-     .toolbar-background{
+    //comment message title background
+    .toolbar-background {
         //background:transparent;
-        background:url('/assets/imgs/12.jpg');
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
+        // background:url('/assets/imgs/12.jpg');
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
+        background-color: dodgerblue;
     }
 
     //icon in header
-    .camfilaicon{
-        zoom :2.0;
-        color:white;
-     }
- 
+    .camfilaicon {
+        zoom: 2;
+        color: white;
+    }
 
     //navbar title
-    .toolbar-title{
-        color:white;
+    .toolbar-title {
+        color: white;
         margin-top: 5px;
-
+        font-size: medium;
     }
 
     //navbar title
-    .navbartitle{
-        margin-top:5px;
+    .navbartitle {
+        margin-top: 5px;
     }
 
-    
     //pin message icon
-    .pinmessageicon{
+    .pinmessageicon {
         float: right;
     }
 
     //time added text
-    .timeadded{
-        float:right;
-        color:black;
-        margin-top:12px !important;
+    .timeadded {
+        float: right;
+        color: black;
+        margin-top: 12px !important;
         font-size: 12px;
         margin-right: 15px;
     }
 
-     //commented message card
-     .commentedmessagecard.card-md{
-        border-radius:10px;
+    //commented message card
+    .commentedmessagecard.card-md {
+        border-radius: 10px;
     }
 
     //message card
-    .commentedmessagecard{
-        background:transparent;
-        margin-top:5px;
+    .commentedmessagecard {
+        background: transparent;
+        margin-top: 5px;
         margin-bottom: 0px;
     }
 
     //profile pic and username as one component
-    .profilepictureANDusername{
-        background:transparent;
+    .profilepictureANDusername {
+        background: transparent;
     }
 
-     //post message textarea
-   .postmessagetextarea{
-    margin-top:0px;
-    border-radius:10px;
-    margin-left:-2px;
-    background: transparent;
-    color:black;
-    font:arial;
-    border:1px solid transparent;
-}
+    //post message textarea
+    .postmessagetextarea {
+        margin-top: 0px;
+        border-radius: 10px;
+        margin-left: -2px;
+        background: transparent;
+        color: black;
+        font: arial;
+        border: 1px solid transparent;
+    }
 
-//add image button 
-.addimagebutton{
-    margin-top:-20px;
-    width:0px;
-    float: right;
-    margin-top:-10px;
-    margin-right:-10px;
-}
+    //add image button
+    .addimagebutton {
+        margin-top: -20px;
+        width: 0px;
+        float: right;
+        margin-top: -10px;
+        margin-right: -10px;
+    }
 
-//send message button
-.sendmessagebutton{
-    margin-top:-10px;
-    width:80px;
-}
+    //send message button
+    .sendmessagebutton {
+        margin-top: -10px;
+        width: 80px;
+    }
 
-//send message icon
-.sendmessageicon{
-    margin-left:5px;
-    margin-top:-3px;
-}
+    //send message icon
+    .sendmessageicon {
+        margin-left: 5px;
+        margin-top: -3px;
+    }
 
-//comment msg with picture card 
-.picturecard{
-    width:320px;
-    height: 200px;
-    border-radius: 10px;
-    margin-left:0px;
-   // position: relative;
-}
+    //comment msg with picture card
+    .picturecard {
+        width: 320px;
+        height: 200px;
+        border-radius: 10px;
+        margin-left: 0px;
+        // position: relative;
+    }
 
-//picture in comment msg picture card
-.imagesource{
-    width:320px !important;
-    height:200px !important;
-}
+    //picture in comment msg picture card
+    .imagesource {
+        width: 320px !important;
+        height: 200px !important;
+    }
 
-//profile pic
-.avatarprofilepic{
-    width:60px !important;
-    height: 60px !important;
-}
+    //profile pic
+    .avatarprofilepic {
+        width: 60px !important;
+        height: 60px !important;
+    }
 
-//delete picture icon
-.deletepictureicon{
-    position: absolute;
-    color:red;
-    background:transparent;
-    //margin-top:200px;
-}
+    //delete picture icon
+    .deletepictureicon {
+        position: absolute;
+        color: red;
+        background: transparent;
+        //margin-top:200px;
+    }
 
     //message media of commented message
-     .commentedmessagemedia{
-        height:200px; 
-        width:800px; 
-        margin-left:0px;
-        margin-bottom:0px;
+    .commentedmessagemedia {
+        height: 200px;
+        width: 800px;
+        margin-left: 0px;
+        margin-bottom: 0px;
         border-radius: 10px;
     }
 
-
     //commented message actual comment message text
-    .commentedmessagetext{
-        color:black;
+    .commentedmessagetext {
+        color: black;
         //preserve line breaks wherever user added them in the text
-        white-space:pre-wrap;
+        white-space: pre-wrap;
     }
 
-     //usrname text
-     .usernametext{
-        color:black;
+    //usrname text
+    .usernametext {
+        color: black;
     }
-
 
     //likes count
-    .likescounttext{
-        color:black;
+    .likescounttext {
+        color: black;
     }
 
     //cmmments count
-    .commmentscounttext{
-        color:black;
+    .commmentscounttext {
+        color: black;
     }
 
     //placeholder color for text area
-    .postmessagetextarea::placeholder{
-        color:black
-     }
-
+    .postmessagetextarea::placeholder {
+        color: black;
+    }
 }
