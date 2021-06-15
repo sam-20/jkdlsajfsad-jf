@@ -1,77 +1,73 @@
 page-dmsendpicturepopup {
     //body
-    .body{
-        background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        //background: white !important;
+    .body {
+        // background:url('/assets/imgs/12.jpg') !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
+        background-color: white;
     }
 
     //back button which comes which navctrl push
-    .back-button-icon{
+    .back-button-icon {
         color: white;
-      }
+    }
 
-      //hide scroll bar when scrolling
+    //hide scroll bar when scrolling
     ::-webkit-scrollbar,
-    *::-webkit-scrollbar
-    {
+    *::-webkit-scrollbar {
         display: none;
     }
 
-     //followers title background
-     .toolbar-background{
+    //followers title background
+    .toolbar-background {
         //background:transparent;
-        background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        //background: white !important;
+        // background:url('/assets/imgs/12.jpg') !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
+        background-color: dodgerblue;
     }
 
     //icon in header
-    .camfilaicon{
-        zoom :2.0;
-        color:white;
-     }
-  
- 
+    .camfilaicon {
+        zoom: 2;
+        color: white;
+    }
+
     //navbar title
-    .toolbar-title{
-        color:white;
+    .toolbar-title {
+        color: white;
         margin-top: 5px;
-
+        font-size: medium;
     }
 
     //navbar title
-    .navbartitle{
-        margin-top:5px;
+    .navbartitle {
+        margin-top: 5px;
     }
-
 
     //message media
-    .messagemedia{
-        margin-top:50px;
+    .messagemedia {
+        margin-top: 50px;
     }
 
     //text area for sending a message
-    .sendmessagetextarea{
+    .sendmessagetextarea {
         border-radius: 50px;
         background: transparent;
-        color:black;
-        font:arial;
+        color: black;
+        font: arial;
     }
 
     //placeholder color for text area
-    .sendmessagetextarea::placeholder{
-        color:black
-     }
-
-    //send message icon
-    .sendmessageicon{
-        margin-top:5px;
-        margin-left: -14px;
-        zoom :2.0;
-        color:dodgerblue;
+    .sendmessagetextarea::placeholder {
+        color: black;
     }
 
+    //send message icon
+    .sendmessageicon {
+        margin-top: 5px;
+        margin-left: -14px;
+        zoom: 2;
+        color: dodgerblue;
+    }
 }

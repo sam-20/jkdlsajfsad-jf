@@ -1,54 +1,53 @@
 page-mygroupspopovermenu {
-
     //item body
-    .itembody{
-        background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        // background: transparent !important;
+    .itembody {
+        // background:url('/assets/imgs/12.jpg') !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
+        background-color: white;
         // padding: 0px;
     }
 
     //view groups item list
-    .viewgroupsitemlist{
+    .viewgroupsitemlist {
         margin-bottom: 0px;
         background: transparent;
-        margin-top:-5px;
+        margin-top: -5px;
         margin-bottom: -10px;
     }
 
     //view all groups button
-    .viewallgroupsbutton{
+    .viewallgroupsbutton {
         width: 200px;
-        background: transparent;
-        color:black;
+        background: dodgerblue;
+        color: white;
     }
 
     //view all groups icon
-    .viewallgroupsicon{
-        color:black;
+    .viewallgroupsicon {
+        color: white;
         margin-left: 10px;
-        zoom:1.5;
+        zoom: 1.5;
     }
 
-     //create group item list
-     .creategroupitemlist{
+    //create group item list
+    .creategroupitemlist {
         margin-bottom: 0px;
         background: transparent;
         margin-bottom: -5px;
     }
 
     //create group button
-    .creategroupbutton{
+    .creategroupbutton {
         width: 200px;
-        background: transparent;
-        color:black;
+        background: dodgerblue;
+        color: white;
     }
 
     //create new group icon
-    .creategroupicon{
-        color:black;
+    .creategroupicon {
+        color: white;
         margin-left: 10px;
-        zoom:1.5;
+        zoom: 1.5;
     }
 }

@@ -1,63 +1,60 @@
 page-mygroups {
-
     //body
-    .body{
-        background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        //background: white !important;
+    .body {
+        // background:url('/assets/imgs/12.jpg') !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
+        background-color: white;
     }
 
     //hide scroll bar when scrolling
     ::-webkit-scrollbar,
-    *::-webkit-scrollbar
-    {
+    *::-webkit-scrollbar {
         display: none;
     }
 
     //trending title background
-    .toolbar-background{
-         //background:transparent;
-         background:url('/assets/imgs/12.jpg') !important;
-         background-repeat: no-repeat !important;
-         background-size: cover !important;
-         //background: white !important;
+    .toolbar-background {
+        //background:transparent;
+        //  background:url('/assets/imgs/12.jpg') !important;
+        //  background-repeat: no-repeat !important;
+        //  background-size: cover !important;
+        background-color: dodgerblue;
     }
 
     //icon in header
-    .camfilaicon{
-        zoom :2.0;
-        color:white;
-        margin-left:10px;
-     }
- 
-
-    //navbar title 
-    .toolbar-title{
-        color:white;
-        //margin-left:-90px;
-        margin-top: 5px;
-
+    .camfilaicon {
+        zoom: 2;
+        color: white;
+        margin-left: 10px;
     }
 
     //navbar title
-    .navbartitle{
-        margin-top:5px;
+    .toolbar-title {
+        color: white;
+        //margin-left:-90px;
+        margin-top: 5px;
+        font-size: medium;
     }
 
-    //remove border line caused by refresher 
-    .has-refresher  .scroll-content {
+    //navbar title
+    .navbartitle {
+        margin-top: 5px;
+    }
+
+    //remove border line caused by refresher
+    .has-refresher .scroll-content {
         border-top: 0 !important;
-      }
+    }
 
     //icon used for pulling refresher
-    .refresher-pulling-icon{
-        color:white;
+    .refresher-pulling-icon {
+        color: white;
     }
 
     //text shown when pulling refresher
-    .refresher-pulling-text{
-        color:white;
+    .refresher-pulling-text {
+        color: white;
     }
 
     //icon used when refreshing
@@ -67,73 +64,70 @@ page-mygroups {
     }
 
     //text shown when refreshing
-    .refresher-refreshing-text{
-        color:white;
+    .refresher-refreshing-text {
+        color: white;
     }
 
     //view all groups icon
-    .viewallgroupsicon{
-        zoom :1.5;
-        color:white;
+    .viewallgroupsicon {
+        zoom: 1.5;
+        color: white;
         margin-top: 3px;
         float: right;
         margin-right: 10px;
-     } 
+    }
 
-
-     //list to contain group chats and their last messages
-    .groupchatlist{
-       background: transparent;
+    //list to contain group chats and their last messages
+    .groupchatlist {
+        background: transparent;
     }
 
     // ion item
-    .chatitem{
-       background: transparent;
-       margin-bottom: 5px;
+    .chatitem {
+        background: transparent;
+        margin-bottom: 5px;
     }
 
     //group chat username
-    .groupname{
-       color:black;
-       margin-top:0px;
+    .groupname {
+        color: black;
+        margin-top: 0px;
     }
 
     //group chat last message text
-    .lastmessage{
-        margin-top:5px;
-       color:gray;
-    }    
+    .lastmessage {
+        margin-top: 5px;
+        color: gray;
+    }
 
     //last messsage time
-    .lastmessagetime{
-       float: right;
-       font-size: 12px;
-       margin-top:-45px;
-       margin-right: 15px;
-       color:black
+    .lastmessagetime {
+        float: right;
+        font-size: 12px;
+        margin-top: -45px;
+        margin-right: 15px;
+        color: black;
     }
 
     //group profile pic
-    .groupprofilepic{
-       width:50px !important;
-       height: 50px !important;
-       margin-top:-5px;
+    .groupprofilepic {
+        width: 50px !important;
+        height: 50px !important;
+        margin-top: -5px;
     }
 
     //last message sender's name
-    .lastmsgsendername{
-        color:black;
+    .lastmsgsendername {
+        color: black;
     }
 
     //sliding list setup
-    .slidingformstyle{
+    .slidingformstyle {
         background: transparent;
     }
 }
 
-.popoverstyling{
+.popoverstyling {
     background: red;
     float: left;
 }
-
-

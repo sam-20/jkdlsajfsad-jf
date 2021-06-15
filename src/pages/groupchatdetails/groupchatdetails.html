@@ -28,7 +28,7 @@
   <ion-row>
 
     <!-- group profile picture-->
-    <ion-col>
+    <ion-col style="padding-left: 15px;">
       <ion-card class="groupprofilecard">
         <img src="{{this.group_profilepic}}" class="groupprofilepic" (click)="viewprofileimage()">
       </ion-card>
@@ -52,8 +52,12 @@
 
   <div>
     <span class="groupparticipantstext">Group participants : {{this.members_joined_count}}</span>
-    <button class="dissolvegroupbutton" ion-button color="danger" small *ngIf="this.mymodulevariables.globaluserid == this.createdgroup_admin_id" (click)="dissolvegroup()">dissolve group</button>
-    <button class="managebutton" ion-button small color="dark" *ngIf="this.mymodulevariables.globaluserid == this.createdgroup_admin_id" (click)="managegroupmembers()">manage</button>
+    <button class="dissolvegroupbutton" ion-button color="danger" small
+      *ngIf="this.mymodulevariables.globaluserid == this.createdgroup_admin_id" (click)="dissolvegroup()">dissolve
+      group</button>
+    <button class="managebutton" ion-button small color="dark"
+      *ngIf="this.mymodulevariables.globaluserid == this.createdgroup_admin_id"
+      (click)="managegroupmembers()">manage</button>
   </div>
 
 
@@ -69,7 +73,8 @@
           <img src="{{server+count.profile_pic_fetched}}" class="participantprofilepic">
         </ion-avatar>
         <!--name-->
-        <h3 class="participantname"><b>{{count.username_fetched}} <span *ngIf="count.user_id_fetched == this.createdgroup_admin_id">:
+        <h3 class="participantname"><b>{{count.username_fetched}} <span
+              *ngIf="count.user_id_fetched == this.createdgroup_admin_id">:
               admin</span></b></h3>
 
         <!--about-->

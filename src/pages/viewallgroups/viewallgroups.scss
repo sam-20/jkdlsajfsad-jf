@@ -1,64 +1,62 @@
 page-viewallgroups {
-
     //body
-    .body{
-        background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        //background: white !important;
+    .body {
+        // background:url('/assets/imgs/12.jpg') !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
+        background-color: white;
     }
 
     //back button which comes which navctrl push
-    .back-button-icon{
+    .back-button-icon {
         color: white;
-      }
+    }
 
     //hide scroll bar when scrolling
     ::-webkit-scrollbar,
-    *::-webkit-scrollbar
-    {
+    *::-webkit-scrollbar {
         display: none;
     }
 
-     //following title background
-     .toolbar-background{
-        background:url('/assets/imgs/12.jpg') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        //background: white !important;
+    //following title background
+    .toolbar-background {
+        // background:url('/assets/imgs/12.jpg') !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
+        background-color: dodgerblue;
     }
 
     //icon in header
-    .camfilaicon{
-        zoom :2.0;
-        color:white;
-     }
- 
- 
-    //navbar title
-    .toolbar-title{
-        color:white;
-        margin-top: 5px;
-    } 
-
-    //navbar title
-    .navbartitle{
-        margin-top:5px;
+    .camfilaicon {
+        zoom: 2;
+        color: white;
     }
 
-    //remove border line caused by refresher  
-    .has-refresher  .scroll-content {
+    //navbar title
+    .toolbar-title {
+        color: white;
+        margin-top: 5px;
+        font-size: medium;
+    }
+
+    //navbar title
+    .navbartitle {
+        margin-top: 5px;
+    }
+
+    //remove border line caused by refresher
+    .has-refresher .scroll-content {
         border-top: 0 !important;
-      }
+    }
 
     //icon used for pulling refresher
-    .refresher-pulling-icon{
-        color:white;
+    .refresher-pulling-icon {
+        color: white;
     }
 
     //text shown when pulling refresher
-    .refresher-pulling-text{
-        color:white;
+    .refresher-pulling-text {
+        color: white;
     }
 
     //icon used when refreshing
@@ -68,18 +66,18 @@ page-viewallgroups {
     }
 
     //text shown when refreshing
-    .refresher-refreshing-text{
-        color:white;
+    .refresher-refreshing-text {
+        color: white;
     }
 
     //searchbar
-    .searchbar{
+    .searchbar {
         position: static;
     }
 
     //card  containing group details
-    .groupcard{
-        background:transparent;
+    .groupcard {
+        background: transparent;
         box-shadow: none !important; //border around card
 
         //remove border lines around card
@@ -89,31 +87,31 @@ page-viewallgroups {
     }
 
     //group profile pic
-    .groupprofilepic{
-        border-radius:50px;
-        width:65px;
-        height:65px;
-        margin-top:2px;
+    .groupprofilepic {
+        border-radius: 50px;
+        width: 65px;
+        height: 65px;
+        margin-top: 2px;
         margin-bottom: 0px;
-        
-        margin-left:10px;
+
+        margin-left: 10px;
         padding-left: 0px;
     }
 
     //join button
-    .joinbutton{
-        width:80px;
-        float:right;
-        margin-top:20px;
+    .joinbutton {
+        width: 80px;
+        float: right;
+        margin-top: 20px;
         margin-right: 10px;
     }
 
     //group name card
-    .groupnamecard{
-        margin-left:0px;
-        margin-top:15px;
-        color:black;
-        background:transparent;
+    .groupnamecard {
+        margin-left: 0px;
+        margin-top: 15px;
+        color: black;
+        background: transparent;
         box-shadow: none !important; //border around card
 
         //remove border lines around card
@@ -123,16 +121,16 @@ page-viewallgroups {
     }
 
     //about card
-    .aboutcard{
-        height:60px;
-        width:140px;
-        margin-left:0px;
-        margin-right:-5px;
-        margin-top:0px;
+    .aboutcard {
+        height: 60px;
+        width: 140px;
+        margin-left: 0px;
+        margin-right: -5px;
+        margin-top: 0px;
         margin-bottom: 0px;
-        color:black;
-        background:transparent;
-        box-shadow: none !important; //border around card 
+        color: black;
+        background: transparent;
+        box-shadow: none !important; //border around card
 
         //remove border lines around card
         box-shadow: none !important;
