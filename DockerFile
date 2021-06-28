@@ -1,0 +1,27 @@
+FROM node:10
+
+//telling docker to create a working directory called 'app' for itself
+//files created by the docker application would be placed inside this 'app' folder
+WORKDIR /app 
+
+//telling docker to move the contents of the package.json into the app folder 
+COPY package.json   /app
+
+//tell docker to run npm install inside the 'app' folder
+//in the previous command we told docker to copy the package.json into the app folder
+//hence npm install will install the dependencies in the package.json file
+RUN npm install
+
+
+//tell docker to copy everything in the current directory ie. '.' into the '/app' folder
+COPY . /app
+
+//tell docker to start the server inside its container from the command prompt
+CMD node app.js
+
+
+//we tell docker to run the application on the port 5000 
+//port specified here can be different from one used by the express server 
+//access to our docker application is made available by the port it uses here on its server
+EXPOSE  5000
+
