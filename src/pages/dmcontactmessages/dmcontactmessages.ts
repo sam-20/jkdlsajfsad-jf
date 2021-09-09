@@ -1,5 +1,5 @@
 
-import { Component, ViewChild} from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, LoadingController, Content, ToastController, Platform } from 'ionic-angular';
 import { PostProvider } from '../../providers/post-provider';
 import { ModulevariablesProvider } from '../../providers/modulevariables/modulevariables'
@@ -10,7 +10,7 @@ import { Media } from '@ionic-native/media';
 import { File } from '@ionic-native/file';
 import { FileChooser } from '@ionic-native/file-chooser'
 import { FilePath } from '@ionic-native/file-path';
-import { FileTransfer,  FileTransferObject } from '@ionic-native/file-transfer';
+import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
 import { StreamingMedia } from '@ionic-native/streaming-media'
 import { MediaCapture, MediaFile, CaptureError, CaptureVideoOptions, CaptureAudioOptions } from '@ionic-native/media-capture';
 import { VideoEditor, CreateThumbnailOptions } from '@ionic-native/video-editor/';
@@ -395,6 +395,13 @@ export class DmcontactmessagesPage {
       // var res = this.dmmsgstablerows.sort((a, b) => a.dm_msg_id_fetched - b.dm_msg_id_fetched)
       //console.log(res)
 
+      this.dmmsgstablerows = this.dmmsgstablerows.reduce((unique, o) => {
+        if (!unique.some(obj => obj.dm_msg_id_fetched === o.dm_msg_id_fetched)) {
+          unique.push(o);
+        }
+        return unique;
+      }, []);
+
       console.log("dm messages", this.dmmsgstablerows);
     });
   }
@@ -483,7 +490,7 @@ export class DmcontactmessagesPage {
 
 
   //send dm message
-  senddmmessage() { 
+  senddmmessage() {
 
     //remove whitespaces in text entered
     try {
