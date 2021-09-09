@@ -137,7 +137,7 @@ export class DmPage {
 
 
       /**this will filter the temp object array
-       *  and remove duplicates using object keys using the reduce method 
+       *  and remove duplicates using a unique object key witht the help of the array reduce method 
        * before finally assigning it to the this.userdmmessagestablerows2 table
        * */
       this.userdmmessagestablerows2 = temp.reduce((unique, o) => {

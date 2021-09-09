@@ -1,18 +1,18 @@
 
-import { Component, ViewChild, ChangeDetectorRef, ElementRef } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, App, LoadingController, ModalController, Slides, Content, ToastController, Platform } from 'ionic-angular';
+import { Component, ViewChild} from '@angular/core';
+import { IonicPage, NavController, NavParams, AlertController, LoadingController, Content, ToastController, Platform } from 'ionic-angular';
 import { PostProvider } from '../../providers/post-provider';
 import { ModulevariablesProvider } from '../../providers/modulevariables/modulevariables'
 import { Camera, CameraOptions } from '@ionic-native/camera'; /******************************************1 */
 import { PhotoViewer } from '@ionic-native/photo-viewer';
 import { CallNumber } from '@ionic-native/call-number';
-import { Media, MediaObject } from '@ionic-native/media';
+import { Media } from '@ionic-native/media';
 import { File } from '@ionic-native/file';
 import { FileChooser } from '@ionic-native/file-chooser'
 import { FilePath } from '@ionic-native/file-path';
-import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
-import { StreamingMedia, StreamingAudioOptions, StreamingVideoOptions } from '@ionic-native/streaming-media'
-import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions, CaptureVideoOptions, CaptureAudioOptions } from '@ionic-native/media-capture';
+import { FileTransfer,  FileTransferObject } from '@ionic-native/file-transfer';
+import { StreamingMedia } from '@ionic-native/streaming-media'
+import { MediaCapture, MediaFile, CaptureError, CaptureVideoOptions, CaptureAudioOptions } from '@ionic-native/media-capture';
 import { VideoEditor, CreateThumbnailOptions } from '@ionic-native/video-editor/';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Base64 } from '@ionic-native/base64';
@@ -483,7 +483,8 @@ export class DmcontactmessagesPage {
 
 
   //send dm message
-  senddmmessage() {
+  senddmmessage() { 
+
     //remove whitespaces in text entered
     try {
       this.senddmmessagetextareainput = this.senddmmessagetextareainput.toString().trim()
@@ -499,7 +500,7 @@ export class DmcontactmessagesPage {
 
     //if user enters a text we insert into the dm database table and update the lastmsgid in the lastdmmessage database table
     else {
-      console.log(this.senddmmessagetextareainput);
+      // console.log(this.senddmmessagetextareainput);
 
       //now we insert our dm message into the database
       /**note that after inserting we'd need to update the lastdmmessage db table with the sent message id  however we can only retrieve that id after we've sent the message

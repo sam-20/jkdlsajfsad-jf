@@ -3,12 +3,10 @@
   <ion-navbar>
     <ion-row>
       <ion-col>
-        <!--text / ios-text / ios-text-outline-->
         <ion-icon name="ios-paw" class="camfilaicon"></ion-icon>
       </ion-col>
 
       <ion-col>
-        <!-- <ion-title>Direct messages ({{this.dmcount}})</ion-title> -->
         <ion-title>Direct messages</ion-title>
       </ion-col>
 
@@ -25,18 +23,15 @@
 
 
 <ion-content class="body">
-  <!-- Custom Refresher Content -->
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
       refreshingText="Refreshing...">
     </ion-refresher-content>
   </ion-refresher>
-  <!-- Custom Refresher Content -->
 
 
   <ion-list class="dmchatlist" no-lines>
 
-    <!-- chat item starts here -->
     <ion-item-sliding *ngFor="let count of this.userdmmessagestablerows2">
 
       <ion-item *ngIf="count.permission_status_fetched == 'accept'" style="padding-left: 0px;">
@@ -44,20 +39,17 @@
 
           <div (click)="viewprofileimage(count)"
             style="display: flex;flex: 0.2;align-items: center;justify-content: center;">
-            <!-- profile pic -->
             <img src="{{server+count.dmreceipient_profilepic}}"
               style="width: 44px; height: 44px; border-radius: 22px;" />
           </div>
 
           <div (click)="opendmchat(count)" style="display: flex;flex: 0.7;flex-direction: column;">
             <div style="display: flex;flex: 0.5;align-items: flex-end;">
-              <!-- username -->
               <span style="font-weight: 500;font-size: 14px;">{{count.dmreceipient_username}}</span>
             </div>
 
             <div style="display: flex;flex: 0.45; align-items: flex-end;">
 
-              <!-- last message -->
               <span
                 style="overflow: hidden; white-space: nowrap;text-overflow: ellipsis;width: 220px;font-size: small;">{{count.lastmsg_fetched}}</span>
             </div>
@@ -65,23 +57,19 @@
 
           <div (click)="opendmchat(count)"
             style="display: flex;flex: 0.15;align-items:flex-end; justify-content: flex-end;padding-bottom: 2px;">
-            <!--last message time -->
             <span style="font-weight: bold;font-size: 10px;">{{count.lastmsg_time_fetched}}</span>
           </div>
 
         </div>
       </ion-item>
 
-      <!-- sliding options -->
       <ion-item-options side="right" style="display: flex;align-items: flex-end;padding-bottom: 10px;">
-        <!-- clear chat -->
         <button
           style="flex-direction: column;display: flex;justify-content: center;align-items: center;background-color: white;">
           <ion-icon name="ios-folder-open" color="secondary"></ion-icon>
           <span style="font-size: 10px; margin-top: 5px;">clear</span>
         </button>
 
-        <!-- delete chat -->
         <button
           style="flex-direction: column;display: flex;justify-content: center;align-items: center;background-color: white;">
           <ion-icon name="ios-trash" color="danger"></ion-icon>
@@ -90,24 +78,17 @@
       </ion-item-options>
 
     </ion-item-sliding>
-    <!-- chat item ends here -->
 
-
-    <!----------------------------accept or decline chat---------------------------->
     <div *ngFor="let count of this.userdmmessagestablerows2" class="acceptordeclinedivchatitem">
       <ion-item class="chatitem" *ngIf="count.permission_status_fetched == 'pending'">
 
         <ion-row>
-          <!--col 1-->
-          <!--message sender profile pic-->
           <ion-col col-2>
             <img src="{{server+count.dmreceipient_profilepic}}" class="senderprofilepic">
           </ion-col>
 
-          <!--col 2 message,buttons,timesent-->
           <ion-col col-10>
 
-            <!--name and message-->
             <ion-row>
               <ion-col col>
                 <span class="sendername"><b>{{count.dmreceipient_username}}:</b></span>
@@ -115,7 +96,6 @@
               </ion-col>
             </ion-row>
 
-            <!--accept/decline button and time sent-->
             <ion-row>
               <ion-col col-10>
                 <button ion-button small round color="secondary" class="acceptbutton"
@@ -134,27 +114,9 @@
         </ion-row>
       </ion-item>
     </div>
-    <!----------------------------accept or decline chat---------------------------->
 
 
   </ion-list>
-
-
-  <!--understanding ion cols-->
-  <!--total columns is 12..so each col u create takes part of the 12 cols-->
-  <!-- <ion-row>
-    <ion-col col-3>
-      <ion-card-content class="col1">a</ion-card-content>
-    </ion-col>
-
-    <ion-col col-6>
-      <ion-card-content class="col2">b</ion-card-content>
-    </ion-col>
-
-    <ion-col col-3>
-      <ion-card-content class="col3">c</ion-card-content>
-    </ion-col>
-  </ion-row> -->
 
 
 </ion-content>

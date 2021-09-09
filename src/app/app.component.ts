@@ -10,7 +10,6 @@ import { ModulevariablesProvider } from '../providers/modulevariables/modulevari
 export class MyApp {
   rootPage: string;
 
-  //contains credentials used to login in case user didnt loggout when exiting app
   storedusernamecredential: any;
   storedpasswordcredential: any;
   storeduseridcredential: any;
@@ -35,12 +34,11 @@ export class MyApp {
     console.log("storedpasswordcredential :", this.storedpasswordcredential);
     console.log("storeduseridcredential :", this.storeduseridcredential);
 
-    //if there's a stored username credential we navigate directly to the home of the user else to the login page
     if (this.storedusernamecredential == null) {
       this.rootPage = 'LoginPage';
     }
     else {
-      this.mymodulevariables.globaluserid = this.storeduseridcredential;  //globaluserid will be used in the menuholder page to load all the messages info
+      this.mymodulevariables.globaluserid = this.storeduseridcredential; 
       this.rootPage = 'TabsholderPage';
     }
   }

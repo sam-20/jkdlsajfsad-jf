@@ -100,9 +100,6 @@ export class MygroupsPage {
         this.groupchatscount = this.groupchatscount + 1 //keep track of the number of group chats
       }
 
-      console.log("user's groupchats: ", this.usergroupchatlisttablerows);
-
-
 
       /**for our new table we assign default group profile pics to those who dont have profile pics */
       for (var key in this.usergroupchatlisttablerows) {
@@ -119,6 +116,20 @@ export class MygroupsPage {
         }
       }
 
+      console.log("user's groupchats: ", this.usergroupchatlisttablerows);
+
+      /**this will filter the temp object array
+      *  and remove duplicates using object keys using the reduce method 
+      * before finally assigning it to the  this.usergroupchatlisttablerows table
+      * */
+      this.usergroupchatlisttablerows = this.usergroupchatlisttablerows.reduce((unique, o) => {
+        if (!unique.some(obj => obj.group_id_fetched === o.group_id_fetched)) {
+          unique.push(o);
+        }
+        return unique;
+      }, []);
+
+      console.log("user's groupchats after removing duplicates: ", this.usergroupchatlisttablerows);
 
     });
 
@@ -141,7 +152,7 @@ export class MygroupsPage {
         this.virtualusergroupchatlisttablerows.push(count);
       }
 
-      console.log("user's virtual groupchats: ", this.virtualusergroupchatlisttablerows);
+      // console.log("user's virtual groupchats: ", this.virtualusergroupchatlisttablerows);
 
 
 

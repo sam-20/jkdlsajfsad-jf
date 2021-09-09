@@ -3,7 +3,6 @@
   <ion-navbar>
     <ion-row>
       <ion-col col-1>
-        <!--text / ios-text / ios-text-outline-->
         <ion-icon name="ios-paw" class="camfilaicon"></ion-icon>
       </ion-col>
 
@@ -26,24 +25,18 @@
  
 
 <ion-content class="body">
-  <!-- Custom Refresher Content -->
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
       refreshingText="Refreshing...">
     </ion-refresher-content>
   </ion-refresher>
-  <!-- Custom Refresher Content -->
 
-  <!--search bar-->
   <div class="searchbar">
     <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
   </div>
-  <!--search bar-->
 
 
-  <!--card to display user info-->
   <ion-card class="usercard" *ngFor="let count of useraccountstablerows | searchnewgroupmembers: terms">
-    <!--looping through the  useraccountstablerows array-->
 
 
     <ion-row>
@@ -66,5 +59,4 @@
     </ion-row>
 
   </ion-card>
-  <!--card to display user info-->
 </ion-content>

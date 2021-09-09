@@ -12,32 +12,24 @@ import { ModulevariablesProvider } from '../../providers/modulevariables/modulev
 })
 export class AddgroupmembersPage {
 
-  /**array to store new created group's group details */
   groupdetailsjson: any = [];
   groupdetailstablerows: any = [];
 
-  /**we store the admin of the group in this */
   createdgroup_admin_id: any;
 
-  /**we store the members count of the group in this */
   selectedgroup_membersjoined;
 
-  /**array to recieve all users account details in the app */
   jsonconvertedrows: any = [];
   useraccountstablerows: any = [];
 
-  /**store any selected user's id in this variable */
   selecteduser_id: any;
 
-  /**these tables will retrieve the members of the newly created group
-   * so that we can know who is a member already and who we can add to the group or remove from the group
-   */
   createdgroupmemberstable: any = [];
   createdgroupmembersjson: any = [];
 
-  server: string; /******************************a */
+  server: string;
 
-  newlycreatedgroup_id_retrieved: any; //will retrieve the group id of the newly created group from the previous page
+  newlycreatedgroup_id_retrieved: any; 
 
 
   constructor(public navCtrl: NavController,
@@ -46,11 +38,9 @@ export class AddgroupmembersPage {
     public loadingCtrl: LoadingController,
     private postPvdr: PostProvider,
     public mymodulevariables: ModulevariablesProvider,
-    // public tabs: Tabs
   ) {
-    this.server = postPvdr.server; /*********************b */
+    this.server = postPvdr.server;
 
-    //retrieving the user id from create group page
     this.newlycreatedgroup_id_retrieved = (localStorage.getItem('storednewlycreatedgroupid'))
   }
 
@@ -59,14 +49,12 @@ export class AddgroupmembersPage {
   }
 
   ionViewWillEnter() {
-    this.loadpagedata();  //used for loading asynchronous data
+    this.loadpagedata(); 
 
     console.log("newly created group's id :", this.newlycreatedgroup_id_retrieved);
   }
 
-  //we load the data into the page like this for asynchronous data
   loadpagedata() {
-    //operation to perform when refresh is taking place
 
 
     setTimeout(() => {
@@ -78,17 +66,14 @@ export class AddgroupmembersPage {
       this.createdgroupmemberstable = [];
       this.loadnewcreatedgroupmembers();
 
-      //finally output all our users
       this.jsonconvertedrows = [];
-      this.useraccountstablerows = [];  //we load whatever is in our useraccounts array whose data has already been converted into usable format
-      this.loadallusers(); //then we call the function to load all the users
+      this.useraccountstablerows = [];  
+      this.loadallusers();
 
 
-    }, 0); //duration of refresh
+    }, 0);
   }
 
-
-  //load created group details
   loadcreatedgroupdetails() {
     this.groupdetailsjson = [];
     this.groupdetailstablerows = [];
@@ -107,12 +92,10 @@ export class AddgroupmembersPage {
       }
       console.log("created group's details :", this.groupdetailstablerows);
 
-
-      //storing our group admin's id
       for (var key in this.groupdetailstablerows) {
         if (this.groupdetailstablerows.hasOwnProperty(key)) {
-          this.createdgroup_admin_id = this.groupdetailstablerows[key].group_admin_id_fetched; //store the admin of the group
-          this.selectedgroup_membersjoined = this.groupdetailstablerows[key].members_joined_fetched;  //store the total members count of the group
+          this.createdgroup_admin_id = this.groupdetailstablerows[key].group_admin_id_fetched; 
+          this.selectedgroup_membersjoined = this.groupdetailstablerows[key].members_joined_fetched;  
         }
       }
       console.log("created group's admin id :", this.createdgroup_admin_id);
@@ -120,8 +103,6 @@ export class AddgroupmembersPage {
 
   }
 
-
-  //load all users in the app
   loadallusers() {
     this.jsonconvertedrows = [];
     this.useraccountstablerows = [];
@@ -143,31 +124,23 @@ export class AddgroupmembersPage {
       this.useraccountstablerows.forEach(function (element) { element.buttoncolor = "dark"; });
       this.useraccountstablerows.forEach(function (element) { element.membershipstatus = "add"; });
 
-      /**now we have have the messages in the messagetablerows array so we are 
-      we are going to check if a profile pic is null then we assign our pic to the user **/
       for (var key in this.useraccountstablerows) {
         if ((this.useraccountstablerows[key].user_profile_pic_fetched) == null) {
           this.useraccountstablerows[key].user_profile_pic_fetched = "defaultprofilepic/defaultprofilepic.jpg";
         }
       }
 
-      /**compare all the users in the account table with the users who are a member of the selected group
-       * if an id is found in both table it indicates the user is already in the group hence we
-       * assign a "remove" text since he's already being added
-      */
+  
       for (var countA = 0; countA < this.useraccountstablerows.length; countA++) {
         for (var countB = 0; countB < this.createdgroupmemberstable.length; countB++) {
-          if (this.useraccountstablerows[countA].user_id_fetched == this.createdgroupmemberstable[countB].user_id_fetched) {//if a user is a member of the group selected
+          if (this.useraccountstablerows[countA].user_id_fetched == this.createdgroupmemberstable[countB].user_id_fetched) {
 
-            /**before we finally assing our status and button color we check if the id 
-             * is an admin then we assign nothing so that he has no option to remove or add himself
-             */
-            if (this.useraccountstablerows[countA].user_id_fetched == this.createdgroup_admin_id) {  //if the id match is also a group admin
+      
+            if (this.useraccountstablerows[countA].user_id_fetched == this.createdgroup_admin_id) { 
               this.useraccountstablerows[countA].buttoncolor = "primary";
               this.useraccountstablerows[countA].membershipstatus = "Admin";
             }
 
-            /**else if the id is a memeber of the group already but not an admin */
             else {
               this.useraccountstablerows[countA].buttoncolor = "danger";
               this.useraccountstablerows[countA].membershipstatus = "remove";
@@ -179,8 +152,6 @@ export class AddgroupmembersPage {
     });
   }
 
-
-  //load members of the newly created group
   loadnewcreatedgroupmembers() {
     this.createdgroupmembersjson = [];
     this.createdgroupmemberstable = [];
@@ -203,60 +174,39 @@ export class AddgroupmembersPage {
   }
 
 
-
-  //open a selected user's profile
   openuserprofile(count) {
-    // console.log("selected user's id", count.user_id_fetched)
-
-    // //if selected user is ourself then we open our own profile tab
-    // if (count.user_id_fetched == this.mymodulevariables.globaluserid){
-    //   console.log("open profile tab page")
-    //   this.tabs.select(0);
-    // }
-
-    // //if user is someone else
-    // else{
-    //   localStorage.setItem('storeduserid',count.user_id_fetched);
-    //   this.navCtrl.push('Profile2Page');
-    // }
+    
   }
-
-
-  //add or remove a member from the group
+  
   addORremoveuser(count) {
     if (count.membershipstatus == "add") {
-      //add user to the group
       count.membershipstatus = "remove";
       count.buttoncolor = "danger";
       this.selecteduser_id = count.user_id_fetched;
 
-      //now db commands to add user to group
-      this.joingroup(); //add user to the group
+      this.joingroup(); 
 
       this.selectedgroup_membersjoined++;
       console.log("selected group's members count: ", this.selectedgroup_membersjoined);
 
-      this.updategroup_members_joined();  //update the total nubmer of members in the group
+      this.updategroup_members_joined();  
     }
 
-    else { //remove user from the group
+    else {
       count.membershipstatus = "add";
       count.buttoncolor = "dark";
       this.selecteduser_id = count.user_id_fetched;
 
-      //now db commands to remove user from group
-      this.exitgroup(); //remove user from group membership
+      this.exitgroup(); 
 
       this.selectedgroup_membersjoined--;
       console.log("selected group's members count: ", this.selectedgroup_membersjoined);
 
-      this.updategroup_members_joined();  //update the total number of members in the group
+      this.updategroup_members_joined();  
     }
   }
 
 
-
-  //join group: insert logged in user_id and id of the group u want to join into group_membership db table
   joingroup() {
     let body = {
       logged_in_useridDB: this.selecteduser_id,
@@ -264,13 +214,10 @@ export class AddgroupmembersPage {
       mydbfunc: 'joingroup'
     };
 
-    //now we are inserting the data into the api db server
     this.postPvdr.postData(body, 'mydbapicommands.php').subscribe(data => {
     });
   }
 
-
-  //exit group: delete from group_membership db table where value = logged in user's id and group joined's id
   exitgroup() {
     let body = {
       logged_in_useridDB: this.selecteduser_id,
@@ -278,14 +225,10 @@ export class AddgroupmembersPage {
       mydbfunc: 'exitgroup'
     };
 
-    //now we are inserting the data into the api db server
     this.postPvdr.postData(body, 'mydbapicommands.php').subscribe(data => {
     });
   }
 
-
-
-  //update the number of members who have joined the selected group
   updategroup_members_joined() {
     let body = {
       group_idDB: this.newlycreatedgroup_id_retrieved,
@@ -293,34 +236,22 @@ export class AddgroupmembersPage {
       mydbfunc: 'updategroup_memberscount'
     };
 
-    //now we are inserting the data into the api db server
     this.postPvdr.postData(body, 'mydbapicommands.php').subscribe(data => {
     });
 
   }
 
-
-  //when user clicks done after adding or removing members
   leavepage() {
-    // this.tabs.select(4);
     this.viewCtrl.dismiss();
   }
 
-
-  //pull to refresh 
   doRefresh(event) {
-    //operation to perform when refresh is taking place
 
     setTimeout(() => {
-      //operation to perform when refresh has completed
-
-      // this.useraccountstablerows = [];  //we load whatever is in our useraccounts array whose data has already been converted into usable format
-      // this.loadallusers(); //then we call the function to load all the users
-
       this.loadpagedata();
 
       console.log('Refresh complete');
       event.complete();
-    }, 500); //duration of refresh
+    }, 500);
   }
 }

@@ -486,6 +486,14 @@ export class HomePage {
         }
       }
 
+      /**remove duplicates from the messagestablerows */
+      this.messagetablerows = this.messagetablerows.reduce((unique, o) => {
+        if (!unique.some(obj => obj.message_id_fetched === o.message_id_fetched)) {
+          unique.push(o);
+        }
+        return unique;
+      }, []);
+
     }, err => {  //log php connection error
       // console.log(err);
 

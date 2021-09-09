@@ -1,29 +1,18 @@
 page-dm {
-    //body
     .body{
-        // background:url('/assets/imgs/12.jpg') !important;
-        // background-repeat: no-repeat !important;
-        // background-size: cover !important;
         background-color: white;
     }
 
-    //hide scroll bar when scrolling
     ::-webkit-scrollbar,
     *::-webkit-scrollbar
     {
         display: none;
     }
 
-    //trending title background
     .toolbar-background{
-        //background:transparent;
-        // background:url('/assets/imgs/12.jpg');
-        // background-repeat: no-repeat !important;
-        // background-size: cover !important;
         background-color: dodgerblue;
     }
 
-    //icon in header
     .camfilaicon{
         zoom :2.0;
         color:white;
@@ -31,66 +20,53 @@ page-dm {
      }
  
 
-    //navbar title 
     .toolbar-title{
         color:white;
-        //margin-left:-90px;
         margin-top: 5px;
         font-size: medium;
     }
 
-    //navbar title
     .navbartitle{
         margin-top:5px;
     }
 
-    //remove border line caused by refresher 
     .has-refresher  .scroll-content {
         border-top: 0 !important;
       }
 
-    //icon used for pulling refresher
     .refresher-pulling-icon{
         color:white;
     }
 
-    //text shown when pulling refresher
     .refresher-pulling-text{
         color:white;
     }
 
-    //icon used when refreshing
     .spinner svg {
         stroke: white;
         fill: white;
     }
 
-    //text shown when refreshing
     .refresher-refreshing-text{
         color:white;
     }
 
-   //list to contain dm chats and their last messages
    .dmchatlist{
        background: transparent;
    }
 
-   // ion item
    .chatitem{
        background: transparent;
    }
 
-   //dm chat username
    .username{
        color:black;
    }
 
-   //dm chat last message
    .lastmessage{
        color:rgb(88, 88, 84);
    }
 
-   //last messsage time
    .lastmessagetime{
        float: right;
        font-size: 12px;
@@ -99,22 +75,17 @@ page-dm {
        color:black;
    }
 
-   //user profile pic
    .userprofilepic{
        width:50px !important;
        height: 50px !important;
        margin-top:0px;
    }
 
-   //sliding list form
    .slidingformstyle{
     background: transparent;
    }
 
 
-
-
-    /****accept or decline chat styling */
     .acceptordeclinedivchatitem{
         margin-left:-9px;
         padding-left: 0px;
@@ -148,7 +119,6 @@ page-dm {
     color:black;
    }
 
-    /****accept or decline chat styling */
 
 
 

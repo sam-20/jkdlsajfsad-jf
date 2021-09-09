@@ -1,21 +1,20 @@
-import { Component, ViewChild, SecurityContext } from '@angular/core';
+import { Component } from '@angular/core';
 import { IonicPage, NavController, Platform, NavParams, AlertController, ToastController } from 'ionic-angular';
 import { File } from '@ionic-native/file';
 import { Storage } from '@ionic/Storage';
-import { Media, MediaObject } from '@ionic-native/media';
-import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions, CaptureVideoOptions, CaptureAudioOptions } from '@ionic-native/media-capture';
+import { Media } from '@ionic-native/media';
+import { MediaCapture, MediaFile, CaptureError, CaptureAudioOptions } from '@ionic-native/media-capture';
 import { CallNumber } from '@ionic-native/call-number';
-import { Camera, CameraOptions } from '@ionic-native/camera'; /******************************************1 */
-import { VideoPlayer, VideoOptions } from '@ionic-native/video-player';
-import { StreamingMedia, StreamingAudioOptions, StreamingVideoOptions } from '@ionic-native/streaming-media'
-import { VideoEditor, CreateThumbnailOptions } from '@ionic-native/video-editor/';
+import { Camera} from '@ionic-native/camera'; /******************************************1 */
+import { VideoPlayer } from '@ionic-native/video-player';
+import { StreamingMedia } from '@ionic-native/streaming-media'
+import { VideoEditor} from '@ionic-native/video-editor/';
 import { FileChooser } from '@ionic-native/file-chooser'
 import { FilePath } from '@ionic-native/file-path';
-import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
 import { NativeAudio } from '@ionic-native/native-audio';
 import { DomSanitizer } from '@angular/platform-browser';
 import { DocumentPicker } from '@ionic-native/document-picker';
-import { normalizeURL } from 'ionic-angular';
 import { Base64 } from '@ionic-native/base64';
 import { Chooser } from '@ionic-native/chooser';
 import { FileOpener } from '@ionic-native/file-opener';

@@ -1,95 +1,69 @@
 page-addgroupmembers {
-    //body
     .body {
-        // background:url('/assets/imgs/12.jpg') !important;
-        // background-repeat: no-repeat !important;
-        // background-size: cover !important;
         background-color: white;
     }
 
-    //hide scroll bar when scrolling
     ::-webkit-scrollbar,
     *::-webkit-scrollbar {
         display: none;
     }
 
-    //friends title background
     .toolbar-background {
-        //background:transparent;
-        // background:url('/assets/imgs/12.jpg') !important;
-        // background-repeat: no-repeat !important;
-        // background-size: cover !important;
         background-color: dodgerblue;
     }
 
-    //back button which comes which navctrl push
     .back-button-icon {
         color: white;
     }
 
-    //icon in header
     .camfilaicon {
         zoom: 2;
         color: white;
         margin-left: 5px;
     }
 
-    //navbar title
     .toolbar-title {
         color: white;
-        //margin-left:-90px;
         margin-top: 5px;
         margin-left: 10px !important;
         font-size: medium;
     }
 
-    //navbar title
     .navbartitle {
         margin-top: 5px;
     }
 
-    //remove border line caused by refresher
     .has-refresher .scroll-content {
         border-top: 0 !important;
     }
 
-    //icon used for pulling refresher
     .refresher-pulling-icon {
         color: white;
     }
 
-    //text shown when pulling refresher
     .refresher-pulling-text {
         color: white;
     }
 
-    //icon used when refreshing
     .spinner svg {
         stroke: white;
         fill: white;
     }
 
-    //text shown when refreshing
     .refresher-refreshing-text {
         color: white;
     }
 
-    //done container
     .donecontainer {
-        // margin-top:4px;
         margin-right: 5px;
     }
 
-    //done checkmark in header
     .doneicon {
         zoom: 1.5;
         color: white;
         margin-top: 5px !important;
-        // margin-right: 25px;
-        // float: right;
     }
 
-    //done text
     .donetext {
         color: white;
         margin-top: 10px;
@@ -97,27 +71,23 @@ page-addgroupmembers {
         float: right;
     }
 
-    //searchbar
     .searchbar {
         position: static;
     }
 
-    //card  containing user details
     .usercard {
         background: transparent;
-        box-shadow: none !important; //border around card
+        box-shadow: none !important; 
         padding-bottom: 5px;
         padding-left: 0px;
         margin-left: 10px;
         border: 0 !important;
 
-        //remove border lines around card
         box-shadow: none !important;
         border: none !important;
         border-style: none !important;
     }
 
-    //user profile pic
     .userprofilepic {
         border-radius: 50px;
         width: 60px;
@@ -128,38 +98,28 @@ page-addgroupmembers {
         padding-left: 0px;
     }
 
-    //add or remove user button
     .addorremoveuserbutton {
         width: 80px;
         float: right;
         margin-top: 25px;
     }
 
-    //username card
     .usernamecard {
         margin-left: 0px;
-        //margin-top:10px;
         color: black;
         background: transparent;
 
-        //remove border lines around card
         box-shadow: none !important;
         border: none !important;
         border-style: none !important;
     }
 
-    //about card
     .aboutcard {
-        //height:60px;
-        //width:140px;
         margin-left: 0px;
-        //margin-right:-5px;
         margin-top: 0px;
         margin-bottom: 0px;
         color: black;
         background: transparent;
-
-        //remove border lines around card
         box-shadow: none !important;
         border: none !important;
         border-style: none !important;

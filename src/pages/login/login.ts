@@ -277,8 +277,7 @@ export class LoginPage {
   //contact us email
   help() {
     let email = {
-      to: 'haickemmanuel@gmail.co',
-      cc: 'botwesamuel192@gmail.com',
+      to: 'doncashes43@gmail.com',
       // bcc: ['john@doe.com', 'jane@doe.com'],
       // attachments: [
       //   'file://img/logo.png',

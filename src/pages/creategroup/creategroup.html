@@ -3,7 +3,6 @@
   <ion-navbar>
     <ion-row>
       <ion-col>
-        <!--text / ios-text / ios-text-outline-->
         <ion-icon name="ios-paw" class="camfilaicon"></ion-icon>
       </ion-col>
 
@@ -27,7 +26,6 @@
  
 
       <ion-col>
-        <!--profile photo-->
         <img *ngIf="defaultgroupprofilepic" [src]="defaultgroupprofilepic" class="profilephoto" />
       </ion-col>
 
@@ -38,7 +36,6 @@
       <ion-col></ion-col>
 
       <ion-col width-50 style="text-align: center">
-        <!--delete photo icon-->
         <ion-icon name="trash" class="deletepictureicon" (click)="deleteprofilepic()"></ion-icon>
       </ion-col>
 
@@ -54,16 +51,12 @@
     </ion-row>
   </ion-grid>
 
-  <!--group name and group about form-->
-
-  <!--group name input-->
   <div class="formsetup">
       <ion-item class="groupnameform" no-lines>
         <ion-input type="text" class="groupnameinput" [(ngModel)]="groupnameinput" placeholder="Enter Group name here..."></ion-input>
       </ion-item>
     </div>
 
-  <!--group description textarea-->
   <ion-row>
     <ion-col width-50 style="text-align: center">
       <textarea rows="3" cols="40" [(ngModel)]="groupdescriptioninput" class="groupdescriptiontextarea" placeholder="Group description..."></textarea>
@@ -71,7 +64,6 @@
   </ion-row>
 
 
-  <!--create group button-->
   <ion-row>
       <ion-col></ion-col>
       <ion-col>

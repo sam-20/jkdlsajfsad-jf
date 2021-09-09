@@ -27,70 +27,40 @@
 <ion-content class="body">
 
 
-  <!-- chat list  -->
   <div *ngFor="let count of this.dmmsgstablerows;"
     style=" display: flex;flex-direction: column;width: 100%;background-color: transparent;">
 
 
-
-
-    <!------------------------------------------------------------ right chat bubble starts here-------------------------------->
     <div *ngIf="count.loggedinuser_id_fetched == this.mymodulevariables.globaluserid" style="display: flex;background-color: transparent;justify-content: flex-end;
  padding-right: 14px;padding-top: 5px;padding-bottom: 5px;">
 
       <div (pan)='deletemymessage($event,count)' class="rightBubble rightBubbleEdge">
 
-        <!---------------------------- image container starts here-->
         <div *ngIf="!server+count.dm_msg_media_fetched"
           style="background-color: transparent;height: 200px;text-align: center;position: relative;margin-bottom: 10px;">
 
-          <!-- image -->
           <img (click)="viewimage(count)" src="{{server+count.dm_msg_media_fetched}}"
             style="width: fit-content;height:200px;border-top-left-radius: 15px;" />
 
-          <!-- download image icon -->
-          <!-- <ion-icon name="download" style="color: black; position: absolute;bottom: 8px;right: 10px; 
-        border-width: 1px;border-style: solid;border-color: white;border-radius: 20px;
-        padding-left: 7px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;
-        background-color: white;
-        "></ion-icon> -->
         </div>
-        <!--------------------------- image container ends here -->
 
-
-        <!--------------------------- video container starts here-->
         <div *ngIf="!server+count.dm_video_fetched"
           style="background-color:transparent;height: 200px;text-align: center;position: relative;">
 
-          <!-- video thumbnail -->
           <img (click)="playvideo(count)" src="{{server+count.dm_video_thumbnail_fetched}}"
             style="width: fit-content;height:200px;border-top-left-radius: 15px;" />
 
-          <!-- play video icon -->
           <ion-icon (click)="playvideo(count)" name="play" style="font-size: 30px; position: absolute; top: 50%; left: 50%;transform: translate(-50%, -50%);
          background-color: white;border-radius: 50px;padding-left: 20px;padding-right: 14px;
          padding-top: 10px;padding-bottom: 10px;
          ">
           </ion-icon>
 
-          <!-- download video icon -->
-          <!-- <ion-icon name="download" style="color: black; position: absolute;bottom: 5px;right: 5px; 
-       border-width: 1px;border-style: solid;border-color: white;border-radius: 20px;
-       padding-left: 7px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;
-       background-color: white;
-       "></ion-icon> -->
         </div>
-        <!-------------------------- video container ends here-->
-
-
-        <!--------------------------- text starts here-->
         <p style="font-size: smaller;padding-top: 5px;background-color: transparent;padding-left: 5px;color:#9a9aa2">
           {{count.dm_msg_fetched}}
         </p>
-        <!---------------------------- text ends here -->
 
-
-        <!---------------------------- document starts here -->
         <div (click)="openfile(count)" *ngIf="count.dm_file_path_fetched !=null" style="display: flex;background-color: transparent;flex-direction: row;padding-left: 10px;
        padding-bottom: 5px;">
           <div style="display: flex;flex: 0.15;justify-content: center;align-items: center;">
@@ -99,22 +69,17 @@
           <div style="display: flex;flex: 0.85;flex-direction: column
          ;min-width: 150px; max-width: 200px;padding-left: 10px;">
 
-            <!-- document name -->
             <span style="overflow: hidden;text-overflow: ellipsis;color: #9a9aa2;
            white-space: nowrap; font-size: smaller;font-weight: bold;">{{count.dm_file_name_fetched}}</span>
 
-            <!-- document size -->
             <span style="font-size: x-small;color: #9a9aa2;">{{count.dm_file_size_fetched}}</span>
           </div>
         </div>
-        <!-------------------------------- document ends here -->
 
 
-        <!--------------------------------- audio starts here -->
         <div *ngIf="count.dm_audio_recorded_fetched != null" style="display: flex;background-color: transparent;flex-direction: row;padding-left: 10px;
        padding-bottom: 5px;">
 
-          <!-- audio icon -->
           <div style="display: flex;flex: 0.15;justify-content: center;align-items: center;">
             <ion-icon name="ios-play" (click)="playrecordedaudio(count)" *ngIf="count.playiconactive"
               style="font-size: 30px; color: #9a9aa2;"></ion-icon>
@@ -130,73 +95,49 @@
           <div style="display: flex;flex: 0.85;flex-direction: column
          ;min-width: 150px; max-width: 200px;padding-left: 10px;">
 
-            <!-- audio name -->
             <span style="overflow: hidden;text-overflow: ellipsis;color: #9a9aa2;
            white-space: nowrap; font-size: smaller;font-weight: bold;">{{count.dm_audio_name_fetched}}</span>
 
-            <!-- audio duration -->
             <span style="font-size: x-small;color: #9a9aa2;">{{count.dm_audio_duration_fetched}}</span>
           </div>
         </div>
-        <!-------------------------------- audio ends here -->
 
 
-        <!----------------------------------- message time starts here -->
         <p style="font-size: xx-small;text-align: right;background-color: transparent;
        margin-top: -10px;margin-bottom: 5px;padding-right: 5px;
        color: #9a9aa2;">
           {{count.dm_msg_time_fetched}}
         </p>
-        <!------------------------------------- message time ends here -->
 
       </div>
     </div>
-    <!------------------------------------------------------------------- right chat bubble ends here------------------------------------------------->
 
 
-
-
-    <!------------------------------------------------------------ left chat bubble starts here-------------------------------->
     <div *ngIf="count.loggedinuser_id_fetched == this.dmreceipient_id_retrieved" style="display: flex;background-color: transparent;justify-content: flex-start;
  padding-left: 14px;padding-top: 5px;padding-bottom: 5px;">
 
       <div (pan)='deleteuser2message($event,count)' class="leftBubble leftBubbleEdge">
 
-
-        <!---------------------------- image container starts here-->
         <div *ngIf="!server+count.dm_msg_media_fetched"
           style="background-color: transparent;height: 200px;text-align: center;position: relative;margin-bottom: 10px;">
 
-          <!-- image -->
           <img (click)="viewimage(count)" src="{{server+count.dm_msg_media_fetched}}"
             style="width: fit-content;height:200px;border-top-right-radius: 15px;" />
 
-          <!-- download image icon -->
-          <!-- <ion-icon name="download" style="color: black; position: absolute;bottom: 8px;right: 10px; 
-      border-width: 1px;border-style: solid;border-color: white;border-radius: 20px;
-      padding-left: 7px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;
-      background-color: white;
-      "></ion-icon> -->
         </div>
-        <!--------------------------- image container ends here -->
 
-
-        <!--------------------------- video container starts here-->
         <div *ngIf="!server+count.dm_video_fetched"
           style="background-color:transparent;height: 200px;text-align: center;position: relative;">
 
-          <!-- video thumbnail -->
           <img (click)="playvideo(count)" src="{{server+count.dm_video_thumbnail_fetched}}"
             style="width: fit-content;height:200px;border-top-right-radius: 15px;" />
 
-          <!-- play video icon -->
           <ion-icon (click)="playvideo(count)" name="play" style="font-size: 30px; position: absolute; top: 50%; left: 50%;transform: translate(-50%, -50%);
        background-color: white;border-radius: 50px;padding-left: 20px;padding-right: 14px;
        padding-top: 10px;padding-bottom: 10px;
        ">
           </ion-icon>
 
-          <!-- download video icon -->
           <ion-icon *ngIf="count.download" (click)="downloadvideo(count)" name="download" 
           style="color: white; position: absolute;bottom: 5px;right: 5px; 
      border-width: 1px;border-style: solid;border-color: #9a9aa2;border-radius: 20px;
@@ -205,25 +146,18 @@
      "></ion-icon>
 
 
-          <!-- downloading video loader -->
           <div *ngIf="count.downloading"
             style="background-color: transparent;position: absolute;bottom: 5px;right: 5px;  "
             class="spinner-border text-light" role="status" (click)="canceldownload(count)">
             <span class="sr-only">Loading...</span>
           </div>
         </div>
-        <!-------------------------- video container ends here-->
 
-
-        <!--------------------------- text starts here-->
         <p style="font-size: smaller;padding-top: 5px;background-color: transparent;
         padding-left: 5px;color:#9a9aa2">
           {{count.dm_msg_fetched}}
         </p>
-        <!---------------------------- text ends here -->
 
-
-        <!---------------------------- document starts here -->
         <div *ngIf="count.dm_file_path_fetched !=null" (click)="openfile(count)" style="display: flex;
         background-color: transparent;
          flex-direction: row;padding-left: 10px;padding-right: 5px;
@@ -236,56 +170,44 @@
        ;min-width: 160px; max-width: 200px;padding-left: 10px;
        background-color: transparent;">
 
-            <!-- document name -->
             <span (click)="openfile(count)" style="overflow: hidden;text-overflow: ellipsis;color: #9a9aa2;
          white-space: nowrap; font-size: smaller;font-weight: bold;">{{count.dm_file_name_fetched}}</span>
 
-            <!-- document size -->
             <span style="font-size: x-small;color: #9a9aa2;">{{count.dm_file_size_fetched}}</span>
           </div>
 
-          <!-- download document icon -->
           <div
             style="background-color: transparent; flex: 0.1; display: flex;align-items: flex-start;justify-content: flex-start;">
 
-            <!-- download icon -->
             <ion-icon *ngIf="count.download" (click)="downloadfile(count)" name="download" 
             style="background-color: #9a9aa2; border-width: 1px;border-style: solid;
             border-color: #9a9aa2;border-radius: 20px;color: white;
             padding-left: 7px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;"></ion-icon>
 
-            <!-- downloading loader -->
             <div *ngIf="count.downloading" style="background-color: transparent;" class="spinner-border text-light"
               role="status" (click)="canceldownload(count)">
               <span class="sr-only">Loading...</span>
             </div>
           </div>
         </div>
-        <!-------------------------------- document ends here -->
 
 
-        <!--------------------------------- audio starts here -->
         <div *ngIf="count.dm_audio_recorded_fetched != null" style="display: flex;
         background-color: transparent;flex-direction: row;padding-left: 10px;padding-right: 5px;
      padding-bottom: 10px;">
 
-          <!-- audio icon -->
           <div style="display: flex;flex: 0.15;justify-content: center;align-items: center;">
 
-            <!-- play -->
             <ion-icon *ngIf="count.playiconactive" name="ios-play" (click)="playrecordedaudio(count)"
               style="font-size: 30px; color: #9a9aa2;"></ion-icon>
 
-            <!-- pause -->
             <ion-icon *ngIf="count.pauseiconactive" name="ios-pause" (click)="pauserecordedaudio(count)"
               style="font-size: 30px; color: #9a9aa2;"></ion-icon>
 
-            <!-- repeat -->
             <ion-icon *ngIf="count.resumeiconactive" name="ios-repeat" (click)="resumerecordedaudio(count)"
               style="font-size: 30px; color: #9a9aa2;">
             </ion-icon>
 
-            <!-- stop -->
             <ion-icon *ngIf="count.stopiconactive" name="ios-square" (click)="stoprecordedaudio(count)"
               style="font-size: 30px; color: #9a9aa2;"></ion-icon>
 
@@ -295,60 +217,39 @@
           <div style="display: flex;flex: 0.75;flex-direction: column
        ;min-width: 160px; max-width: 200px;padding-left: 10px;">
 
-            <!-- audio name -->
             <span style="overflow: hidden;text-overflow: ellipsis;color: #9a9aa2;
          white-space: nowrap; font-size: smaller;font-weight: bold;">{{count.dm_audio_name_fetched}}</span>
 
-            <!-- audio duration -->
             <span style="font-size: x-small;color: #9a9aa2;">{{count.dm_audio_duration_fetched}}</span>
           </div>
 
-          <!-- download audio icon -->
           <div
             style="background-color: transparent; flex: 0.1; display: flex;align-items: center;justify-content: flex-start;">
 
-            <!-- download icon -->
             <ion-icon *ngIf="count.download" (click)="downloadaudio(count)" name="download" 
             style="background-color: #9a9aa2; color: white;
             border-width: 1px;border-style: solid;border-color: #9a9aa2;border-radius: 20px;
            padding-left: 7px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;"></ion-icon>
 
-            <!-- downloading loader -->
             <div *ngIf="count.downloading" style="background-color: transparent;" class="spinner-border text-light"
               role="status" (click)="canceldownload(count)">
               <span class="sr-only">Loading...</span>
             </div>
           </div>
         </div>
-        <!-------------------------------- audio ends here -->
 
 
-        <!----------------------------------- message time starts here -->
         <p style="font-size: xx-small;text-align: right;background-color: transparent;
      margin-top: -10px;margin-bottom: 5px;padding-right: 5px;
      color: #9a9aa2;">
           {{count.dm_msg_time_fetched}}
         </p>
-        <!------------------------------------- message time ends here -->
 
 
       </div>
     </div>
-    <!------------------------------------------------------------------- left chat bubble ends here------------------------------------------------->
-
-
-
-
-
 
   </div>
-
-
-
-
-
-
-
 
 
 </ion-content>
@@ -358,7 +259,6 @@
 
 <ion-footer class="textareafooter">
 
-  <!-- send message area starts here-->
   <div style="display: flex;background-color: transparent;width: 100%;
   padding-left: 10px;padding-right: 10px;padding-top: 5px;padding-bottom: 5px;">
 
@@ -366,7 +266,6 @@
       flex-direction: row;">
 
       <div style="display: flex;background-color: transparent;flex: 0.7;">
-        <!-- textarea -->
         <textarea [(ngModel)]="senddmmessagetextareainput" placeholder="type message here..." name="abc" id="" rows="1"
           style="width: 100%;border: none;font-size: small;
           background-color: transparent;margin-top: 5px;margin-bottom: 5px;
@@ -376,7 +275,6 @@
       <div style="display: flex;background-color: transparent;flex: 0.3;flex-direction: row;justify-content: space-between;">
         <div style="display: flex;flex: 0.5;background-color: transparent;align-items: flex-start;justify-content: flex-start;padding-right:5px;">
 
-          <!-- media options icon -->
           <ion-fab style="background-color: transparent;">
             <button ion-fab style="width: 35px;height: 35px; display: flex;justify-content: center;
               align-items: center;
@@ -387,37 +285,31 @@
 
             <ion-fab-list side="top">
 
-              <!--camera  option-->
               <button ion-fab (click)="openCamera()" style="background-color: dodgerblue;">
                 <ion-icon name="ios-camera" style="color: white;"></ion-icon>
                 <div class="label">Take photo</div>
               </button>
 
-              <!--gallery option-->
               <button ion-fab (click)="openPhotos()" style="background-color: dodgerblue;">
                 <ion-icon name="ios-photos" style="color: white;"></ion-icon>
                 <div class="label">Upload photo</div>
               </button>
 
-              <!--capture video  option-->
               <button ion-fab (click)="capturevideo()" style="background-color: dodgerblue;">
                 <ion-icon name="ios-film" style="color: white;"></ion-icon>
                 <div class="label">Capture video</div>
               </button>
 
-              <!--upload video  option-->
               <button ion-fab (click)="uploadvideo()" style="background-color: dodgerblue;">
                 <ion-icon name="ios-play" style="color: white;"></ion-icon>
                 <div class="label">Upload video</div>
               </button>
 
-              <!--record audio  option-->
               <button ion-fab (click)="recordaudio()" style="background-color: dodgerblue;">
                 <ion-icon name="ios-microphone" style="color: white;"></ion-icon>
                 <div class="label">Record audio</div>
               </button>
 
-              <!--file  option-->
               <button ion-fab (click)="uploadfile()" style="background-color: dodgerblue;">
                 <ion-icon name="ios-folder" style="color: white;"></ion-icon>
                 <div class="label">Upload file</div>
@@ -430,7 +322,6 @@
         <div
           style="display: flex;flex: 0.5;background-color: transparent; align-items: center;justify-content: center;">
 
-          <!-- send message icon -->
           <button (click)="senddmmessage()" ion-fab style="width: 35px;height: 35px; display: flex;justify-content: center;
           align-items: center;
           background-color: transparent; border: none;
@@ -441,6 +332,5 @@
       </div>
     </div>
   </div>
-  <!-- send message area ends here-->
 
 </ion-footer>
