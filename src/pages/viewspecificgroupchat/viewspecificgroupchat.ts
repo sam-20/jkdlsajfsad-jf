@@ -12,7 +12,7 @@ import { FileChooser } from '@ionic-native/file-chooser'
 import { FilePath } from '@ionic-native/file-path';
 import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
 import { StreamingMedia } from '@ionic-native/streaming-media'
-import { MediaCapture, MediaFile, CaptureError,CaptureVideoOptions, CaptureAudioOptions } from '@ionic-native/media-capture';
+import { MediaCapture, MediaFile, CaptureError, CaptureVideoOptions, CaptureAudioOptions } from '@ionic-native/media-capture';
 import { VideoEditor, CreateThumbnailOptions } from '@ionic-native/video-editor/';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Base64 } from '@ionic-native/base64';
@@ -354,6 +354,13 @@ export class ViewspecificgroupchatPage {
 
       // var res = this.dmmsgstablerows.sort((a, b) => a.dm_msg_id_fetched - b.dm_msg_id_fetched)
       //console.log(res)
+
+      this.groupmessagestablerows = this.groupmessagestablerows.reduce((unique, o) => {
+        if (!unique.some(obj => obj.grp_msg_id_fetched === o.grp_msg_id_fetched)) {
+          unique.push(o);
+        }
+        return unique;
+      }, []);
 
       console.log("selected group's details", this.groupdetailstablerows);
     });
