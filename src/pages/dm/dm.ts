@@ -90,10 +90,10 @@ export class DmPage {
 
       console.log("user's dm chats:", this.userdmmessagestablerows)
 
-
+      var temp = []
       for (var count = 0; count < this.userdmmessagestablerows.length; count++) {
         if (this.userdmmessagestablerows[count].user1_id_fetched != this.mymodulevariables.globaluserid) {
-          this.userdmmessagestablerows2.push({
+          temp.push({
             dmreceipient_id: this.userdmmessagestablerows[count].user1_id_fetched,
             dmreceipient_username: this.userdmmessagestablerows[count].user1_username_fetched,
             dmreceipient_profilepic: this.userdmmessagestablerows[count].user1_profilepic_fetched,
@@ -106,7 +106,7 @@ export class DmPage {
         }
 
         else if (this.userdmmessagestablerows[count].user2_id_fetched != this.mymodulevariables.globaluserid) {
-          this.userdmmessagestablerows2.push({
+          temp.push({
             dmreceipient_id: this.userdmmessagestablerows[count].user2_id_fetched,
             dmreceipient_username: this.userdmmessagestablerows[count].user2_username_fetched,
             dmreceipient_profilepic: this.userdmmessagestablerows[count].user2_profilepic_fetched,
@@ -119,25 +119,36 @@ export class DmPage {
         }
       }
 
-      for (var key in this.userdmmessagestablerows2) {
-        if ((this.userdmmessagestablerows2[key].dmreceipient_profilepic) == null) {
-          this.userdmmessagestablerows2[key].dmreceipient_profilepic = "defaultprofilepic/defaultprofilepic.jpg";
+      for (var key in temp) {
+        if ((temp[key].dmreceipient_profilepic) == null) {
+          temp[key].dmreceipient_profilepic = "defaultprofilepic/defaultprofilepic.jpg";
         }
       }
 
-      for (var key in this.userdmmessagestablerows2) {
-        if ((this.userdmmessagestablerows2[key].lastmsg_fetched) == "") {
-          this.userdmmessagestablerows2[key].lastmsg_fetched = "image";
+      for (var key in temp) {
+        if ((temp[key].lastmsg_fetched) == "") {
+          temp[key].lastmsg_fetched = "image";
         }
       }
 
-      for (var key in this.userdmmessagestablerows2) {
-        this.userdmmessagestablerows2[key].permission_status_fetched = "accept";
+      for (var key in temp) {
+        temp[key].permission_status_fetched = "accept";
       }
 
 
+      /**this will filter the temp object array
+       *  and remove duplicates using object keys using the reduce method 
+       * before finally assigning it to the this.userdmmessagestablerows2 table
+       * */
+      this.userdmmessagestablerows2 = temp.reduce((unique, o) => {
+        if (!unique.some(obj => obj.lastmsg_id_fetched === o.lastmsg_id_fetched)) {
+          unique.push(o);
+        }
+        return unique;
+      }, []);
 
-      console.log("final dm chat table:", this.userdmmessagestablerows2)
+      console.log("final dm chat table after removing duplicates:", this.userdmmessagestablerows2)
+
 
       this.userdmmessagestablerows2.sort((b, a) => a.lastmsg_id_fetched - b.lastmsg_id_fetched)
     });
