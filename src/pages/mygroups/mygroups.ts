@@ -74,6 +74,7 @@ export class MygroupsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MygroupsPage');
+    this.loadusergroupchatlist();
   }
 
   ionViewWillEnter() {

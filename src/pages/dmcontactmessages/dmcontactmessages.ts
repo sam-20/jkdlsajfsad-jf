@@ -18,6 +18,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Base64 } from '@ionic-native/base64';
 import { DocumentPicker } from '@ionic-native/document-picker';
 import { FileOpener } from '@ionic-native/file-opener';
+import { Downloader, DownloadRequest, NotificationVisibility } from '@ionic-native/downloader';
 
 @IonicPage()
 @Component({
@@ -110,6 +111,7 @@ export class DmcontactmessagesPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public mymodulevariables: ModulevariablesProvider,
+    private downloader: Downloader,
     private media: Media,
     private file: File,
     private base64: Base64,
@@ -1304,19 +1306,41 @@ export class DmcontactmessagesPage {
     count.download = false; //hide the download icon
     count.downloading = true; //show the downloading spinner
 
-    const fileTransfer: FileTransferObject = this.transfer.create();
-    fileTransfer.download(count.dm_file_path_fetched, this.file.externalRootDirectory + '/CamfilaDownloads/Documents/' + count.dm_file_name_fetched).then(  //creates a folder with the one given in the parameter even if the folder doesn't exist
-      (data) => {
+    // const fileTransfer: FileTransferObject = this.transfer.create();
+    // fileTransfer.download(count.dm_file_path_fetched, this.file.externalRootDirectory + '/CamfilaDownloads/Documents/' + count.dm_file_name_fetched).then(  //creates a folder with the one given in the parameter even if the folder doesn't exist
+    //   (data) => {
 
+    //     count.downloading = false;  //hide the downloading spinner
+    //     count.download = true;  //show the download icon
+
+    //     // this.styledToastmessage("Document saved to " + 'CamfilaDownloads/Documents/' + count.dm_file_name_fetched);
+    //     this.styledToastmessage("Document saved");
+    //   }, (err) => {
+    //     console.log("Download error", err);
+    //     this.alertmsg(JSON.stringify(err));
+    //   });
+
+
+    var request: DownloadRequest = {
+      uri: 'https://media.readthedocs.org/pdf/django/latest/django.pdf',
+      title: 'django framework',
+      description: '',
+      mimeType: '',
+      visibleInDownloadsUi: true,
+      notificationVisibility: NotificationVisibility.VisibleNotifyCompleted,
+      destinationInExternalFilesDir: {
+        dirType: 'Downloads',
+        subPath: 'django.pdf'
+      }
+    };
+
+    this.downloader.download(request)
+      .then((location: string) => {
+        alert('File downloaded at:' + location)
         count.downloading = false;  //hide the downloading spinner
         count.download = true;  //show the download icon
-
-        // this.styledToastmessage("Document saved to " + 'CamfilaDownloads/Documents/' + count.dm_file_name_fetched);
-        this.styledToastmessage("Document saved");
-      }, (err) => {
-        console.log("Download error", err);
-        this.alertmsg(JSON.stringify(err));
-      });
+      })
+      .catch((error: any) => alert(error));
   }
 
 

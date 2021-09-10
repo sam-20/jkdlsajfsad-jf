@@ -33,7 +33,7 @@ import { DocumentViewer } from '@ionic-native/document-viewer';
 import { MyApp } from './app.component';
 import { ModulevariablesProvider } from '../providers/modulevariables/modulevariables';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-
+import { Downloader } from '@ionic-native/downloader';
 
 @NgModule({
   declarations: [
@@ -81,7 +81,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     {provide: HttpBackend, useClass: NativeHttpFallback, deps: [Platform, NativeHttpBackend, HttpXhrBackend]},
     ModulevariablesProvider,
-    PostProvider
+    PostProvider,
+    Downloader
   ]
 })
 export class AppModule { }

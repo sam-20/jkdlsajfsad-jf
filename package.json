@@ -27,6 +27,7 @@
     "@ionic-native/core": "~4.18.0",
     "@ionic-native/document-picker": "^4.20.0",
     "@ionic-native/document-viewer": "^4.5.3",
+    "@ionic-native/downloader": "^4.20.0",
     "@ionic-native/email-composer": "^3.7.0",
     "@ionic-native/file": "^4.5.3",
     "@ionic-native/file-chooser": "^4.5.3",
@@ -135,7 +136,8 @@
       "cordova-plugin-file-opener2": {
         "ANDROID_SUPPORT_V4_VERSION": "27.+"
       },
-      "cordova-plugin-inappbrowser": {}
+      "cordova-plugin-inappbrowser": {},
+      "integrator-cordova-plugin-downloader": {}
     },
     "platforms": [
       "android"
