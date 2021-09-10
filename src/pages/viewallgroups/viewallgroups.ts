@@ -151,6 +151,11 @@ export class ViewallgroupsPage {
       this.groupaccountstablerows.forEach(function (element) { element.buttoncolor = "dark"; });
       this.groupaccountstablerows.forEach(function (element) { element.joinstatus = "join"; });
 
+      /**we overriden restricted access to join certain groups */
+      for (var key in this.groupaccountstablerows) {
+        this.groupaccountstablerows[key].student_year_eligibility_fetched = "all"
+      }
+
 
       /**now we have have the group details in the groupaccounttablerows array so we are 
       we are going to check if a group's profile pic is null then we assign our default pic to the group **/
@@ -202,14 +207,14 @@ export class ViewallgroupsPage {
         //assign the members_joined of the selected group to our variable
         //add 1 to the members_joined and update in the database
         this.selectedgroup_membersjoined = count.members_joined_fetched;
-        this.selectedgroup_membersjoined++ ;
+        this.selectedgroup_membersjoined++;
         this.selectedgroup_membersjoined--;
-        console.log("selected group's members count: ",this.selectedgroup_membersjoined);
+        console.log("selected group's members count: ", this.selectedgroup_membersjoined);
         this.updategroup_members_joined();
 
         //now we open the group page and its messages for the group the user has joined
         localStorage.setItem('storedgroupid', count.group_id_fetched);
-        this.navCtrl.push('ViewspecificgroupchatPage');
+        // this.navCtrl.push('ViewspecificgroupchatPage');
       }
 
       else {
@@ -221,7 +226,7 @@ export class ViewallgroupsPage {
         //sub 1 from the members_joined and update in the database
         this.selectedgroup_membersjoined = count.members_joined_fetched;
         this.selectedgroup_membersjoined--;
-        console.log("selected group's members count: ",this.selectedgroup_membersjoined);
+        console.log("selected group's members count: ", this.selectedgroup_membersjoined);
         this.updategroup_members_joined();
       }
     }
@@ -243,7 +248,7 @@ export class ViewallgroupsPage {
           this.selectedgroup_membersjoined = count.members_joined_fetched;
           this.selectedgroup_membersjoined++
           this.selectedgroup_membersjoined--;
-          console.log("selected group's members count: ",this.selectedgroup_membersjoined);
+          console.log("selected group's members count: ", this.selectedgroup_membersjoined);
           this.updategroup_members_joined();
 
           //now we open the group page and its messages for the group the user has joined
@@ -260,7 +265,7 @@ export class ViewallgroupsPage {
           //sub 1 from the members_joined and update in the database
           this.selectedgroup_membersjoined = count.members_joined_fetched;
           this.selectedgroup_membersjoined--
-          console.log("selected group's members count: ",this.selectedgroup_membersjoined);
+          console.log("selected group's members count: ", this.selectedgroup_membersjoined);
           this.updategroup_members_joined();
         }
       }

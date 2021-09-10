@@ -505,6 +505,7 @@ export class ViewspecificgroupchatPage {
 
   //view group chat details
   viewgroupchatdetails() {
+    console.log('the grrrrrrrr id is: ',this.group_id_retrieved )
     localStorage.setItem('storedgroupid', this.group_id_retrieved);
     this.navCtrl.push('GroupchatdetailsPage');
   }
