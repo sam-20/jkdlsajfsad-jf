@@ -19,6 +19,8 @@ import { Base64 } from '@ionic-native/base64';
 import { DocumentPicker } from '@ionic-native/document-picker';
 import { FileOpener } from '@ionic-native/file-opener';
 import { Downloader, DownloadRequest, NotificationVisibility } from '@ionic-native/downloader';
+import { HTTP } from '@ionic-native/http';
+
 
 @IonicPage()
 @Component({
@@ -112,6 +114,7 @@ export class DmcontactmessagesPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public mymodulevariables: ModulevariablesProvider,
     private downloader: Downloader,
+    private nativeHTTP: HTTP,
     private media: Media,
     private file: File,
     private base64: Base64,
@@ -567,45 +570,30 @@ export class DmcontactmessagesPage {
       if (imageData) {
 
         /***********use this if u want to send the image to another page in order to caption it */
-        // //after the user has taken the pic we open a new page with the picture there and a texbox for adding messsage or caption to the image then
-        // //we also provide a send button to send the message and image
         localStorage.setItem('storedimagefordisplay', this.base64Image);  //picture taken which has been coverted for display in the html for the next page
         localStorage.setItem('storedcameradata', this.cameraData) //direct image from camera that we'd save in the database as the image in our next page
-
-        // //we need the id of the person we're chatting with so that we can save the message with their id and ours
         localStorage.setItem('storedreceipientid', this.dmreceipient_id_retrieved);
-
-        // //now we can open our next page whihc will display the image selected, a textbox for adding a message to the image and a send button
         this.navCtrl.push('DmsendpicturepopupPage');
+        /***********use this if u want to send the image to another page in order to caption it */
 
 
-        //if an image is taken we send to the db
-        // this.sendingloader(); //show sending... loader as backend functions are being run
-        // console.log("send image to database");
+        /***********use this if u want to send the image straight away without adding caption to it */
+        // this.sendingloader();
+        // let body = {
+        //   mydbfunc: 'senddmmessage_withpicture',
+        //   loggedinuseridDB: this.mymodulevariables.globaluserid,
+        //   receipientuseridDB: this.dmreceipient_id_retrieved,
+        //   dmmessageDB: null,
+        //   dmmessage_mediaDB: this.cameraData
+        // };
+        // this.postPvdr.postData(body, 'mydbapicommands.php').subscribe(data => {
+        //   this.loader.dismiss();
+        //   this.loadvirtualdmmessages();
+        //   this.scrolltobottom(); //finally scroll to the bottom of the page to see the last message
+        // });
+        /***********use this if u want to send the image straight away without adding caption to it */
 
-        //send image to database
-        //now we insert our dm message into the database
-        /**note that after inserting we'd need to update the lastdmmessage db table with the sent message id  however we can only retrieve that id after we've sent the message
-         * so in this 'senddmmessage_withpicture' function..after inserting the dm mesage we also retrieve the id and use it to update the lastdmmessage id value in the lastdmmessage db table
-         */
-        let body = {
-          mydbfunc: 'senddmmessage_withpicture',
-          loggedinuseridDB: this.mymodulevariables.globaluserid,
-          receipientuseridDB: this.dmreceipient_id_retrieved,
-          dmmessageDB: null,
-          dmmessage_mediaDB: this.cameraData
-        };
-
-        this.postPvdr.postData(body, 'mydbapicommands.php').subscribe(data => {
-
-          // this.loader.dismiss();
-
-          //refresh the virtual table messages to add only the neww message to the list of html messages
-          this.loadvirtualdmmessages();
-          this.scrolltobottom(); //finally scroll to the bottom of the page to see the last message
-        });
       }
-
       //if no image is selected do nothing
       else {
         //do nothing
@@ -643,44 +631,30 @@ export class DmcontactmessagesPage {
       if (imageData) {
 
         /***********use this if u want to send the image to another page in order to caption it */
-        // //after the user has selected the pic from gallery we open a new page with the picture there and a texbox for adding a messsage or caption to the image then
-        // //we also provide a send button to send the message and image
         localStorage.setItem('storedimagefordisplay', this.base64Image);  //picture taken which has been coverted for display in the html for the next page
         localStorage.setItem('storedcameradata', this.cameraData) //direct image from camera that we'd save in the database as the image in our next page
-
-        // //we need the id of the person we're chatting with so that we can save the message with their id and ours
         localStorage.setItem('storedreceipientid', this.dmreceipient_id_retrieved);
-
-        // //now we can open our next page whihc will display the image selected, a textbox for adding a message to the image and a send button
         this.navCtrl.push('DmsendpicturepopupPage');
+        /***********use this if u want to send the image to another page in order to caption it */
 
-        //if an image is selected then we send to the db
+
+        /***********use this if u want to send the image straight away without adding caption to it */
         // this.sendingloader(); //show sending... loader as backend functions are being run
-        // console.log("send image to database");
+        // let body = {
+        //   mydbfunc: 'senddmmessage_withpicture',
+        //   loggedinuseridDB: this.mymodulevariables.globaluserid,
+        //   receipientuseridDB: this.dmreceipient_id_retrieved,
+        //   dmmessageDB: null,
+        //   dmmessage_mediaDB: this.cameraData
+        // };
+        // this.postPvdr.postData(body, 'mydbapicommands.php').subscribe(data => {
+        //   this.loader.dismiss();
+        //   this.loadvirtualdmmessages();
+        //   this.scrolltobottom(); //finally scroll to the bottom of the page to see the last message
+        // });
+        /***********use this if u want to send the image straight away without adding caption to it */
 
-        //send image to database
-        //now we insert our dm message into the database
-        /**note that after inserting we'd need to update the lastdmmessage db table with the sent message id  however we can only retrieve that id after we've sent the message
-         * so in this 'senddmmessage_withpicture' function..after inserting the dm mesage we also retrieve the id and use it to update the lastdmmessage id value in the lastdmmessage db table
-         */
-        let body = {
-          mydbfunc: 'senddmmessage_withpicture',
-          loggedinuseridDB: this.mymodulevariables.globaluserid,
-          receipientuseridDB: this.dmreceipient_id_retrieved,
-          dmmessageDB: null,
-          dmmessage_mediaDB: this.cameraData
-        };
-
-        this.postPvdr.postData(body, 'mydbapicommands.php').subscribe(data => {
-
-          // this.loader.dismiss();
-
-          //refresh the virtual table messages to add only the neww message to the list of html messages
-          this.loadvirtualdmmessages();
-          this.scrolltobottom(); //finally scroll to the bottom of the page to see the last message
-        });
       }
-
       //if no image is selected
       else {
         //do nothing
@@ -1307,41 +1281,65 @@ export class DmcontactmessagesPage {
     count.download = false; //hide the download icon
     count.downloading = true; //show the downloading spinner
 
-    // const fileTransfer: FileTransferObject = this.transfer.create();
-    // fileTransfer.download(count.dm_file_path_fetched, this.file.externalRootDirectory + '/CamfilaDownloads/Documents/' + count.dm_file_name_fetched).then(  //creates a folder with the one given in the parameter even if the folder doesn't exist
-    //   (data) => {
 
-    //     count.downloading = false;  //hide the downloading spinner
-    //     count.download = true;  //show the download icon
-
-    //     // this.styledToastmessage("Document saved to " + 'CamfilaDownloads/Documents/' + count.dm_file_name_fetched);
-    //     this.styledToastmessage("Document saved");
-    //   }, (err) => {
-    //     console.log("Download error", err);
-    //     this.alertmsg(JSON.stringify(err));
-    //   });
+    /**removing 'file' from the download path string */
+    // var newPath = (count.dm_file_path_fetched).replace('file://', '');
+    // alert('old path is: ' + count.dm_file_path_fetched + '  new path is: ' + newPath)
 
 
-    var request: DownloadRequest = {
-      uri: 'https://media.readthedocs.org/pdf/django/latest/django.pdf',
-      title: 'django framework',
-      description: '',
-      mimeType: '',
-      visibleInDownloadsUi: true,
-      notificationVisibility: NotificationVisibility.VisibleNotifyCompleted,
-      destinationInExternalFilesDir: {
-        dirType: 'Downloads',
-        subPath: 'django.pdf'
-      }
-    };
-
-    this.downloader.download(request)
-      .then((location: string) => {
-        alert('File downloaded at:' + location)
+    /**********using filetransfer plugin****************** */
+    const fileTransfer: FileTransferObject = this.transfer.create();
+    var newloc = this.file.externalRootDirectory.replace('file://', '')
+    fileTransfer.download(count.dm_file_path_fetched, newloc + '/CamfilaDownloads/Documents/' + count.dm_file_name_fetched).then(  //creates a folder with the one given in the parameter even if the folder doesn't exist
+      (data) => {
         count.downloading = false;  //hide the downloading spinner
         count.download = true;  //show the download icon
-      })
-      .catch((error: any) => alert(error));
+
+        // this.styledToastmessage("Document saved to " + 'CamfilaDownloads/Documents/' + count.dm_file_name_fetched);
+        this.styledToastmessage("Document saved");
+      }, (err) => {
+        this.alertmsg('download error: ' + JSON.stringify(err));
+      });
+    /**********using filetransfer plugin****************** */
+
+
+    /********using ionic-native/downloader plugin********* */
+    // var request: DownloadRequest = {
+    //   uri: count.dm_file_path_fetched,
+    //   // uri: 'https://sipb.mit.edu/iap/django/CCCDjango2010.pdf',
+    //   title: count.dm_file_name_fetched,
+    //   description: '',
+    //   mimeType: '',
+    //   visibleInDownloadsUi: true,
+    //   notificationVisibility: NotificationVisibility.VisibleNotifyCompleted,
+    //   destinationInExternalPublicDir: {
+    //     dirType: 'CamfilaDownloads/Documents/',
+    //     subPath: count.dm_file_name_fetched
+    //   }
+    // };
+    // this.downloader.download(request)
+    //   .then((location: string) => {
+    //     this.styledToastmessage("Document saved to " + location);
+    //     count.downloading = false;  //hide the downloading spinner
+    //     count.download = true;  //show the download icon
+    //   })
+    //   .catch((error: any) => alert(error));
+    /********using ionic-native/downloader plugin********* */
+
+
+    /***using native http **********/
+    // this.nativeHTTP.downloadFile(
+    //   count.dm_file_path_fetched,
+    //   {},
+    //   {},
+    //   this.file.externalRootDirectory + '/CamfilaDownloads/Documents/' + count.dm_file_name_fetched
+    // ).then(res => {
+    //   alert(JSON.stringify(res))
+    // }).catch(err => {
+    //   alert('errr: ' + JSON.stringify(err))
+    // })
+    /***using native http **********/
+
   }
 
 

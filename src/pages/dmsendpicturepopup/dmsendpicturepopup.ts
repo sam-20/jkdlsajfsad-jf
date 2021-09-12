@@ -38,36 +38,41 @@ export class DmsendpicturepopupPage {
 
 
   senddmmessage() {
-    const confirm = this.alertCtrl.create({
-      title: '',
-      message: 'Send message?',
-      buttons: [
-        {
-          text: 'Yes',
-          handler: () => {
-
-            this.sendingloader(); //show sending... loader as backend functions are being run
 
 
-            //send image w/o comment to database
-            this.senddmmessage2();
-          }
-        },
-        {
-          text: 'Cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        }
-      ]
-    });
-    confirm.present();
+    this.sendingloader()
+    this.senddmmessage2();
+
+    // const confirm = this.alertCtrl.create({
+    //   title: '',
+    //   message: 'Send message?',
+    //   buttons: [
+    //     {
+    //       text: 'Yes',
+    //       handler: () => {
+
+    //         this.sendingloader(); //show sending... loader as backend functions are being run
+
+
+    //         //send image w/o comment to database
+    //         this.senddmmessage2();
+    //       }
+    //     },
+    //     {
+    //       text: 'Cancel',
+    //       handler: () => {
+    //         console.log('Cancel clicked');
+    //       }
+    //     }
+    //   ]
+    // });
+    // confirm.present();
   }
 
 
   //send dm message
   senddmmessage2() {
-    console.log(this.senddmmessagetextareainput);
+    // console.log(this.senddmmessagetextareainput);
 
     //now we insert our dm message into the database
     /**note that after inserting we'd need to update the lastdmmessage db table with the sent message id  however we can only retrieve that id after we've sent the message

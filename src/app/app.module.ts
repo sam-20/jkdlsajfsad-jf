@@ -34,6 +34,7 @@ import { MyApp } from './app.component';
 import { ModulevariablesProvider } from '../providers/modulevariables/modulevariables';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Downloader } from '@ionic-native/downloader';
+import { HTTP } from '@ionic-native/http';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ import { Downloader } from '@ionic-native/downloader';
     {provide: HttpBackend, useClass: NativeHttpFallback, deps: [Platform, NativeHttpBackend, HttpXhrBackend]},
     ModulevariablesProvider,
     PostProvider,
-    Downloader
+    Downloader,
+    HTTP
   ]
 })
 export class AppModule { }

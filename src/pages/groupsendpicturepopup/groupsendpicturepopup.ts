@@ -37,30 +37,34 @@ export class GroupsendpicturepopupPage {
   }
 
   sendgroupmessage() {
-    const confirm = this.alertCtrl.create({
-      title: '',
-      message: 'Send message?',
-      buttons: [
-        {
-          text: 'Yes',
-          handler: () => {
 
-            this.sendingloader(); //show sending... loader as backend functions are being run
+    this.sendingloader()
+    this.sendgroupmessage2()
+
+    // const confirm = this.alertCtrl.create({
+    //   title: '',
+    //   message: 'Send message?',
+    //   buttons: [
+    //     {
+    //       text: 'Yes',
+    //       handler: () => {
+
+    //         this.sendingloader(); //show sending... loader as backend functions are being run
 
 
-            //send image w/o comment to database
-            this.sendgroupmessage2();
-          }
-        },
-        {
-          text: 'Cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        }
-      ]
-    });
-    confirm.present();
+    //         //send image w/o comment to database
+    //         this.sendgroupmessage2();
+    //       }
+    //     },
+    //     {
+    //       text: 'Cancel',
+    //       handler: () => {
+    //         console.log('Cancel clicked');
+    //       }
+    //     }
+    //   ]
+    // });
+    // confirm.present();
   }
 
 

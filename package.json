@@ -34,7 +34,7 @@
     "@ionic-native/file-opener": "^4.20.0",
     "@ionic-native/file-path": "^4.5.3",
     "@ionic-native/file-transfer": "^4.5.3",
-    "@ionic-native/http": "^4.0.0",
+    "@ionic-native/http": "^4.20.0",
     "@ionic-native/in-app-browser": "^4.5.3",
     "@ionic-native/ionic-webview": "^5.5.1",
     "@ionic-native/local-notifications": "^4.20.0",
