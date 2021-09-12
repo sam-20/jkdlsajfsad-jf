@@ -569,19 +569,19 @@ export class DmcontactmessagesPage {
         /***********use this if u want to send the image to another page in order to caption it */
         // //after the user has taken the pic we open a new page with the picture there and a texbox for adding messsage or caption to the image then
         // //we also provide a send button to send the message and image
-        // localStorage.setItem('storedimagefordisplay', this.base64Image);  //picture taken which has been coverted for display in the html for the next page
-        // localStorage.setItem('storedcameradata', this.cameraData) //direct image from camera that we'd save in the database as the image in our next page
+        localStorage.setItem('storedimagefordisplay', this.base64Image);  //picture taken which has been coverted for display in the html for the next page
+        localStorage.setItem('storedcameradata', this.cameraData) //direct image from camera that we'd save in the database as the image in our next page
 
         // //we need the id of the person we're chatting with so that we can save the message with their id and ours
-        // localStorage.setItem('storedreceipientid', this.dmreceipient_id_retrieved);
+        localStorage.setItem('storedreceipientid', this.dmreceipient_id_retrieved);
 
         // //now we can open our next page whihc will display the image selected, a textbox for adding a message to the image and a send button
-        // this.navCtrl.push('DmsendpicturepopupPage');
+        this.navCtrl.push('DmsendpicturepopupPage');
 
 
         //if an image is taken we send to the db
         // this.sendingloader(); //show sending... loader as backend functions are being run
-        console.log("send image to database");
+        // console.log("send image to database");
 
         //send image to database
         //now we insert our dm message into the database
@@ -645,18 +645,18 @@ export class DmcontactmessagesPage {
         /***********use this if u want to send the image to another page in order to caption it */
         // //after the user has selected the pic from gallery we open a new page with the picture there and a texbox for adding a messsage or caption to the image then
         // //we also provide a send button to send the message and image
-        // localStorage.setItem('storedimagefordisplay', this.base64Image);  //picture taken which has been coverted for display in the html for the next page
-        // localStorage.setItem('storedcameradata', this.cameraData) //direct image from camera that we'd save in the database as the image in our next page
+        localStorage.setItem('storedimagefordisplay', this.base64Image);  //picture taken which has been coverted for display in the html for the next page
+        localStorage.setItem('storedcameradata', this.cameraData) //direct image from camera that we'd save in the database as the image in our next page
 
         // //we need the id of the person we're chatting with so that we can save the message with their id and ours
-        // localStorage.setItem('storedreceipientid', this.dmreceipient_id_retrieved);
+        localStorage.setItem('storedreceipientid', this.dmreceipient_id_retrieved);
 
         // //now we can open our next page whihc will display the image selected, a textbox for adding a message to the image and a send button
-        // this.navCtrl.push('DmsendpicturepopupPage');
+        this.navCtrl.push('DmsendpicturepopupPage');
 
         //if an image is selected then we send to the db
         // this.sendingloader(); //show sending... loader as backend functions are being run
-        console.log("send image to database");
+        // console.log("send image to database");
 
         //send image to database
         //now we insert our dm message into the database

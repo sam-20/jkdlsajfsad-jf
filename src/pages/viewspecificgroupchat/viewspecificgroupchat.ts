@@ -505,7 +505,7 @@ export class ViewspecificgroupchatPage {
 
   //view group chat details
   viewgroupchatdetails() {
-    console.log('the grrrrrrrr id is: ',this.group_id_retrieved )
+    console.log('the grrrrrrrr id is: ', this.group_id_retrieved)
     localStorage.setItem('storedgroupid', this.group_id_retrieved);
     this.navCtrl.push('GroupchatdetailsPage');
   }
@@ -548,7 +548,7 @@ export class ViewspecificgroupchatPage {
 
         //if an image is taken we send to the db
         // this.sendingloader(); //show sending... loader as backend functions are being run
-        console.log("send image to database");
+        // console.log("send image to database");
 
         //send image to database
         //now we insert our group message into the database
@@ -622,7 +622,7 @@ export class ViewspecificgroupchatPage {
 
         //if an image is selected then we send to the db
         // this.sendingloader(); //show sending... loader as backend functions are being run
-        console.log("send image to database");
+        // console.log("send image to database");
 
         //send image to database
         //now we insert our group message into the database
