@@ -1282,24 +1282,22 @@ export class DmcontactmessagesPage {
     count.downloading = true; //show the downloading spinner
 
 
-    /**removing 'file' from the download path string */
+    /**removing 'file://' from the download path string */
     // var newPath = (count.dm_file_path_fetched).replace('file://', '');
     // alert('old path is: ' + count.dm_file_path_fetched + '  new path is: ' + newPath)
 
 
     /**********using filetransfer plugin****************** */
-    const fileTransfer: FileTransferObject = this.transfer.create();
-    var newloc = this.file.externalRootDirectory.replace('file://', '')
-    fileTransfer.download(count.dm_file_path_fetched, newloc + '/CamfilaDownloads/Documents/' + count.dm_file_name_fetched).then(  //creates a folder with the one given in the parameter even if the folder doesn't exist
-      (data) => {
-        count.downloading = false;  //hide the downloading spinner
-        count.download = true;  //show the download icon
-
-        // this.styledToastmessage("Document saved to " + 'CamfilaDownloads/Documents/' + count.dm_file_name_fetched);
-        this.styledToastmessage("Document saved");
-      }, (err) => {
-        this.alertmsg('download error: ' + JSON.stringify(err));
-      });
+    // const fileTransfer: FileTransferObject = this.transfer.create();
+    // fileTransfer.download(count.dm_file_path_fetched, this.file.externalRootDirectory + '/CamfilaDownloads/Documents/' + count.dm_file_name_fetched).then(  //creates a folder with the one given in the parameter even if the folder doesn't exist
+    //   (data) => {
+    //     count.downloading = false;  //hide the downloading spinner
+    //     count.download = true;  //show the download icon
+    //     this.styledToastmessage("Document saved to " + 'CamfilaDownloads/Documents/' + count.dm_file_name_fetched);
+    //     this.styledToastmessage("Document saved");
+    //   }, (err) => {
+    //     this.alertmsg('download error: ' + JSON.stringify(err));
+    //   });
     /**********using filetransfer plugin****************** */
 
 
