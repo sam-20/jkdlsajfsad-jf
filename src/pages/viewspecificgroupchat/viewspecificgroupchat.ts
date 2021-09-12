@@ -941,7 +941,8 @@ export class ViewspecificgroupchatPage {
       });
       confirm.present();
     }, (err) => {
-      this.alertmsg(err);
+      // this.alertmsg(err);
+      this.styledToastmessage("no video selected")
       console.log(err);
     })
   }
