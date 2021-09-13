@@ -10,7 +10,7 @@ import { Media } from '@ionic-native/media';
 import { File } from '@ionic-native/file';
 import { FileChooser } from '@ionic-native/file-chooser'
 import { FilePath } from '@ionic-native/file-path';
-import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
+import { FileTransfer, FileTransferObject, FileUploadOptions } from '@ionic-native/file-transfer';
 import { StreamingMedia } from '@ionic-native/streaming-media'
 import { MediaCapture, MediaFile, CaptureError, CaptureVideoOptions, CaptureAudioOptions } from '@ionic-native/media-capture';
 import { VideoEditor, CreateThumbnailOptions } from '@ionic-native/video-editor/';
@@ -1053,41 +1053,78 @@ export class DmcontactmessagesPage {
   //upload file 
   uploadfile() {
     if (this.platform.is('android')) {
-      this.fileChooser.open()
-        .then(
-          uri => {
-            this.filePath.resolveNativePath(uri)
-              .then(url => {
+      // this.fileChooser.open()
+      //   .then(
+      //     uri => {
+      //       this.filePath.resolveNativePath(uri)
+      //         .then(url => {
 
-                this.sendingloader(); //show sending... loader as backend functions are being run
+      //           this.sendingloader(); //show sending... loader as backend functions are being run
 
-                // url is path of selected file
-                console.log("file path: ", url);
-                this.selectedfilepath = url;
+      //           // url is path of selected file
+      //           console.log("file path: ", url);
+      //           this.selectedfilepath = url;
 
-                var fileName = url.substring(url.lastIndexOf("/") + 1)
-                // fileName is selected file's name
-                console.log("file name: ", fileName)
-                this.selectedfilename = fileName;
+      //           var fileName = url.substring(url.lastIndexOf("/") + 1)
+      //           // fileName is selected file's name
+      //           console.log("file name: ", fileName)
+      //           this.selectedfilename = fileName;
 
-                //retrieve mime type and extension of selected file
-                this.viewfileextensionandmimetype();
+      //           //retrieve mime type and extension of selected file
+      //           this.viewfileextensionandmimetype();
 
-                //retrieve size of selected file
-                this.viewselectedfilesize();
+      //           //retrieve size of selected file
+      //           this.viewselectedfilesize();
 
-                //finally send file to database after a few seconds(delay due to the fact that we want to retrieve file size and mime type)
-                setTimeout(() => {
-                  this.sendfiletodb();
-                }, 2000);
+      //           //finally send file to database after a few seconds(delay due to the fact that we want to retrieve file size and mime type)
+      //           setTimeout(() => {
+      //             this.sendfiletodb();
+      //           }, 2000);
 
-              })
-              .catch(err => console.log(err));
+      //         })
+      //         .catch(err => console.log(err));
+      //     }
+      //   )
+      //   .catch(error => {
+      //     console.log(error)
+      //   });
+
+
+      this.fileChooser.open().then((uri) => {
+        this.filePath.resolveNativePath(uri).then((nativepath) => {
+
+          //retrieve filename from selected file path
+          this.selectedfilename = nativepath.substring(nativepath.lastIndexOf("/") + 1)
+
+          //retrieve mime type and extension of selected file
+          this.viewfileextensionandmimetype();
+
+          const fileTransfer: FileTransferObject = this.transfer.create();
+          let options: FileUploadOptions = {
+            fileKey: 'file',
+            fileName: this.selectedfilename,
+            chunkedMode: false,
+            headers: {},
+            mimeType: this.selectedfilemimetype
           }
-        )
-        .catch(error => {
-          console.log(error)
-        });
+          this.sendingloader(); //show sending... loader as backend functions are being run 
+          fileTransfer.upload(nativepath, this.server + 'uploadedfiles/', options).then((data) => {
+
+            alert("file sent: " + JSON.stringify(data))
+            // this.styledToastmessage("file sent")
+            this.loader.dismiss();
+          }, (err) => {
+            this.loader.dismiss();
+            alert('errrrrr1' + JSON.stringify(err))
+          })
+        }, (err) => {
+          alert('errrrrr2' + JSON.stringify(err))
+        })
+      }, (err) => {
+        alert('errrrrr3' + JSON.stringify(err))
+      })
+
+
     } else {
 
       //use getFile('all') if u want to select all file types
