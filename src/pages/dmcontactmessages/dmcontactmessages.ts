@@ -107,6 +107,7 @@ export class DmcontactmessagesPage {
   selectedfilemimetype: any;
   selectedfilepath: any;
   selectedfilesize: any;
+  selectedfilebase64: any;
 
   /**we are using this to prevent multiple popup messages when a user swipes to delte a message */
   popupmessageshownalready: boolean = false;
@@ -1093,35 +1094,41 @@ export class DmcontactmessagesPage {
       this.fileChooser.open().then((uri) => {
         this.filePath.resolveNativePath(uri).then((nativepath) => {
 
+          this.sendingloader(); //show sending... loader as backend functions are being run
+
+          //encode base64 of the file (convert to base64 string)
+          this.base64.encodeFile(nativepath).then((base64File) => {
+            // alert('base64file: ' + base64File)
+            // base64File = base64File.replace('data:image/*;charset=utf-8;base64,', '')
+            this.selectedfilebase64 = base64File
+          }, (err) => {
+            alert('error encoding base64: ' + err)
+            this.loader.dismiss();
+            return;
+          })
+
+          //assign to file location to our filepath variable for database operations
+          this.selectedfilepath = nativepath
+
           //retrieve filename from selected file path
           this.selectedfilename = nativepath.substring(nativepath.lastIndexOf("/") + 1)
 
           //retrieve mime type and extension of selected file
           this.viewfileextensionandmimetype();
 
-          const fileTransfer: FileTransferObject = this.transfer.create();
-          let options: FileUploadOptions = {
-            fileKey: 'file',
-            fileName: this.selectedfilename,
-            chunkedMode: false,
-            headers: {},
-            mimeType: this.selectedfilemimetype
-          }
-          this.sendingloader(); //show sending... loader as backend functions are being run 
-          fileTransfer.upload(nativepath, this.server + 'uploadedfiles/', options).then((data) => {
+          //retrieve size of selected file
+          this.viewselectedfilesize();
 
-            alert("file sent: " + JSON.stringify(data))
-            // this.styledToastmessage("file sent")
-            this.loader.dismiss();
-          }, (err) => {
-            this.loader.dismiss();
-            alert('errrrrr1' + JSON.stringify(err))
-          })
+          //finally send file to database after a few seconds(delay due to the fact that we want to retrieve file size and mime type)
+          setTimeout(() => {
+            this.sendfiletodb();
+          }, 2000);
+
         }, (err) => {
-          alert('errrrrr2' + JSON.stringify(err))
+          alert('errrrrr1' + JSON.stringify(err))
         })
       }, (err) => {
-        alert('errrrrr3' + JSON.stringify(err))
+        alert('errrrrr2' + JSON.stringify(err))
       })
 
 
@@ -1285,7 +1292,9 @@ export class DmcontactmessagesPage {
       filenameDB: this.selectedfilename,
       filepathDB: this.selectedfilepath,
       filemimetypeDB: this.selectedfilemimetype,
-      filesizeDB: this.selectedfilesize
+      filesizeDB: this.selectedfilesize,
+      filebase64stringDB: this.selectedfilebase64,
+      fileextensionDB: this.selectedfileextension
     };
 
     this.postPvdr.postData(body, 'mydbapicommands.php').subscribe(data => {
@@ -1308,7 +1317,7 @@ export class DmcontactmessagesPage {
       })
       .catch(e => {
         console.log('Error openening file', e);
-        this.styledToastmessage("No application to open file")
+        // this.styledToastmessage("No application to open file")
       });
   }
 
@@ -1339,26 +1348,26 @@ export class DmcontactmessagesPage {
 
 
     /********using ionic-native/downloader plugin********* */
-    // var request: DownloadRequest = {
-    //   uri: count.dm_file_path_fetched,
-    //   // uri: 'https://sipb.mit.edu/iap/django/CCCDjango2010.pdf',
-    //   title: count.dm_file_name_fetched,
-    //   description: '',
-    //   mimeType: '',
-    //   visibleInDownloadsUi: true,
-    //   notificationVisibility: NotificationVisibility.VisibleNotifyCompleted,
-    //   destinationInExternalPublicDir: {
-    //     dirType: 'CamfilaDownloads/Documents/',
-    //     subPath: count.dm_file_name_fetched
-    //   }
-    // };
-    // this.downloader.download(request)
-    //   .then((location: string) => {
-    //     this.styledToastmessage("Document saved to " + location);
-    //     count.downloading = false;  //hide the downloading spinner
-    //     count.download = true;  //show the download icon
-    //   })
-    //   .catch((error: any) => alert(error));
+    var request: DownloadRequest = {
+      uri: this.server + count.dm_file_path_fetched,
+      // uri: 'https://sipb.mit.edu/iap/django/CCCDjango2010.pdf',
+      title: count.dm_file_name_fetched,
+      description: '',
+      mimeType: '',
+      visibleInDownloadsUi: true,
+      notificationVisibility: NotificationVisibility.VisibleNotifyCompleted,
+      destinationInExternalPublicDir: {
+        dirType: 'CamfilaDownloads/Documents/',
+        subPath: count.dm_file_name_fetched
+      }
+    };
+    this.downloader.download(request)
+      .then((location: string) => {
+        this.styledToastmessage("Document saved to " + location);
+        count.downloading = false;  //hide the downloading spinner
+        count.download = true;  //show the download icon
+      })
+      .catch((error: any) => alert(error));
     /********using ionic-native/downloader plugin********* */
 
 
@@ -1477,7 +1486,7 @@ export class DmcontactmessagesPage {
   styledToastmessage(msg) {
     const toast = this.toastCtrl.create({
       message: msg,
-      duration: 1500,
+      duration: 3500,
       position: 'middle',
       cssClass: "microphonetoast"
     });

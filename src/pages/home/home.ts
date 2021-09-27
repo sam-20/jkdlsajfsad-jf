@@ -1195,9 +1195,13 @@ export class HomePage {
   //internet connection error
   connectionerrorAlert() {
     const alert = this.alertCtrl.create({
-      title: 'Error!',
-      subTitle: 'Unable to load messages, check internet connection',
-      buttons: ['OK']
+      title: 'No internet connection!',
+      subTitle: 'Oops! we were unable to load your messages. Check your internet connection and then try again!',
+      buttons:[{
+        text:'OK',
+        cssClass:'alertBtnCss'
+      }],
+      cssClass : 'alertController',
     });
     alert.present();
   }

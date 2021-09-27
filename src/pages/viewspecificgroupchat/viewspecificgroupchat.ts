@@ -18,6 +18,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Base64 } from '@ionic-native/base64';
 import { DocumentPicker } from '@ionic-native/document-picker';
 import { FileOpener } from '@ionic-native/file-opener';
+import { Downloader, DownloadRequest, NotificationVisibility } from '@ionic-native/downloader';
 
 @IonicPage()
 @Component({
@@ -96,12 +97,14 @@ export class ViewspecificgroupchatPage {
   selectedfilemimetype: any;
   selectedfilepath: any;
   selectedfilesize: any;
+  selectedfilebase64: any;
 
   /**we are using this to prevent multiple popup messages when a user swipes to delte a message */
   popupmessageshownalready: boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public mymodulevariables: ModulevariablesProvider,
+    private downloader: Downloader,
     private media: Media,
     private file: File,
     private base64: Base64,
@@ -997,41 +1000,75 @@ export class ViewspecificgroupchatPage {
   //upload file 
   uploadfile() {
     if (this.platform.is('android')) {
-      this.fileChooser.open()
-        .then(
-          uri => {
-            this.filePath.resolveNativePath(uri)
-              .then(url => {
+      // this.fileChooser.open()
+      //   .then(
+      //     uri => {
+      //       this.filePath.resolveNativePath(uri)
+      //         .then(url => {
 
-                this.sendingloader(); //show sending... loader as backend functions are being run
+      //           this.sendingloader(); //show sending... loader as backend functions are being run
 
-                // url is path of selected file
-                console.log("file path: ", url);
-                this.selectedfilepath = url;
+      //           // url is path of selected file
+      //           console.log("file path: ", url);
+      //           this.selectedfilepath = url;
 
-                var fileName = url.substring(url.lastIndexOf("/") + 1)
-                // fileName is selected file's name
-                console.log("file name: ", fileName)
-                this.selectedfilename = fileName;
+      //           var fileName = url.substring(url.lastIndexOf("/") + 1)
+      //           // fileName is selected file's name
+      //           console.log("file name: ", fileName)
+      //           this.selectedfilename = fileName;
 
-                //retrieve mime type and extension of selected file
-                this.viewfileextensionandmimetype();
+      //           //retrieve mime type and extension of selected file
+      //           this.viewfileextensionandmimetype();
 
-                //retrieve size of selected file
-                this.viewselectedfilesize();
+      //           //retrieve size of selected file
+      //           this.viewselectedfilesize();
 
-                //finally send file to database after a few seconds(delay due to the fact that we want to retrieve file size and mime type)
-                setTimeout(() => {
-                  this.sendfiletodb();
-                }, 2000);
+      //           //finally send file to database after a few seconds(delay due to the fact that we want to retrieve file size and mime type)
+      //           setTimeout(() => {
+      //             this.sendfiletodb();
+      //           }, 2000);
 
-              })
-              .catch(err => console.log(err));
-          }
-        )
-        .catch(error => {
-          console.log(error)
-        });
+      //         })
+      //         .catch(err => console.log(err));
+      //     }
+      //   )
+      //   .catch(error => {
+      //     console.log(error)
+      //   });
+
+      this.fileChooser.open().then((uri) => {
+        this.filePath.resolveNativePath(uri).then((nativepath) => {
+
+          this.sendingloader()
+
+          this.base64.encodeFile(nativepath).then((base64File) => {
+            this.selectedfilebase64 = base64File
+          }, (err) => {
+            alert('encoding base 64 error: ' + err)
+            this.loader.dismiss()
+            return
+          })
+
+          this.selectedfilepath = nativepath
+
+          this.selectedfilename = nativepath.substring(nativepath.lastIndexOf("/") + 1)
+
+          this.viewfileextensionandmimetype()
+
+          this.viewselectedfilesize()
+
+          setTimeout(() => {
+            this.sendfiletodb()
+          }, 2000);
+
+        }, (err) => {
+          alert('errrr 1' + JSON.stringify(err))
+        })
+      }, (err) => {
+        alert('errrr2' + JSON.stringify(err))
+      })
+
+
     } else {
 
       //use getFile('all') if u want to select all file types
@@ -1196,7 +1233,9 @@ export class ViewspecificgroupchatPage {
       filenameDB: this.selectedfilename,
       filepathDB: this.selectedfilepath,
       filemimetypeDB: this.selectedfilemimetype,
-      filesizeDB: this.selectedfilesize
+      filesizeDB: this.selectedfilesize,
+      filebase64stringDB: this.selectedfilebase64,
+      fileextensionDB: this.selectedfileextension
     };
 
     this.postPvdr.postData(body, 'mydbapicommands.php').subscribe(data => {
@@ -1220,7 +1259,7 @@ export class ViewspecificgroupchatPage {
       })
       .catch(e => {
         console.log('Error openening file', e);
-        this.styledToastmessage("No application to open file")
+        // this.styledToastmessage("No application to open file")
       });
   }
 
@@ -1231,19 +1270,39 @@ export class ViewspecificgroupchatPage {
     count.download = false; //hide the download icon
     count.downloading = true; //show the downloading spinner
 
-    const fileTransfer: FileTransferObject = this.transfer.create();
-    fileTransfer.download(count.grp_file_path_fetched, this.file.externalRootDirectory + '/CamfilaDownloads/Documents/' + count.grp_file_name_fetched).then(  //creates a folder with the one given in the parameter even if the folder doesn't exist
-      (data) => {
+    // const fileTransfer: FileTransferObject = this.transfer.create();
+    // fileTransfer.download(count.grp_file_path_fetched, this.file.externalRootDirectory + '/CamfilaDownloads/Documents/' + count.grp_file_name_fetched).then(  //creates a folder with the one given in the parameter even if the folder doesn't exist
+    //   (data) => {
 
+    //     count.downloading = false;  //hide the downloading spinner
+    //     count.download = true;  //show the download icon
+
+    //     // this.styledToastmessage("Document saved to " + 'CamfilaDownloads/Documents/' + count.grp_file_name_fetched);
+    //     this.styledToastmessage("Document saved");
+    //   }, (err) => {
+    //     console.log("Download error", err);
+    //     this.alertmsg(JSON.stringify(err));
+    //   });
+
+    var request : DownloadRequest ={
+      uri: this.server+ count.grp_file_path_fetched,
+      title: count.grp_file_name_fetched,
+      description:'',
+      mimeType:'',
+      visibleInDownloadsUi:true,
+      notificationVisibility: NotificationVisibility.VisibleNotifyCompleted,
+      destinationInExternalPublicDir: {
+        dirType:'CamfilaDownloads/Documents/',
+        subPath:count.grp_file_name_fetched
+      }
+    };
+    this.downloader.download(request)
+    .then((location:string)=>{
+      this.styledToastmessage("Document saved to " + location);
         count.downloading = false;  //hide the downloading spinner
         count.download = true;  //show the download icon
-
-        // this.styledToastmessage("Document saved to " + 'CamfilaDownloads/Documents/' + count.grp_file_name_fetched);
-        this.styledToastmessage("Document saved");
-      }, (err) => {
-        console.log("Download error", err);
-        this.alertmsg(JSON.stringify(err));
-      });
+    })
+    .catch((error: any) => alert(error));
   }
 
 

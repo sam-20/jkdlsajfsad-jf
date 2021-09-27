@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ModalController, LoadingController
 import { PostProvider } from '../../providers/post-provider';
 import { ModulevariablesProvider } from '../../providers/modulevariables/modulevariables'
 import { EmailComposer } from '@ionic-native/email-composer';
+import { t } from '@angular/core/src/render3';
 
 /**
  * Generated class for the LoginPage page.
@@ -205,8 +206,8 @@ export class LoginPage {
         console.log(err);
         //this.Toastvalidation("no internet connection");
         //this.Toastvalidation(err);
-        //this.connectionerrorAlert(err);
-        this.connectionerrorAlert("Please check your internet connection");
+        this.connectionerrorAlert("Oops! login failed. Check your internet connection and then try again!");
+        // this.connectionerrorAlert(JSON.stringify(err))
         this.loader.dismiss() //cancel the please wait loader after the error has been dispalyed
       }
       );
@@ -267,7 +268,7 @@ export class LoginPage {
   //internet connection error
   connectionerrorAlert(msg) {
     const alert = this.alertCtrl.create({
-      title: 'Error!',
+      title: 'No internet connection!',
       subTitle: msg,
       buttons: ['OK']
     });
