@@ -602,7 +602,7 @@ export class DmcontactmessagesPage {
       }
     }, (err) => {
       // Handle error
-      this.alertmsg(err);
+      // this.alertmsg(err);
     });
   }
 
@@ -663,7 +663,7 @@ export class DmcontactmessagesPage {
       }
     }, (err) => {
       // Handle error
-      this.alertmsg(err);
+      // this.alertmsg(err);
     });
   }
 
@@ -721,7 +721,7 @@ export class DmcontactmessagesPage {
       })
       .catch((err: CaptureError) => {
         console.log(err);
-        this.alertmsg(JSON.stringify(err));
+        // this.alertmsg(JSON.stringify(err));
       });
   }
 
@@ -922,7 +922,7 @@ export class DmcontactmessagesPage {
       });
       confirm.present();
     }, (err) => {
-      this.alertmsg(err);
+      // this.alertmsg(err);
       console.log(err);
     })
   }
@@ -1038,7 +1038,7 @@ export class DmcontactmessagesPage {
       });
 
     }, (err) => {
-      this.alertmsg(err);
+      // this.alertmsg(err);
       console.log(err);
     });
 
@@ -1128,7 +1128,8 @@ export class DmcontactmessagesPage {
           alert('errrrrr1' + JSON.stringify(err))
         })
       }, (err) => {
-        alert('errrrrr2' + JSON.stringify(err))
+        // alert('errrrrr2' + JSON.stringify(err))
+        this.styledToastmessage('no file selected')
       })
 
 
@@ -1363,7 +1364,8 @@ export class DmcontactmessagesPage {
     };
     this.downloader.download(request)
       .then((location: string) => {
-        this.styledToastmessage("Document saved to " + location);
+        // this.styledToastmessage("Document saved to " + location);
+        this.styledToastmessage('Download complete')
         count.downloading = false;  //hide the downloading spinner
         count.download = true;  //show the download icon
       })
@@ -1408,7 +1410,7 @@ export class DmcontactmessagesPage {
         this.styledToastmessage("Video saved");
       }, (err) => {
         console.log("Download error", err);
-        this.alertmsg(JSON.stringify(err));
+        // this.alertmsg(JSON.stringify(err));
       });
   }
 
@@ -1434,7 +1436,7 @@ export class DmcontactmessagesPage {
         this.styledToastmessage("Image saved");
       }, (err) => {
         console.log("Download error", err);
-        this.alertmsg(JSON.stringify(err));
+        // this.alertmsg(JSON.stringify(err));
       });
   }
 
@@ -1456,7 +1458,7 @@ export class DmcontactmessagesPage {
         this.styledToastmessage("Audio saved");
       }, (err) => {
         console.log("Download error", err);
-        this.alertmsg(JSON.stringify(err));
+        // this.alertmsg(JSON.stringify(err));
       });
   }
 

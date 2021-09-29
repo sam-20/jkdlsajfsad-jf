@@ -19,6 +19,7 @@ import { Base64 } from '@ionic-native/base64';
 import { DocumentPicker } from '@ionic-native/document-picker';
 import { FileOpener } from '@ionic-native/file-opener';
 import { Downloader, DownloadRequest, NotificationVisibility } from '@ionic-native/downloader';
+import { t } from '@angular/core/src/render3';
 
 @IonicPage()
 @Component({
@@ -628,7 +629,7 @@ export class ViewspecificgroupchatPage {
       }
     }, (err) => {
       // Handle error
-      this.alertmsg(err);
+      // this.alertmsg(err);
     });
   }
 
@@ -666,7 +667,7 @@ export class ViewspecificgroupchatPage {
       })
       .catch((err: CaptureError) => {
         console.log(err);
-        this.alertmsg(JSON.stringify(err));
+        // this.alertmsg(JSON.stringify(err));
       });
   }
 
@@ -869,7 +870,7 @@ export class ViewspecificgroupchatPage {
       });
       confirm.present();
     }, (err) => {
-      this.alertmsg(err);
+      // this.alertmsg(err);
       console.log(err);
     })
   }
@@ -983,7 +984,7 @@ export class ViewspecificgroupchatPage {
       });
 
     }, (err) => {
-      this.alertmsg(err);
+      // this.alertmsg(err);
       console.log(err);
     });
 
@@ -1065,7 +1066,8 @@ export class ViewspecificgroupchatPage {
           alert('errrr 1' + JSON.stringify(err))
         })
       }, (err) => {
-        alert('errrr2' + JSON.stringify(err))
+        // alert('errrr2' + JSON.stringify(err))
+        this.styledToastmessage('no file selected')
       })
 
 
@@ -1284,25 +1286,26 @@ export class ViewspecificgroupchatPage {
     //     this.alertmsg(JSON.stringify(err));
     //   });
 
-    var request : DownloadRequest ={
-      uri: this.server+ count.grp_file_path_fetched,
+    var request: DownloadRequest = {
+      uri: this.server + count.grp_file_path_fetched,
       title: count.grp_file_name_fetched,
-      description:'',
-      mimeType:'',
-      visibleInDownloadsUi:true,
+      description: '',
+      mimeType: '',
+      visibleInDownloadsUi: true,
       notificationVisibility: NotificationVisibility.VisibleNotifyCompleted,
       destinationInExternalPublicDir: {
-        dirType:'CamfilaDownloads/Documents/',
-        subPath:count.grp_file_name_fetched
+        dirType: 'CamfilaDownloads/Documents/',
+        subPath: count.grp_file_name_fetched
       }
     };
     this.downloader.download(request)
-    .then((location:string)=>{
-      this.styledToastmessage("Document saved to " + location);
+      .then((location: string) => {
+        // this.styledToastmessage("Document saved to " + location);
+        this.styledToastmessage('Download complete')
         count.downloading = false;  //hide the downloading spinner
         count.download = true;  //show the download icon
-    })
-    .catch((error: any) => alert(error));
+      })
+      .catch((error: any) => alert(error));
   }
 
 
@@ -1328,7 +1331,7 @@ export class ViewspecificgroupchatPage {
         this.styledToastmessage("Video saved");
       }, (err) => {
         console.log("Download error", err);
-        this.alertmsg(JSON.stringify(err));
+        // this.alertmsg(JSON.stringify(err));
       });
   }
 
@@ -1354,7 +1357,7 @@ export class ViewspecificgroupchatPage {
         this.styledToastmessage("Image saved");
       }, (err) => {
         console.log("Download error", err);
-        this.alertmsg(JSON.stringify(err));
+        // this.alertmsg(JSON.stringify(err));
       });
   }
 
@@ -1376,7 +1379,7 @@ export class ViewspecificgroupchatPage {
         this.styledToastmessage("Audio saved");
       }, (err) => {
         console.log("Download error", err);
-        this.alertmsg(JSON.stringify(err));
+        // this.alertmsg(JSON.stringify(err));
       });
   }
 

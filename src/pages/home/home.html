@@ -1,7 +1,7 @@
 <!--splashscreen settings-->
 <div class="custom-overlay" [style.display]="splash ? 'flex': 'none'">
 
-  <h1 class="splashheader">CamFila</h1>
+  <h1 class="splashheader">UENR CamFila</h1>
 
   <!--splash screen styling-->
   <div>
@@ -78,7 +78,7 @@
       <div *ngIf="!server+count.message_media_fetched"
         style="display: flex;background-color: transparent;justify-content: center;align-items: center;padding-top: 15px;padding-bottom: 5px;">
         <img (click)="viewimage(count)" src="{{server+count.message_media_fetched}}"
-          style="height: 180px;width: 85%;" />
+          style="height: 180px;width: 65%;" />
       </div>
 
       <!-- message -->
@@ -155,7 +155,7 @@
         <div *ngIf="!server+count.commentedmsg_messagemedia"
           style="display: flex;background-color: transparent;justify-content: center;align-items: center;padding-top: 15px;padding-bottom: 5px;">
           <img src="{{server+count.commentedmsg_messagemedia}}" (click)="viewimage2(count)"
-            style="height: 180px;width: 85%;" />
+            style="height: 180px;width: 65%;" />
         </div>
 
         <!-- message -->
@@ -227,7 +227,7 @@
         <div *ngIf="!server+count.message_media_fetched"
           style="display: flex;background-color: transparent;justify-content: center;align-items: center;padding-top: 15px;padding-bottom: 5px;">
           <img (click)="viewimage(count)" src="{{server+count.message_media_fetched}}"
-            style="height: 180px;width: 85%;" />
+            style="height: 180px;width: 65%;" />
         </div>
 
         <!-- message -->
